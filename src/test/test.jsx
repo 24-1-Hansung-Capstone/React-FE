@@ -1,26 +1,23 @@
-import { Map } from "react-kakao-maps-sdk"
-import { useKakaoLoader } from "react-kakao-maps-sdk"
+import React, { useEffect } from "react";
+const { kakao } = window;
+
 
 const BasicMap = () => {
-  useKakaoLoader()
+  useEffect(()=>{
+    const container = document.getElementById("map");
+    const options = {
+      center: new kakao.maps.LatLng(33, 126),
+      level:3
+    };
+    const map = new kakao.maps.Map(container, options)
+  })
 
   return (
-    
-    <Map // 지도를 표시할 Container
-      id="map"
-      center={{
-        // 지도의 중심좌표
-        lat: 33.450701,
-        lng: 126.570667,
-      }}
-      style={{
-        // 지도의 크기
-        width: "100%",
-        height: "350px",
-      }}
-      level={3} // 지도의 확대 레벨sdfsdf
-    />
+    <div id = "map" style={{width :'500px', height : '400px'}}>
+      
+    </div>
   )
+
 }
 
 export default BasicMap;
