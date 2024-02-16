@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import Section1 from './test/test';
+import SearchBar from './components/SearchBar/SearchBar';
+import Test from './test/Test'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+
 root.render(
   <React.StrictMode>
-    <Section1 />
+    <Test/>
   </React.StrictMode>
 );
 

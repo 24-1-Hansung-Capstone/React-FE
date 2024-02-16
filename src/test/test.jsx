@@ -1,33 +1,26 @@
-import "./FrameContainer.css";
-import logo from "../assets/logo.png"
-import map from "../assets/map.png"
-import searchIcon from "../assets/search_button.png"
+import { Map } from "react-kakao-maps-sdk"
+import { useKakaoLoader } from "react-kakao-maps-sdk"
 
+const BasicMap = () => {
+  useKakaoLoader()
 
-
-const FrameContainer = () => {
   return (
-    <div className="frame-container">
-      <div className="wrapper-map">
-        <img className="map-icon" alt="" src={map} />
-      </div>
-      <img className="logo-icon" loading="eager" alt="" src={logo} />
-      <div className="search">
-        <div className="input">
-          <input
-            className="left"
-            placeholder="홈즈 검색 또는 지도에서 클릭"
-            type="text"
-          />
-          <div className="right">
-            <div className="value">Value</div>
-            <img className="right-icon" alt="" src="/right-icon.svg" />
-          </div>
-        </div>
-        <img className="search-icon" alt="" src={searchIcon} />
-      </div>
-    </div>
-  );
-};
+    
+    <Map // 지도를 표시할 Container
+      id="map"
+      center={{
+        // 지도의 중심좌표
+        lat: 33.450701,
+        lng: 126.570667,
+      }}
+      style={{
+        // 지도의 크기
+        width: "100%",
+        height: "350px",
+      }}
+      level={3} // 지도의 확대 레벨sdfsdf
+    />
+  )
+}
 
-export default FrameContainer;
+export default BasicMap;
