@@ -1,22 +1,53 @@
-import React, { useEffect } from "react";
-const { kakao } = window;
-
+import React, { useEffect, useState } from 'react';
 
 const MainMap = () => {
-  useEffect(()=>{
-    const container = document.getElementById("map");
-    const options = {
-      center: new kakao.maps.LatLng(33, 126),
-      level:3
-    };
-    const map = new kakao.maps.Map(container, options)
-  })
+  const [map, setMap] = useState();
+  const [marker, setMarker] = useState();
+
+  useEffect(() => {
+    window.kakao.maps.load(() => {
+      const container = document.getElementById("map");
+      const options = {
+        center: new window.kakao.maps.LatLng(33.450701, 126.570667),
+        level: 3,
+      };
+
+      setMap(new window.kakao.maps.Map(container, options));
+      setMarker(new window.kakao.maps.Marker());
+    });
+  }, []);
+
+  const getCurrentPosBtn = () => {
+    navigator.geolocation.getCurrentPosition(
+      getPosSuccess,
+      () => alert("위치 정보를 가져오는데 실패했습니다."),
+      {
+        enableHighAccuracy: true,
+        maximumAge: 30000,
+        timeout: 27000,
+      }
+    );
+  }
+
+  const getPosSuccess = (pos) => {
+    var currentPos = new window.kakao.maps.LatLng(
+      pos.coords.latitude,
+      pos.coords.longitude
+    );
+
+    map.panTo(currentPos);
+
+    marker.setMap(null);
+    marker.setPosition(currentPos);
+    marker.setMap(map);
+  };
 
   return (
-    <div id = "map" style={{position: "absolute", left: "0px", top: "0px", width: "100%", height: "100%"}}>
+    <div>
+      <div id="map" style={{ width: "100vw", height: "calc(100vh - 50px)" }}></div>
+      <button style={{ position: 'absolute', bottom: '10px', left: '10px', zIndex: '9999' }} onClick={getCurrentPosBtn}>현재 위치</button>
     </div>
-  )
-
+  );
 }
 
 export default MainMap;
