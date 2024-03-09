@@ -2,17 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import SearchBar from './components/SearchBar/SearchBar';
-import Test from './test/Test'
 import MainMap from './components/MainMap/MainMap'
 import reportWebVitals from './reportWebVitals';
 import MainPage from './components/MainPage/MainPage';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <MainPage />
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
