@@ -7,7 +7,9 @@ const SearchBar = () => {
   const [searchWord, setSearchWord] = useState("");
   
   const navigate = useNavigate();
-  const goNavigate =() =>{navigate(`/search-result/${searchWord}`)}
+  const goNavigate =() =>{
+    if(searchWord !== "") navigate(`/search-result/${searchWord}`)
+  }
 
   return (
     <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '9999' }}>
