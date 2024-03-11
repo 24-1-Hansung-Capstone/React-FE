@@ -44,8 +44,8 @@ const MainMap = () => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <div id="map" style={{ width: "100vw", height: "calc(100vh - 50px)" }}></div>
-      <button className="current-location-btn" onClick={getCurrentPosBtn}>현재 위치</button>
+      <div id="map" style={{ width: "100vw", height: "100vh" }}></div>
+      <button className="current-location-btn" onClick={getCurrentPosBtn} style={{ position:"absolute", right: "5px", bottom: "5px"}}>현재 위치</button>
     </div>
   );
 }

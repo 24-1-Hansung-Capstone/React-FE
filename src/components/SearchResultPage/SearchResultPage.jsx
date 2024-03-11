@@ -14,7 +14,6 @@ const SearchResultPage = () => {
         .then(response => {
             // 성공 핸들링
             setResult(response.data)
-            console.log("엄준식")
         })
         .catch(function (error) {
             // 에러 핸들링
