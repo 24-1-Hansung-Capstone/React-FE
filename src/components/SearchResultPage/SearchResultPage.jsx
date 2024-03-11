@@ -1,9 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Axios from 'axios';
+import { useState } from 'react';
 
 const SearchResultPage = () => {
     const {searchWord} = useParams();
+    const [result, setResult] = useState(`${searchWord}에 대한 검색결과창입니다`)
 
 
     // 지정된 ID를 가진 유저에 대한 요청
@@ -11,7 +13,7 @@ const SearchResultPage = () => {
     Axios.get(`http://localhost:8080/search?query=${searchWord}`)
         .then(response => {
             // 성공 핸들링
-            console.log(response);
+            setResult(response.data)
             console.log("엄준식")
         })
         .catch(function (error) {
@@ -25,7 +27,7 @@ const SearchResultPage = () => {
     
     return (
         <div>
-            {searchWord}에 대한 검색결과창입니다
+            {result}
         </div>
     );
 }
