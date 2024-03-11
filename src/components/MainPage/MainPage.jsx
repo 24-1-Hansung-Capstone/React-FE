@@ -8,7 +8,7 @@ const MainPage = () => {
   return (
     <React.StrictMode>
       <MainMap />
-      <SearchBar />
+      <SearchBar position='absolute' top='10%'  left='50%'  transform='translate(-50%, -50%)' zIndex= '9999'/>
     </React.StrictMode>
   );
 }
