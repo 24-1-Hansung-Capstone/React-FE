@@ -6,7 +6,7 @@ const { kakao } = window;
 
 const MainMap = () => {
   const [info, setInfo] = useState();
-  const [markers, setMarkers] = useState([]);
+  const [marker, setMarker] = useState([]);
   const [map, setMap] = useState();
   const [keyword, setKeyword] = useState('');
 
