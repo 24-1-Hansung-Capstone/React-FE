@@ -8,7 +8,7 @@ const SearchResultPage = () => {
 
     // 지정된 ID를 가진 유저에 대한 요청
     
-    Axios.get(`https://localhost:8080/search?query=${searchWord}`)
+    Axios.get(`http://localhost:8080/search?query=${searchWord}`)
         .then(response => {
             // 성공 핸들링
             console.log(response);
