@@ -10,14 +10,22 @@ const SearchBar = () => {
   const goNavigate =() =>{
     if(searchWord !== "") navigate(`/search-result/${searchWord}`)
   }
+  const searchBarEnterKeyDown = (event) =>{
+    if (event.key === 'Enter') {
+      goNavigate();
+    }
+  }
 
   return (
     <div style={{ position: 'absolute', top: '10%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '9999' }}>
-      <div className="w-[600px] h-[43px] flex flex-row items-center justify-center gap-[20px] overflow-hidden">
+      <div style = {{width:"600px", height:"45px", display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center", gap:"20px", overflow:"hidden"}}>
         <img src={Logo} alt="Logo" style={{ width: '120px', height: '50px' }} />
-        <div className="flex-1 h-[43px] flex flex-col items-start justify-between justify-center py-0 px-[8px] bg-[#fff] border-[5px] border-solid border-[#92baff] rounded-[4px]">
-          <div className="w-[422px] flex flex-row items-center justify-start py-[8px] px-0">
-            <input className="flex-1 text-[14px] leading-[24px] font-['Roboto'] text-[#656f77]" placeholder='홈즈 검색 또는 지도에서 클릭' onChange = { (event) => { setSearchWord(event.target.value) }}/>
+        <div style={{ height: '45px',  backgroundColor: '#fff',  borderWidth: '5px',  borderStyle: 'solid',  borderColor: '#92baff',  borderRadius: '4px'}}>
+        <div style={{width: '425px', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <input style={{flex: '1',fontSize: '14px',lineHeight: '24px',color: '#000', outline:"None"}} placeholder='홈즈 검색 또는 지도에서 클릭' 
+            onChange = { (event) => { setSearchWord(event.target.value) }}
+            onKeyDown={(event) => {searchBarEnterKeyDown(event)}}
+            />
           </div>
         </div>
         <img width="28" height="28" src={SearchButton} alt="Search Button" onClick={goNavigate}/>
