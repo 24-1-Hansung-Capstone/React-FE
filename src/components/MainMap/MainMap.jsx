@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { Map, MapMarker } from 'react-kakao-maps-sdk';
+import { styled } from 'styled-components';
+
+const { kakao } = window;
 
 const MainMap = () => {
+  const [info, setInfo] = useState();
+  const [markers, setMarkers] = useState([]);
   const [map, setMap] = useState();
-  const [marker, setMarker] = useState();
+  const [keyword, setKeyword] = useState('');
 
   useEffect(() => {
     window.kakao.maps.load(() => {
       const container = document.getElementById("map");
       const options = {
-        center: new window.kakao.maps.LatLng(33.450701, 126.570667),
+        center: new window.kakao.maps.LatLng(37.566498652285, 126.99209745028),
         level: 3,
       };
 
