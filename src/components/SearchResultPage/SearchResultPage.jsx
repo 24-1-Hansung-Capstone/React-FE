@@ -1,8 +1,27 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import Axios from 'axios';
 
 const SearchResultPage = () => {
     const {searchWord} = useParams();
+
+
+    // 지정된 ID를 가진 유저에 대한 요청
+    
+    Axios.get(`https://localhost:8080/search?query=${searchWord}`)
+        .then(response => {
+            // 성공 핸들링
+            console.log(response);
+            console.log("엄준식")
+        })
+        .catch(function (error) {
+            // 에러 핸들링
+            console.log(error);
+        })
+        .then(function () {
+        // 항상 실행되는 영역
+        });
+
     
     return (
         <div>
