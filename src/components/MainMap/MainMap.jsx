@@ -1,3 +1,4 @@
+// src/components/MainMap/MainMap.jsx
 import React, { useEffect, useState } from 'react';
 import { Map, MapMarker } from 'react-kakao-maps-sdk';
 import { styled } from 'styled-components';

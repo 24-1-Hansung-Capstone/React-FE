@@ -1,3 +1,4 @@
+// src/components/SearchResultPage/SearchButton.jsx
 import React from 'react';
 
 const SearchButton = ({ active, handleButtonClick, buttonName }) => {
