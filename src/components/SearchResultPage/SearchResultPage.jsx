@@ -11,7 +11,13 @@ const SearchResultPage = () => {
     const [result, setResult] = useState(`${searchWord}에 대한 검색결과창입니다`);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchResults, setSearchResults] = useState([]);
-    const [activeButton, setActiveButton] = useState(null);
+    const [buttonStates, setButtonStates] = useState({
+        " 주변 명소 ": false,
+        "  관광지  ": false,
+        "   집값   ": false,
+        "지역 만족도": false,
+        "   범죄율   ": false,
+    });
 
     useEffect(() => {
         // 페이지가 변경될 때마다 API를 호출하여 결과 가져오기
@@ -31,7 +37,12 @@ const SearchResultPage = () => {
     };
 
     const handleButtonClick = (buttonName) => {
-        setActiveButton(buttonName);
+        setButtonStates(prevState => {
+            return {
+                ...prevState,
+                [buttonName]: !prevState[buttonName]
+            };
+        });
         // 이 부분에서 버튼에 따라 다른 동작 수행
         // 예를 들어 다른 API 호출 등
     };
@@ -47,21 +58,24 @@ const SearchResultPage = () => {
             {/* 1. 검색 결과 창과 버튼들 */}
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                 <div style={{ margin: '20px auto' }}>{result}</div>
-                <SearchBar/>
+                <SearchBar />
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                    <SearchButton activeButton={activeButton} handleButtonClick={handleButtonClick} buttonName=" 주변 명소 " />
-                    <SearchButton activeButton={activeButton} handleButtonClick={handleButtonClick} buttonName="  관광지  " />
-                    <SearchButton activeButton={activeButton} handleButtonClick={handleButtonClick} buttonName="   집값   " />
-                    <SearchButton activeButton={activeButton} handleButtonClick={handleButtonClick} buttonName="지역 만족도" />
-                    <SearchButton activeButton={activeButton} handleButtonClick={handleButtonClick} buttonName="   범죄율   " />
+                    {Object.keys(buttonStates).map(buttonName => (
+                        <SearchButton
+                            key={buttonName}
+                            active={buttonStates[buttonName]}
+                            handleButtonClick={handleButtonClick}
+                            buttonName={buttonName}
+                        />
+                    ))}
                 </div>
             </div>
-    
+
             {/* 2. 검색 결과 리스트 */}
             <div style={{ flex: 4 }}>
                 <SearchResultList searchResults={searchResults} />
             </div>
-    
+
             {/* 3. 페이지네이션 */}
             <div style={{ flex: 1 }}>
                 <Pagination pageNumbers={pageNumbers} handlePageClick={handlePageClick} />
