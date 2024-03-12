@@ -30,6 +30,7 @@ const SearchResultPage = () => {
             })
             .catch(function (error) {
                 // 에러 핸들링
+                setResult(searchWord + "를 검색했지만 연결이 안되있넹 ㅋㅋ");
                 console.log(error);
             });
     }, [searchWord, currentPage]);
