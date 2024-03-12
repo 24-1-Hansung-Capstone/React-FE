@@ -22,11 +22,11 @@ const SearchResultPage = () => {
 
     useEffect(() => {
         // 페이지가 변경될 때마다 API를 호출하여 결과 가져오기
-        Axios.get(`http://localhost:8080/search?query=${searchWord}&page=${currentPage}`)
+        Axios.get(`http://localhost:8080/search?query=${searchWord}`)
             .then(response => {
                 // 성공 핸들링
-                setResult(response.data)
-
+                console.log(response.data)
+                setSearchResults(response.data);
             })
             .catch(function (error) {
                 // 에러 핸들링
