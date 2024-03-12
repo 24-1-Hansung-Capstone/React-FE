@@ -1,3 +1,4 @@
+// src/components/SearchResultPage/SearchResultList.jsx
 import React from 'react';
 
 const SearchResultList = (props) => {

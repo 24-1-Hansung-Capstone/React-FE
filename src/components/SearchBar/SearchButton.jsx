@@ -1,4 +1,4 @@
-// src/components/SearchBar/SearchBar.jsx
+// src/components/SearchBar/SearchButton.jsx
 import React, { useState } from 'react';
 import SearchButtonImg from "./SearchButtonpng.png";
 

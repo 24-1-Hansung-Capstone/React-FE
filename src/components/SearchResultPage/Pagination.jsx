@@ -1,3 +1,4 @@
+// src/components/SearchResultPage/Pagination.jsx
 import React, { useState, useEffect } from 'react';
 import { FaAngleDoubleLeft, FaAngleLeft, FaAngleRight, FaAngleDoubleRight } from 'react-icons/fa';
 import styled from 'styled-components';
