@@ -1,18 +1,18 @@
 // src/components/SearchResultPage/SearchButton.jsx
 import React from 'react';
 
-const SearchButton = ({ active, handleButtonClick, buttonName }) => {
+const SearchButton = (props) => {
     return (
         <button
             style={{
                 margin: '0 30px',
-                backgroundColor: active ? 'black' : 'white',
-                color: active ? 'white' : 'black',
+                backgroundColor: props.active ? 'black' : 'white',
+                color: props.active ? 'white' : 'black',
                 border: '1px solid black' // 테두리 추가
             }}
-            onClick={() => handleButtonClick(buttonName)}
+            onClick={() => props.handleButtonClick(props.buttonName)}
         >
-            {buttonName}
+            {props.buttonName}
         </button>
     );
 };

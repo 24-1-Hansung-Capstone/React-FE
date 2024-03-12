@@ -25,7 +25,8 @@ const SearchResultPage = () => {
         Axios.get(`http://localhost:8080/search?query=${searchWord}&page=${currentPage}`)
             .then(response => {
                 // 성공 핸들링
-                setSearchResults(response.data);
+                setResult(response.data)
+                
             })
             .catch(function (error) {
                 // 에러 핸들링
@@ -33,10 +34,12 @@ const SearchResultPage = () => {
             });
     }, [searchWord, currentPage]);
 
+
     const handlePageClick = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
 
+    
     const handleButtonClick = (buttonName) => {
         setButtonStates(prevState => {
             return {
