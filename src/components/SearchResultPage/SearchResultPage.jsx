@@ -26,7 +26,7 @@ const SearchResultPage = () => {
             .then(response => {
                 // 성공 핸들링
                 setResult(response.data)
-                
+
             })
             .catch(function (error) {
                 // 에러 핸들링
@@ -39,7 +39,7 @@ const SearchResultPage = () => {
         setCurrentPage(pageNumber);
     };
 
-    
+
     const handleButtonClick = (buttonName) => {
         setButtonStates(prevState => {
             return {
@@ -58,23 +58,19 @@ const SearchResultPage = () => {
     }
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-            {/* 1. 검색 결과 창과 버튼들 */}
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ margin: '20px auto' }}>{result}</div>
-                <SearchBar />
-                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                    {Object.keys(buttonStates).map(buttonName => (
-                        <SearchButton
-                            key={buttonName}
-                            active={buttonStates[buttonName]}
-                            handleButtonClick={handleButtonClick}
-                            buttonName={buttonName}
-                        />
-                    ))}
-                </div>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ margin: '20px auto', textAlign: 'center' }}>{result}</div>
+            <SearchBar position='relative' top='0' left='0' transform='none' zIndex='auto' />
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                {Object.keys(buttonStates).map(buttonName => (
+                    <SearchButton
+                        key={buttonName}
+                        active={buttonStates[buttonName]}
+                        handleButtonClick={handleButtonClick}
+                        buttonName={buttonName}
+                    />
+                ))}
             </div>
-
             {/* 2. 검색 결과 리스트 */}
             <div style={{ flex: 4 }}>
                 <SearchResultList searchResults={searchResults} />
