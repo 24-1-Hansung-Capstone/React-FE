@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SearchBar from './components/SearchBar/SearchBar';
-import MainMap from './components/MainMap/MainMap'
 import reportWebVitals from './reportWebVitals';
-import MainPage from './components/MainPage/MainPage';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

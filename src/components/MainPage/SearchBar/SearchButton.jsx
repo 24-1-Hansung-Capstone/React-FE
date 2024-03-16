@@ -1,6 +1,6 @@
 // src/components/SearchBar/SearchButton.jsx
 import React, { useState } from 'react';
-import SearchButtonImg from "./SearchButtonpng.png";
+import SearchButtonImg from "../../../assets/SearchButton.png"
 
 const SearchButton = (props) => {
 

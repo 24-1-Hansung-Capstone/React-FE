@@ -5,7 +5,7 @@ import Axios from 'axios';
 import SearchResultList from './SearchResultList';
 import Pagination from './Pagination';
 import SearchButton from './SearchButton'; // 새로운 컴포넌트 임포트
-import SearchBar from '../SearchBar/SearchBar';
+import SearchBar from '../MainPage/SearchBar/SearchBar';
 
 const SearchResultPage = () => {
     const { searchWord } = useParams();

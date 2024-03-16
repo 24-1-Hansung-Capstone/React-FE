@@ -1,6 +1,6 @@
 // src/components/SearchBar/SearchLogo.jsx
 import React, { useState } from 'react';
-import Logo from "../../assets/logo.png"; // 로고 이미지 불러오기
+import Logo from "../../../assets/logo.png"; // 로고 이미지 불러오기
 
 const searchLogo = (props) => {
 
