@@ -2,12 +2,10 @@
 import React, { useEffect, useState } from 'react';
 const { kakao } = window;
 
-const MainMap = () => {
+const MainMap = (props) => {
   const [marker, setMarker] = useState([]);
   const [map, setMap] = useState(null);
   const [geocoder, setGeocoder] = useState(null);
-  const [mapLoaded, setMapLoaded] = useState(false);
-
 
   useEffect(() => {
     //지도 로드
@@ -18,27 +16,34 @@ const MainMap = () => {
         level: 3,
       };
 
-      setMap(new window.kakao.maps.Map(container, options));
-      setMarker(new window.kakao.maps.Marker());
-      setGeocoder(new kakao.maps.services.Geocoder());
+      const newMap = new window.kakao.maps.Map(container, options);
+      setMap(newMap);
+      const newMarker = new window.kakao.maps.Marker()
+      setMarker(newMarker);
+      const newGeocoder = new window.kakao.maps.services.Geocoder()
+      setGeocoder(newGeocoder);
+
+      window.kakao.maps.event.addListener(newMap, 'click', function (mouseEvent) {
+        searchDetailAddrFromCoords(newGeocoder, mouseEvent.latLng, function (result, status) {
+          if (status === kakao.maps.services.Status.OK) {
+            var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
+            detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+    
+    
+            console.log(result[0].address.address_name)
+            props.setSearchWord(result[0].address.address_name)
+
+            // 마커를 클릭한 위치에 표시합니다
+            newMarker.setPosition(mouseEvent.latLng);
+            newMarker.setMap(newMap);
+          } 
+        });
+      });
+
     });
   }, []);
 
 
-  // window.kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
-  //   searchDetailAddrFromCoords(mouseEvent.latLng, function (result, status) {
-  //     if (status === kakao.maps.services.Status.OK) {
-  //       var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-  //       detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
-
-
-  //       console.log(result[0].address.address_name)
-  //       // 마커를 클릭한 위치에 표시합니다 
-  //       marker.setPosition(mouseEvent.latLng);
-  //       marker.setMap(map);
-  //     }
-  //   });
-  // });
 
   //현재위치 버튼
   const getCurrentPosBtn = () => {
@@ -71,8 +76,7 @@ const MainMap = () => {
   }
 
 
-
-  function searchDetailAddrFromCoords(coords, callback) {
+  function searchDetailAddrFromCoords(geocoder, coords, callback) {
     // 좌표로 법정동 상세 주소 정보를 요청합니다
     geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
   }
