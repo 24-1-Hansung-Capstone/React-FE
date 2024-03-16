@@ -8,7 +8,7 @@ function App(props){
         <BrowserRouter>
             <Routes>
                 <Route index element = {<MainPage/>}/>
-                <Route path="search-result/:searchWord" element = {<SearchResultPage/>}/>
+                <Route path="search-result/:searchedWord" element = {<SearchResultPage/>}/>
             </Routes>
         </BrowserRouter>
     )
