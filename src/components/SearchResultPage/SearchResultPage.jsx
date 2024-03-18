@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Axios from 'axios';
-import SearchResultList from './SearchResultList';
+import SearchResultList from './SearchResultList/SearchResultList';
 import Pagination from './Pagination';
 import SearchButton from './SearchButton'; // 새로운 컴포넌트 임포트
 import SearchBar from '../MainPage/SearchBar/SearchBar';
@@ -13,6 +13,7 @@ const SearchResultPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchResults, setSearchResults] = useState([]);
     const [searchWord, setSearchWord] = useState(searchedWord);
+    const [pageItems, setPageItems] = useState(10);
     const [buttonStates, setButtonStates] = useState({
         " 주변 명소 ": false,
         "  관광지  ": false,
@@ -60,7 +61,7 @@ const SearchResultPage = () => {
     }
 
     return (
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ margin: '20px auto', textAlign: 'center' }}>{result}</div>
             <SearchBar position='relative' top='0' left='0' transform='none' zIndex='auto' setSearchWord = {setSearchWord} searchWord = {searchWord}/>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
@@ -74,12 +75,12 @@ const SearchResultPage = () => {
                 ))}
             </div>
             {/* 2. 검색 결과 리스트 */}
-            <div style={{ flex: 4 }}>
-                <SearchResultList searchResults={searchResults} />
+            <div>
+                <SearchResultList searchResults={searchResults.slice((currentPage-1)*pageItems, (currentPage-1)*pageItems + pageItems)} />
             </div>
 
             {/* 3. 페이지네이션 */}
-            <div style={{ flex: 1 }}>
+            <div>
                 <Pagination pageNumbers={pageNumbers} handlePageClick={handlePageClick} />
             </div>
         </div>
