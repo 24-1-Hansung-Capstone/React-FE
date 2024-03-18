@@ -39,9 +39,9 @@ const SearchResultPage = () => {
     }, [searchedWord]);
 
 
-    const onPageChange = (e, page)=> {
+    const onPageChange = (e, page) => {
         setCurrentPage(page);
-      };
+    };
 
 
     const handleButtonClick = (buttonName) => {
@@ -57,7 +57,7 @@ const SearchResultPage = () => {
 
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <div>
             <div style={{ margin: '20px auto', textAlign: 'center' }}>{result}</div>
 
             <SearchBar position='relative' setSearchWord={setSearchWord} searchWord={searchWord} />
@@ -72,8 +72,6 @@ const SearchResultPage = () => {
                     />
                 ))}
             </div>
-
-            <hr></hr>
 
             {/* 2. 검색 결과 리스트 */}
             <div>
@@ -93,7 +91,7 @@ const SearchResultPage = () => {
                         padding: "15px 0",
                     }}
                     renderItem={(item) => (
-                      <PaginationItem {...item} sx={{ fontSize: 12 }} />
+                        <PaginationItem {...item} sx={{ fontSize: 12 }} />
                     )}
                 />
             </div>
