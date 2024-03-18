@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Axios from 'axios';
 import SearchResultList from './SearchResultList/SearchResultList';
-import SearchButton from './SearchButton'; // 새로운 컴포넌트 임포트
+import CategoryButton from './CategoryButton'; // 새로운 컴포넌트 임포트
 import SearchBar from '../MainPage/SearchBar/SearchBar';
 import { Pagination, PaginationItem } from "@mui/material";
 
@@ -13,7 +13,7 @@ const SearchResultPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchResults, setSearchResults] = useState([]);
     const [searchWord, setSearchWord] = useState(searchedWord);
-    const [pageItems, setPageItems] = useState(10);
+    const [pageItems, setPageItems] = useState(5);
     const [buttonStates, setButtonStates] = useState({
         " 주변 명소 ": false,
         "  관광지  ": false,
@@ -29,13 +29,14 @@ const SearchResultPage = () => {
                 // 성공 핸들링
                 console.log(response.data)
                 setSearchResults(response.data);
+                setCurrentPage(1);
             })
             .catch(function (error) {
                 // 에러 핸들링
                 setResult(searchedWord + "를 검색했지만 연결이 안되있넹 ㅋㅋ");
                 console.log(error);
             });
-    }, [searchedWord, currentPage]);
+    }, [searchedWord]);
 
 
     const onPageChange = (e, page)=> {
@@ -58,10 +59,12 @@ const SearchResultPage = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ margin: '20px auto', textAlign: 'center' }}>{result}</div>
-            <SearchBar position='relative' top='0' left='0' transform='none' zIndex='auto' setSearchWord={setSearchWord} searchWord={searchWord} />
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+
+            <SearchBar position='relative' setSearchWord={setSearchWord} searchWord={searchWord} />
+
+            <div style={{ justifyContent: 'center', marginTop: '20px' }}>
                 {Object.keys(buttonStates).map(buttonName => (
-                    <SearchButton
+                    <CategoryButton
                         key={buttonName}
                         active={buttonStates[buttonName]}
                         handleButtonClick={handleButtonClick}
@@ -69,6 +72,9 @@ const SearchResultPage = () => {
                     />
                 ))}
             </div>
+
+            <hr></hr>
+
             {/* 2. 검색 결과 리스트 */}
             <div>
                 <SearchResultList searchResults={searchResults.slice((currentPage - 1) * pageItems, (currentPage - 1) * pageItems + pageItems)} />

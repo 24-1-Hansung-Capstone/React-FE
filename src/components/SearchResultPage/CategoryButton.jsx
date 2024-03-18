@@ -1,7 +1,7 @@
 // src/components/SearchResultPage/SearchButton.jsx
 import React from 'react';
 
-const SearchButton = ({ active, handleButtonClick, buttonName }) => {
+const CategoryButton = ({ active, handleButtonClick, buttonName }) => {
     return (
         <button
             style={{
@@ -21,4 +21,4 @@ const SearchButton = ({ active, handleButtonClick, buttonName }) => {
     );
 };
 
-export default SearchButton;
+export default CategoryButton;
