@@ -1,8 +1,10 @@
 // src/components/SearchBar/SearchInput.jsx
 import React, { useState } from 'react';
 
+// 검색어 입력하는 창 만들기
 const SearchInput = (props) => {
 
+    // 키보드 Enter키를 눌러도 이벤트 발생.
     const searchBarEnterKeyDown = (event) => {
         if (event.key === 'Enter') {
             props.goNavigate();

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import SearchButtonImg from "../../../assets/SearchButton.png"
 
+//돋보기 버튼 만들기
 const SearchButton = (props) => {
 
   return (

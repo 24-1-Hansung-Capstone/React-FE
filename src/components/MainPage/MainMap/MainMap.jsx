@@ -8,10 +8,11 @@ const MainMap = (props) => {
   const [geocoder, setGeocoder] = useState(null);
 
   useEffect(() => {
-    //지도 로드
+    // 지도 로드 및 그리기
     window.kakao.maps.load(() => {
       const container = document.getElementById("map");
       const options = {
+        // 지도 초기 화면은 을지로로 고정.
         center: new window.kakao.maps.LatLng(37.566498652285, 126.99209745028),
         level: 3,
       };
@@ -64,6 +65,7 @@ const MainMap = (props) => {
       marker.setMap(map);
     };
 
+    //위치 정보를 읽지 못했을 때
     navigator.geolocation.getCurrentPosition(
       getPosSuccess,
       () => alert("위치 정보를 가져오는데 실패했습니다."),
@@ -80,7 +82,7 @@ const MainMap = (props) => {
     // 좌표로 법정동 상세 주소 정보를 요청합니다
     geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
   }
-
+  // 현재 위치 버튼
   return (
     <div style={{ position: 'relative' }}>
       <div id="map" style={{ width: "100vw", height: "100vh" }}></div>
