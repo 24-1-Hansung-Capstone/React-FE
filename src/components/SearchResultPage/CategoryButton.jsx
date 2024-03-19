@@ -1,4 +1,4 @@
-// src/components/SearchResultPage/SearchButton.jsx
+// src/components/SearchResultPage/CategoryButton.jsx
 import React from 'react';
 
 const CategoryButton = ({ active, handleButtonClick, buttonName }) => {

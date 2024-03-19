@@ -56,7 +56,7 @@ const SearchResultPage = () => {
 
 
     return (
-        <div>
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, overflowY: 'scroll' }}>
             <SearchBar position='relative' setSearchWord={setSearchWord} searchWord={searchWord} />
 
             <div style={{ justifyContent: 'center', marginTop: '20px' }}>
@@ -74,7 +74,7 @@ const SearchResultPage = () => {
             <div>
                 <SearchResultList searchResults={searchResults.slice((currentPage - 1) * pageItems, (currentPage - 1) * pageItems + pageItems)} searchedWord={searchedWord} />
             </div>
-
+                        
             {/* 3. 페이지네이션 */}
             <div>
                 <Pagination

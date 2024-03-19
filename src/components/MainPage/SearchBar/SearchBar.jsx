@@ -1,3 +1,4 @@
+// src/components/SearchBar/SearchBar.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SearchLogo from './SearchLogo';

@@ -1,4 +1,4 @@
-// src/components/SearchResultPage/SearchResult.jsx
+// src/components/SearchResultPage/SearchResultList/SearchResult.jsx
 import React from 'react';
 
 const SearchResult = (props) => {
