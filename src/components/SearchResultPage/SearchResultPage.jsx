@@ -33,7 +33,6 @@ const SearchResultPage = () => {
             })
             .catch(function (error) {
                 // 에러 핸들링
-                setResult(searchedWord + "를 검색했지만 연결이 안되있넹 ㅋㅋ");
                 console.log(error);
             });
     }, [searchedWord]);
@@ -58,8 +57,6 @@ const SearchResultPage = () => {
 
     return (
         <div>
-            <div style={{ margin: '20px auto', textAlign: 'center' }}>{result}</div>
-
             <SearchBar position='relative' setSearchWord={setSearchWord} searchWord={searchWord} />
 
             <div style={{ justifyContent: 'center', marginTop: '20px' }}>
@@ -75,7 +72,7 @@ const SearchResultPage = () => {
 
             {/* 2. 검색 결과 리스트 */}
             <div>
-                <SearchResultList searchResults={searchResults.slice((currentPage - 1) * pageItems, (currentPage - 1) * pageItems + pageItems)} />
+                <SearchResultList searchResults={searchResults.slice((currentPage - 1) * pageItems, (currentPage - 1) * pageItems + pageItems)} searchedWord={searchedWord} />
             </div>
 
             {/* 3. 페이지네이션 */}
