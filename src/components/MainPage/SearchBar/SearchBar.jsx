@@ -8,8 +8,12 @@ import SearchButton from './SearchButton';
 const SearchBar = (props) => {
   const navigate = useNavigate();
 
-  const goNavigate = () => {
+  const goSearchResultPageNavigate = () => {
     if (props.searchWord !== "") navigate(`/search-result/${props.searchWord}`);
+  };
+
+  const goMainPageNavigate = () => {
+    if (props.searchWord !== "") navigate(`/`);
   };
 
   //검색창 만들기
@@ -17,10 +21,10 @@ const SearchBar = (props) => {
     <div style={{ position: props.position, top: props.top, left: props.left, transform: props.transform, zIndex: props.zIndex }}>
       <div style={{ width: "700px", height: "45px", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", overflow: "hidden", backgroundColor: "#fff", borderColor: '#92baff', borderWidth: '5px', borderStyle: 'solid', borderRadius: '4px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-          <SearchLogo />
-          <SearchInput searchWord={props.searchWord} setSearchWord={props.setSearchWord} goNavigate={goNavigate} />
+          <SearchLogo goNavigate = {goMainPageNavigate}/>
+          <SearchInput searchWord={props.searchWord} setSearchWord={props.setSearchWord} goNavigate={goSearchResultPageNavigate} />
         </div>
-        <SearchButton goNavigate={goNavigate} />
+        <SearchButton goNavigate={goSearchResultPageNavigate} />
       </div>
     </div>
   );

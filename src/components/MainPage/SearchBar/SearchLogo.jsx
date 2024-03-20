@@ -7,7 +7,7 @@ const searchLogo = (props) => {
   // 로고 사이즈 설정하기
   return (
     <div>
-        <img src={Logo} alt="Logo" style={{ width: '110px', height: '50px' }} /> 
+        <img src={Logo} alt="Logo" style={{ width: '110px', height: '50px' }} onClick={props.goNavigate}/> 
     </div>
   );
 }
