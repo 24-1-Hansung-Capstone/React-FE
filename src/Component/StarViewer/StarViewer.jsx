@@ -1,0 +1,1 @@
+// src/Components/StarViewer/StarViewer.jsx

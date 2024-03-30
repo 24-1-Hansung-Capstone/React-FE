@@ -1,3 +1,4 @@
+// src/Components/SearchInputMid/SearchInputMid.jsx
 import React from "react"
 import SearchInput from '../SearchInput/SearchInput'
 

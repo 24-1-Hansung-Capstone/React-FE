@@ -1,3 +1,4 @@
+// src/Components/Mainpage/Mainpage.jsx
 import React from "react";
 import MenuBar from "../Menubar/Menubar";
 import SearchInputMid from '../SearchInputMid/SearchInputMid'

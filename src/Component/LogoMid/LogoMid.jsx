@@ -1,3 +1,4 @@
+// src/Components/LogoMid/LogoMid.jsx
 import logo from '../../Asset/Logo.png';
 
 function Logo(props){

@@ -1,3 +1,4 @@
+// src/Components/SearchInput/SearchInput.jsx
 import React from "react";
 import searchIcon from "../../Asset/searchIcon.svg";
 

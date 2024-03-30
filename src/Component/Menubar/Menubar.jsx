@@ -1,3 +1,4 @@
+// src/Components/Menubar/Menubar.jsx
 import React from 'react';
 
 
@@ -36,8 +37,8 @@ function MenuBar() {
             <a href="/about" style={styles.link}>청약</a>
             <a href="/contact" style={styles.link}>뉴스</a>
             <a href="/contact" style={styles.link}>매물만족도</a>
-            <a href="/contact" style={styles.link}>dd</a>
-            <a href="/contact" style={styles.link}>dd</a>
+            <a href="/contact" style={styles.link}>부동산 추이</a>
+            <a href="/contact" style={styles.link}>홈즈 사무소</a>
             <a href="/contact" style={styles.link}>dd</a>
             <a href="/contact" style={styles.link}>dd</a>
             <a href="/contact" style={styles.link}>dd</a>

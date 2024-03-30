@@ -1,3 +1,4 @@
+// src/Components/ScrollContainerMid/ScrollContainerMid.jsx
 import React from "react";
 import ScrollContainer from "../ScrollContainer/ScrollContainer";
 
