@@ -48,7 +48,6 @@ function QuestionForm(props) {
                     style={{ marginBottom: '10px', width: '100%', padding: '10px', backgroundColor: '#f2f2f2', borderRadius: '5px', border: 'none' }}
                 />
                 <textarea 
-                    placeholder="질문을 입력하세요." 
                     value={message} 
                     onChange={(e) => setMessage(e.target.value)} 
                     style={{ marginBottom: '20px', width: '100%', minHeight: '300px', padding: '10px', backgroundColor: '#f2f2f2', borderRadius: '5px', border: 'none', resize: 'none' }}
