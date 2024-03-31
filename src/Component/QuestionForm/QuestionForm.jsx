@@ -20,10 +20,10 @@ function QuestionForm(props) {
 
     return (
         <div style={{
-            backgroundColor: '#FFFFFF', // 민트색 배경
+            backgroundColor: '#FFFFFF', // 하얀색 배경
             borderRadius: '40px', // 모서리 반지름 설정
-            width: '400px', // 너비 
-            height: '780px', // 화면의 세로 절반에서 20px만큼 뺀 크기
+            width: '400px', // 너비 400px
+            height: '780px', // 높이 780px
             display: 'flex', // Flexbox 모델 사용
             flexDirection: 'column', // 수직 방향으로 배열
             justifyContent: 'space-around', // 요소들을 여유 공간으로 정렬

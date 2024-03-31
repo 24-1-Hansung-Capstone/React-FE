@@ -5,8 +5,8 @@ function MapViewer(props) {
     return (
         <div style={{
             borderRadius: '40px', // 모서리 반지름 설정
-            width: '1000px' , // 너비 45%
-            height: '800px', // 화면의 세로 절반에서 20px만큼 뺀 크기
+            width: '1000px' , // 너비 1000px
+            height: '800px', // 높이 800px
             margin: '10px', // 마진 설정
             display: 'flex', // Flexbox 모델 사용
             justifyContent: 'center', // 수평 중앙 정렬

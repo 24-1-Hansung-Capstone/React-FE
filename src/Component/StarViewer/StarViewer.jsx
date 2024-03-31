@@ -6,9 +6,9 @@ function StarViewer(props) {
         <div style={{
             backgroundColor: '#FFFFFF', // 배경색 흰색으로 변경
             borderRadius: '40px', // 모서리 반지름 설정
-            width: 'calc(100% - 20px)', // 너비 140% - 10px로 변경
-            height: '390px', // 높이 25vh로 변경
-            margin: '10px', // 마진 10px로 유지
+            width: 'calc(100% - 20px)', // 너비 100% - 20px로 변경
+            height: '390px', // 높이 390px로 변경
+            margin: '10px', // 마진 10px로 변경
             display: 'flex', // Flexbox 모델 사용
             justifyContent: 'center', // 수평 중앙 정렬
             alignItems: 'center', // 수직 중앙 정렬
