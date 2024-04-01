@@ -1,4 +1,4 @@
-// SearchInputMid.jsx
+// src/Components/SearchInputMid/SearchInputMid.jsx
 import React, { useState } from "react";
 import SearchInput from '../SearchInput/SearchInput';
 

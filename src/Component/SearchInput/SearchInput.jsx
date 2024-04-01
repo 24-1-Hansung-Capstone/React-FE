@@ -1,4 +1,4 @@
-// SearchInput.jsx
+// src/Components/SearchInput/SearchInput.jsx
 import React, { useState } from "react";
 import searchIcon from "../../Asset/searchIcon.svg";
 
