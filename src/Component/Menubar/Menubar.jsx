@@ -9,9 +9,9 @@ const styles = {
         left: 0, // 좌측에서 시작
         display: 'flex', // 내부 항목을 flex로 정렬
         justifyContent: 'space-around', // 항목 간 공간 동일하게 배분
-        padding: '10px', // 상하 패딩
+        padding: '20px', // 상하 패딩
         zIndex: 1000, // 다른 요소들 위에 보이도록 z-index 설정
-        borderBottom: '1px solid #92baff', // 아래쪽에만 테두리 추가
+        borderBottom: '3px solid #92baff', // 아래쪽에만 테두리 추가
         
     },
     link: {

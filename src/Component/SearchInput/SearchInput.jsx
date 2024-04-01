@@ -23,9 +23,9 @@ function SearchInput(props) {
     return (
         <div style={{
             border: "5px solid #92baff",
-            borderRadius: "20px",
-            width: "530px",
-            height: "40px",
+            borderRadius: "30px",
+            width: "830px",
+            height: "60px",
             display: 'flex',
             alignItems: 'center',
         }}>
@@ -35,9 +35,9 @@ function SearchInput(props) {
                     backgroundColor: 'transparent',
                     border: "none",
                     outline: "none",
-                    width: "500px",
+                    width: "800px",
                     height: "40px",
-                    fontSize: "18px",
+                    fontSize: "20px",
                     fontFamily: "Roboto",
                     paddingLeft: "20px",
                 }}
@@ -49,9 +49,9 @@ function SearchInput(props) {
                 src={searchIcon} 
                 alt="아이콘" 
                 style={{
-                    width: '30px', 
-                    height: '30px',
-                    paddingRight:"10px",
+                    width: '50px', 
+                    height: '50px',
+                    paddingRight:"20px",
                     cursor: 'pointer' // 포인터 커서로 변경하여 클릭 가능한 상태로 만듭니다.
                 }} 
                 onClick={handleSearch} // 검색 아이콘 클릭 시 검색 실행

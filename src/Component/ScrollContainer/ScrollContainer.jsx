@@ -1,6 +1,5 @@
 // src/Components/ScrollContainer/ScrollContainer.jsx
 import React, { useState, useEffect } from 'react';
-import ScrollItem from '../ScrollItem/ScrollItem';
 
 // Component0 정의
 const Component0 = () => (
@@ -61,7 +60,7 @@ const ScrollComponent = () => {
 
     return (
         <div style={{width: "100%"}}>
-            <ScrollItem></ScrollItem>
+            
         </div>
     );
 };
