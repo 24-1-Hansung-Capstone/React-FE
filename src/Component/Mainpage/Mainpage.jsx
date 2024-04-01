@@ -12,7 +12,7 @@ function Mainpage(props){
             <LogoMid></LogoMid>
             <SearchInputMid></SearchInputMid>
             <ScrollContainerMid></ScrollContainerMid>
-            
+
         </div>
     )
 }
