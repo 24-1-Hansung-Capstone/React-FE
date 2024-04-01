@@ -1,3 +1,4 @@
+//App.css
 .App {
   text-align: center;
 }
@@ -37,3 +38,7 @@
   }
 }
 
+@font-face{
+  font-family: "Myfont";
+  src: url("./Asset/Myfont.ttf");
+}

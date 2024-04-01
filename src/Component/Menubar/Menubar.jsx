@@ -1,7 +1,6 @@
 // src/Components/Menubar/Menubar.jsx
 import React from 'react';
 
-
 // 스타일 정의
 const styles = {
     menuBar: {
@@ -33,7 +32,7 @@ const styles = {
 function MenuBar() {
     return (
         <div style={styles.menuBar}>
-            <a href="/" style={styles.link}>지도</a>
+            <a href="/map" style={styles.link}>지도</a>
             <a href="/about" style={styles.link}>청약</a>
             <a href="/contact" style={styles.link}>뉴스</a>
             <a href="/contact" style={styles.link}>매물만족도</a>

@@ -1,31 +1,73 @@
-// ToggleMenu.jsx
-
 import React, { useState } from "react";
-import arrow_down from "../../Asset/arrow_down.svg";
-import arrow_up from "../../Asset/arrow_up.svg";
+import ShareStyles from "../ShareStyles/ShareStyles";
+import Pagination from "../Pagination/Pagination";
+import { TiNews } from "react-icons/ti";
+import { GrBlog } from "react-icons/gr";
+import { MdCardTravel, MdOutlineSentimentSatisfied, MdOutlineRealEstateAgent   } from "react-icons/md";
+import { RiCriminalLine } from "react-icons/ri";
+import { TbBuildingEstate } from "react-icons/tb";
+import arrow_up from '../../Asset/arrow_up.svg';
+import arrow_down from '../../Asset/arrow_down.svg';
 
 export default function ToggleMenu({ context }) {
     const [isOpen, setIsOpen] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const totalPages = 20;
 
     const handleToggle = () => {
         setIsOpen(!isOpen);
     };
 
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    let iconComponent;
+    switch (context) {
+        case "뉴스":
+            iconComponent = <TiNews  />;
+            break;
+        case "블로그":
+            iconComponent = <GrBlog />;
+            break;
+        case "관광지":
+            iconComponent = <MdCardTravel  />;
+            break;
+        case "범죄율":
+            iconComponent = <RiCriminalLine />;
+            break;
+        case "지역 만족도":
+            iconComponent = <MdOutlineSentimentSatisfied  />;
+            break;
+        case "청약 공고":
+            iconComponent = <TbBuildingEstate />;
+            break;
+        case "부동산 정보":
+            iconComponent = <MdOutlineRealEstateAgent  />;
+            break;
+        default:
+            iconComponent = null;
+    }
+
     return (
-        <div style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
-            <div style={{ marginRight: "5px" }}>{context}</div>
-            <div style={{ marginRight: "5px", marginLeft: "auto" }}>
-                {isOpen ? (
-                    <img src={arrow_up} alt="arrow_up" style={{ width: "20px", height: "20px" }} onClick={handleToggle} />
-                ) : (
-                    <img src={arrow_down} alt="arrow_down" style={{ width: "20px", height: "20px" }} onClick={handleToggle} />
-                )}
+        <div>
+            <div style={ShareStyles.ToggleMenu} onClick={handleToggle}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div>
+                        {context}
+                        {iconComponent}
+                    </div>
+                    <img src={isOpen ? arrow_up : arrow_down} alt={isOpen ? "arrow_up" : "arrow_down"} style={ShareStyles.arrowIcon} />
+                </div>
             </div>
-            {isOpen && ( 
-                <ul>
-                    <h2>열린 메뉴1</h2>
-                    <h2>열린 메뉴2</h2>
-                </ul>
+            {isOpen && (
+                <div>
+                    <ul>
+                        <h1 style={{ fontSize: "30px" }}>하이퍼링크 {currentPage}</h1>
+                        <p style={{ fontSize: "20px" }}>하이퍼링크 {currentPage} 미리보기</p>
+                    </ul>
+                    <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+                </div>
             )}
         </div>
     );

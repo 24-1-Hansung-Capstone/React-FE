@@ -1,6 +1,7 @@
 // src/Components/SearchInput/SearchInput.jsx
 import React, { useState } from "react";
 import searchIcon from "../../Asset/searchIcon.svg";
+import ShareStyles from "../ShareStyles/ShareStyles";
 
 function SearchInput(props) {
     const [searchTerm, setSearchTerm] = useState(""); // 검색어 상태를 관리합니다.
@@ -21,14 +22,7 @@ function SearchInput(props) {
     };
 
     return (
-        <div style={{
-            border: "5px solid #92baff",
-            borderRadius: "30px",
-            width: "830px",
-            height: "60px",
-            display: 'flex',
-            alignItems: 'center',
-        }}>
+        <div style={ShareStyles.searchBarContainer}> {/* 스타일 변경 */}
             <input 
                 placeholder="Homes! 검색"  
                 style={{ 
