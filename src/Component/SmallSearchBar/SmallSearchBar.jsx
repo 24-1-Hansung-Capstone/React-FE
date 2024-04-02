@@ -5,7 +5,7 @@ import ShareStyles from "../ShareStyles/ShareStyles";
 
 function SmallSearchBar() {
     return (
-        <SearchInput style={ShareStyles.ToggleMenu} />
+        <SearchInput style={ShareStyles.ToggleCategory} />
     );
 }
 

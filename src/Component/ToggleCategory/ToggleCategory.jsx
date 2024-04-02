@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import ShareStyles from "../ShareStyles/ShareStyles";
 import Pagination from "../Pagination/Pagination";
+import HyperlinkPreview from "../HyperlinkPreview/HyperlinkPreview";
 import { TiNews } from "react-icons/ti";
 import { GrBlog } from "react-icons/gr";
-import { MdCardTravel, MdOutlineSentimentSatisfied, MdOutlineRealEstateAgent   } from "react-icons/md";
+import { MdCardTravel, MdOutlineSentimentSatisfied, MdOutlineRealEstateAgent } from "react-icons/md";
 import { RiCriminalLine } from "react-icons/ri";
 import { TbBuildingEstate } from "react-icons/tb";
 import arrow_up from '../../Asset/arrow_up.svg';
 import arrow_down from '../../Asset/arrow_down.svg';
 
-export default function ToggleMenu({ context }) {
+export default function ToggleCategory({ context }) {
     const [isOpen, setIsOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 20;
@@ -25,25 +26,25 @@ export default function ToggleMenu({ context }) {
     let iconComponent;
     switch (context) {
         case "뉴스":
-            iconComponent = <TiNews  />;
+            iconComponent = <TiNews />;
             break;
         case "블로그":
             iconComponent = <GrBlog />;
             break;
         case "관광지":
-            iconComponent = <MdCardTravel  />;
+            iconComponent = <MdCardTravel />;
             break;
         case "범죄율":
             iconComponent = <RiCriminalLine />;
             break;
         case "지역 만족도":
-            iconComponent = <MdOutlineSentimentSatisfied  />;
+            iconComponent = <MdOutlineSentimentSatisfied />;
             break;
         case "청약 공고":
             iconComponent = <TbBuildingEstate />;
             break;
         case "부동산 정보":
-            iconComponent = <MdOutlineRealEstateAgent  />;
+            iconComponent = <MdOutlineRealEstateAgent />;
             break;
         default:
             iconComponent = null;
@@ -51,7 +52,7 @@ export default function ToggleMenu({ context }) {
 
     return (
         <div>
-            <div style={ShareStyles.ToggleMenu} onClick={handleToggle}>
+            <div style={ShareStyles.ToggleCategory} onClick={handleToggle}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <div>
                         {context}
@@ -62,10 +63,7 @@ export default function ToggleMenu({ context }) {
             </div>
             {isOpen && (
                 <div>
-                    <ul>
-                        <h1 style={{ fontSize: "30px" }}>하이퍼링크 {currentPage}</h1>
-                        <p style={{ fontSize: "20px" }}>하이퍼링크 {currentPage} 미리보기</p>
-                    </ul>
+                    <HyperlinkPreview currentPage={currentPage} />
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
                 </div>
             )}

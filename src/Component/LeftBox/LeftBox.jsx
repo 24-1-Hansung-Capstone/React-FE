@@ -6,7 +6,7 @@ import ShareStyles from "../ShareStyles/ShareStyles";
 function LeftBox() {
     return (
         <div style={ShareStyles.LeftBox}>
-        <ToggleList />
+            <ToggleList />
         </div>
     );
 }

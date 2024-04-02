@@ -12,13 +12,7 @@ const ShareStyles = {
         display: 'flex',
         alignItems: 'center',
     },
-    menuLink: {
-        color: '#191D21',
-        textDecoration: 'none',
-        fontFamily: "Roboto",
-        fontWeight: 'bold'
-    },
-    SearchRecommend: {
+        SearchRecommend: {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: "#92baff",
@@ -37,45 +31,32 @@ const ShareStyles = {
         width: "200px",
         height: "100px",
     },
-    ToggleMenu: {
-        marginRight: "5px",
+    ToggleCategory: {
+        marginRight: "15px",
         borderBottom: "1px solid gray",
-        marginRight: "10px",
-    },
-    ResultDetailsContainer: {
-        width: "50%",
-        padding: "20px",
-    },
-    ResultDetailsItem: {
-        marginTop: "20px",
-        marginLeft: "100px",
-    },
-    ResultDetailsMenu: {
-        borderBottom: "1px solid gray",
-        width: "80%",
-        marginLeft: "100px",
-        marginRight: "50px",
+        marginBottom: "50px",
     },
     RightBox: {
         paddingBottom: "10px",
-        width: "100%", 
-        padding: "20px",
+        width: "90%", 
+        padding: "10px",
         display: 'flex',
         alignItems: 'center',
         justifyContent: "flex-end",
+        marginTop: "20px",
+        marginLeft: "70px",
+        marginRight: "30px",
+        marginBottom: "20px",
     },
     LeftBox: {
-        width: "50%",
+        width: "120%",
         padding: "20px",
         marginTop: "20px",
-        marginLeft: "100px",
+        marginLeft: "20px",
         marginRight: "10px",
         marginBottom: "10px",
-        flexBasis: "50%",
+        flexBasis: "100%",
         fontSize: "35px",
-    },
-    ToggleList : {
-
     },
     Nav: {
         display: 'flex',
@@ -93,15 +74,6 @@ const ShareStyles = {
         height: "20px",
         marginLeft: "5px",
     },
-    Box: {
-        paddingBottom: "10px",
-        width: "100%", 
-        padding: "20px",
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: "flex-end",
-        flexBasis: "50%",
-    },
     section: {
         display: "flex",
         flexDirection: "column",
@@ -109,7 +81,7 @@ const ShareStyles = {
         flexBasis: "80%",
     },
     textarea1: {
-        width: "100%", // 필요에 따라 너비 조정
+        width: "90%", // 필요에 따라 너비 조정
         minHeight: "100px", // 필요에 따라 최소 높이 조정
         padding: "10px",
         resize: "vertical", // 사용자가 수직으로만 크기를 조정할 수 있게 함
@@ -117,9 +89,12 @@ const ShareStyles = {
         border: "none", // 테두리 없음
         whiteSpace: "pre-wrap", // 자동 줄바꿈 활성화
         wrap: "soft", // 가로 스크롤 없음
+        overflowY: 'scroll', 
+        maxHeight: '400px', 
+        minHeight: '400px'
     },
     textarea2: {
-        width: "100%", // 필요에 따라 너비 조정
+        width: "90%", // 필요에 따라 너비 조정
         minHeight: "200px", // 필요에 따라 최소 높이 조정
         padding: "10px",
         resize: "vertical", // 사용자가 수직으로만 크기를 조정할 수 있게 함
@@ -127,11 +102,24 @@ const ShareStyles = {
         backgroundColor: "#DCDCDC", // 배경색을 회색으로 설정
         border: "none", // 테두리 없음
     },
-
-    inputArea: {
+    searchResult: {
+        textAlign: "left", 
+        color: "blue", 
+        fontSize: "40px"
+    },
+    chatarea1: {
+        textAlign: "right", 
         flex: "1",
-        padding: "10px",
-        height: "500px",
+        marginRight: "100px", 
+        padding: "10px", 
+        fontSize: "25px"
+    },
+    chatarea2: {
+        textAlign: "left", 
+        flex: "1",
+        marginRight: "100px", 
+        padding: "10px", 
+        fontSize: "25px"
     },
     input: {
         width: "100%",
@@ -147,20 +135,13 @@ const ShareStyles = {
     },
     button: {
         width: "100%",
-        height: "30px",
+        height: "50px",
         backgroundColor: "#92baff",
         border: "none",
         borderRadius: "40px",
         cursor: "pointer",
     },
-    searchBarContainer: {
-        border: "5px solid #92baff",
-        borderRadius: "30px",
-        width: "830px",
-        height: "60px",
-        display: 'flex',
-        alignItems: 'center',
-    },
+    
 
 };
 

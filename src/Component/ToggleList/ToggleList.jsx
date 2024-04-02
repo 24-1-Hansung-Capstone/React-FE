@@ -1,35 +1,18 @@
 // src/Components/ToggleList/ToggleList.jsx
 import React from "react";
-import ToggleMenu from "../ToggleMenu/ToggleMenu";
+import ToggleCategory from "../ToggleCategory/ToggleCategory";
 import ShareStyles from "../ShareStyles/ShareStyles";
 
 function ToggleList() {
     return (
-        <div>
-            <div style={ShareStyles.ToggleList}>
-                <div>
-                    <ToggleMenu context="뉴스" />
-                </div>
-                <div>
-                    <ToggleMenu context="블로그" />
-                </div>
-                <div>
-                    <ToggleMenu context="관광지" />
-                </div>
-                <div>
-                    <ToggleMenu context="범죄율" />
-                </div>
-                <div>
-                    <ToggleMenu context="지역 만족도" />
-                </div>
-                <div>
-                    <ToggleMenu context="청약 공고" />
-                </div>
-                <div>
-                    <ToggleMenu context="부동산 정보" />
-                </div>
-            </div>
-
+        <div style={ShareStyles.ToggleList}>
+            <ToggleCategory context="뉴스" />
+            <ToggleCategory context="블로그" />
+            <ToggleCategory context="관광지" />
+            <ToggleCategory context="범죄율" />
+            <ToggleCategory context="지역 만족도" />
+            <ToggleCategory context="청약 공고" />
+            <ToggleCategory context="부동산 정보" />
         </div>
     );
 }
