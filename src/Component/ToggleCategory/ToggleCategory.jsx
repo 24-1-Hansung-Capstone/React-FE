@@ -10,7 +10,7 @@ import { TbBuildingEstate } from "react-icons/tb";
 import arrow_up from '../../Asset/arrow_up.svg';
 import arrow_down from '../../Asset/arrow_down.svg';
 
-export default function ToggleCategory({ context }) {
+export default function ToggleCategory({ searchResults, context }) {
     const [isOpen, setIsOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 20;
@@ -63,7 +63,13 @@ export default function ToggleCategory({ context }) {
             </div>
             {isOpen && (
                 <div>
-                    <HyperlinkPreview currentPage={currentPage} />
+                    {
+                        searchResults.map((item, index) => {
+                            return(
+                                <HyperlinkPreview title={item["esDto"]["title"]} itemPreview = {item["preview"]} url={item["esDto"]["url"]}></HyperlinkPreview>
+                            )
+                        })
+                    }
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
                 </div>
             )}

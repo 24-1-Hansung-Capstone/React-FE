@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function HyperlinkPreview({ currentPage }) {
+export default function HyperlinkPreview({ title, itemPreview, url }) {
   return (
     <div>
-      <h1 style={{ fontSize: "30px" }}>하이퍼링크 {currentPage}</h1>
-      <p style={{ fontSize: "20px" }}>하이퍼링크 {currentPage} 미리보기</p>
+      <a src = {url}><h1 style={{ fontSize: "30px" }}>{title}</h1></a>
+      <p style={{ fontSize: "20px" }}>{itemPreview}</p>
     </div>
   );
 }

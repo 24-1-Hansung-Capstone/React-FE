@@ -3,10 +3,10 @@ import React from "react";
 import ToggleList from "../ToggleList/ToggleList";
 import ShareStyles from "../ShareStyles/ShareStyles";
 
-function LeftBox() {
+function LeftBox({ searchResults }) {
     return (
         <div style={ShareStyles.LeftBox}>
-            <ToggleList />
+            <ToggleList searchResults = {searchResults}/>
         </div>
     );
 }
