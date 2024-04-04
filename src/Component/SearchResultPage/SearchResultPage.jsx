@@ -19,11 +19,11 @@ const styles = {
 };
 
 function SearchResultPage() {
-    const [searchResults, setSearchResults] = useState();
+    const [searchResults, setSearchResults] = useState([]);
 
     const { searchTerm } = useParams();
     useEffect(() => {
-        Axios.get(`http://223.194.157.73:8080/search?query=${searchTerm}`)
+        Axios.get(`http://localhost:8080/search?query=${searchTerm}`)
             .then(response => {
                 // 성공 핸들링
                 console.log(response.data)
