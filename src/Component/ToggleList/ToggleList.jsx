@@ -1,7 +1,7 @@
 // src/Components/ToggleList/ToggleList.jsx
 import React from "react";
 import ToggleCategory from "../ToggleCategory/ToggleCategory";
-import ShareStyles from "../ShareStyles/ShareStyles";
+import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 
 function ToggleList({searchResults}) {
     return (

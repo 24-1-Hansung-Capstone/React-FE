@@ -39,7 +39,7 @@ function SearchResultPage() {
     return (
         <div>
             <section style={styles.home}>
-                <Nav />
+                <Nav searchWord = {searchTerm }/>
                 <div style={styles.container}>
                     <LeftBox searchResults = {searchResults}/>
                     <RightBox searchTerm={searchTerm} />

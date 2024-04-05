@@ -1,10 +1,10 @@
 // src/Components/SearchInput/SearchInput.jsx
 import React, { useState } from "react";
 import searchIcon from "../../Asset/searchIcon.svg";
-import ShareStyles from "../ShareStyles/ShareStyles";
+import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 
-function SearchInput(props) {
-    const [searchTerm, setSearchTerm] = useState(""); // 검색어 상태를 관리합니다.
+function SearchInput({searchWord}) {
+    const [searchTerm, setSearchTerm] = useState(searchWord); // 검색어 상태를 관리합니다.
 
     // 엔터 키가 눌렸을 때 검색 결과 페이지로 이동하는 함수
     const handleKeyPress = (e) => {

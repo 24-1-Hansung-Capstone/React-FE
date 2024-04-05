@@ -1,6 +1,6 @@
 // src/Components/SearchRecommend/SearchRecommend.jsx
 import React from "react";
-import ShareStyles from "../ShareStyles/ShareStyles";
+import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 
 function SearchRecommend({ recommendation }) {
     return (

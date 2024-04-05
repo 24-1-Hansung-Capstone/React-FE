@@ -1,11 +1,11 @@
 // src/Components/SmallSearchBar/SmallSearchBar.jsx
 import React from "react";
 import SearchInput from "../SearchInput/SearchInput";
-import ShareStyles from "../ShareStyles/ShareStyles";
+import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 
-function SmallSearchBar() {
+function SmallSearchBar({searchWord}) {
     return (
-        <SearchInput style={ShareStyles.ToggleCategory} />
+        <SearchInput searchWord ={searchWord} style={ShareStyles.ToggleCategory} />
     );
 }
 

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import ShareStyles from "../ShareStyles/ShareStyles";
+import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 import OnlyLogo from '../../Asset/OnlyLogo.png';
 import { BiSolidFace  } from "react-icons/bi";
 

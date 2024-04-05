@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ShareStyles from "../ShareStyles/ShareStyles";
+import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 import Pagination from "../Pagination/Pagination";
 import HyperlinkPreview from "../HyperlinkPreview/HyperlinkPreview";
 import { TiNews } from "react-icons/ti";

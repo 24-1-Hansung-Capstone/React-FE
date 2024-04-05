@@ -81,7 +81,7 @@ const ShareStyles = {
         flexBasis: "80%",
     },
     textarea1: {
-        width: "90%", // 필요에 따라 너비 조정
+        width: "0%", // 필요에 따라 너비 조정
         minHeight: "100px", // 필요에 따라 최소 높이 조정
         padding: "10px",
         resize: "vertical", // 사용자가 수직으로만 크기를 조정할 수 있게 함
