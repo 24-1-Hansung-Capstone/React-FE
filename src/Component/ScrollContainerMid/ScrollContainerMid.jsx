@@ -1,7 +1,7 @@
 // src/Components/ScrollContainerMid/ScrollContainerMid.jsx
 import React from "react";
 import ScrollContainer from "../ScrollContainer/ScrollContainer";
-import ShareStyles from "../ShareStyles/ShareStyles";
+import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 
 function ScrollContainerMid(props){
     return (

@@ -11,6 +11,8 @@ const ShareStyles = {
         height: "60px",
         display: 'flex',
         alignItems: 'center',
+        marginTop: "40px",
+        marginBottom: "40px",
     },
         SearchRecommend: {
         display: 'flex',
@@ -43,20 +45,18 @@ const ShareStyles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: "flex-end",
-        marginTop: "20px",
-        marginLeft: "70px",
-        marginRight: "30px",
+        marginLeft: "30px",
         marginBottom: "20px",
     },
     LeftBox: {
-        width: "120%",
+        width: "180%",
         padding: "20px",
         marginTop: "20px",
         marginLeft: "20px",
         marginRight: "10px",
         marginBottom: "10px",
-        flexBasis: "100%",
-        fontSize: "35px",
+        flexBasis: "150%",
+        fontSize: "30px",
     },
     Nav: {
         display: 'flex',
@@ -78,11 +78,11 @@ const ShareStyles = {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        flexBasis: "80%",
+        flexBasis: "60%",
     },
     textarea1: {
-        width: "0%", // 필요에 따라 너비 조정
-        minHeight: "100px", // 필요에 따라 최소 높이 조정
+        width: "100%", // 필요에 따라 너비 조정
+        minHeight: "80px", // 필요에 따라 최소 높이 조정
         padding: "10px",
         resize: "vertical", // 사용자가 수직으로만 크기를 조정할 수 있게 함
         boxSizing: "border-box",
@@ -90,36 +90,40 @@ const ShareStyles = {
         whiteSpace: "pre-wrap", // 자동 줄바꿈 활성화
         wrap: "soft", // 가로 스크롤 없음
         overflowY: 'scroll', 
-        maxHeight: '400px', 
-        minHeight: '400px'
+        maxHeight: '300px', 
+        minHeight: '300px',
     },
     textarea2: {
-        width: "90%", // 필요에 따라 너비 조정
-        minHeight: "200px", // 필요에 따라 최소 높이 조정
+        width: "100%", // 필요에 따라 너비 조정
+        minHeight: "120px", // 필요에 따라 최소 높이 조정
         padding: "10px",
-        resize: "vertical", // 사용자가 수직으로만 크기를 조정할 수 있게 함
         boxSizing: "border-box",
         backgroundColor: "#DCDCDC", // 배경색을 회색으로 설정
         border: "none", // 테두리 없음
+        resize: "none",
+        outline: "none", // 포커스 시 테두리 제거
+        overflowY: 'scroll', // 필요시 수직 스크롤 추가
+        fontSize: "20px",
     },
     searchResult: {
         textAlign: "left", 
         color: "blue", 
-        fontSize: "40px"
+        fontSize: "30px",
+        marginBottom: "20px",
     },
     chatarea1: {
         textAlign: "right", 
         flex: "1",
-        marginRight: "100px", 
+        marginRight: "40px", 
         padding: "10px", 
-        fontSize: "25px"
+        fontSize: "20px"
     },
     chatarea2: {
         textAlign: "left", 
         flex: "1",
-        marginRight: "100px", 
+        marginRight: "40px", 
         padding: "10px", 
-        fontSize: "25px"
+        fontSize: "20px"
     },
     input: {
         width: "100%",
@@ -134,8 +138,8 @@ const ShareStyles = {
         width: "80%",
     },
     button: {
-        width: "100%",
-        height: "50px",
+        width: "120%",
+        height: "40px",
         backgroundColor: "#92baff",
         border: "none",
         borderRadius: "40px",
@@ -144,8 +148,5 @@ const ShareStyles = {
     
 
 };
-
-ShareStyles.textarea1Style = { ...ShareStyles.textarea1 };
-ShareStyles.textarea2Style = { ...ShareStyles.textarea2 };
 
 export default ShareStyles;

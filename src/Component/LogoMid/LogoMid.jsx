@@ -7,7 +7,7 @@ function Logo(props){
             display: 'flex',
             justifyContent: 'center',
             width: '100%',
-            margin: '250px 0'
+            margin: '180px 0'
         }}>
             <img src={logo} width='530px' height='260px' alt="Logo"></img>
         </div>

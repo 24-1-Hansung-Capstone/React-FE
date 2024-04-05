@@ -8,7 +8,7 @@ const styles = {
         left: 0, // 좌측에서 시작
         display: 'flex', // 내부 항목을 flex로 정렬
         justifyContent: 'space-around', // 항목 간 공간 동일하게 배분
-        padding: '20px', // 상하 패딩
+        padding: '10px', // 상하 패딩
         zIndex: 1000, // 다른 요소들 위에 보이도록 z-index 설정
         borderBottom: '3px solid #92baff', // 아래쪽에만 테두리 추가
         
@@ -17,7 +17,8 @@ const styles = {
         color: '#191D21', // 링크 색상
         textDecoration: 'none', // 밑줄 없앰
         fontFamily: "Roboto", // Roboto 글꼴을 적용합니다.
-        fontWeight: 'bold' // 볼드체로 설정
+        fontWeight: 'bold', // 볼드체로 설정
+        fontSize : '15px'
     },
     login: {
         color: '#191D21', // 링크 색상

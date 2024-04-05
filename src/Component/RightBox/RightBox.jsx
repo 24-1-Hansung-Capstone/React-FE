@@ -32,7 +32,7 @@ function RightBox({ searchTerm }) {
                     <div style={ShareStyles.textarea1}>
                         <div>
                             <img src={OnlyLogo} alt="Logo" style={{ width: "50px", height: "50px" }} />
-                            <p style={{ fontSize: "25px" }}>{AI_Text}</p>
+                            <p style={{ fontSize: "20px" }}>{AI_Text}</p>
                         </div>
                         {userMessages.map((message, index) => (
                             <div key={index}>
@@ -49,12 +49,17 @@ function RightBox({ searchTerm }) {
                         <div ref={messagesEndRef} />
                     </div>
 
-                    <div style={ShareStyles.textarea2}>
-                        <textarea
+                    <div>
+                        <textarea style={ShareStyles.textarea2}
                             placeholder="텍스트를 입력하세요"
-                            style={ShareStyles.textarea2Style}
                             value={currentMessage}
                             onChange={(e) => setCurrentMessage(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault(); // 엔터키 입력을 막음
+                                    handleMessageSend(); // Enter 키를 눌렀을 때 handleMessageSend 함수 호출
+                                }
+                            }}
                         ></textarea>
                     </div>
                     <div style={ShareStyles.buttonArea}>
