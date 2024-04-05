@@ -14,6 +14,7 @@ export default function ToggleCategory({ searchResults, context }) {
     const [isOpen, setIsOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 20;
+    const setPage = 5;
 
     const handleToggle = () => {
         setIsOpen(!isOpen);
@@ -70,7 +71,7 @@ export default function ToggleCategory({ searchResults, context }) {
                             )
                         })
                     }
-                    <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+                    <Pagination currentPage={currentPage} totalPages={totalPages} setPage={setPage} onPageChange={handlePageChange} />
                 </div>
             )}
         </div>

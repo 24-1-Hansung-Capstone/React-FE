@@ -33,16 +33,16 @@ const styles = {
 function MenuBar() {
     return (
         <div style={styles.menuBar}>
-            <a href="/map" style={styles.link}>지도</a>
-            <a href="/about" style={styles.link}>청약</a>
-            <a href="/contact" style={styles.link}>뉴스</a>
-            <a href="/contact" style={styles.link}>매물만족도</a>
-            <a href="/contact" style={styles.link}>부동산 추이</a>
-            <a href="/contact" style={styles.link}>홈즈 사무소</a>
+            <a href="/MapPage" style={styles.link}>지도</a>
+            <a href="/SubscriptionPage" style={styles.link}>청약</a>
+            <a href="/NewsPage" style={styles.link}>뉴스</a>
+            <a href="/SatisfactionPage" style={styles.link}>매물만족도</a>
+            <a href="/EstatePage" style={styles.link}>부동산 추이</a>
+            <a href="/CommunityPage" style={styles.link}>홈즈 사무소</a>
             <a href="/contact" style={styles.link}>dd</a>
             <a href="/contact" style={styles.link}>dd</a>
             <a href="/contact" style={styles.link}>+</a>
-            <a href="/contact" style={styles.link}>로그인</a>
+            <a href="/LoginPage" style={styles.link}>로그인</a>
             {/* 더 많은 링크 추가 가능 */}
         </div>
     );

@@ -37,6 +37,7 @@ const ShareStyles = {
         marginRight: "15px",
         borderBottom: "1px solid gray",
         marginBottom: "50px",
+        fontSize: "30px",
     },
     RightBox: {
         paddingBottom: "10px",
@@ -51,10 +52,10 @@ const ShareStyles = {
     LeftBox: {
         width: "180%",
         padding: "20px",
-        marginTop: "20px",
+        marginTop: "35px",
         marginLeft: "20px",
         marginRight: "10px",
-        marginBottom: "10px",
+        marginBottom: "35px",
         flexBasis: "150%",
         fontSize: "30px",
     },
@@ -109,7 +110,6 @@ const ShareStyles = {
         textAlign: "left", 
         color: "blue", 
         fontSize: "30px",
-        marginBottom: "20px",
     },
     chatarea1: {
         textAlign: "right", 
@@ -145,7 +145,6 @@ const ShareStyles = {
         borderRadius: "40px",
         cursor: "pointer",
     },
-    
 
 };
 
