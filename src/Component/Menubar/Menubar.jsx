@@ -34,7 +34,7 @@ function MenuBar() {
     return (
         <div style={styles.menuBar}>
             <a href="/MapPage" style={styles.link}>지도</a>
-            <a href="/SubscriptionPage" style={styles.link}>청약</a>
+            <a href="/ChungyakPage" style={styles.link}>청약</a>
             <a href="/NewsPage" style={styles.link}>뉴스</a>
             <a href="/SatisfactionPage" style={styles.link}>매물만족도</a>
             <a href="/EstatePage" style={styles.link}>부동산 추이</a>
