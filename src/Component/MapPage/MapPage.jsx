@@ -1,3 +1,4 @@
+// src\Component\MapPage\MapPage.jsx
 import React, { useEffect } from 'react';
 import MenuBar from "../ShareFolder/Menubar";
 import MapSearchInput from "../MapPage/MapSearchInput";

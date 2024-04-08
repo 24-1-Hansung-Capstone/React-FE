@@ -42,8 +42,6 @@ function MenuBar() {
             <a href="/SatisfactionPage" style={styles.link}>매물만족도</a>
             <a href="/EstatePage" style={styles.link}>부동산 추이</a>
             <a href="/CommunityPage" style={styles.link}>홈즈 사무소</a>
-            <a href="/contact" style={styles.link}>dd</a>
-            <a href="/contact" style={styles.link}>dd</a>
             <a href="#" style={styles.link} onClick={handleHomeClick}>메인 화면</a>
             <a href="/LoginPage" style={styles.link}>로그인</a>
             {/* 더 많은 링크 추가 가능 */}
