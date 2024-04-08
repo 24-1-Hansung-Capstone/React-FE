@@ -1,12 +1,12 @@
-// src/Components/Nav/Nav.jsx
+// src/Components/SearchResultNav/SearchResultNav.jsx
 import React from "react";
-import MenuBar from "../Menubar/Menubar";
-import Logo from "../Logo/Logo";
-import SmallSearchBar from "../SmallSearchBar/SmallSearchBar";
+import MenuBar from "../ShareFolder/Menubar";
+import Logo from "../ShareFolder/Logo";
+import SmallSearchBar from "../ShareFolder/SmallSearchBar";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
-import SearchRecommend from "../SearchRecommend/SearchRecommend";
+import SearchRecommend from "./SearchRecommend";
 
-function Nav({searchWord}) {
+function SearchResultNav({searchWord}) {
     const recommendations = ["검색어 관련1", "검색어 관련2", "검색어 관련3", "검색어 관련4"];
 
     return (
@@ -16,7 +16,7 @@ function Nav({searchWord}) {
                 <Logo />
                 <SmallSearchBar searchWord = {searchWord}/>
             </div>
-            <div style={ShareStyles.Nav}>
+            <div style={ShareStyles.SearchResultNav}>
                 <div style={ShareStyles.container}>
                     {recommendations.map((recommendation, index) => (
                         <SearchRecommend key={index} recommendation={recommendation} />
@@ -28,4 +28,4 @@ function Nav({searchWord}) {
     );
 }
 
-export default Nav;
+export default SearchResultNav;

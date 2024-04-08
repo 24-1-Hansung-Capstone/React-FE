@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
-import Pagination from "../Pagination/Pagination";
-import HyperlinkPreview from "../HyperlinkPreview/HyperlinkPreview";
+import Pagination from "../ShareFolder/Pagination";
+import HyperlinkPreview from "../ShareFolder/HyperlinkPreview";
 import { TiNews } from "react-icons/ti";
 import { GrBlog } from "react-icons/gr";
 import { MdCardTravel, MdOutlineSentimentSatisfied, MdOutlineRealEstateAgent } from "react-icons/md";
@@ -10,7 +10,7 @@ import { TbBuildingEstate } from "react-icons/tb";
 import arrow_up from '../../Asset/arrow_up.svg';
 import arrow_down from '../../Asset/arrow_down.svg';
 
-export default function ToggleCategory({ searchResults, context }) {
+export default function SearchResultCategory({ searchResults, context }) {
     const [isOpen, setIsOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 20;
@@ -53,7 +53,7 @@ export default function ToggleCategory({ searchResults, context }) {
 
     return (
         <div>
-            <div style={ShareStyles.ToggleCategory} onClick={handleToggle}>
+            <div style={ShareStyles.SearchResultCategory} onClick={handleToggle}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <div>
                         {context}

@@ -1,6 +1,6 @@
 // src/Components/MapSearchInput/MapSearchInput.jsx
 import React from "react";
-import SearchInput from "../SearchInput/SearchInput";
+import SearchInput from "../ShareFolder/SearchInput";
 
 function MapSearchInput({ searchWord }) {
     return (

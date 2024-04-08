@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import MenuBar from "../Menubar/Menubar";
-import MapSearchInput from "../MapSearchInput/MapSearchInput";
-import SmallLogoMid from "../SmallLogoMid/SmallLogoMid";
+import MenuBar from "../ShareFolder/Menubar";
+import MapSearchInput from "../MapPage/MapSearchInput";
+import SmallLogoMid from "../ShareFolder/SmallLogoMid";
 import ShareStyles from '../../Asset/ShareStyles/ShareStyles';
 
 let map; // Move map variable outside of component

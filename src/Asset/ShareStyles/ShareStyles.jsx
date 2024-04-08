@@ -35,21 +35,17 @@ const ShareStyles = {
         fontWeight: "bold",
         cursor: "pointer",
     },
-    ScrollContainerMid: {
-        display: 'flex',
-        justifyContent: 'center',
-    },
     logo: {
         width: "200px",
         height: "100px",
     },
-    ToggleCategory: {
+    SearchResultCategory: {
         marginRight: "15px",
         borderBottom: "1px solid gray",
         marginBottom: "50px",
         fontSize: "30px",
     },
-    RightBox: {
+    SearchResultRightBox: {
         paddingBottom: "10px",
         width: "90%", 
         padding: "10px",
@@ -59,7 +55,7 @@ const ShareStyles = {
         marginLeft: "30px",
         marginBottom: "20px",
     },
-    LeftBox: {
+    SearchResultLeftBox: {
         width: "180%",
         padding: "20px",
         marginTop: "35px",
@@ -69,7 +65,7 @@ const ShareStyles = {
         flexBasis: "150%",
         fontSize: "30px",
     },
-    Nav: {
+    SearchResultNav: {
         display: 'flex',
         alignItems: 'left',
         justifyContent: "left", 

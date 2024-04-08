@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Axios from "axios";
-import Nav from "../Nav/Nav";
-import LeftBox from "../LeftBox/LeftBox";
-import RightBox from "../RightBox/RightBox";
+import SearchResultNav from "./SearchResultNav";
+import SearchResultLeftBox from "./SearchResultLeftBox";
+import SearchResultRightBox from "./SearchResultRightBox";
 
 const styles = {
     home: {
@@ -39,10 +39,10 @@ function SearchResultPage() {
     return (
         <div>
             <section style={styles.home}>
-                <Nav searchWord = {searchTerm }/>
+                <SearchResultNav searchWord = {searchTerm }/>
                 <div style={styles.container}>
-                    <LeftBox searchResults = {searchResults}/>
-                    <RightBox searchTerm={searchTerm} />
+                    <SearchResultLeftBox searchResults = {searchResults}/>
+                    <SearchResultRightBox searchTerm={searchTerm} />
                 </div>
             </section>
         </div>

@@ -1,8 +1,8 @@
 // src/Components/NewsPage/NewsPage.jsx
 import React from "react";
-import MenuBar from "../Menubar/Menubar";
-import Logo from "../Logo/Logo";
-import SmallSearchBar from "../SmallSearchBar/SmallSearchBar";
+import MenuBar from "../ShareFolder/Menubar";
+import Logo from "../ShareFolder/Logo";
+import SmallSearchBar from "../ShareFolder/SmallSearchBar";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 
 function NewsPage({searchWord}) {

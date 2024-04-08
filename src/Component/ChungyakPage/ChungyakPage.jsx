@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import MenuBar from "../Menubar/Menubar";
-import SmallLogoMid from "../SmallLogoMid/SmallLogoMid";
+import MenuBar from "../ShareFolder/Menubar";
+import SmallLogoMid from "../ShareFolder/SmallLogoMid";
 import ShareStyles from '../../Asset/ShareStyles/ShareStyles';
-import ChungyakSearchInput from "../ChungyakSearchInput/ChungyakSearchInput"
+import ChungyakSearchInput from "./ChungyakSearchInput"
 
 function ChungyakPage() {
 

@@ -1,6 +1,6 @@
 // src/Components/SearchInputMid/SearchInputMid.jsx
 import React, { useState } from "react";
-import MainSearchInput from '../MainSearchInput/MainSearchInput';
+import MainSearchInput from '../Mainpage/MainSearchInput';
 
 function SearchInputMid(props){
     const [searchTerm, setSearchTerm] = useState(""); // 검색어 상태를 관리합니다.

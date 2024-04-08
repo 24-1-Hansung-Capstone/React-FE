@@ -1,6 +1,6 @@
-// src/Components/ChungyakSearchInput/ChungyakSearchInput.jsx
+// src/Components/ChungyakPage/ChungyakSearchInput.jsx
 import React from "react";
-import SearchInput from "../SearchInput/SearchInput";
+import SearchInput from "../ShareFolder/SearchInput";
 
 function ChungyakSearchInput({ searchWord }) {
     return (

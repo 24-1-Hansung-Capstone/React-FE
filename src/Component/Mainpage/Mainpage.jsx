@@ -1,9 +1,8 @@
 // src/Components/Mainpage/Mainpage.jsx
 import React from "react";
-import MenuBar from "../Menubar/Menubar";
-import SearchInputMid from '../SearchInputMid/SearchInputMid'
-import LogoMid from "../LogoMid/LogoMid";
-import ScrollContainerMid from "../ScrollContainerMid/ScrollContainerMid";
+import MenuBar from "../ShareFolder/Menubar";
+import SearchInputMid from '../ShareFolder/SearchInputMid'
+import LogoMid from "../ShareFolder/LogoMid";
 
 function Mainpage(props){
     return(
@@ -11,7 +10,6 @@ function Mainpage(props){
             <MenuBar></MenuBar>
             <LogoMid></LogoMid>
             <SearchInputMid></SearchInputMid>
-            <ScrollContainerMid></ScrollContainerMid>
 
         </div>
     )
