@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import MenuBar from "../Menubar/Menubar";
-import ScrollContainerMid from "../ScrollContainerMid/ScrollContainerMid";
-import Logo from "../Logo/Logo";
+import MapSearchInput from "../MapSearchInput/MapSearchInput";
+import SmallLogoMid from "../SmallLogoMid/SmallLogoMid";
+import ShareStyles from '../../Asset/ShareStyles/ShareStyles';
 
 let map; // Move map variable outside of component
 
@@ -46,23 +47,10 @@ const MapPage = ({searchWord}) => {
         <MenuBar></MenuBar> 
       </div>
       <div
-        style={{
-          display: 'flex', // Use flexbox layout
-          width: '100%',
-          height: '100vh',
-          position: 'relative', // Add relative position to allow absolute positioning within this div
-        }}
-      >
-        <div
-          style={{
-            flex: '1', // Take up 20% of the space
-            position: 'absolute', // Absolute position this div
-            height: '100%', // Set height to full height of parent div
-            backgroundColor: 'rgba(255, 255, 255, 1)', // Set to semi-transparent red for visibility
-            zIndex: 100, // Make sure the box is on top of the map
-          }}
-        >
-          <Logo/>
+        style={ShareStyles.LeftPageStyle}>
+        <div style={ShareStyles.LeftPageDetailStyle}>
+          <SmallLogoMid/>
+          <MapSearchInput></MapSearchInput>
         </div>
         <div
           id="map"
@@ -71,7 +59,6 @@ const MapPage = ({searchWord}) => {
             position: 'relative', // Add relative position to allow absolute positioning within this div
           }}
         >
-          {/* Map container */}
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-// src/Components/ShareStyles/ShareStyles.jsx
+// src/Asset/ShareStyles/ShareStyles.jsx
 const ShareStyles = {
     container: {
         display: 'flex',
@@ -13,6 +13,16 @@ const ShareStyles = {
         alignItems: 'center',
         marginTop: "40px",
         marginBottom: "40px",
+    },
+    CommonSearchBarContainer: {
+        border: "3px solid #92baff",
+        borderRadius: "30px",
+        width: "630px",
+        height: "40px",
+        display: 'flex',
+        alignItems: 'center',
+        marginTop: "20px",
+        marginBottom: "20px",
     },
         SearchRecommend: {
         display: 'flex',
@@ -145,7 +155,48 @@ const ShareStyles = {
         borderRadius: "40px",
         cursor: "pointer",
     },
+    Chungyak: {
+        display: 'flex',
+        width: '100%',
+        height: '100vh',
+        position: 'relative',
+    },
 
+    ChungyakLogo: {
+        flex: '1',
+        position: 'absolute',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        zIndex: 100,
+    },
+    LeftPageStyle: {
+        display: 'flex',
+        width: '100%',
+        height: '100vh',
+        position: 'relative',
+    },
+    LeftPageDetailStyle: {
+        flex: '1',
+        position: 'absolute',
+        height: '100%',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        zIndex: 100,
+    },
+    CommonSearchBarStyle: {
+        backgroundColor: 'transparent',
+        border: "none",
+        outline: "none",
+        width: "600px",
+        height: "20px",
+        fontSize: "15px",
+        fontFamily: "Roboto",
+        paddingLeft: "10px",
+    },
+    CommonIconStyle: {
+        width: '20px', 
+        height: '20px',
+        paddingRight:"20px",
+        cursor: 'pointer'
+    },
 };
 
 export default ShareStyles;
