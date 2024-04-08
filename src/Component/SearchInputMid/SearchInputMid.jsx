@@ -1,6 +1,6 @@
 // src/Components/SearchInputMid/SearchInputMid.jsx
 import React, { useState } from "react";
-import SearchInput from '../SearchInput/SearchInput';
+import MainSearchInput from '../MainSearchInput/MainSearchInput';
 
 function SearchInputMid(props){
     const [searchTerm, setSearchTerm] = useState(""); // 검색어 상태를 관리합니다.
@@ -26,7 +26,7 @@ function SearchInputMid(props){
             justifyContent: 'center', // 주 축(여기서는 수평 축)을 기준으로 중앙 정렬합니다.
             width: '100%', // 부모 컨테이너의 폭을 최대로 설정합니다.
         }}>
-            <SearchInput />
+            <MainSearchInput />
         </div>
     )
 }

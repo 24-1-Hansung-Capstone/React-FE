@@ -197,6 +197,22 @@ const ShareStyles = {
         paddingRight:"20px",
         cursor: 'pointer'
     },
+    MainSearchBarStyle: {
+        backgroundColor: 'transparent',
+        border: "none",
+        outline: "none",
+        width: "800px",
+        height: "40px",
+        fontSize: "20px",
+        fontFamily: "Roboto",
+        paddingLeft: "20px",
+    },
+    MainIconStyle: {
+        width: '50px', 
+        height: '50px',
+        paddingRight:"20px",
+        cursor: 'pointer'
+    },
 };
 
 export default ShareStyles;
