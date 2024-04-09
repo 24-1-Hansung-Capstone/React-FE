@@ -1,31 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";
-import ShareStyles from '../../Asset/ShareStyles/ShareStyles';
-import ChungyakSearchInput from "./ChungyakSearchInput"
+import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
+import ChungyakSearchInput from "./ChungyakSearchInput";
+import ChungyakLeftSection from "./ChungyakLeftSection";
+import ChungyakRightSection from "./ChungyakRightSection";
 
 function ChungyakPage() {
-
   return (
     <div>
-      <div>
-        <MenuBar></MenuBar> 
-      </div>
+      <MenuBar />
       <div style={ShareStyles.LeftPageStyle}>
-        <div style={ShareStyles.LeftPageDetailStyle}>
-          <SmallLogoMid/>
-          <ChungyakSearchInput></ChungyakSearchInput>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
-          <div style={{ width: '50%' }}>
-            <h2>ㅎㅇ</h2>
-          </div>
-          <div style={{ width: '50%' }}>
-            <h2>ㅂㅇ</h2>
-          </div>
-        </div>
+        <ChungyakLeftSection />
+        <ChungyakRightSection />
       </div>
     </div>
   );
-};
+}
 export default ChungyakPage;
