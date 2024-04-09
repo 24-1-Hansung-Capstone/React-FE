@@ -1,9 +1,11 @@
 // src\Component\MapPage\MapPage.jsx
 import React, { useEffect } from "react";
 import MenuBar from "../ShareFolder/Menubar";
+import ShareStyles from '../../Asset/ShareStyles/ShareStyles';
 import MapSearchInput from "../MapPage/MapSearchInput";
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";
-import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
+import MapPageLeftBox from './MapPageLeftBox';
+import MapPageRightBox from './MapPageRightBox';
 
 let map; // Move map variable outside of component
 
@@ -47,20 +49,22 @@ const MapPage = ({ searchWord }) => {
   return (
     <div>
       <div>
-        <MenuBar />
+        <MenuBar></MenuBar> 
       </div>
-      <div style={ShareStyles.LeftPageStyle}>
+      <div
+        style={ShareStyles.LeftPageStyle}>
         <div style={ShareStyles.LeftPageDetailStyle}>
-          <SmallLogoMid />
-          <MapSearchInput />
+          <SmallLogoMid/>
+          <MapSearchInput></MapSearchInput>
         </div>
         <div
           id="map"
           style={{
-            flex: "1", // Take up 80% of the space
-            position: "relative", // Add relative position to allow absolute positioning within this div
+            flex: '1', // Take up 80% of the space
+            position: 'relative', // Add relative position to allow absolute positioning within this div
           }}
-        ></div>
+        >
+        </div>
       </div>
     </div>
   );

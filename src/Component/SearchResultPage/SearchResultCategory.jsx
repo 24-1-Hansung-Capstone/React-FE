@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 import Pagination from "../ShareFolder/Pagination";
 import HyperlinkPreview from "../ShareFolder/HyperlinkPreview";
 import { TiNews } from "react-icons/ti";
@@ -7,8 +6,7 @@ import { GrBlog } from "react-icons/gr";
 import { MdCardTravel, MdOutlineSentimentSatisfied, MdOutlineRealEstateAgent } from "react-icons/md";
 import { RiCriminalLine } from "react-icons/ri";
 import { TbBuildingEstate } from "react-icons/tb";
-import arrow_up from '../../Asset/arrow_up.svg';
-import arrow_down from '../../Asset/arrow_down.svg';
+import SearchResultCategoryHeader from "./SearchResultCategoryHeader";
 
 export default function SearchResultCategory({ searchResults, context }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -53,15 +51,8 @@ export default function SearchResultCategory({ searchResults, context }) {
 
     return (
         <div>
-            <div style={ShareStyles.SearchResultCategory} onClick={handleToggle}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <div>
-                        {context}
-                        {iconComponent}
-                    </div>
-                    <img src={isOpen ? arrow_up : arrow_down} alt={isOpen ? "arrow_up" : "arrow_down"} style={ShareStyles.arrowIcon} />
-                </div>
-            </div>
+            <SearchResultCategoryHeader context={context} iconComponent={iconComponent} isOpen={isOpen} handleToggle={handleToggle} />
+            
             {isOpen && (
                 <div>
                     {
