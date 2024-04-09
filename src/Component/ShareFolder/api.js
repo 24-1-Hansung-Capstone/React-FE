@@ -18,4 +18,4 @@ const getSearchResult = (query) => {
   }
 };
 
-export default getSearchResult;
+export { getSearchResult };
