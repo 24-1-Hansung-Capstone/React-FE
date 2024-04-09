@@ -4,6 +4,7 @@ import Axios from "axios";
 import SearchResultNav from "./SearchResultNav";
 import SearchResultLeftBox from "./SearchResultLeftBox";
 import SearchResultRightBox from "./SearchResultRightBox";
+import { getSearchResult } from "../ShareFolder/api";
 
 const styles = {
     home: {
@@ -23,16 +24,7 @@ function SearchResultPage() {
 
     const { searchTerm } = useParams();
     useEffect(() => {
-        Axios.get(`http://localhost:8080/search?query=${searchTerm}`)
-            .then(response => {
-                // 성공 핸들링
-                console.log(response.data)
-                setSearchResults(response.data);
-            })
-            .catch(function (error) {
-                // 에러 핸들링
-                console.log(error);
-            });
+        getSearchResult(searchTerm)
     }, [searchTerm]);
 
 
