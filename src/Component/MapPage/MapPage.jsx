@@ -1,21 +1,23 @@
 // src\Component\MapPage\MapPage.jsx
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import MapSearchInput from "../MapPage/MapSearchInput";
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";
-import ShareStyles from '../../Asset/ShareStyles/ShareStyles';
+import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 
 let map; // Move map variable outside of component
 
-const MapPage = ({searchWord}) => {
+const MapPage = ({ searchWord }) => {
   useEffect(() => {
     const loadKakaoMapScript = async () => {
       try {
-        await loadScript('https://dapi.kakao.com/v2/maps/sdk.js?appkey=850a9218cb545efb10a9bbc88723f254&libraries=services,clusterer&autoload=false');
+        await loadScript(
+          "https://dapi.kakao.com/v2/maps/sdk.js?appkey=850a9218cb545efb10a9bbc88723f254&libraries=services,clusterer&autoload=false"
+        );
         window.kakao.maps.load(() => {
           const container = document.getElementById("map");
           const options = {
-            center: new window.kakao.maps.LatLng(37.5665, 126.9780),
+            center: new window.kakao.maps.LatLng(37.5665, 126.978),
             level: 3,
             scrollwheel: true,
           };
@@ -28,16 +30,16 @@ const MapPage = ({searchWord}) => {
         console.error(error);
       }
     };
-    
+
     loadKakaoMapScript();
   }, []);
 
   function loadScript(url) {
     return new Promise((resolve, reject) => {
-      const script = document.createElement('script');
+      const script = document.createElement("script");
       script.src = url;
       script.onload = () => resolve();
-      script.onerror = () => reject('Failed to load script');
+      script.onerror = () => reject("Failed to load script");
       document.head.append(script);
     });
   }
@@ -45,22 +47,20 @@ const MapPage = ({searchWord}) => {
   return (
     <div>
       <div>
-        <MenuBar></MenuBar> 
+        <MenuBar />
       </div>
-      <div
-        style={ShareStyles.LeftPageStyle}>
+      <div style={ShareStyles.LeftPageStyle}>
         <div style={ShareStyles.LeftPageDetailStyle}>
-          <SmallLogoMid/>
-          <MapSearchInput></MapSearchInput>
+          <SmallLogoMid />
+          <MapSearchInput />
         </div>
         <div
           id="map"
           style={{
-            flex: '1', // Take up 80% of the space
-            position: 'relative', // Add relative position to allow absolute positioning within this div
+            flex: "1", // Take up 80% of the space
+            position: "relative", // Add relative position to allow absolute positioning within this div
           }}
-        >
-        </div>
+        ></div>
       </div>
     </div>
   );
