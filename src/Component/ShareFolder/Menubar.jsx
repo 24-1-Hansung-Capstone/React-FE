@@ -1,5 +1,6 @@
 // src/Components/Menubar/Menubar.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // 스타일 정의
 const styles = {
@@ -31,6 +32,8 @@ const styles = {
 
 // 메뉴바 컴포넌트
 function MenuBar() {
+    const navigate = useNavigate();
+
     const handleHomeClick = () => {
         window.location.href = "http://localhost:3000";
     };
