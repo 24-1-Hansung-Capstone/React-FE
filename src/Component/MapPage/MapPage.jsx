@@ -11,7 +11,7 @@ const MapPage = ({searchWord}) => {
   useEffect(() => {
     const loadKakaoMapScript = async () => {
       try {
-        await loadScript('https://dapi.kakao.com/v2/maps/sdk.js?appkey=850a9218cb545efb10a9bbc88723f254&autoload=false');
+        await loadScript('https://dapi.kakao.com/v2/maps/sdk.js?appkey=850a9218cb545efb10a9bbc88723f254&libraries=services,clusterer&autoload=false');
         window.kakao.maps.load(() => {
           const container = document.getElementById("map");
           const options = {
