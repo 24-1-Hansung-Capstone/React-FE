@@ -13,7 +13,7 @@ function SearchResultRightBox({ searchTerm }) {
         <div>
             <div style={ShareStyles.SearchResultRightBox}>
                 <section>
-                    <div style={ShareStyles.searchResult}>
+                    <div style={ShareStyles.SearchResult}>
                         <p>{searchTerm}</p>
                     </div>
                     <SearchResultRightBoxChattingLog userMessages={userMessages} AI_Text={AI_Text} />

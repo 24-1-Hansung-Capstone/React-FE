@@ -9,7 +9,7 @@ function Logo(props){
             width: '100%',
             margin: '180px 0'
         }}>
-            <img src={logo} width='530px' height='260px' alt="Logo"></img>
+            <img src={logo} width='350px' height='190px' alt="Logo"></img>
         </div>
     );
 }

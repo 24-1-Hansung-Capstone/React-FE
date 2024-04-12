@@ -1,14 +1,9 @@
 import React from "react";
+import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 
 const ChungyakRightSection = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        marginTop: "20px",
-      }}
-    >
+    <div style={ShareStyles.ChungyakRightSection}>
       <div style={{ width: "50%" }}>
         <h2>ㅎㅇ</h2>
       </div>

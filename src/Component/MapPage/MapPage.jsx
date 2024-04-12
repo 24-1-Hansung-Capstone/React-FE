@@ -17,7 +17,7 @@ const MapPage = ({ searchWord }) => {
           "https://dapi.kakao.com/v2/maps/sdk.js?appkey=850a9218cb545efb10a9bbc88723f254&libraries=services,clusterer&autoload=false"
         );
         window.kakao.maps.load(() => {
-          const container = document.getElementById("map");
+          const MapContainer = document.getElementById("map");
           const options = {
             center: new window.kakao.maps.LatLng(37.5665, 126.978),
             level: 3,
@@ -25,7 +25,7 @@ const MapPage = ({ searchWord }) => {
           };
           // Only create a new map if it doesn't already exist
           if (!map) {
-            map = new window.kakao.maps.Map(container, options);
+            map = new window.kakao.maps.Map(MapContainer, options);
           }
         });
       } catch (error) {
@@ -52,17 +52,14 @@ const MapPage = ({ searchWord }) => {
         <MenuBar></MenuBar> 
       </div>
       <div
-        style={ShareStyles.LeftPageStyle}>
-        <div style={ShareStyles.LeftPageDetailStyle}>
+        style={ShareStyles.CommonPageDivide}>
+        <div style={ShareStyles.CommonLeftPage}>
           <SmallLogoMid/>
           <MapSearchInput></MapSearchInput>
         </div>
         <div
           id="map"
-          style={{
-            flex: '1', // Take up 80% of the space
-            position: 'relative', // Add relative position to allow absolute positioning within this div
-          }}
+          style={ShareStyles.CommonRightPage}
         >
         </div>
       </div>

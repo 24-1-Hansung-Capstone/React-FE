@@ -4,7 +4,7 @@ import RelatedSearchWord from "./RelatedSearchWord";
 
 function RelatedSearchWords({recommendations}){
     return (
-        <div style={ShareStyles.container}>
+        <div style={ShareStyles.SmallSearchLogo}>
             {recommendations.map((recommendation, index) => (
                 <RelatedSearchWord key={index} recommendation={recommendation} />
             ))}

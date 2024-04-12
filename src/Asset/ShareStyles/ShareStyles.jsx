@@ -1,14 +1,14 @@
 // src/Asset/ShareStyles/ShareStyles.jsx
 const ShareStyles = {
-    container: {
+    SmallSearchLogo: {
         display: 'flex',
         alignItems: 'center',
     },
-    searchBarContainer: {
+    SearchBarContainer: {
         border: "5px solid #92baff",
         borderRadius: "30px",
-        width: "830px",
-        height: "60px",
+        width: "630px",
+        height: "50px",
         display: 'flex',
         alignItems: 'center',
         marginTop: "40px",
@@ -17,14 +17,14 @@ const ShareStyles = {
     CommonSearchBarContainer: {
         border: "3px solid #92baff",
         borderRadius: "30px",
-        width: "630px",
+        width: "530px",
         height: "40px",
         display: 'flex',
         alignItems: 'center',
         marginTop: "20px",
         marginBottom: "20px",
     },
-        SearchRecommend: {
+    SearchRecommend: {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: "#92baff",
@@ -35,15 +35,15 @@ const ShareStyles = {
         fontWeight: "bold",
         cursor: "pointer",
     },
-    logo: {
-        width: "200px",
-        height: "100px",
+    CommonLogo: {
+        width: "150px",
+        height: "70px",
     },
     SearchResultCategory: {
         marginRight: "15px",
         borderBottom: "1px solid gray",
         marginBottom: "50px",
-        fontSize: "30px",
+        fontSize: "25px",
     },
     SearchResultRightBox: {
         paddingBottom: "10px",
@@ -63,7 +63,7 @@ const ShareStyles = {
         marginRight: "10px",
         marginBottom: "35px",
         flexBasis: "150%",
-        fontSize: "30px",
+        fontSize: "20px",
     },
     SearchResultNav: {
         display: 'flex',
@@ -72,22 +72,26 @@ const ShareStyles = {
         marginBottom: "10px", 
         paddingBottom: "10px",
     },
-    hrStyle: {
+    SearchResultHr: {
         border: "1px solid black",
         width: "100%",
     },
-    arrowIcon: {
+    SearchResultPage: {
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+    },
+    SearchResultPageDivide: {
+        flex: 1,
+        display: "flex",
+    },
+    ArrowIcon: {
         width: "20px",
         height: "20px",
         marginLeft: "5px",
     },
-    section: {
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        flexBasis: "60%",
-    },
-    textarea: {
+    ChatTextarea: { 
         width: "100%", // 필요에 따라 너비 조정
         minHeight: "80px", // 필요에 따라 최소 높이 조정
         padding: "10px",
@@ -112,38 +116,31 @@ const ShareStyles = {
         overflowY: 'scroll', // 필요시 수직 스크롤 추가
         fontSize: "20px",
     },
-    searchResult: {
+    SearchResult: {
         textAlign: "left", 
         color: "blue", 
         fontSize: "30px",
     },
-    chatarea1: {
+    ChatQuestion: {
         textAlign: "right", 
         flex: "1",
         marginRight: "40px", 
         padding: "10px", 
         fontSize: "20px"
     },
-    chatarea2: {
+    ChatAnswer: {
         textAlign: "left", 
         flex: "1",
         marginRight: "40px", 
         padding: "10px", 
         fontSize: "20px"
     },
-    input: {
-        width: "100%",
-        height: "200px",
-        padding: "5px",
-        borderRadius: "5px",
-        border: "1px solid #ccc",
-    },
-    buttonArea: {
+    ChatSendMessageArea: {
         flex: "1",
         padding: "10px",
         width: "80%",
     },
-    button: {
+    ChatMessageButton: {
         width: "120%",
         height: "40px",
         backgroundColor: "#92baff",
@@ -151,31 +148,26 @@ const ShareStyles = {
         borderRadius: "40px",
         cursor: "pointer",
     },
-    Chungyak: {
+    CommonPageDivide: {
         display: 'flex',
         width: '100%',
         height: '100vh',
-        position: 'relative',
     },
-
-    ChungyakLogo: {
+    CommonLeftPage: {
         flex: '1',
-        position: 'absolute',
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        zIndex: 100,
-    },
-    LeftPageStyle: {
-        display: 'flex',
+        position: 'relative',
         width: '100%',
-        height: '100vh',
-        position: 'relative',
-    },
-    LeftPageDetailStyle: {
-        flex: '1',
-        position: 'absolute',
         height: '100%',
         backgroundColor: 'rgba(255, 255, 255, 1)',
+        zIndex: 50,
+    },
+    CommonRightPage: {
+        flex: '4',
+        position: 'relative',
+        width: '100%',
+        height: '100vh',
         zIndex: 100,
+        flexBasis: "150%",
     },
     CommonSearchBarStyle: {
         backgroundColor: 'transparent',
@@ -204,15 +196,10 @@ const ShareStyles = {
         paddingLeft: "20px",
     },
     MainIconStyle: {
-        width: '50px', 
-        height: '50px',
+        width: '40px', 
+        height: '40px',
         paddingRight:"20px",
-        cursor: 'pointer'
-    },
-    MapSection: {
-        width: "360px",
-        height: "100vh",
-        marginleft: "-17px",
+        cursor: 'pointer',
     },
 };
 

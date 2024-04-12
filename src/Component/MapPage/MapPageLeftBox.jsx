@@ -5,7 +5,7 @@ import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
  
 export default function MapPageLeftBox() {
   return (
-    <div style={ShareStyles.LeftPageDetailStyle}>
+    <div style={ShareStyles.CommonLeftPage}>
       <SmallLogoMid />
       <MapSearchInput />
     </div>
