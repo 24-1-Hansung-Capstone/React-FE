@@ -13,18 +13,18 @@ function SearchResultRightBoxChattingLog({AI_Text, userMessages}) {
 
 
     return (
-        <div style={ShareStyles.textarea}>
+        <div style={ShareStyles.ChatTextarea}>
             <div>
                 <img src={OnlyLogo} alt="Logo" style={{ width: "50px", height: "50px" }} />
                 <p style={{ fontSize: "20px" }}>{AI_Text}</p>
             </div>
             {userMessages.map((message, index) => (
                 <div key={index}>
-                    <div style={ShareStyles.chatarea1}>
+                    <div style={ShareStyles.ChatQuestion}>
                         <BiSolidFace />
                         {message}
                     </div>
-                    <div style={ShareStyles.chatarea2}>
+                    <div style={ShareStyles.ChatAnswer}>
                         <img src={OnlyLogo} alt="Logo" style={{ width: "50px", height: "50px" }} />
                         <p>No Response</p>
                     </div>

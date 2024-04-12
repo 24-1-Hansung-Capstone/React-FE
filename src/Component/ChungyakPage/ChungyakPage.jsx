@@ -9,11 +9,17 @@ import ChungyakRightSection from "./ChungyakRightSection";
 function ChungyakPage() {
   return (
     <div>
-      <MenuBar />
-      <div style={ShareStyles.LeftPageStyle}>
+    <div>
+      <MenuBar/>
+    </div>
+    <div style={ShareStyles.CommonPageDivide}>
+      <div style={ShareStyles.CommonLeftPage}>
         <ChungyakLeftSection />
+    </div>
+    <div style={ShareStyles.CommonRightPage}>
         <ChungyakRightSection />
       </div>
+    </div>
     </div>
   );
 }

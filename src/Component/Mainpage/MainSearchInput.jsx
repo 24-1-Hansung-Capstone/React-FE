@@ -23,7 +23,7 @@ function MainSearchInput({searchWord}) {
     };
 
     return (
-        <div style={ShareStyles.searchBarContainer}> {/* 스타일 변경 */}
+        <div style={ShareStyles.SearchBarContainer}> {/* 스타일 변경 */}
             <input 
                 placeholder="Homes! 검색"  
                 style={ShareStyles.MainSearchBarStyle}

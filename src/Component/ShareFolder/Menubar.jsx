@@ -32,6 +32,9 @@ const styles = {
 function MenuBar() {
   return (
     <div style={styles.menuBar}>
+      <Link to="/" style={styles.link}>
+        메인 화면
+      </Link>
       <Link to="/MapPage" style={styles.link}>
         지도
       </Link>
@@ -49,9 +52,6 @@ function MenuBar() {
       </Link>
       <Link to="/CommunityPage" style={styles.link}>
         홈즈 사무소
-      </Link>
-      <Link to="/" style={styles.link}>
-        메인 화면
       </Link>
       <Link to="/LoginPage" style={styles.link}>
         로그인
