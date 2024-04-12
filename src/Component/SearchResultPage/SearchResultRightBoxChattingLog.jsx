@@ -13,7 +13,7 @@ function SearchResultRightBoxChattingLog({AI_Text, userMessages}) {
 
 
     return (
-        <div style={ShareStyles.textarea1}>
+        <div style={ShareStyles.textarea}>
             <div>
                 <img src={OnlyLogo} alt="Logo" style={{ width: "50px", height: "50px" }} />
                 <p style={{ fontSize: "20px" }}>{AI_Text}</p>

@@ -1,3 +1,4 @@
+// src\Component\MapPage\MapPageRightBox.jsx
 export default function MapPageRightBox() {
     return (
       <div
