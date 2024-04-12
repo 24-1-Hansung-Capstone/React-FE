@@ -1,5 +1,8 @@
 // src/Asset/ShareStyles/ShareStyles.jsx
 const ShareStyles = {
+    SearchResultList: {
+        fontSize:"10px"
+    },
     SmallSearchLogo: {
         display: 'flex',
         alignItems: 'center',
@@ -39,38 +42,39 @@ const ShareStyles = {
         width: "150px",
         height: "70px",
     },
-    SearchResultCategory: {
+    SearchResultCategoryHeader: {
         marginRight: "15px",
         borderBottom: "1px solid gray",
-        marginBottom: "50px",
+        marginBottom: "2vh",
         fontSize: "25px",
     },
     SearchResultRightBox: {
         paddingBottom: "10px",
-        width: "90%", 
+        width: "50%", 
         padding: "10px",
         display: 'flex',
         alignItems: 'center',
         justifyContent: "flex-end",
         marginLeft: "30px",
         marginBottom: "20px",
+        flexBasis: "100%",
     },
     SearchResultLeftBox: {
-        width: "180%",
+        width: "50%",
         padding: "20px",
-        marginTop: "35px",
-        marginLeft: "20px",
-        marginRight: "10px",
-        marginBottom: "35px",
-        flexBasis: "150%",
-        fontSize: "20px",
+        // marginTop: "35px",
+        // marginLeft: "20px",
+        // marginRight: "10px",
+        // marginBottom: "35px",
+        flexBasis: "100%",
+        // fontSize: "20px",
     },
     SearchResultNav: {
         display: 'flex',
         alignItems: 'left',
         justifyContent: "left", 
-        marginBottom: "10px", 
-        paddingBottom: "10px",
+        marginBottom: "1vh", 
+        paddingBottom: "1vh",
     },
     SearchResultHr: {
         border: "1px solid black",
