@@ -54,6 +54,10 @@ function MenuBar() {
         메인 화면
       </Link>
       <Link to="/LoginPage" style={styles.link}>
+      </Link>
+      <Link style={styles.link}>
+      </Link>
+      <Link to="/LoginPage" style={styles.link}>
         로그인
       </Link>
       {/* 더 많은 링크 추가 가능 */}
