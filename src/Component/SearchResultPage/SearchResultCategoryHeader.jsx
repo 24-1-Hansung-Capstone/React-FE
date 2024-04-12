@@ -10,7 +10,7 @@ export default function SearchResultCategoryHeader({ context, iconComponent, isO
                     {context}
                     {iconComponent}
                 </div>
-                <img src={isOpen ? arrow_up : arrow_down} alt={isOpen ? "arrow_up" : "arrow_down"} style={ShareStyles.arrowIcon} />
+                <img src={isOpen ? arrow_up : arrow_down} alt={isOpen ? "arrow_up" : "arrow_down"} style={ShareStyles.ArrowIcon} />
             </div>
         </div>
     );
