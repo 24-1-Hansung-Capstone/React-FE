@@ -11,8 +11,9 @@ function SearchResultPage() {
     const [searchResults, setSearchResults] = useState([]);
 
     const { searchTerm } = useParams();
+    
     useEffect(() => {
-        getSearchResult(searchTerm)
+        getSearchResult(searchTerm, setSearchResults)
     }, [searchTerm]);
 
 
