@@ -11,7 +11,7 @@ function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessa
 
     return (
         <div>
-            <textarea style={ShareStyles.textarea2}
+            <textarea style={ShareStyles.ChatbotInput}
                 placeholder="텍스트를 입력하세요"
                 value={currentMessage}
                 onChange={(e) => setCurrentMessage(e.target.value)}

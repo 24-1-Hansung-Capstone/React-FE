@@ -1,3 +1,4 @@
+// src\Component\MapPage\MapPageLeftBox.jsx
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";
 import MapSearchInput from "./MapSearchInput";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";

@@ -87,7 +87,7 @@ const ShareStyles = {
         justifyContent: "space-between",
         flexBasis: "60%",
     },
-    textarea1: {
+    textarea: {
         width: "100%", // 필요에 따라 너비 조정
         minHeight: "80px", // 필요에 따라 최소 높이 조정
         padding: "10px",
@@ -100,7 +100,7 @@ const ShareStyles = {
         maxHeight: '300px', 
         minHeight: '300px',
     },
-    textarea2: {
+    ChatbotInput: {
         width: "100%", // 필요에 따라 너비 조정
         minHeight: "120px", // 필요에 따라 최소 높이 조정
         padding: "10px",
@@ -208,6 +208,11 @@ const ShareStyles = {
         height: '50px',
         paddingRight:"20px",
         cursor: 'pointer'
+    },
+    MapSection: {
+        width: "360px",
+        height: "100vh",
+        marginleft: "-17px",
     },
 };
 
