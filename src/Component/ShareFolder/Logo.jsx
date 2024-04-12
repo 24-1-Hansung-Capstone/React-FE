@@ -1,4 +1,4 @@
-// src/Components/Logo/Logo.jsx
+// src/Components/ShareFolder/Logo.jsx
 import React from "react";
 import logo from '../../Asset/Logo.png';
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";

@@ -1,7 +1,7 @@
-// src/Components/LogoMid/LogoMid.jsx
+// src/Components/ShareFolder/LogoMid.jsx
 import logo from '../../Asset/Logo.png';
 
-function Logo(props){
+function LogoMid(props){
     return(
         <div style={{
             display: 'flex',
@@ -14,4 +14,4 @@ function Logo(props){
     );
 }
 
-export default Logo;
+export default LogoMid;

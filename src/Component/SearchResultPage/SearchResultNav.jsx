@@ -1,4 +1,4 @@
-// src/Components/SearchResultNav/SearchResultNav.jsx
+// src/Components/SearchResultPage/SearchResultNav.jsx
 import React from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import Logo from "../ShareFolder/Logo";

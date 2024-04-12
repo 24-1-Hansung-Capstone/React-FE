@@ -1,3 +1,4 @@
+// src/Components/SearchResultPage/SearchResultCategoryHeader.jsx
 import arrow_up from '../../Asset/arrow_up.svg';
 import arrow_down from '../../Asset/arrow_down.svg';
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";

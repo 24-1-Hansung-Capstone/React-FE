@@ -1,3 +1,4 @@
+// src/Component/SearchResultPage/SearchResultRightBoxInput.jsx
 import React from "react";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 

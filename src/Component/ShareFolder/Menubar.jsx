@@ -1,4 +1,4 @@
-// src/Components/Menubar/Menubar.jsx
+// src/Components/ShareFolder/Menubar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 

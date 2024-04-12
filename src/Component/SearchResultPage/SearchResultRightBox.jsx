@@ -1,3 +1,4 @@
+// src/Components/SearchResultPage/SearchResultRightBox.jsx
 import React, { useState, useRef, useEffect } from "react";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 import SearchResultRightBoxChattingLog from "./SearchResultRightBoxChattingLog";

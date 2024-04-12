@@ -1,4 +1,4 @@
-// src/Components/ScrollContainer/ScrollContainer.jsx
+// src/Components/ShareFolder/ScrollContainer.jsx
 import React, { useState, useEffect } from 'react';
 
 // Component0 정의

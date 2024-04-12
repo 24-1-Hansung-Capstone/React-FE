@@ -1,3 +1,4 @@
+// src/Components/ChungyakPage/ChungyakRightSection.jsx
 import React from "react";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 

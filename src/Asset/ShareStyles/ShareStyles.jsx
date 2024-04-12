@@ -162,14 +162,12 @@ const ShareStyles = {
         width: '100vh',
         height: '100%',
         backgroundColor: 'rgba(255, 255, 255, 1)',
-        zIndex: 50,
     },
     CommonRightPage: {
-        flex: '4',
+        flex: '3',
         position: 'relative',
         width: '100%',
         height: '100vh',
-        zIndex: 100,
         flexBasis: "150%",
     },
     CommonSearchBarStyle: {
@@ -203,6 +201,11 @@ const ShareStyles = {
         height: '40px',
         paddingRight:"20px",
         cursor: 'pointer',
+    },
+    LogoMid: {
+        display: 'flex', // Flexbox 모델을 사용합니다.
+        justifyContent: 'center', // 주 축(여기서는 수평 축)을 기준으로 중앙 정렬합니다.
+        width: '100%', // 부모 컨테이너의 폭을 최대로 설정합니다.
     },
 };
 

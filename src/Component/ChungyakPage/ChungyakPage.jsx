@@ -1,3 +1,4 @@
+// src/Components/ChungyakPage/ChungyakPage.jsx
 import React, { useEffect } from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";

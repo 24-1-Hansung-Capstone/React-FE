@@ -1,4 +1,4 @@
-// src/Components/SearchInput/SearchInput.jsx
+// src/Components/ShareFolder/SearchInput.jsx
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import searchIcon from "../../Asset/searchIcon.svg";
