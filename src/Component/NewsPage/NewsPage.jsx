@@ -10,7 +10,7 @@ function NewsPage({searchWord}) {
     return (
         <div>
             <MenuBar />
-            <div style={ShareStyles.container}>
+            <div style={ShareStyles.SmallSearchLogo}>
                 <Logo />
                 <SmallSearchBar searchWord = {searchWord}/>
             </div>
