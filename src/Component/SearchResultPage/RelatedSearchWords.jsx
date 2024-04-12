@@ -1,3 +1,4 @@
+// src/Components/SearchResultPage/RelatedSearchWords.jsx
 import React from "react";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 import RelatedSearchWord from "./RelatedSearchWord";

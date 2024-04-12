@@ -1,3 +1,4 @@
+// src/Components/ChungyakPage/ChungyakLeftSection.jsx
 import React from "react";
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";

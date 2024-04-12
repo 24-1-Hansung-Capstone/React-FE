@@ -1,4 +1,4 @@
-// src/Components/SearchResultList/SearchResultList.jsx
+// src/Components/SearchResultPage/SearchResultList.jsx
 import React from "react";
 import SearchResultCategory from "./SearchResultCategory";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";

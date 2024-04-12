@@ -1,3 +1,4 @@
+// src/Components/SearchResultPage/SearchResultRightBoxChattingLog.jsx
 import React, { useState, useRef, useEffect } from "react";
 import OnlyLogo from '../../Asset/OnlyLogo.png';
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
