@@ -50,23 +50,22 @@ const ShareStyles = {
     },
     SearchResultRightBox: {
         paddingBottom: "10px",
-        width: "50%", 
-        padding: "10px",
+        width: "100vh", 
         display: 'flex',
         alignItems: 'center',
         justifyContent: "flex-end",
-        marginLeft: "30px",
         marginBottom: "20px",
         flexBasis: "100%",
+        marginRight: "10px",
     },
     SearchResultLeftBox: {
-        width: "50%",
+        width: "100vh",
         padding: "20px",
         // marginTop: "35px",
         // marginLeft: "20px",
         // marginRight: "10px",
         // marginBottom: "35px",
-        flexBasis: "100%",
+        flexBasis: "50%",
         // fontSize: "20px",
     },
     SearchResultNav: {
@@ -96,8 +95,8 @@ const ShareStyles = {
         marginLeft: "5px",
     },
     ChatTextarea: { 
-        width: "100%", // 필요에 따라 너비 조정
-        minHeight: "80px", // 필요에 따라 최소 높이 조정
+        width: "80vh", // 필요에 따라 너비 조정
+        minHeight: "40px", // 필요에 따라 최소 높이 조정
         padding: "10px",
         resize: "vertical", // 사용자가 수직으로만 크기를 조정할 수 있게 함
         boxSizing: "border-box",
@@ -109,8 +108,8 @@ const ShareStyles = {
         minHeight: '300px',
     },
     ChatbotInput: {
-        width: "100%", // 필요에 따라 너비 조정
-        minHeight: "120px", // 필요에 따라 최소 높이 조정
+        width: "80vh", // 필요에 따라 너비 조정
+        minHeight: "80px", // 필요에 따라 최소 높이 조정
         padding: "10px",
         boxSizing: "border-box",
         backgroundColor: "#DCDCDC", // 배경색을 회색으로 설정
@@ -123,7 +122,7 @@ const ShareStyles = {
     SearchResult: {
         textAlign: "left", 
         color: "blue", 
-        fontSize: "30px",
+        fontSize: "25px",
     },
     ChatQuestion: {
         textAlign: "right", 
@@ -160,7 +159,7 @@ const ShareStyles = {
     CommonLeftPage: {
         flex: '1',
         position: 'relative',
-        width: '100%',
+        width: '100vh',
         height: '100%',
         backgroundColor: 'rgba(255, 255, 255, 1)',
         zIndex: 50,
