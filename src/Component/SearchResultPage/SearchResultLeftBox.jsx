@@ -1,3 +1,4 @@
+// src/Components/SearchResultPage/SearchResultLeftBox.jsx
 import SearchResultList from "./SearchResultList";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 

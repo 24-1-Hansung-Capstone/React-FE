@@ -1,3 +1,4 @@
+// src/Components/ShareFolder/Pagination.jsx
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FaAngleDoubleLeft, FaAngleLeft, FaAngleRight, FaAngleDoubleRight } from "react-icons/fa";

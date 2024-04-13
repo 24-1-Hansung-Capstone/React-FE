@@ -1,4 +1,4 @@
-// src/Components/SearchInputMid/SearchInputMid.jsx
+// src/Components/ShareFolder/SearchInputMid.jsx
 import React, { useState } from "react";
 import MainSearchInput from '../Mainpage/MainSearchInput';
 

@@ -1,11 +1,11 @@
-// src/Components/Logo/Logo.jsx
+// src/Components/ShareFolder/Logo.jsx
 import React from "react";
 import logo from '../../Asset/Logo.png';
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 
 function Logo() {
     return (
-        <img src={logo} alt="Logo" style={ShareStyles.logo} />
+        <img src={logo} alt="Logo" style={ShareStyles.CommonLogo} />
     );
 }
 

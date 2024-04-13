@@ -1,4 +1,4 @@
-// src/Components/EstatePage/EstatePage.jsx
+// src/Components/SatisfactionPage/SatisfactionPage.jsx
 import React from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import Logo from "../ShareFolder/Logo";
@@ -10,7 +10,7 @@ function SatisfactionPage({searchWord}) {
     return (
         <div>
             <MenuBar />
-            <div style={ShareStyles.container}>
+            <div style={ShareStyles.SmallSearchLogo}>
                 <Logo />
                 <SmallSearchBar searchWord = {searchWord}/>
             </div>

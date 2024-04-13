@@ -1,3 +1,4 @@
+// src/Components/SearchResultPage/SearchResultCategory.jsx
 import React, { useState } from "react";
 import Pagination from "../ShareFolder/Pagination";
 import HyperlinkPreview from "../ShareFolder/HyperlinkPreview";
