@@ -1,4 +1,4 @@
-// src/Components/SmallLogoMid/SmallLogoMid.jsx
+// src/Components/ShareFolder/SmallLogoMid.jsx
 import logo from '../../Asset/Logo.png';
 
 function SmallLogoMid(props){
@@ -6,7 +6,7 @@ function SmallLogoMid(props){
         <div style={{
             display: 'flex',
             justifyContent: 'center',
-            width: '100%',
+            width: '50%',
             marginTop : '30px'
         }}>
             <img src={logo} width='150px' height='80px' alt="Logo"></img>

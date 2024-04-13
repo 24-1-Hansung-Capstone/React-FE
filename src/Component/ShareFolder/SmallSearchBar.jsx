@@ -1,4 +1,4 @@
-// src/Components/SmallSearchBar/SmallSearchBar.jsx
+// src/Components/ShareFolder/SmallSearchBar.jsx
 import React from "react";
 import MainSearchInput from "../Mainpage/MainSearchInput";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";

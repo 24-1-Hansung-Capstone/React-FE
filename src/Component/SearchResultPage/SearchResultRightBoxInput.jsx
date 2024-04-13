@@ -1,3 +1,4 @@
+// src/Component/SearchResultPage/SearchResultRightBoxInput.jsx
 import React from "react";
 import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
 
@@ -23,8 +24,8 @@ function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessa
                 }}
             ></textarea>
 
-            <div style={ShareStyles.buttonArea}>
-                <button style={ShareStyles.button} onClick={handleMessageSend}>메시지 전송</button>
+            <div style={ShareStyles.ChatSendMessageArea}>
+                <button style={ShareStyles.ChatMessageButton} onClick={handleMessageSend}>메시지 전송</button>
             </div>
         </div>
     )

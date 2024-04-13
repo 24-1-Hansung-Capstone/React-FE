@@ -1,3 +1,4 @@
+// src/Components/ChungyakPage/ChungyakPage.jsx
 import React, { useEffect } from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";
@@ -9,11 +10,17 @@ import ChungyakRightSection from "./ChungyakRightSection";
 function ChungyakPage() {
   return (
     <div>
-      <MenuBar />
-      <div style={ShareStyles.LeftPageStyle}>
+    <div>
+      <MenuBar/>
+    </div>
+    <div style={ShareStyles.CommonPageDivide}>
+      <div style={ShareStyles.CommonLeftPage}>
         <ChungyakLeftSection />
+    </div>
+    <div style={ShareStyles.CommonRightPage}>
         <ChungyakRightSection />
       </div>
+    </div>
     </div>
   );
 }

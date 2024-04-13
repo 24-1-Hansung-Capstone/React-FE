@@ -13,7 +13,7 @@ const MapPage = ({searchWord}) => {
       try {
         await loadScript('https://dapi.kakao.com/v2/maps/sdk.js?appkey=850a9218cb545efb10a9bbc88723f254&libraries=services,clusterer&autoload=false');
         window.kakao.maps.load(() => {
-          const container = document.getElementById("map");
+          const MapContainer = document.getElementById("map");
           const options = {
             center: new window.kakao.maps.LatLng(37.5665, 126.9780),
             level: 3,
@@ -21,7 +21,7 @@ const MapPage = ({searchWord}) => {
           };
           // Only create a new map if it doesn't already exist
           if (!map) {
-            map = new window.kakao.maps.Map(container, options);
+            map = new window.kakao.maps.Map(MapContainer, options);
           }
         });
       } catch (error) {
@@ -48,7 +48,7 @@ const MapPage = ({searchWord}) => {
       <div style={ShareStyles.LeftPageStyle}>
       <MapPageLeftBox/>
       <MapPageRightBox/>
-      </div>
+    </div>
     </div>
   );
 };
