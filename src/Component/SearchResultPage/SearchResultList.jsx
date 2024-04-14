@@ -1,11 +1,12 @@
 // src/Components/SearchResultPage/SearchResultList.jsx
 import React from "react";
 import SearchResultCategory from "./SearchResultCategory";
-import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
+import PageStyles from "../../Asset/ShareStyles/PageStyles";
+import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 
 function SearchResultList({searchResults}) {
     return (
-        <div style={ShareStyles.SearchResultList}>
+        <div style={{...PageStyles.SearchResultList, ...ComponentStyles.SearchResultList}}>
             <SearchResultCategory searchResults = {searchResults.filter(item => item.category === "news")} context="뉴스" />
             <SearchResultCategory searchResults = {searchResults.filter(item => item.category === "blog")} context="블로그" />
             <SearchResultCategory searchResults = {searchResults.filter(item => item.category === "visitkorea")} context="관광지" />

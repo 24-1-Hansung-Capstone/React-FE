@@ -1,12 +1,13 @@
 // src/Components/ChungyakPage/ChungyakLeftSection.jsx
 import React from "react";
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";
-import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
+import PageStyles from "../../Asset/ShareStyles/PageStyles";
+import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 import ChungyakSearchInput from "./ChungyakSearchInput";
 
 const ChungyakLeftSection = () => {
   return (
-    <div style={ShareStyles.CommonLeftPage}>
+    <div style={{...PageStyles.CommonLeftPage, ...ComponentStyles.CommonLeftPage}}>
       <SmallLogoMid />
       <ChungyakSearchInput />
     </div>

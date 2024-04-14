@@ -2,7 +2,8 @@
 import React, { useEffect } from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";
-import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
+import PageStyles from "../../Asset/ShareStyles/PageStyles";
+import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 import ChungyakSearchInput from "./ChungyakSearchInput";
 import ChungyakLeftSection from "./ChungyakLeftSection";
 import ChungyakRightSection from "./ChungyakRightSection";
@@ -13,11 +14,11 @@ function ChungyakPage() {
     <div>
       <MenuBar/>
     </div>
-    <div style={ShareStyles.CommonPageDivide}>
-      <div style={ShareStyles.CommonLeftPage}>
+    <div style={{...PageStyles.CommonPageDivide, ...ComponentStyles.CommonPageDivide}}>
+      <div style={{...PageStyles.CommonLeftPage, ...ComponentStyles.CommonLeftPage}}>
         <ChungyakLeftSection />
     </div>
-    <div style={ShareStyles.CommonRightPage}>
+    <div style={{...PageStyles.CommonRightPage, ...ComponentStyles.CommonRightPage}}>
         <ChungyakRightSection />
       </div>
     </div>

@@ -1,10 +1,11 @@
 // src/Components/ChungyakPage/ChungyakRightSection.jsx
 import React from "react";
-import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
+import PageStyles from "../../Asset/ShareStyles/PageStyles";
+import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 
 const ChungyakRightSection = () => {
   return (
-    <div style={ShareStyles.ChungyakRightSection}>
+    <div style={{...PageStyles.ChungyakRightSection, ...ComponentStyles.ChungyakRightSection}}>
       <div style={{ width: "50%" }}>
         <h2>ㅎㅇ</h2>
       </div>

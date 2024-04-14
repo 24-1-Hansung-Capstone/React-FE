@@ -4,14 +4,15 @@ import MenuBar from "../ShareFolder/Menubar";
 import SearchInputMid from "../ShareFolder/SearchInputMid";
 import LogoMid from "../ShareFolder/LogoMid";
 import MainSearchInput from '../Mainpage/MainSearchInput';
-import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
+import PageStyles from "../../Asset/ShareStyles/PageStyles";
+import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 
 function Mainpage(props) {
   return (
     <div>
       <MenuBar />
       <LogoMid />
-      <div style={ShareStyles.LogoMid}>
+      <div style={{...PageStyles.LogoMid, ...ComponentStyles.LogoMid}}>
         <MainSearchInput />
       </div>
     </div>
