@@ -21,7 +21,7 @@ function App() {
           <Route path="/MapPage" exact element={<MapPage />} />
           <Route path="/ChungyakPage" exact element={<ChungyakPage />} />
           <Route path="/NewsPage" exact element={<NewsPage />} />
-          <Route path="/SatisfactionPage" exact element={<SatisfactionPage />} />
+          <Route path="/SatisfactionPage/:searchTerm" exact element={<SatisfactionPage />} />
           <Route path="/EstatePage" exact element={<EstatePage />} />
           <Route path="/CommunityPage" exact element={<CommunityPage />} />
           <Route path="/LoginPage" exact element={<LoginPage />} />

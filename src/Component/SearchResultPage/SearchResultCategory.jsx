@@ -53,7 +53,6 @@ export default function SearchResultCategory({ searchResults, context }) {
     return (
         <div>
             <SearchResultCategoryHeader context={context} iconComponent={iconComponent} isOpen={isOpen} handleToggle={handleToggle} />
-            
             {isOpen && (
                 <div>
                     {
