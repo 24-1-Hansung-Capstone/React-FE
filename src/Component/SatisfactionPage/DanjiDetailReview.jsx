@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 function DanjiDetailReview({desc}) {
     return (
-        <div>
+        <div style = {{
+        }}>
             {desc}
         </div>
     )
