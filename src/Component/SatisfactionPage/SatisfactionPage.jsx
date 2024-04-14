@@ -27,7 +27,7 @@ function SatisfactionPage() {
                 <Logo />
                 <SearchInput searchWord = {searchTerm} searchUrlPath={"SatisfactionPage"}/>
             </div>
-            <hr/>
+            <hr color="black"/>
             <SatisfactionBody result = {result}/>
         </div>
     );

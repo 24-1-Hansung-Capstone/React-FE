@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import arrow_up from '../../Asset/arrow_up.svg';
-import arrow_down from '../../Asset/arrow_down.svg';
 import DanjiItemHeader from "./DanjiItemHeader";
 import DanjiReview from "./DanjiReview";
 
@@ -11,7 +9,7 @@ function DanjiItem({danjiName, danjiDatas}) {
     }
 
     return (
-        <div >
+        <div style={{marginBottom :"40px"}}>
             <DanjiItemHeader isOpen={isOpen} danjiName={danjiName} handleToggle={handleToggle}/>
             {console.log(danjiDatas)}
             {isOpen && (

@@ -14,7 +14,7 @@ function SatisfactionLeftBody({result}) {
 
 
     return (
-        <div>
+        <div style = {{width: "45%"}}>
             {Object.entries(danjiNameMap).map(([danjiName, danjiDatas], index) => {
                 return (
                     <DanjiItem danjiName={danjiName} danjiDatas = {danjiDatas}/>
