@@ -1,6 +1,7 @@
 // src/Component/SearchResultPage/SearchResultRightBoxInput.jsx
 import React from "react";
-import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
+import PageStyles from "../../Asset/ShareStyles/PageStyles";
+import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 
 function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessages, setUserMessages}) {
     const handleMessageSend = () => {
@@ -12,7 +13,7 @@ function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessa
 
     return (
         <div>
-            <textarea style={ShareStyles.ChatbotInput}
+            <textarea style={{...PageStyles.ChatbotInput, ...ComponentStyles.ChatbotInput}}
                 placeholder="텍스트를 입력하세요"
                 value={currentMessage}
                 onChange={(e) => setCurrentMessage(e.target.value)}
@@ -24,8 +25,8 @@ function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessa
                 }}
             ></textarea>
 
-            <div style={ShareStyles.ChatSendMessageArea}>
-                <button style={ShareStyles.ChatMessageButton} onClick={handleMessageSend}>메시지 전송</button>
+            <div style={{...PageStyles.ChatSendMessageArea, ...ComponentStyles.ChatSendMessageArea}}>
+                <button style={{...PageStyles.ChatMessageButton, ...ComponentStyles.ChatSendMessageArea}} onClick={handleMessageSend}>메시지 전송</button>
             </div>
         </div>
     )

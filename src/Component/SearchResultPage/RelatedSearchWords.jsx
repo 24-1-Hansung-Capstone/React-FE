@@ -1,11 +1,12 @@
 // src/Components/SearchResultPage/RelatedSearchWords.jsx
 import React from "react";
-import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
+import PageStyles from "../../Asset/ShareStyles/PageStyles";
+import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 import RelatedSearchWord from "./RelatedSearchWord";
 
 function RelatedSearchWords({recommendations}){
     return (
-        <div style={ShareStyles.SmallSearchLogo}>
+        <div style={{...PageStyles.SmallSearchLogo, ...ComponentStyles.SmallSearchLogo}}>
             {recommendations.map((recommendation, index) => (
                 <RelatedSearchWord key={index} recommendation={recommendation} />
             ))}

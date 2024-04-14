@@ -1,7 +1,8 @@
 // src\Component\MapPage\MapPage.jsx
 import React, { useEffect } from 'react';
 import MenuBar from "../ShareFolder/Menubar";
-import ShareStyles from '../../Asset/ShareStyles/ShareStyles';
+import PageStyles from "../../Asset/ShareStyles/PageStyles";
+import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 import MapPageLeftBox from './MapPageLeftBox';
 import MapPageRightBox from './MapPageRightBox';
 
@@ -44,8 +45,10 @@ const MapPage = ({searchWord}) => {
 
   return (
     <div>
+      <div>
       <MenuBar/>
-      <div style={ShareStyles.LeftPageStyle}>
+      </div>
+      <div style={{...PageStyles.CommonPageDivide, ...ComponentStyles.CommonPageDivide}}>
       <MapPageLeftBox/>
       <MapPageRightBox/>
     </div>

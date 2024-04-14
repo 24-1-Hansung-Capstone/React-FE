@@ -1,10 +1,11 @@
 // src/Components/SearchResultPage/RelatedSearchWord.jsx
 import React from "react";
-import ShareStyles from "../../Asset/ShareStyles/ShareStyles";
+import PageStyles from "../../Asset/ShareStyles/PageStyles";
+import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 
 function RelatedSearchWord({ recommendation }) {
     return (
-        <div style={ShareStyles.SearchRecommend}>{recommendation}</div>
+        <div style={PageStyles.SearchRecommend}>{recommendation}</div>
     );
 }
 
