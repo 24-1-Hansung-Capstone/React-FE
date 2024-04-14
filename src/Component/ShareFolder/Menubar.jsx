@@ -44,7 +44,7 @@ function MenuBar() {
       <Link to="/NewsPage" style={styles.link}>
         뉴스
       </Link>
-      <Link to="/SatisfactionPage" style={styles.link}>
+      <Link to="/SatisfactionPage/검색어" style={styles.link}>
         매물만족도
       </Link>
       <Link to="/EstatePage" style={styles.link}>

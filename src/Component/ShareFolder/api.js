@@ -4,10 +4,10 @@ const URL = "localhost";
 const PORT = 8080;
 const BASEURL = `http://${URL}:${PORT}`;
 
-const getSearchResult = (query, setResult) => {
+const getSearchResult = (query, service, setResult) => {
   try {
     axios
-      .get(`${BASEURL}/search?query=${query}`)
+      .get(`${BASEURL}/${service}?query=${query}`)
       .then((response) => {
         console.log(`getapi : ${response.data}`);
         // return response.data;
