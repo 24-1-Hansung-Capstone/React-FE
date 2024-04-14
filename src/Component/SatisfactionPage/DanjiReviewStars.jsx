@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react"
 
 const starStyle = {
-    borderRadius: "10%",
+    borderRadius: "50px",
     marginRight: "2%",
     padding: "0.1%",
-    backgroundColor: "white",
+    backgroundColor: "transparent",
     cursor: "pointer"
 }
 
@@ -16,11 +16,11 @@ function DanjiReviewStars({ setSelectedDesc, danjiData }) {
     const aroundScore = useRef();
 
     const setBackgroundColor = (nowSelected) => {
-        totalScore.current.style.backgroundColor = "white";
-        trafficScore.current.style.backgroundColor = "white";
-        careScore.current.style.backgroundColor = "white";
-        residentScore.current.style.backgroundColor = "white";
-        aroundScore.current.style.backgroundColor = "white";
+        totalScore.current.style.backgroundColor = "transparent";
+        trafficScore.current.style.backgroundColor = "transparent";
+        careScore.current.style.backgroundColor = "transparent";
+        residentScore.current.style.backgroundColor = "transparent";
+        aroundScore.current.style.backgroundColor = "transparent";
         nowSelected.style.backgroundColor = "#92baFF";
     }
 
@@ -54,12 +54,13 @@ function DanjiReviewStars({ setSelectedDesc, danjiData }) {
             flexWrap: "wrap",
             justifyContent: "space-around",
             alignContent: "flex-start",
+            marginBottom: "5px",
             fontSize : "15px"
         }}>
             <span ref={totalScore} style={{
-                borderRadius: "10%",
+                borderRadius: "50px",
                 marginRight: "2%",
-                padding: "0.1%",
+                padding: "1%",
                 backgroundColor: "#92baff",
                 cursor: "pointer"
             }} onClick={setTotalDesc}>⭐추천점수: {danjiData.totalScore}</span>
