@@ -5,6 +5,7 @@ const starStyle = {
     marginRight: "2%",
     padding: "0.1%",
     backgroundColor: "transparent",
+    border: "1px solid #92baFF", // borderColor, borderWidth를 이렇게 통합하여 표현
     cursor: "pointer"
 }
 
@@ -21,6 +22,7 @@ function DanjiReviewStars({ setSelectedDesc, danjiData }) {
         careScore.current.style.backgroundColor = "transparent";
         residentScore.current.style.backgroundColor = "transparent";
         aroundScore.current.style.backgroundColor = "transparent";
+
         nowSelected.style.backgroundColor = "#92baFF";
     }
 
@@ -45,8 +47,6 @@ function DanjiReviewStars({ setSelectedDesc, danjiData }) {
         setBackgroundColor(aroundScore.current)
     }
 
-    // setBackgroundColor(totalScore.current)
-
 
     return (
         <div style={{
@@ -55,15 +55,9 @@ function DanjiReviewStars({ setSelectedDesc, danjiData }) {
             justifyContent: "space-around",
             alignContent: "flex-start",
             marginBottom: "5px",
-            fontSize : "15px"
+            fontSize: "15px"
         }}>
-            <span ref={totalScore} style={{
-                borderRadius: "50px",
-                marginRight: "2%",
-                padding: "1%",
-                backgroundColor: "#92baff",
-                cursor: "pointer"
-            }} onClick={setTotalDesc}>⭐추천점수: {danjiData.totalScore}</span>
+            <span ref={totalScore} style={starStyle} onClick={setTotalDesc}>⭐추천점수: {danjiData.totalScore}</span>
             <span ref={trafficScore} style={starStyle} onClick={setTrafficDesc}>🚌교통여건: {danjiData.trafficScore}</span>
             <span ref={careScore} style={starStyle} onClick={setCareDesc}>💂‍♀단지관리: {danjiData.careScore}</span>
             <span ref={residentScore} style={starStyle} onClick={setResidentDesc}>🏢거주환경: {danjiData.residentScore}</span>
