@@ -1,20 +1,21 @@
 import React, {useState} from "react";
 import ChungyakListTitle from "./ChangyakListTitle";
 import ChungyakListSearch from './ChangyakListSearch';
+import ChangyakListItems from "./ChangyakListItems";
+import { getSearchResult } from "../ShareFolder/SpringApi";
 
 function ChungyakList() {
-    const [searchParam, setSearchParam] = useState({
-        "유형":null,
-        "지역":null,
-        "상태":null,
-        "기간":null,
-        "제목":null,
-    });
+    const [searchHouse_NM, setSearchHouse_NM] = useState("");
+    const [searchHssply_ADRES, setSearchHssply_ADRES] = useState("");
+    const [applies, setApplies] = useState([]);
+
+    getSearchResult("getAllApply", setApplies)
 
     return (
         <div>
             <ChungyakListTitle/>
-            <ChungyakListSearch setSearchParam = {setSearchParam}/>
+            <ChungyakListSearch setSearchTitleParam = {setSearchHouse_NM} setSearchAddrParam = {setSearchHssply_ADRES} />
+            <ChangyakListItems applies = {applies} searchHouse_NM = {searchHouse_NM} searchHssply_ADRES = {searchHssply_ADRES}/>
         </div>
     )
 }

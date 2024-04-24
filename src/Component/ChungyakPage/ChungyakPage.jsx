@@ -1,5 +1,5 @@
 // src/Components/ChungyakPage/ChungyakPage.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";
 import PageStyles from "../../Asset/ShareStyles/PageStyles";
@@ -7,8 +7,11 @@ import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 import ChungyakSearchInput from "./ChungyakSearchInput";
 import ChungyakLeftSection from "./ChungyakLeftSection";
 import ChungyakRightSection from "./ChungyakRightSection";
+import axios from "axios";
 
 function ChungyakPage() {
+
+
   return (
     <div>
     <div>
@@ -19,7 +22,7 @@ function ChungyakPage() {
         <ChungyakLeftSection />
     </div>
     <div style={{...PageStyles.CommonRightPage, ...ComponentStyles.CommonRightPage}}>
-        <ChungyakRightSection />
+        <ChungyakRightSection/>
       </div>
     </div>
     </div>

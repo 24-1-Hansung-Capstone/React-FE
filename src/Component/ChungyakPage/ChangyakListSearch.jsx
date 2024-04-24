@@ -1,14 +1,18 @@
 import React from "react";
 
-function ChangyakListSearch({setSearchParam}){
+function ChangyakListSearch({setSearchTitleParam, setSearchAddrParam}){
+    const onChangeSearchTitleParam = (e) => {
+        setSearchTitleParam(e.target.value)
+    }
+
+    const onChangeSearchAddrParam = (e) =>{
+        setSearchAddrParam(e.target.value)
+    }
 
     return (
         <div>
-            유형 <input type = "text"/> <br />
-            지역 <input type = "text"/> <br />
-            상태 <input type = "text"/> <br />
-            기간 <input type="date"/> ~ <input type="date"/> <br />
-            제목 <input type = "text"/>
+            제목 <input type = "text" onChange={onChangeSearchTitleParam}/> <br />
+            주소 <input type = "text" onChange={onChangeSearchAddrParam}/> <br />
         </div>
     )
 }
