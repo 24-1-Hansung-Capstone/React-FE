@@ -11,7 +11,8 @@ function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessa
 
     return (
         <div>
-            <textarea style={{}}
+            <textarea style={{
+        width : "45%",}}
                 placeholder="텍스트를 입력하세요"
                 value={currentMessage}
                 onChange={(e) => setCurrentMessage(e.target.value)}
