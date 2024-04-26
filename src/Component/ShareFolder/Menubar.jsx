@@ -53,9 +53,8 @@ function MenuBar() {
       <Link to="/CommunityPage" style={styles.link}>
         홈즈 사무소
       </Link>
-      <Link to="/LoginPage" style={styles.link}>
-      </Link>
-      <Link style={styles.link}>
+      <Link to="/SignUpPage" style={styles.link}>
+        회원가입
       </Link>
       <Link to="/LoginPage" style={styles.link}>
         로그인
