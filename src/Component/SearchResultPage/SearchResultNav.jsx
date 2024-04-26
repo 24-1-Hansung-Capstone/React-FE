@@ -17,7 +17,7 @@ function SearchResultNav({ searchWord }) {
                     <img src={logo} alt="Logo" style={style.logo} />
                     <SearchInput searchWord={searchWord} searchUrlPath={"search"} />
                 </div>
-                <div style={style.RelatedSearchWords}>
+                <div>
                     <RelatedSearchWords recommendations={recommendations} />
                 </div>
             </div>
