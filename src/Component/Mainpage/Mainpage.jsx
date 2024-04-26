@@ -30,7 +30,7 @@ function Mainpage(props) {
       <MenuBar />
       <div  style={MainPage.mainPageBody}>
         <img src={logo} style={MainPage.logo} alt="Logo" />
-
+        
         <MainSearchInput />
       </div>
     </div>
