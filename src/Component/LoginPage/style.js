@@ -1,19 +1,29 @@
 import styled from "styled-components";
 
 export const LoginContainer = styled.div`
-  height: 100vh; /* 화면 전체 높이 */
+min-height: 100vh; /* 화면 전체 높이 */
+display: flex;
+flex-direction: column; /* 로고와 폼을 세로로 배치 */
+justify-content: center;
+align-items: center;
+background-color: #EBF7FF;
+`;
+
+export const Logo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px; /* 로고와 회원가입 폼 간의 간격 조정 */ 
 `;
 
 export const LoginForm = styled.form`
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  border: 1px solid #ccc;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #EBF7FF;
   border-radius: 5px;
 `;
 
