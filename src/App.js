@@ -7,7 +7,7 @@ import MapPage from './Component/MapPage/MapPage';
 import ChungyakPage from './Component/ChungyakPage/ChungyakPage';
 import SatisfactionPage from './Component/SatisfactionPage/SatisfactionPage';
 import EstatePage from './Component/EstatePage/EstatePage';
-import CommunityPage from './Component/CommunityPage/CommunityPage';
+import CommunityPage from './Component/HomesOffice/OfficeMain';
 import SignUpPage from "./Component/SignUpPage/SignUpPage";
 import LoginPage from "./Component/LoginPage/LoginPage";
 
