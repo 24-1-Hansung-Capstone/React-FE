@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import searchIcon from "../../Asset/searchIcon.svg";
+import style from "./Style/ResultSearchInputStyle";
 
-function SearchInput({ searchWord, searchUrlPath }) {
+function ResultSearchInput({ searchWord, searchUrlPath }) {
     const [searchTerm, setSearchTerm] = useState(searchWord); // 검색어 상태를 관리합니다.
     const navigate = useNavigate();
 
@@ -25,10 +26,10 @@ function SearchInput({ searchWord, searchUrlPath }) {
     };
 
     return (
-        <div style={{}}> {/* 스타일 변경 */}
+        <div style={style.searchBar}> {/* 스타일 변경 */}
             <input 
                 placeholder="Homes! 검색"  
-                style={{}}
+                style={style.searchInput}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyPress={handleKeyPress} // 엔터 키 입력 감지
@@ -36,11 +37,11 @@ function SearchInput({ searchWord, searchUrlPath }) {
             <img 
                 src={searchIcon} 
                 alt="아이콘" 
-                style={{}}
+                style={style.searchButton}
                 onClick={handleSearch} // 검색 아이콘 클릭 시 검색 실행
             />
         </div>
     );
 }
 
-export default SearchInput;
+export default ResultSearchInput;
