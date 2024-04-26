@@ -2,9 +2,10 @@ import React from "react";
 
 const OfficeCategoryType = ({context, onClick}) => {
 
+    // TODO: onclick 처리, 태그 적절히 변경
     return(
         <>
-            <a onClick={onClick}>{context}</a>
+            <div onClick={onClick}>{context}</div>
         </>
     )
 }
