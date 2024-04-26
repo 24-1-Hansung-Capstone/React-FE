@@ -1,9 +1,10 @@
 // src/Components/SearchResultPage/RelatedSearchWord.jsx
 import React from "react";
+import style from "./style/RelatedSearchWordStyle"
 
 function RelatedSearchWord({ recommendation }) {
     return (
-        <div style={{}}>{recommendation}</div>
+        <div style={style.relatedSearchWord}>{recommendation}</div>
     );
 }
 
