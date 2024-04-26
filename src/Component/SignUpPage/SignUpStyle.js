@@ -1,21 +1,20 @@
 import styled from "styled-components";
 
 
-export const LoginLogo = styled.div`
-  height: 10px; 
-  width: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px; /* 로고와 회원가입 폼 간의 간격 조정 */ 
-`;
-
 export const SignUpContainer = styled.div`
-  height: 100vh; /* 화면 전체 높이 */
+  min-height: 100vh; /* 화면 전체 높이 */
   display: flex;
   flex-direction: column; /* 로고와 폼을 세로로 배치 */
   justify-content: center;
   align-items: center;
+  background-color: #EBF7FF;
+`;
+
+export const LoginLogo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px; /* 로고와 회원가입 폼 간의 간격 조정 */ 
 `;
 
 export const SignUpForm = styled.form`
@@ -24,7 +23,8 @@ export const SignUpForm = styled.form`
   flex-direction: column;
   align-items: center;
   padding: 30px;
-  border: 1px solid #ccc;
+  background-color: white;
+  border: 1px solid #EBF7FF;
   border-radius: 5px;
 `;
 
