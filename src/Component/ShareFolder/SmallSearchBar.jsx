@@ -4,7 +4,7 @@ import MainSearchInput from "../Mainpage/MainSearchInput";
 
 function SmallSearchBar({searchWord}) {
     return (
-        <MainSearchInput searchWord ={searchWord} style={{}} />
+        <MainSearchInput searchWord ={searchWord}/>
     );
 }
 
