@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import SmallLogoMid from "../ShareFolder/SmallLogoMid";
-import PageStyles from "../../Asset/ShareStyles/PageStyles";
-import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 import ChungyakSearchInput from "./ChungyakSearchInput";
 import ChungyakLeftSection from "./ChungyakLeftSection";
 import ChungyakRightSection from "./ChungyakRightSection";
@@ -17,11 +15,11 @@ function ChungyakPage() {
     <div>
       <MenuBar/>
     </div>
-    <div style={{...PageStyles.CommonPageDivide, ...ComponentStyles.CommonPageDivide}}>
-      <div style={{...PageStyles.CommonLeftPage, ...ComponentStyles.CommonLeftPage}}>
+    <div style={{}}>
+      <div style={{}}>
         <ChungyakLeftSection />
     </div>
-    <div style={{...PageStyles.CommonRightPage, ...ComponentStyles.CommonRightPage}}>
+    <div style={{}}>
         <ChungyakRightSection/>
       </div>
     </div>
