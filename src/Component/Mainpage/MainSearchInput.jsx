@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import searchIcon from "../../Asset/searchIcon.svg";
-import MainSearchInputStyle from "../../Asset/style/MainSearchInputStyle.jsx"
+import MainSearchInputStyle from "./Style/MainSearchInputStyle.jsx"
 
-function MainSearchInput({searchWord}) {
+function MainSearchInput({searchWord, style}) {
     const [searchTerm, setSearchTerm] = useState(searchWord); // 검색어 상태를 관리합니다.
     const navigate = useNavigate();
 

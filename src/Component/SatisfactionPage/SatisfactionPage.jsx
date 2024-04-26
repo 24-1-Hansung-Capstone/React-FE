@@ -7,7 +7,7 @@ import { getSearchResult } from "../ShareFolder/api";
 import Logo from "../ShareFolder/Logo";
 import SmallSearchBar from "../ShareFolder/SmallSearchBar";
 import SatisfactionBody from "./SatisfactionBody";
-import SearchInput from "../ShareFolder/SearchInput";
+import ResultSearchInput from "../ShareFolder/ResultSearchInput";
 
 function SatisfactionPage() {
     const [result, setResult] = useState([]);
@@ -24,7 +24,7 @@ function SatisfactionPage() {
             <MenuBar />
             <div style={{}}>
                 <Logo />
-                <SearchInput searchWord = {searchTerm} searchUrlPath={"SatisfactionPage"}/>
+                <ResultSearchInput searchWord = {searchTerm} searchUrlPath={"SatisfactionPage"}/>
             </div>
             <hr color="black"/>
             <SatisfactionBody result = {result}/>

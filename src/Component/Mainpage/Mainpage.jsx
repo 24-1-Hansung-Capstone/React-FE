@@ -5,7 +5,8 @@ import MainSearchInput from '../Mainpage/MainSearchInput';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import logo from '../../Asset/Logo.png';
-import MainPage from "../../Asset/style/MainPageStyle.jsx"
+import MainPage from "./Style/MainPageStyle.jsx"
+import MainSearchInputStyle from "./Style/MainSearchInputStyle.jsx"
 
 function Mainpage(props) {
   const [connection, setConnection] = useState("");
@@ -28,10 +29,10 @@ function Mainpage(props) {
   return (
     <div>
       <MenuBar />
-      <div  style={MainPage.mainPageBody}>
+      <div style={MainPage.mainPageBody}>
         <img src={logo} style={MainPage.logo} alt="Logo" />
 
-        <MainSearchInput />
+        <MainSearchInput style = {MainSearchInputStyle}/>
       </div>
     </div>
   );
