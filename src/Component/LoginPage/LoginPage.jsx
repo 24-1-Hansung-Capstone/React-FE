@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import * as _ from "./style";
+import logo from '../../Asset/Logo.png';
 
 const LoginPage = () => {
   const [userEmail, setUserEmail] = useState("");
@@ -17,6 +18,7 @@ const LoginPage = () => {
 
   return (
     <_.LoginContainer>
+      <_.Logo><img src={logo} alt="Logo" height="120"/></_.Logo>
       <_.LoginForm> 
         <h2>로그인</h2>
         <_.LoginInput

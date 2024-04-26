@@ -10,7 +10,7 @@ export const SignUpContainer = styled.div`
   background-color: #EBF7FF;
 `;
 
-export const LoginLogo = styled.div`
+export const Logo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

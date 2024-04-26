@@ -7,7 +7,6 @@ import MapPage from './Component/MapPage/MapPage';
 import ChungyakPage from './Component/ChungyakPage/ChungyakPage';
 import SatisfactionPage from './Component/SatisfactionPage/SatisfactionPage';
 import EstatePage from './Component/EstatePage/EstatePage';
-import CommunityPage from './Component/CommunityPage/CommunityPage';
 import SignUpPage from "./Component/SignUpPage/SignUpPage";
 import LoginPage from "./Component/LoginPage/LoginPage";
 
@@ -22,7 +21,6 @@ function App() {
           <Route path="/ChungyakPage" exact element={<ChungyakPage />} />
           <Route path="/SatisfactionPage/:searchTerm" exact element={<SatisfactionPage />} />
           <Route path="/EstatePage" exact element={<EstatePage />} />
-          <Route path="/CommunityPage" exact element={<CommunityPage />} />
           <Route path="/SignUpPage" exact element={<SignUpPage />} />
           <Route path="/LoginPage" exact element={<LoginPage />} />
         </Routes>
