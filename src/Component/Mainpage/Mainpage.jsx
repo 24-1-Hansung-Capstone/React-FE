@@ -1,13 +1,11 @@
 // src/Components/Mainpage/Mainpage.jsx
 import React from "react";
 import MenuBar from "../ShareFolder/Menubar";
-import SearchInputMid from "../ShareFolder/SearchInputMid";
-import LogoMid from "../ShareFolder/LogoMid";
 import MainSearchInput from '../Mainpage/MainSearchInput';
-import PageStyles from "../../Asset/ShareStyles/PageStyles";
-import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import logo from '../../Asset/Logo.png';
+import MainPage from "../../Asset/style/MainPageStyle.jsx"
 
 function Mainpage(props) {
   const [connection, setConnection] = useState("");
@@ -30,11 +28,11 @@ function Mainpage(props) {
   return (
     <div>
       <MenuBar />
-      <LogoMid />
-      <div style={{...PageStyles.LogoMid, ...ComponentStyles.LogoMid}}>
+      <div  style={MainPage.mainPageBody}>
+        <img src={logo} style={MainPage.logo} alt="Logo" />
+
         <MainSearchInput />
       </div>
-      {/* <p>{connection}</p> */}
     </div>
   );
 }

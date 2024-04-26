@@ -3,8 +3,6 @@ import React from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import Logo from "../ShareFolder/Logo";
 import SmallSearchBar from "../ShareFolder/SmallSearchBar";
-import PageStyles from "../../Asset/ShareStyles/PageStyles";
-import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 import RelatedSearchWords from "./RelatedSearchWords";
 
 function SearchResultNav({searchWord}) {
@@ -13,14 +11,14 @@ function SearchResultNav({searchWord}) {
     return (
         <div>
             <MenuBar />
-            <div style={{...PageStyles.SmallSearchLogo, ...ComponentStyles.SmallSearchLogo}}>
+            <div style={{}}>
                 <Logo />
                 <SmallSearchBar searchWord = {searchWord}/>
             </div>
-            <div style={PageStyles.SearchResultNav}>
+            <div style={{}}>
                 <RelatedSearchWords recommendations = {recommendations}/>
             </div>
-            <hr style={ComponentStyles.SearchResultHr} />
+            <hr style={{}} />
         </div>
     );
 }

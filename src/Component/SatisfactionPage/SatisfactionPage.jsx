@@ -6,8 +6,6 @@ import MenuBar from "../ShareFolder/Menubar";
 import { getSearchResult } from "../ShareFolder/api";
 import Logo from "../ShareFolder/Logo";
 import SmallSearchBar from "../ShareFolder/SmallSearchBar";
-import PageStyles from "../../Asset/ShareStyles/PageStyles";
-import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 import SatisfactionBody from "./SatisfactionBody";
 import SearchInput from "../ShareFolder/SearchInput";
 
@@ -24,7 +22,7 @@ function SatisfactionPage() {
     return (
         <div>
             <MenuBar />
-            <div style={{...PageStyles.SmallSearchLogo, ...ComponentStyles.SmallSearchLogo}}>
+            <div style={{}}>
                 <Logo />
                 <SearchInput searchWord = {searchTerm} searchUrlPath={"SatisfactionPage"}/>
             </div>

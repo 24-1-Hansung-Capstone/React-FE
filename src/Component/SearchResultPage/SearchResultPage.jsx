@@ -6,8 +6,6 @@ import SearchResultNav from "./SearchResultNav";
 import SearchResultLeftBox from "./SearchResultLeftBox";
 import SearchResultRightBox from "./SearchResultRightBox";
 import { getSearchResult } from "../ShareFolder/api";
-import PageStyles from "../../Asset/ShareStyles/PageStyles";
-import ComponentStyles from "../../Asset/ShareStyles/ComponentStyles";
 
 function SearchResultPage() {
     const [searchResults, setSearchResults] = useState([]);
@@ -21,9 +19,9 @@ function SearchResultPage() {
 
     return (
         <div>
-            <section style={{...PageStyles.SearchResultPage, ...ComponentStyles.SearchResultPage}}>
+            <section style={{}}>
                 <SearchResultNav searchWord = {searchTerm }/>
-                <div style={PageStyles.SearchResultPageDivide}>
+                <div style={{}}>
                     <SearchResultLeftBox searchResults = {searchResults}/>
                     <SearchResultRightBox searchTerm={searchTerm} />
                 </div>
