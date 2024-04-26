@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import OfficeCategorySelect from "./OfficeCategorySelect";
-import OfficePostList from "./OfficePostList";
+import OfficeCategorySelectBox from "./OfficeCategorySelectBox";
+import OfficeList from "./OfficeList";
 
-const OfficeLeftContainer = ({ onSelectPost }) => {
+const OfficeLeftContainer = ({ data, setSelectPostId }) => {
     const officeCategory = {
         ALL : "모두",
         JEONSE: "전세",
@@ -16,15 +16,17 @@ const OfficeLeftContainer = ({ onSelectPost }) => {
     const [selectCategory, setSelectCategory] = useState(officeCategory.ALL)
 
     return (
-        <>
-            <h3>왼쪽</h3>
-            <OfficeCategorySelect 
+        <div>
+            <OfficeCategorySelectBox 
                 officeCategory={officeCategory}
                 setSelectCategory={setSelectCategory}/>
-            <OfficePostList 
+            <hr/>
+            <OfficeList 
+                data={data}
+                officeCategory={officeCategory}
                 selectCategory={selectCategory}
-                onSelectPost={onSelectPost}/>
-        </>
+                setSelectPostId={setSelectPostId}/>
+        </div>
     )
 }
 
