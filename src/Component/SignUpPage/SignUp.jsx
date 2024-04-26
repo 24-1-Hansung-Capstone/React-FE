@@ -35,7 +35,7 @@ const SignUp = () => {
 
   return (
     <_.SignUpContainer>
-      <_.LoginLogo><img src={logo} alt="Logo" /></_.LoginLogo>
+      <_.LoginLogo><img src={logo} alt="Logo" height="120"/></_.LoginLogo>
       <_.SignUpForm>
       <h2>회원가입</h2>
         <_.SignUpInput
