@@ -41,14 +41,8 @@ function MenuBar() {
       <Link to="/ChungyakPage" style={styles.link}>
         청약
       </Link>
-      <Link to="/NewsPage" style={styles.link}>
-        뉴스
-      </Link>
       <Link to="/SatisfactionPage/검색어입력" style={styles.link}>
         매물만족도
-      </Link>
-      <Link to="/EstatePage" style={styles.link}>
-        부동산 추이
       </Link>
       <Link to="/CommunityPage" style={styles.link}>
         홈즈 사무소

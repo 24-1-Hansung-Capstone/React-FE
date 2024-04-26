@@ -6,8 +6,8 @@ function SatisfactionBody({result}) {
     return (
         <div style={{
             flexDirection:"row",
+            display:"flex",
             flexWrap:"wrap",
-            justifyContent:"center",
             alignItems:"stretch"
         }}>
             <SatisfactionLeftBody result = {result}/>

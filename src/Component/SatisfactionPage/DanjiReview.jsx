@@ -9,7 +9,6 @@ function DanjiReview({ danjiData }) {
         <div style = {{
             marginBottom : "20px",
             flexDirection: "column",
-            backgroundColor:"#d9d9d9"
         }}>
             <DanjiReviewStars setSelectedDesc = {setSelectedDesc}
                 danjiData = {danjiData}

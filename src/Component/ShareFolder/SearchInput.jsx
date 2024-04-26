@@ -30,7 +30,7 @@ function SearchInput({ searchWord, searchUrlPath }) {
         <div style={{...PageStyles.CommonSearchBarContainer, ...ComponentStyles.CommonSearchBarContainer}}> {/* 스타일 변경 */}
             <input 
                 placeholder="Homes! 검색"  
-                style={{...PageStyles.CommonSearchBarStyle, ...ComponentStyles.CommonSearchBarStyle}}
+                style={{...PageStyles.CommonSearchBarStyle, ...ComponentStyles.CommonSearchBarStyle, }}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyPress={handleKeyPress} // 엔터 키 입력 감지
