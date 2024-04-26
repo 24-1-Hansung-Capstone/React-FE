@@ -1,11 +1,11 @@
 // src/Components/SearchResultPage/SearchResultPage.jsx
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Axios from "axios";
 import SearchResultNav from "./SearchResultNav";
 import SearchResultLeftBox from "./SearchResultLeftBox";
 import SearchResultRightBox from "./SearchResultRightBox";
 import { getSearchResult } from "../ShareFolder/api";
+import style from "./style/SearchResultPageStyle"
 
 function SearchResultPage() {
     const [searchResults, setSearchResults] = useState([]);
@@ -21,7 +21,7 @@ function SearchResultPage() {
         <div>
             <section style={{}}>
                 <SearchResultNav searchWord = {searchTerm }/>
-                <div style={{}}>
+                <div style={style.body}>
                     <SearchResultLeftBox searchResults = {searchResults}/>
                     <SearchResultRightBox searchTerm={searchTerm} />
                 </div>
