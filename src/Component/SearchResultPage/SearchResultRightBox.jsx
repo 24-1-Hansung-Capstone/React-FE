@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import SearchResultRightBoxChattingLog from "./SearchResultRightBoxChattingLog";
 import SearchResultRightBoxInput from "./SearchResultRightBoxInput";
+import style from "./style/SearchResultRightBoxStyle";
 
 function SearchResultRightBox({ searchTerm }) {
     const AI_Text = "아 집가고 싶다.";
@@ -11,7 +12,7 @@ function SearchResultRightBox({ searchTerm }) {
 
     return (
         <div>
-            <div style={{}}>
+            <div style={style.rightBox}>
                 <section>
                     <div style={{}}>
                         <p>{searchTerm}</p>
