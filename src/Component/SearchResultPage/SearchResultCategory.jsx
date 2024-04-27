@@ -11,7 +11,7 @@ import SearchResultCategoryHeader from "./SearchResultCategoryHeader";
 import style from "./style/SearchResultCategoryStyle"
 
 export default function SearchResultCategory({ searchResults, context }) {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 20;
     const setPage = 5;
