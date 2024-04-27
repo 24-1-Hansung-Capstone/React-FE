@@ -3,6 +3,7 @@ const style = {
         width : "100%",
         border: "none",
         resize:"none",
+        minHeight: "70px",
         backgroundColor:"#d9d9d9",
         borderRadius:"5px",
         fontFamily:"sans-serif"
