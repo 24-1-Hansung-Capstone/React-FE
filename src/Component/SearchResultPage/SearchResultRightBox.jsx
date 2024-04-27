@@ -11,17 +11,15 @@ function SearchResultRightBox({ searchTerm }) {
     const [currentMessage, setCurrentMessage] = useState("");
 
     return (
-        <div>
-            <div style={style.rightBox}>
-                <section>
-                    <div style={{}}>
-                        <p>{searchTerm}</p>
-                    </div>
-                    <SearchResultRightBoxChattingLog userMessages={userMessages} AI_Text={AI_Text} />
-                    <SearchResultRightBoxInput
-                        currentMessage={currentMessage} setCurrentMessage={setCurrentMessage} userMessages={userMessages} setUserMessages={setUserMessages} />
-                </section>
-            </div>
+        <div style={style.rightBox}>
+            <section>
+                <div style={style.searchTerm}>
+                    <p>{searchTerm}</p>
+                </div>
+                <SearchResultRightBoxChattingLog userMessages={userMessages} AI_Text={AI_Text} />
+                <SearchResultRightBoxInput
+                    currentMessage={currentMessage} setCurrentMessage={setCurrentMessage} userMessages={userMessages} setUserMessages={setUserMessages} />
+            </section>
         </div>
     );
 }

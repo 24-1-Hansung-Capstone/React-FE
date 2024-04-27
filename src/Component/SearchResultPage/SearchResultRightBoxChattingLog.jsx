@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import OnlyLogo from '../../Asset/OnlyLogo.png';
 import { BiSolidFace  } from "react-icons/bi";
+import style from "./style/SearchResultRightBoxChattingLogStyle"
 
 function SearchResultRightBoxChattingLog({AI_Text, userMessages}) {
     const messagesEndRef = useRef(null);
@@ -13,24 +14,29 @@ function SearchResultRightBoxChattingLog({AI_Text, userMessages}) {
 
 
     return (
-        <div style={{}}>
+        <div style={style.chattingLogs} >
+            
             <div>
-                <img src={OnlyLogo} alt="Logo" style={{ width: "50px", height: "50px" }} />
-                <p style={{ fontSize: "20px" }}>{AI_Text}</p>
+                <p style={style.summary}>{AI_Text}</p>
+                {/* <img src={OnlyLogo} alt="Logo" style={style.logo} /> */}
             </div>
+
             {userMessages.map((message, index) => (
-                <div key={index}>
-                    <div style={{}}>
+                <div key={index} style = {{}}>
+                    <div style={style.userQuestion}>
                         <BiSolidFace />
-                        {message}
+                        <p>{message}</p>
                     </div>
-                    <div style={{}}>
-                        <img src={OnlyLogo} alt="Logo" style={{ width: "50px", height: "50px" }} />
+
+                    <div style={style.botResponse}>
+                        <img src={OnlyLogo} alt="Logo" style={style.logo} />
                         <p>No Response</p>
                     </div>
                 </div>
             ))}
+
             <div ref={messagesEndRef} />
+
         </div>
     )
 }

@@ -1,7 +1,7 @@
 const styles = {
     searchBar: {
         width: '80%',
-        maxWidth:"800px",
+        maxWidth:"700px",
         maxHeight:"40px",
         borderRadius: '40px',
         display: 'inline-flex',
