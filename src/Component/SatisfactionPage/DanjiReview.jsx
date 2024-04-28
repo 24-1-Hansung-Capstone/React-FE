@@ -1,15 +1,13 @@
 import React, {useEffect, useState} from "react"
 import DanjiReviewStars from "./DanjiReviewStars"
 import DanjiDetailReview from "./DanjiDetailReview"
+import style from "./style/DanjiReviewStyle"
 
 function DanjiReview({ danjiData }) {
     const [selectedDesc, setSelectedDesc] = useState(danjiData.totalDesc)
         
     return (
-        <div style = {{
-            marginBottom : "20px",
-            flexDirection: "column",
-        }}>
+        <div style = {style.item}>
             <DanjiReviewStars setSelectedDesc = {setSelectedDesc}
                 danjiData = {danjiData}
             />
