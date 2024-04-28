@@ -2,12 +2,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import MenuBar from "../ShareFolder/Menubar";
 import { getSearchResult } from "../ShareFolder/api";
-import Logo from "../ShareFolder/Logo";
-import SmallSearchBar from "../ShareFolder/SmallSearchBar";
 import SatisfactionBody from "./SatisfactionBody";
-import ResultSearchInput from "../ShareFolder/ResultSearchInput";
+import SearchResultNav from "../ShareFolder/SearchResultNav";
 
 function SatisfactionPage() {
     const [result, setResult] = useState([]);
@@ -21,12 +18,7 @@ function SatisfactionPage() {
 
     return (
         <div>
-            <MenuBar />
-            <div style={{}}>
-                <Logo />
-                <ResultSearchInput searchWord = {searchTerm} searchUrlPath={"SatisfactionPage"}/>
-            </div>
-            <hr color="black"/>
+            <SearchResultNav searchWord = {searchTerm} searchUrlPath={"SatisfactionPage"}/>
             <SatisfactionBody result = {result}/>
         </div>
     );
