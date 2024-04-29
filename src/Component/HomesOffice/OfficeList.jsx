@@ -1,13 +1,14 @@
 import React from "react";
 
 import OfficeListItem from "./OfficeListItem";
+import { officeCategory, postData} from "./OfficeData"; 
 
-const OfficeList = ({data, officeCategory, selectCategory, setSelectPostId}) => {
+const OfficeList = ({selectCategory, setSelectPostId}) => {
 
     return (
         <>
             {
-                data
+                postData
                     .filter(({type}) => selectCategory === officeCategory.ALL || type === selectCategory )
                     .map(post => <OfficeListItem post={post} setSelectPostId={setSelectPostId}/>)
             }
