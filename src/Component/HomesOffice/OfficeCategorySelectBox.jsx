@@ -1,8 +1,9 @@
 import React from "react";
 
 import OfficeCategoryType from "./OfficeCategoryType";
+import { officeCategory } from "./OfficeData";
 
-const OfficeCategorySelectBox = ({officeCategory, setSelectCategory, selectedCategory}) => {
+const OfficeCategorySelectBox = ({setSelectCategory, selectedCategory}) => {
 
     return(
         <div>

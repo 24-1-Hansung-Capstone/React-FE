@@ -1,8 +1,9 @@
 import React, {} from "react";
+import { postData } from "./OfficeData";
 
-const OfficeRightContainer = ({ data, selectPostId }) => {
+const OfficeRightContainer = ({selectPostId }) => {
 
-    const selectPost = data.find(({id}) => id === selectPostId)
+    const selectPost = postData.find(({id}) => id === selectPostId)
 
     return (
         <div className="officePost">

@@ -1,18 +1,3 @@
-/* .OfficeMainContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 100vh;
-  flex: 1;
-}
-
-.OfficeLeftContainer,
-.OfficeRightContainer {
-  display: block;
-  flex-basis: 50%;
-  width: 50%;
-} */
-
 .OfficeMainContainer {
   flex: 1;
   display: flex;
