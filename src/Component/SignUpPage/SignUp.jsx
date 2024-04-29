@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import * as _ from "./SignUpStyle";
 import logo from '../../Asset/Logo.png';
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [userEmail, setUserEmail] = useState("");
@@ -27,15 +28,17 @@ const SignUp = () => {
       .post("http://localhost:3000/SignUpPage", data)
       .then((res) => {
         console.log(res);
+        alert("회원가입이 완료되었습니다!");
       })
       .catch((err) => {
         console.log(`${err} :: 회원가입 실패`);
+        alert("회원가입에 실패했습니다. 다시 시도해주세요.");
       });
   };
 
   return (
     <_.SignUpContainer>
-      <_.Logo><img src={logo} alt="Logo" height="120"/></_.Logo>
+      <Link to="/" ><_.Logo><img src={logo} alt="Logo" height="120"/></_.Logo></Link>
       <_.SignUpForm>
       <h2>회원가입</h2>
         <_.SignUpInput
