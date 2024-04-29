@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DanjiItemHeader from "./DanjiItemHeader";
 import DanjiReview from "./DanjiReview";
+import style from "./style/DanjiItemStyle"
 
 function DanjiItem({danjiName, danjiDatas}) {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,9 +10,8 @@ function DanjiItem({danjiName, danjiDatas}) {
     }
 
     return (
-        <div style={{marginBottom :"40px"}}>
+        <div style={style.DanjiItem}>
             <DanjiItemHeader isOpen={isOpen} danjiName={danjiName} handleToggle={handleToggle}/>
-            {console.log(danjiDatas)}
             {isOpen && (
                 <div>
                     {

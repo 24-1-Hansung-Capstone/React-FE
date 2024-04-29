@@ -1,15 +1,11 @@
 import React from "react";
 import SatisfactionLeftBody from "./SatisfactionLeftBody";
 import SatisfactionRightBody from "./SatisfactionRightBody";
+import style from "./style/SatisfactionBodyStyle"
 
 function SatisfactionBody({result}) {
     return (
-        <div style={{
-            flexDirection:"row",
-            display:"flex",
-            flexWrap:"wrap",
-            alignItems:"stretch"
-        }}>
+        <div style={style.Body}>
             <SatisfactionLeftBody result = {result}/>
             <SatisfactionRightBody/>
         </div>
