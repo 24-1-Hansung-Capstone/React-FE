@@ -6,6 +6,7 @@ import SmallSearchBar from "../ShareFolder/SmallSearchBar";
 import OfficeLeftContainer from "./OfficeLeftContainer";
 import OfficeRightContainer from "./OfficeRightContainer";
 import './style/OfficeMain.css'
+
 const OfficeMain = () => {
 
     // TODO: 추후, 해당 부분을 useEffect로 처리해야한다.
@@ -54,11 +55,9 @@ const OfficeMain = () => {
                 <SmallSearchBar />
                 <div className="OfficeMainContainer" >
                     <OfficeLeftContainer
-                        className="OfficeLeftContainer"
                         data={data}
                         setSelectPostId={setSelectPostId} />
-                    <OfficeRightContainer 
-                        className="OfficeRightContainer"
+                    <OfficeRightContainer
                         data={data}
                         selectPostId={selectPostId} />
                 </div>

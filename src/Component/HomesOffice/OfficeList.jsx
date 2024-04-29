@@ -4,8 +4,6 @@ import OfficeListItem from "./OfficeListItem";
 
 const OfficeList = ({data, officeCategory, selectCategory, setSelectPostId}) => {
 
-    const list = data.filter(({type}) => selectCategory === officeCategory.ALL || type === selectCategory )
-
     return (
         <>
             {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import OfficeCategorySelectBox from "./OfficeCategorySelectBox";
 import OfficeList from "./OfficeList";
+import "./style/OfficeLeftContainer.css";
 
 const OfficeLeftContainer = ({ data, setSelectPostId }) => {
     const officeCategory = {
@@ -16,7 +17,7 @@ const OfficeLeftContainer = ({ data, setSelectPostId }) => {
     const [selectCategory, setSelectCategory] = useState(officeCategory.ALL)
 
     return (
-        <div>
+        <div className="officeLeftList">
             <OfficeCategorySelectBox 
                 officeCategory={officeCategory}
                 setSelectCategory={setSelectCategory}/>
