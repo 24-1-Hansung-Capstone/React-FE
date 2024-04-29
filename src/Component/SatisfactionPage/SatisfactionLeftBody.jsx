@@ -1,24 +1,25 @@
 import React from "react";
 import DanjiItem from "./DanjiItem"
+import style from "./style/SatisfactionLeftBodyStyle"
 
 
-function SatisfactionLeftBody({result}) {
+function SatisfactionLeftBody({ result }) {
 
     const danjiNameMap = {};
     result.forEach(item => {
-      if (!danjiNameMap[item.danji_name]) {
-        danjiNameMap[item.danji_name] = [];
-      }
-      danjiNameMap[item.danji_name].push(item);
+        if (!danjiNameMap[item.danji_name]) {
+            danjiNameMap[item.danji_name] = [];
+        }
+        danjiNameMap[item.danji_name].push(item);
     });
 
 
     return (
-        <div style = {{width: "45%"}}>
+        <div style={style.leftBox}>
             {Object.entries(danjiNameMap).map(([danjiName, danjiDatas], index) => {
                 return (
-                    <DanjiItem danjiName={danjiName} danjiDatas = {danjiDatas}/>
-                )  
+                    <DanjiItem danjiName={danjiName} danjiDatas={danjiDatas} />
+                )
             })}
         </div>
     )

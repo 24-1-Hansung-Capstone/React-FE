@@ -1,13 +1,5 @@
 import React, { useRef, useState } from "react"
-
-const starStyle = {
-    borderRadius: "50px",
-    marginRight: "2%",
-    padding: "0.1%",
-    backgroundColor: "transparent",
-    border: "1px solid #92baFF", // borderColor, borderWidth를 이렇게 통합하여 표현
-    cursor: "pointer"
-}
+import style from "./style/DanjiReviewStarsStyle"
 
 function DanjiReviewStars({ setSelectedDesc, danjiData }) {
     const totalScore = useRef();
@@ -49,19 +41,12 @@ function DanjiReviewStars({ setSelectedDesc, danjiData }) {
 
 
     return (
-        <div style={{
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "space-around",
-            alignContent: "flex-start",
-            marginBottom: "5px",
-            fontSize: "15px"
-        }}>
-            <span ref={totalScore} style={starStyle} onClick={setTotalDesc}>⭐추천점수: {danjiData.totalScore}</span>
-            <span ref={trafficScore} style={starStyle} onClick={setTrafficDesc}>🚌교통여건: {danjiData.trafficScore}</span>
-            <span ref={careScore} style={starStyle} onClick={setCareDesc}>💂‍♀단지관리: {danjiData.careScore}</span>
-            <span ref={residentScore} style={starStyle} onClick={setResidentDesc}>🏢거주환경: {danjiData.residentScore}</span>
-            <span ref={aroundScore} style={starStyle} onClick={setAroundDesc}>🚑️주변환경: {danjiData.aroundScore}</span>
+        <div style={style.stars}>
+            <span ref={totalScore} style={style.item} onClick={setTotalDesc}>⭐추천점수: {danjiData.totalScore}</span>
+            <span ref={trafficScore} style={style.item} onClick={setTrafficDesc}>🚌교통여건: {danjiData.trafficScore}</span>
+            <span ref={careScore} style={style.item} onClick={setCareDesc}>💂‍♀단지관리: {danjiData.careScore}</span>
+            <span ref={residentScore} style={style.item} onClick={setResidentDesc}>🏢거주환경: {danjiData.residentScore}</span>
+            <span ref={aroundScore} style={style.item} onClick={setAroundDesc}>🚑️주변환경: {danjiData.aroundScore}</span>
         </div>
     )
 }
