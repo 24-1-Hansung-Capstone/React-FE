@@ -12,9 +12,6 @@ import {
 import './style/OfficeMain.css'
 
 const OfficeMain = () => {
-
-    // 
-    
     const [selectPostId, setSelectPostId] = useState(null)
     const [selectCategory, setSelectCategory] = useState(officeCategory.ALL)
 
@@ -24,12 +21,11 @@ const OfficeMain = () => {
             <div>
                 <Logo />
                 <SmallSearchBar />
+                <OfficeCategorySelectBox setSelectCategory={setSelectCategory} selectCategory={selectCategory} />
+                <hr/>
                 <div className="OfficeMainContainer" >
-                    <OfficeCategorySelectBox 
-                        setSelectCategory={setSelectCategory}
-                        selectCategory={selectCategory}/>
-                    <hr/>
-                    <OfficeLeftContainer setSelectPostId={setSelectPostId} />
+                    <OfficeLeftContainer setSelectPostId={setSelectPostId} selectCategory={selectCategory}/>
+                    
                     <OfficeRightContainer selectPostId={selectPostId} />
                 </div>
             </div>
