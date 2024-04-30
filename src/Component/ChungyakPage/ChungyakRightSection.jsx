@@ -1,13 +1,11 @@
 // src/Components/ChungyakPage/ChungyakRightSection.jsx
 import React, {useState} from "react";
 import ChungyakList from "./ChangyakList";
+import style from "./style/ChangyakRightSectionStyle";
 
 const ChungyakRightSection = () => {
-
-
-
   return (
-    <div style={{}}>
+    <div style={style.chungyakRightSection}>
       <ChungyakList/>
     </div>
   );

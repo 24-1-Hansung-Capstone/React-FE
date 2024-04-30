@@ -12,7 +12,6 @@ const ChungyakLeftSection = () => {
         <img src={Logo} style={style.logo} />
         <ChungyakSearchInput />
       </div>
-
       <ChungyakScore />
     </div>
   );
