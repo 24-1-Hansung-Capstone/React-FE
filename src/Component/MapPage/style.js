@@ -1,3 +1,4 @@
+//srr\Component\MapPage\style.js
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -7,7 +8,7 @@ export const Wrapper = styled.div`
 export const MapContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 900px;
+  height: 95vh;
   margin: 0 0;
   margin-top: 5px;
 `;
@@ -47,11 +48,11 @@ export const ResultList = styled.div`
   max-width: 468px;
   width: calc(30% - 10px);
   overflow-y: auto;
-  border-radius: 10px; /* Added border radius */
+  border-radius: 10px;
 
   div {
     margin-top: 5px;
-    padding: 5px; /* Added padding for inner divs */
+    padding: 5px;
     background-color: #f5f5f5; /* Added background color for inner divs */
     border-radius: 5px; /* Added border radius for inner divs */
   }
@@ -108,4 +109,18 @@ export const SearchButton = styled.button`
     width: 100%;
     height: auto;
   }
+`;
+
+export const CurrentPosButton = styled.button`
+  position: absolute;
+  bottom: 20px; /* 조정 가능한 버튼 위치 */
+  right: 20px; /* 조정 가능한 버튼 위치 */
+  background-color: #92baff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 7px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
 `;
