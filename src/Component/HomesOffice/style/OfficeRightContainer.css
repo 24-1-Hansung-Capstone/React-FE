@@ -1,4 +1,37 @@
 .officePost {
   margin-right: 1%;
   flex-basis: 49%;
+  font-size: 22px;
+}
+
+.officeName,
+.officeAddress,
+.officeType,
+.officeImg,
+.officeDesc {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  margin-bottom: 5%; 
+  margin-right: 2%;
+}
+
+.officeName > div,
+.officeAddress > div,
+.officeType > div,
+.officeImg > div,
+.officeDesc > div {
+  margin-top: 8px; /* 간격 조절 */
+  padding: 10px 10px;
+}
+
+.officeTypeButton {
+  padding: 2px 30px;
+  background-color: #92baff;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
 }
