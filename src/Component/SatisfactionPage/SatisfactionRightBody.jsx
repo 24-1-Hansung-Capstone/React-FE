@@ -14,6 +14,7 @@ const SatisfactionRightBody = ({DanjiName, InputText, setInputText}) => {
       const container = document.getElementById('myMap');
       const options = {
         center: new kakao.maps.LatLng(37.566826, 126.9786567),
+        draggable: false,
         level: 3,
       };
       const map = new kakao.maps.Map(container, options);
@@ -78,36 +79,20 @@ const SatisfactionRightBody = ({DanjiName, InputText, setInputText}) => {
           infowindow.open(map, marker);
         });
       }
+
+      function setDraggable(draggable) {
+        // 마우스 드래그로 지도 이동 가능여부를 설정합니다
+        map.setDraggable(draggable);    
+    }
+    function setZoomable(zoomable) {
+      // 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
+      map.setZoomable(zoomable);    
+  }
     });
   }, [InputText, DanjiName]);
 
   const onChange = (e) => {
     setInputText(e.target.value);
-  };
-
-  const getCurrentPosBtn = () => { // getCurrentPosBtn 함수 정의
-    navigator.geolocation.getCurrentPosition(
-      getPosSuccess,
-      () => alert("위치 정보를 가져오는데 실패했습니다."),
-      {
-        enableHighAccuracy: true,
-        maximumAge: 30000,
-        timeout: 27000,
-      }
-    );
-  }
-  
-  const getPosSuccess = (pos) => {
-    const container = document.getElementById('myMap');
-    const options = {
-      center: new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
-      level: 3,
-    };
-    const map = new kakao.maps.Map(container, options);
-    const marker = new kakao.maps.Marker({
-      map: map,
-      position: new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
-    });
   };
 
   const onSearchClick = () => {
@@ -145,7 +130,6 @@ const SatisfactionRightBody = ({DanjiName, InputText, setInputText}) => {
             ))}
             <Pagination id="pagination"></Pagination>
           </ResultList>
-          <CurrentPosButton onClick={getCurrentPosBtn}>현재 위치</CurrentPosButton> {/* 수정된 버튼 */}
         </div>
         <MapContainer id="myMap"></MapContainer>
       </div>
