@@ -1,5 +1,6 @@
 import { type } from "@testing-library/user-event/dist/type";
 import React, { useEffect, useState } from "react";
+import style from "./style/ChangyakScoreCalcStyle"
 
 function ChungyakScoreCalc() {
     const [noHouseTimePoint, setHouseTimePoint] = useState(0);
@@ -9,7 +10,7 @@ function ChungyakScoreCalc() {
 
     function setNoHouseTime(years) {
         let score = 0;
-        if (years < 0)  score = 0;
+        if (years < 0) score = 0;
         else if (years < 1) score = 2;
         else if (years < 2) score = 4;
         else if (years < 3) score = 6;
@@ -36,7 +37,7 @@ function ChungyakScoreCalc() {
 
     function setSavingTime(years) {
         let calculatedScore = 0;
-        if(years < 0) calculatedScore = 0;
+        if (years < 0) calculatedScore = 0;
         else if (years < 0.5) {
             calculatedScore = 1;
         } else if (years < 1) {
@@ -76,17 +77,23 @@ function ChungyakScoreCalc() {
         setSavingTimePoint(calculatedScore);
     }
 
-    useEffect( () => {
+    useEffect(() => {
         setTotalScore(noHouseTimePoint + familyNumPoint + savingTimePoint)
     }, [noHouseTimePoint, familyNumPoint, savingTimePoint])
 
     return (
-        <div>
-            <div> 내 무주택 기간은 <input type="number" onChange={(e) => { setNoHouseTime(parseInt(e.target.value)) }} /> 년</div>
-            <div> 내 부양가족 수는 <input type="number" onChange={(e) => { setFamilyNum(parseInt(e.target.value)) }} /> 명</div>
-            <div> 내 입주자 저축 기간은 <input type="number" onChange={(e) => { setSavingTime(parseInt(e.target.value)) }}  step="0.5"/> 년</div>
-            <div>
-                {totalScore}점
+        <div style={style.ChungyakScoreCalc}>
+            <div style={style.div1}>
+                내 무주택 기간은 <input style={style.input} type="number" onChange={(e) => { setNoHouseTime(parseInt(e.target.value)) }} /> 년
+            </div>
+            <div style={style.div2}>
+                내 부양가족 수는 <input style={style.input} type="number" onChange={(e) => { setFamilyNum(parseInt(e.target.value)) }} /> 명
+            </div>
+            <div style={style.div3}>
+                내 입주자 저축 기간은 <input style={style.input} type="number" onChange={(e) => { setSavingTime(parseInt(e.target.value)) }} step="0.5" /> 년
+            </div>
+            <div style = {style.result}>
+                <span style = {style.score}>{totalScore}</span>점
             </div>
         </div>
     )

@@ -15,7 +15,7 @@ function ChungyakList() {
   }, []); // 빈 배열을 두어 한 번만 실행되도록 설정
 
     return (
-        <div>
+        <div style = {{}}>
             <ChungyakListTitle/>
             <ChungyakListSearch setSearchTitleParam = {setSearchHouse_NM} setSearchAddrParam = {setSearchHssply_ADRES} />
             <ChangyakListItems applies = {applies} searchHouse_NM = {searchHouse_NM} searchHssply_ADRES = {searchHssply_ADRES}/>
