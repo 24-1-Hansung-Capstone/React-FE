@@ -11,6 +11,7 @@ const style = {
         //justifyContent: "space-around",
         justifyContent: "center",
         alignItems: "flex-start",
+
     }
 
 
