@@ -5,9 +5,7 @@ const OfficeListItem = ({post:{id, type, name, addr}, setSelectPostId}) => {
         <>
             <div>
                 <div>type : {type} <br/></div>
-                <div onClick={() => {
-                    console.log(id)
-                    setSelectPostId(id)}}>name : {name} <br/></div>
+                <div onClick={() => setSelectPostId(id)}>name : {name} <br/></div>
                 <div>addr : {addr} <br/></div>
             </div>
             <br/>

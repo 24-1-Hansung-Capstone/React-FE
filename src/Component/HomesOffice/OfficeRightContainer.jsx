@@ -17,9 +17,7 @@ const OfficeRightContainer = ({selectPostId }) => {
                         <div> 내용 : {selectPost.desc} </div><br/>
                     </>
                 ) : (
-                    <>
-                    <div> 오른쪽 </div> 
-                    </>
+                    <></>
                 )
             }
         </div>
