@@ -1,5 +1,5 @@
 //srr\Component\MapPage\MapPage.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import MenuBar from "../ShareFolder/Menubar";
 import { MapContainer, InputForm, ResultList, Pagination, SearchButton, Wrapper, CurrentPosButton } from "./style"; // CurrentPosButton import 추가
 import searchIcon from "../../Asset/searchIcon.svg"; // 이미지 불러오기
@@ -9,81 +9,129 @@ const { kakao } = window;
 const MapPage = () => {
   const [InputText, setInputText] = useState('');
   const [Places, setPlaces] = useState([]);
-  
+  const [renderedMap, setRenderedMap] = useState(null);
+  let markersArr = []
+  let infoWindow
+
+
+  const myMap = useRef(null);
+  const myPagination = useRef(null);
+
+
   useEffect(() => {
     kakao.maps.load(() => {
-      const container = document.getElementById('myMap');
+      const container = myMap.current
       const options = {
         center: new kakao.maps.LatLng(37.566826, 126.9786567),
         level: 3,
       };
-      const map = new kakao.maps.Map(container, options);
-      const ps = new kakao.maps.services.Places();
-      var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-      let marker; // marker 정의
+      if (renderedMap === null) {
+        const maap = new kakao.maps.Map(container, options)
+        setRenderedMap(maap);
+      }
+      else {
+        return;
+      }
+    })
+  }, [])
 
-      ps.keywordSearch(InputText, placesSearchCB, { size: 5 });
+  useEffect(() => {
+    if (renderedMap === null) {
+      return;
+    }
+    const ps = new kakao.maps.services.Places();
+    infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
+    infoWindow.setMap(null)
+    infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
+    ps.keywordSearch(InputText, placesSearchCB, { size: 5 });
 
-      function placesSearchCB(data, status, pagination) {
-        if (status === kakao.maps.services.Status.OK) {
-          let bounds = new kakao.maps.LatLngBounds();
-
-          for (let i = 0; i < data.length; i++) {
-            displayMarker(data[i]);
-            bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-          }
-
-          map.setBounds(bounds);
-          displayPagination(pagination);
-          setPlaces(data);
+    function placesSearchCB(data, status, pagination) {
+      for(let i = 0; i < markersArr.length; i++){
+        markersArr[i].setMap(null)
+        console.log()
+      }
+      infoWindow.setMap(null)
+      markersArr.length = 0;
+      
+      if (status === kakao.maps.services.Status.OK) {
+        let bounds = new kakao.maps.LatLngBounds();
+        for(let i = 0; i < markersArr.length; i++){
+          markersArr[i].setMap(null)
+          console.log()
         }
+        infoWindow.setMap(null)
+        markersArr.length = 0;
+        for (let i = 0; i < data.length; i++) {
+          addMarker(data[i], markersArr);
+          bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+        }
+        for(let i = 0; i < markersArr.length; i++){
+          markersArr[i].setMap(renderedMap)
+        }
+
+        renderedMap.setBounds(bounds);
+        displayPagination(pagination);
+        setPlaces(data);
+      }
+      else{
+        for(let i = 0; i < markersArr.length; i++){
+          markersArr[i].setMap(null)
+          console.log()
+        }
+        infoWindow.setMap(null)
+        markersArr.length = 0;
+      }
+    }
+
+    function displayPagination(pagination) {
+      var paginationEl = myPagination.current,
+        fragment = document.createDocumentFragment(),
+        i;
+
+      while (paginationEl.hasChildNodes()) {
+        paginationEl.removeChild(paginationEl.lastChild);
       }
 
-      function displayPagination(pagination) {
-        var paginationEl = document.getElementById('pagination'),
-          fragment = document.createDocumentFragment(),
-          i;
+      for (i = 1; i <= pagination.last; i++) {
+        var el = document.createElement('a');
+        el.href = '#';
+        el.innerHTML = i;
 
-        while (paginationEl.hasChildNodes()) {
-          paginationEl.removeChild(paginationEl.lastChild);
+        if (i === pagination.current) {
+          el.className = 'on';
+        } else {
+          el.onclick = (function (i) {
+            return function () {
+              
+              pagination.gotoPage(i);
+            };
+          })(i);
         }
 
-        for (i = 1; i <= pagination.last; i++) {
-          var el = document.createElement('a');
-          el.href = '#';
-          el.innerHTML = i;
-
-          if (i === pagination.current) {
-            el.className = 'on';
-          } else {
-            el.onclick = (function (i) {
-              return function () {
-                pagination.gotoPage(i);
-              };
-            })(i);
-          }
-
-          fragment.appendChild(el);
-        }
-        paginationEl.appendChild(fragment);
+        fragment.appendChild(el);
       }
+      paginationEl.appendChild(fragment);
+    }
 
-      function displayMarker(place) {
-        marker = new kakao.maps.Marker({ // marker 변수 선언
-          map: map,
-          position: new kakao.maps.LatLng(place.y, place.x),
-        });
+    function addMarker(place, markersArr) {
+      let marker = new kakao.maps.Marker({ // marker 변수 선언
+        map: null,
+        position: new kakao.maps.LatLng(place.y, place.x),
+      });
 
-        kakao.maps.event.addListener(marker, 'click', function () {
-          infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-          infowindow.open(map, marker);
-        });
-      }
-    });
+      kakao.maps.event.addListener(marker, 'click', () => {
+        infoWindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+        infoWindow.open(renderedMap, marker);
+
+      });
+      markersArr.push(marker);
+    }
   }, [InputText]);
 
-  const onChange = (e) => {
-    setInputText(e.target.value);
+  const onHandleOnKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      setInputText(event.target.value);
+    }
   };
 
   const getCurrentPosBtn = () => { // getCurrentPosBtn 함수 정의
@@ -97,33 +145,25 @@ const MapPage = () => {
       }
     );
   }
-  
+
   const getPosSuccess = (pos) => {
-    const container = document.getElementById('myMap');
-    const options = {
-      center: new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
-      level: 3,
-    };
-    const map = new kakao.maps.Map(container, options);
     const marker = new kakao.maps.Marker({
-      map: map,
+      map: renderedMap,
       position: new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
     });
+    marker.setMap(renderedMap);
   };
 
-  const onSearchClick = () => {
-    // 검색 버튼 클릭 시 실행할 함수
-    // 여기에 기존의 검색 기능 구현
-  };
+
 
   return (
     <Wrapper>
-      <MenuBar/>
+      <MenuBar />
       <div style={{ display: 'flex', position: 'relative' }}>
         <div style={{ flex: 1 }}>
           <InputForm onSubmit={(e) => e.preventDefault()}>
-            <input placeholder="검색어를 입력하세요" onChange={onChange} value={InputText} />
-            <SearchButton type="button" onClick={onSearchClick}>
+            <input placeholder="검색어를 입력하세요" onKeyDown={onHandleOnKeyDown}/>
+            <SearchButton type="button" onClick={onHandleOnKeyDown}>
               <img src={searchIcon} alt="Search" /> {/* 이미지 아이콘 추가 */}
             </SearchButton>
           </InputForm>
@@ -145,11 +185,11 @@ const MapPage = () => {
                 </div>
               </div>
             ))}
-            <Pagination id="pagination"></Pagination>
+            <Pagination ref={myPagination}></Pagination>
           </ResultList>
-          <CurrentPosButton onClick={getCurrentPosBtn}>현재 위치</CurrentPosButton> {/* 수정된 버튼 */}
+          {/* <CurrentPosButton onClick={getCurrentPosBtn}>현재 위치</CurrentPosButton> */}
         </div>
-        <MapContainer id="myMap"></MapContainer>
+        <MapContainer ref={myMap}></MapContainer>
       </div>
     </Wrapper>
   );

@@ -3,14 +3,14 @@ import DanjiItemHeader from "./DanjiItemHeader";
 import DanjiReview from "./DanjiReview";
 import style from "./style/DanjiItemStyle"
 
-function DanjiItem({danjiName, danjiDatas}) {
-    const [isOpen, setIsOpen] = useState(false);
+function DanjiItem({danjiName, danjiDatas, setInputText}) {
+    const [isOpen, setIsOpen] = useState(true);
     const handleToggle = () =>{
         setIsOpen(!isOpen)
     }
 
     return (
-        <div style={style.DanjiItem}>
+        <div style={style.DanjiItem} onClick={() => {setInputText(danjiName)}}>
             <DanjiItemHeader isOpen={isOpen} danjiName={danjiName} handleToggle={handleToggle}/>
             {isOpen && (
                 <div>

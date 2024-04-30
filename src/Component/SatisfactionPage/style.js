@@ -47,7 +47,7 @@ export const ResultList = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 2;
   font-size: 13px;
-  max-height: calc(82% - 10px);
+  max-height: calc(72% - 10px);
   max-width: 468px;
   width: calc(30% - 10px);
   overflow-y: auto;
@@ -76,7 +76,7 @@ export const ResultList = styled.div`
 export const Pagination = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
 
   a {
     margin: 0 5px;

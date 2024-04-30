@@ -3,7 +3,7 @@ import DanjiItem from "./DanjiItem"
 import style from "./style/SatisfactionLeftBodyStyle"
 
 
-function SatisfactionLeftBody({ result }) {
+function SatisfactionLeftBody({ result, setInputText }) {
 
     const danjiNameMap = {};
     result.forEach(item => {
@@ -18,7 +18,7 @@ function SatisfactionLeftBody({ result }) {
         <div style={style.leftBox}>
             {Object.entries(danjiNameMap).map(([danjiName, danjiDatas], index) => {
                 return (
-                    <DanjiItem danjiName={danjiName} danjiDatas={danjiDatas} />
+                    <DanjiItem danjiName={danjiName} danjiDatas={danjiDatas} setInputText={setInputText}/>
                 )
             })}
         </div>
