@@ -1,0 +1,9 @@
+.link {
+    color: #191D21;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .link.active {
+    color: #6392ff;
+  }

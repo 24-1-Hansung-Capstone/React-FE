@@ -26,12 +26,12 @@
 }
 
 .officeTypeButton {
-  padding: 2px 30px;
+  padding: 1px 20px;
   background-color: #92baff;
     color: #000000;
     border: none;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 5px;
 }
