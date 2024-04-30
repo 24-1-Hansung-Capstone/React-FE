@@ -1,7 +1,7 @@
-// src/Component/MapPage/MapPage.jsx
+//srr\Component\MapPage\MapPage.jsx
 import React, { useEffect, useState } from 'react';
 import MenuBar from "../ShareFolder/Menubar";
-import { MapContainer, InputForm, ResultList, Pagination, SearchButton, Wrapper } from "./style";
+import { MapContainer, InputForm, ResultList, Pagination, SearchButton, Wrapper, CurrentPosButton } from "./style"; // CurrentPosButton import 추가
 import searchIcon from "../../Asset/searchIcon.svg"; // 이미지 불러오기
 
 const { kakao } = window;
@@ -18,11 +18,11 @@ const MapPage = () => {
         level: 3,
       };
       const map = new kakao.maps.Map(container, options);
-
       const ps = new kakao.maps.services.Places();
       var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+      let marker; // marker 정의
 
-      ps.keywordSearch(InputText, placesSearchCB);
+      ps.keywordSearch(InputText, placesSearchCB, { size: 5 });
 
       function placesSearchCB(data, status, pagination) {
         if (status === kakao.maps.services.Status.OK) {
@@ -69,7 +69,7 @@ const MapPage = () => {
       }
 
       function displayMarker(place) {
-        let marker = new kakao.maps.Marker({
+        marker = new kakao.maps.Marker({ // marker 변수 선언
           map: map,
           position: new kakao.maps.LatLng(place.y, place.x),
         });
@@ -86,6 +86,31 @@ const MapPage = () => {
     setInputText(e.target.value);
   };
 
+  const getCurrentPosBtn = () => { // getCurrentPosBtn 함수 정의
+    navigator.geolocation.getCurrentPosition(
+      getPosSuccess,
+      () => alert("위치 정보를 가져오는데 실패했습니다."),
+      {
+        enableHighAccuracy: true,
+        maximumAge: 30000,
+        timeout: 27000,
+      }
+    );
+  }
+  
+  const getPosSuccess = (pos) => {
+    const container = document.getElementById('myMap');
+    const options = {
+      center: new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+      level: 3,
+    };
+    const map = new kakao.maps.Map(container, options);
+    const marker = new kakao.maps.Marker({
+      map: map,
+      position: new kakao.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+    });
+  };
+
   const onSearchClick = () => {
     // 검색 버튼 클릭 시 실행할 함수
     // 여기에 기존의 검색 기능 구현
@@ -94,7 +119,7 @@ const MapPage = () => {
   return (
     <Wrapper>
       <MenuBar/>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', position: 'relative' }}>
         <div style={{ flex: 1 }}>
           <InputForm onSubmit={(e) => e.preventDefault()}>
             <input placeholder="검색어를 입력하세요" onChange={onChange} value={InputText} />
@@ -122,6 +147,7 @@ const MapPage = () => {
             ))}
             <Pagination id="pagination"></Pagination>
           </ResultList>
+          <CurrentPosButton onClick={getCurrentPosBtn}>현재 위치</CurrentPosButton> {/* 수정된 버튼 */}
         </div>
         <MapContainer id="myMap"></MapContainer>
       </div>
