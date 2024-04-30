@@ -1,0 +1,24 @@
+.officeListItemContainer {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.officeListButton {
+    background-color: #92baff;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px; /* 버튼과 세부 정보 사이의 간격 조정 */
+}
+
+.officeListItemDetails {
+    display: flex;
+    flex-direction: column; /* 세로로 배치 */
+}
+
+.officeListItemDetails > div {
+    margin-bottom: 5px; /* 각 세부 정보 요소 사이의 간격 조정 */
+}
