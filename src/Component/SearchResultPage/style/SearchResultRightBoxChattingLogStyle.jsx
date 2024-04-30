@@ -4,7 +4,7 @@ const style = {
         height: "20px"
     },
     summary: {
-        fontSize: "20px",
+        fontSize: "25px",
         justifyContent: "flex-start",
         textAlign: "left",
     },

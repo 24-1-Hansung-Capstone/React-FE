@@ -1,9 +1,18 @@
 import React from "react";
 import { postData } from "./OfficeData";
 import "./style/OfficeRightContainer.css";
+import clickmeimage from "../../Asset/plsClickDetail.png";
 
 const OfficeRightContainer = ({ selectPostId }) => {
   const selectPost = postData.find(({ id }) => id === selectPostId);
+
+  const getButtonStyle = (type) => {
+    if (type === selectPost.type) {
+      return { backgroundColor: "#92baff" };
+    } else {
+      return { backgroundColor: "#E0E0E0" };
+    }
+  };
 
   return (
     <div className="officePost">
@@ -19,7 +28,10 @@ const OfficeRightContainer = ({ selectPostId }) => {
           </div>
           <div className="officeType">
             <div>거래유형</div>
-            <button className="officeTypeButton">{selectPost.type}</button>
+            <button className="officeTypeButton" style={getButtonStyle("전세")}>전세</button>
+            <button className="officeTypeButton" style={getButtonStyle("월세")}>월세</button>
+            <button className="officeTypeButton" style={getButtonStyle("매매")}>매매</button>
+            <button className="officeTypeButton" style={getButtonStyle("협의")}>협의</button>
           </div>
           <div className="officeImg">
             <div>사진</div>
@@ -31,7 +43,9 @@ const OfficeRightContainer = ({ selectPostId }) => {
           </div>
         </>
       ) : (
-        <></>
+        <div className="officePlaceholder">
+          <img src={clickmeimage} alt="Please Click for Detail" style={{ width: "100%" }} />
+        </div>
       )}
     </div>
   );
