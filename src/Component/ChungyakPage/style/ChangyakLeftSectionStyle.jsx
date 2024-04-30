@@ -3,6 +3,8 @@ const style = {
         display:"flex",
         flexDirection: "column",
         alignItems: "center",
+        width: "45%",
+        minWidth: "400px",
         top: "1px",
         position: "sticky",
     },
