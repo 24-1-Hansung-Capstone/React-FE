@@ -1,13 +1,10 @@
 import React from "react";
+import style from "./style/ChangyakListTitleStyle"
 
 function ChungyakListTitle() {
     return (
-        <div style = {{
-          fontSize:"20px",
-          fontWeight:"bold",
-        }}>
+        <div style = {style.title}>
           청약 공고 🏠
-          <hr />
         </div>
     )
 }
