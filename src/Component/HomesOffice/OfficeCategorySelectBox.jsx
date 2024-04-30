@@ -4,7 +4,6 @@ import { officeCategory } from "./OfficeData";
 import "./style/OfficeCategorySelectBox.css"
 
 const OfficeCategorySelectBox = ({setSelectCategory, selectCategory}) => {
-    console.log(selectCategory)
     return(
         <div className="CategorySelectBox">
             <Stack spacing={1} direction="row">

@@ -1,7 +1,7 @@
 import React, {} from "react";
 import { postData } from "./OfficeData";
 
-const OfficeRightContainer = ({selectPostId}) => {
+const OfficeRightContainer = ({selectPostId }) => {
 
     const selectPost = postData.find(({id}) => id === selectPostId)
 
