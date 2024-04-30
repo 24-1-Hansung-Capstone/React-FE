@@ -3,7 +3,8 @@ import React, { useState } from "react";
 function DanjiDetailReview({desc}) {
     return (
         <div style = {{
-            backgroundColor:"#d9d9d9"
+            marginTop:"3%",
+            fontSize:"20px",
         }}>
             {desc}
         </div>

@@ -1,7 +1,7 @@
 const style = {
-    padding: "20px",
+    padding: "10px",
     backgroundcolor : "#f9f9f9",
-
+    
 
 }
 

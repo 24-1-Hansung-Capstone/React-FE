@@ -2,16 +2,18 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  position: relative;
+  position: sticky;
   width: 50%;
+  top : 0;
 `;
 
 export const MapContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 75vh;
   margin: 0 0;
   margin-top: 5px;
+  border-radius: 20px;
 `;
 
 export const InputForm = styled.form`
