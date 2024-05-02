@@ -10,6 +10,7 @@ import EstatePage from './Component/EstatePage/EstatePage';
 import SignUpPage from "./Component/SignUpPage/SignUpPage";
 import LoginPage from "./Component/LoginPage/LoginPage";
 import OfficeMain from "./Component/HomesOffice/OfficeMain"
+import {createUserWithEmailAndPassword} from 'firebase/auth';
 
 function App() {
   return (
