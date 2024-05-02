@@ -1,12 +1,24 @@
 // src/Component/SearchResultPage/SearchResultRightBoxInput.jsx
-import React from "react";
+import React, { useState } from "react";
 import style from "./style/SearchResultRightBoxInputStyle"
+import { getChatAnswer } from "../ShareFolder/api";
 
 function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessages, setUserMessages}) {
+
+    const [isInputable, setIsInputable] = useState(true);
     
     const handleMessageSend = () => {
         if (currentMessage.trim() === "") return;
+        
+        console.log(`clicked! msg:${currentMessage}`)
+        
+        setIsInputable(false)
         setUserMessages([...userMessages, currentMessage]);
+        console.log(userMessages)
+        // getChatAnswer(currentMessage, "chat", res => setUserMessages([...userMessages, res]));
+        // console.log(userMessages)
+        // setIsInputable(true)
+
         setCurrentMessage("");
     };
 
@@ -24,7 +36,7 @@ function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessa
                     }
                 }}
             />
-            <button style={style.sendButton} onClick={handleMessageSend}>메시지 전송</button>
+            <button style={style.sendButton} onClick={handleMessageSend} disabled={!isInputable}>메시지 전송</button>
         </div>
     )
 }

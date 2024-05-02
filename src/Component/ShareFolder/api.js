@@ -19,4 +19,36 @@ const getSearchResult = (query, service, setResult) => {
   }
 };
 
-export { getSearchResult };
+const getSummary = (query, service, setResult) => {
+  // try {
+  //   axios
+  //     .post(`${BASEURL}/${service}?query=${query}`)
+  //     .then((response) => {
+  //       console.log(`getapi : ${response.data}`);
+  //       // return response.data;
+  //       setResult(response.data);
+  //     })
+  //     .catch((e) => console.log(e));
+  // } catch (e) {
+  //   console.log(e);
+  // }
+  return "요약"
+}
+
+const getChatAnswer = (query, service, setResult) => {
+  // try {
+  //   axios
+  //     .post(`${BASEURL}/${service}?query=${query}`)
+  //     .then((response) => {
+  //       console.log(`getapi : ${response.data}`);
+  //       // return response.data;
+  //       setResult(response.data);
+  //     })
+  //     .catch((e) => console.log(e));
+  // } catch (e) {
+  //   console.log(e);
+  // }
+  setResult(`query:${query}`)
+}
+
+export { getSearchResult, getSummary, getChatAnswer};
