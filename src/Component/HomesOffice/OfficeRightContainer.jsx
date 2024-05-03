@@ -33,10 +33,6 @@ const OfficeRightContainer = ({ selectPostId }) => {
             <button className="officeTypeButton" style={getButtonStyle("매매")}>매매</button>
             <button className="officeTypeButton" style={getButtonStyle("협의")}>협의</button>
           </div>
-          <div className="officeImg">
-            <div>사진</div>
-            <div>{selectPost.img}</div>
-          </div>
           <div className="officeDesc">
             <div>내용</div>
             <div>{selectPost.desc}</div>

@@ -1,7 +1,9 @@
 .officePost {
-  margin-right: 1%;
-  flex-basis: 49%;
   font-size: 22px;
+  position: sticky;
+  height: 100%;
+  top : 0;
+  bottom: 70px;
 }
 
 .officeName,
@@ -26,12 +28,13 @@
 }
 
 .officeTypeButton {
+  font-family: "KCC-Hanbit";
   padding: 1px 20px;
   background-color: #92baff;
     color: #000000;
     border: none;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     margin-right: 5px;
 }
