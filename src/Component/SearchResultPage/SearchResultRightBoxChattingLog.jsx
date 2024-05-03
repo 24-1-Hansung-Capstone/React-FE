@@ -13,6 +13,12 @@ const SearchResultRightBoxChattingLog = ({AI_Text, userMessages}) => {
         // getChatAnswer(currentMessage, "chat", res => setUserMessages([...userMessages, res]));
         // console.log(userMessages)
         // setIsInputable(true)
+        console.log(`${userMessages}`);
+
+        // getChatAnswer(currentMessage, "chat", res => setUserMessages([...userMessages, res]));
+        // console.log(userMessages);
+        // setIsInputable(true);
+
     }, [userMessages]);
 
 
@@ -32,15 +38,17 @@ const SearchResultRightBoxChattingLog = ({AI_Text, userMessages}) => {
 
             {userMessages.map((message, index) => (
                 <div key={index} style = {{}}>
-                    <div style={style.userQuestion}>
-                        <BiSolidFace />
-                        <p>{message}</p>
-                    </div>
-
-                    <div style={style.botResponse}>
-                        <img src={OnlyLogo} alt="Logo" style={style.logo} />
-                        <p>No Response</p>
-                    </div>
+                    { index % 2 === 0 ? (
+                        <div style={style.userQuestion}>
+                            <BiSolidFace />
+                            <p>{message}</p>
+                        </div>
+                    ) : (
+                        <div style={style.botResponse}>
+                            <img src={OnlyLogo} alt="Logo" style={style.logo} />
+                            <p>{message}</p>
+                        </div>
+                    )}
                 </div>
             ))}
 

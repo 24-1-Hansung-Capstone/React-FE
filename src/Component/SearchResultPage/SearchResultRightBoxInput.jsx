@@ -3,23 +3,23 @@ import React, { useState } from "react";
 import style from "./style/SearchResultRightBoxInputStyle"
 import { getChatAnswer } from "../ShareFolder/api";
 
-function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessages, setUserMessages}) {
+function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessages, setUserMessages, isInputable, setIsInputable}) {
 
-    const [isInputable, setIsInputable] = useState(true);
     
     const handleMessageSend = () => {
         if (currentMessage.trim() === "") return;
         
         console.log(`clicked! msg:${currentMessage}`)
         
-        setIsInputable(false)
-        setUserMessages([...userMessages, currentMessage]);
-        console.log(userMessages)
-        // getChatAnswer(currentMessage, "chat", res => setUserMessages([...userMessages, res]));
-        // console.log(userMessages)
-        // setIsInputable(true)
-
+        setIsInputable(false);
+        setUserMessages(prev => [...prev, currentMessage]);
         setCurrentMessage("");
+
+        getChatAnswer(currentMessage, "chat", res => {
+            setUserMessages(prev => [...prev, res])
+            console.log(userMessages);
+            setIsInputable(true);
+        });
     };
 
 
