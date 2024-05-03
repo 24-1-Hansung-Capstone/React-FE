@@ -24,7 +24,6 @@ function SearchResultRightBox({ searchTerm }) {
                 <SearchResultRightBoxInput
                     currentMessage={currentMessage}
                     setCurrentMessage={setCurrentMessage}
-                    userMessages={userMessages}
                     setUserMessages={setUserMessages}
                     isInputable={isInputable}
                     setIsInputable={setIsInputable} />

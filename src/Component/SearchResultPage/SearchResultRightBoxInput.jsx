@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import style from "./style/SearchResultRightBoxInputStyle"
 import { getChatAnswer } from "../ShareFolder/api";
 
-function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessages, setUserMessages, isInputable, setIsInputable}) {
+const SearchResultRightBoxInput = ({currentMessage, setCurrentMessage, setUserMessages, isInputable, setIsInputable}) => {
 
     
     const handleMessageSend = () => {
