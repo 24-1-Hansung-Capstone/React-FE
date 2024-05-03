@@ -9,7 +9,7 @@ const OfficeCategorySelectBox = ({setSelectCategory, selectCategory}) => {
             <Stack spacing={1} direction="row">
             {
                 Object
-                    .values(officeCategory)
+                    .values(["전체", "전세", "월세", "매매", "협의"])
                     // .map( type => <OfficeCategoryType context={type} onClick={() => setSelectCategory(type)} selectedCategory={selectedCategory}/> )
                     .map((type, index) => (
                         <Button variant={ selectCategory !== type ? "outlined" : "contained"} onClick={() => setSelectCategory(type)}>

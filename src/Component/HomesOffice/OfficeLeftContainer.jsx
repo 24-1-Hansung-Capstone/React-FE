@@ -36,7 +36,7 @@ const OfficeLeftContainer = ({ setSelectPostId, selectCategory }) => {
 
     // Clear form data for next entry
     setFormData({
-      type: "",
+      type: '',
       name: "",
       addr: "",
       content: "",

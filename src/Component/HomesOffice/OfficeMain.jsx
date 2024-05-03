@@ -16,7 +16,7 @@ import './style/OfficeMain.css'
 
 const OfficeMain = ({ searchWord, searchUrlPath}) => {
     const [selectPostId, setSelectPostId] = useState(null)
-    const [selectCategory, setSelectCategory] = useState(officeCategory.ALL)
+    const [selectCategory, setSelectCategory] = useState("전체")
     const { searchTerm } = useParams();
 
     return (

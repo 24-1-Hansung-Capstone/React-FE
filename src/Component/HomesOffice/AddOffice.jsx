@@ -10,7 +10,7 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
 
   // State variables to hold input data
   const [formData, setFormData] = useState({
-    type: "",
+    type: 1,
     name: "",
     addr: "",
     content: "",
@@ -19,6 +19,7 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
   // Function to handle input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    console.log(name, value)
     setFormData({ ...formData, [name]: value });
   };
 
@@ -55,10 +56,10 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
       <h2>새로운 데이터 입력</h2>
       <div className="popup">
         <select className="type" name="type" onChange={handleInputChange} value={formData.type}>
-          <option value={officeCategory.JEONSE}>전세</option>
-          <option value={officeCategory.MONTH}>월세</option>
-          <option value={officeCategory.SALE}>매매</option>
-          <option value={officeCategory.CONFER}>협의</option>
+          <option value={1}>전세</option>
+          <option value={2}>월세</option>
+          <option value={3}>매매</option>
+          <option value={4}>협의</option>
         </select>
         <input type="text" name="name" placeholder="매물 이름" value={formData.name} onChange={handleInputChange} />
         <textarea
