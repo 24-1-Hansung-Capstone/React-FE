@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import OfficeList from "./OfficeList";
 import "./style/AddOffice.css";
+import axios from "axios";
 import { officeCategory } from "./OfficeData";
 
 const AddOffice = ({ setSelectPostId, selectCategory }) => {
@@ -12,8 +13,7 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
     type: "",
     name: "",
     addr: "",
-    desc: "",
-    img: ""
+    content: "",
   });
 
   // Function to handle input change
@@ -22,31 +22,19 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleOpenNewTab = (url) => {
-    window.open(url, "_blank", "noopener, noreferrer");
-  };
-
   function closePopup() {
     window.close();
   };
 
-  // Function to handle form submission
   const handleSubmit = () => {
-    // Add the new data to postData array
-    const newData = {
-      id: postData.length + 1,
-      ...formData
-    };
-    setPostData([...postData, newData]);
-
-    // Clear form data for next entry
-    setFormData({
-      type: "",
-      name: "",
-      addr: "",
-      desc: "",
-      img: ""
-    });
+    console.log(formData)
+    axios.post("http://localhost:8080/CommunityPage/register", formData) // Assuming your endpoint to fetch all posts is '/api/posts'
+      .then(response => {
+        setPostData(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching posts:", error);
+      });
   };
 
   // useEffect to save data to localStorage whenever postData changes
@@ -63,38 +51,33 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
   }, []);
 
   return (
-        <div>
-          <h2>새로운 데이터 입력</h2>
-          <div className="popup">
-          <select className="type" onChange={handleInputChange} value={formData.type}>
-            <option value="1" >전세</option>
-            <option value="2">월세</option>
-            <option value="3">매매</option>
-            <option value="4">협의</option>
-          </select>
-            <textarea
-              name="name"
-              placeholder="매물 이름"
-              value={formData.name}
-              onChange={handleInputChange}
-            ></textarea>
-            <textarea
-              name="addr"
-              placeholder="매물 주소"
-              value={formData.addr}
-              onChange={handleInputChange}
-            ></textarea>
-            <textarea
-              name="desc"
-              placeholder="매물 설명"
-              value={formData.desc}
-              onChange={handleInputChange}
-            ></textarea>
-          </div>
-          <button className="popupButton" onClick={handleSubmit}>업로드</button>
-          <button className="popupButton" onClick={closePopup}>닫기</button>
-        </div>
-      )}
-
+    <div>
+      <h2>새로운 데이터 입력</h2>
+      <div className="popup">
+        <select className="type" name="type" onChange={handleInputChange} value={formData.type}>
+          <option value={officeCategory.JEONSE}>전세</option>
+          <option value={officeCategory.MONTH}>월세</option>
+          <option value={officeCategory.SALE}>매매</option>
+          <option value={officeCategory.CONFER}>협의</option>
+        </select>
+        <input type="text" name="name" placeholder="매물 이름" value={formData.name} onChange={handleInputChange} />
+        <textarea
+          name="addr"
+          placeholder="매물 주소"
+          value={formData.addr}
+          onChange={handleInputChange}
+        ></textarea>
+        <textarea
+          name="content"
+          placeholder="매물 설명"
+          value={formData.content}
+          onChange={handleInputChange}
+        ></textarea>
+      </div>
+      <button className="popupButton" onClick={handleSubmit}>업로드</button>
+      <button className="popupButton" onClick={closePopup}>닫기</button>
+    </div>
+  );
+};
 
 export default AddOffice;
