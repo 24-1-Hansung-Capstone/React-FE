@@ -1,19 +1,27 @@
-import React from "react";
-
+// OfficeList.js
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import OfficeListItem from "./OfficeListItem";
-import { officeCategory, postData} from "./OfficeData"; 
+import { getSearchResult } from "../ShareFolder/SpringApi";
 
-const OfficeList = ({selectCategory, setSelectPostId}) => {
+const OfficeList = ({ selectCategory, setSelectPostId }) => {
+    const [realtyData, setRealtyData] = useState([]);
+
+    useEffect(() => {
+        getSearchResult("CommunityPage/", setRealtyData)
+    }, []); // Fetch data on component mount
 
     return (
-        <>
+        <div>
             {
-                postData
-                    .filter(({type}) => selectCategory === officeCategory.ALL || type === selectCategory )
-                    .map(post => <OfficeListItem post={post} setSelectPostId={setSelectPostId}/>)
-            }
-        </>
-    )
-}
+        console.log(realtyData)       }
+            {realtyData
+                .filter(({ type }) => {return selectCategory === "전체" || type === selectCategory})
+                .map(post => (
+                    <OfficeListItem key={post.id} post={post} setSelectPostId={setSelectPostId} />
+                ))}
+        </div>
+    );
+};
 
-export default OfficeList
+export default OfficeList;

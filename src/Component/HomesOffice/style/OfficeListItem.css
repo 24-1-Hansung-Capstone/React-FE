@@ -4,6 +4,7 @@
 }
 
 .officeListButton {
+    font-family: "KCC-Hanbit";
     background-color: #92baff;
     color: #000000;
     border: none;
@@ -24,6 +25,7 @@
 }
 
 .officeDetailButton {
+    font-family: "KCC-Hanbit";
     background-color: #E0E0E0;
     color: #000000;
     border: none;
