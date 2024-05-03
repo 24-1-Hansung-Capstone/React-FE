@@ -1,13 +1,25 @@
 // src/Component/SearchResultPage/SearchResultRightBoxInput.jsx
-import React from "react";
+import React, { useState } from "react";
 import style from "./style/SearchResultRightBoxInputStyle"
+import { getChatAnswer } from "../ShareFolder/api";
 
-function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessages, setUserMessages}) {
+const SearchResultRightBoxInput = ({currentMessage, setCurrentMessage, setUserMessages, isInputable, setIsInputable}) => {
+
     
     const handleMessageSend = () => {
         if (currentMessage.trim() === "") return;
-        setUserMessages([...userMessages, currentMessage]);
+        
+        console.log(`clicked! msg:${currentMessage}`)
+        
+        setIsInputable(false);
+        setUserMessages(prev => [...prev, currentMessage]);
         setCurrentMessage("");
+
+        getChatAnswer(currentMessage, "nlpModel/chat", res => {
+            setUserMessages(prev => [...prev, res])
+            setIsInputable(true);
+            setCurrentMessage("");
+        });
     };
 
 
@@ -18,13 +30,13 @@ function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessa
                 value={currentMessage}
                 onChange={(e) => setCurrentMessage(e.target.value)}
                 onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
+                    if (isInputable && e.key === 'Enter') {
                         e.preventDefault(); // 엔터키 입력을 막음
                         handleMessageSend(); // Enter 키를 눌렀을 때 handleMessageSend 함수 호출
                     }
                 }}
             />
-            <button style={style.sendButton} onClick={handleMessageSend}>메시지 전송</button>
+            <button style={style.sendButton} onClick={handleMessageSend} disabled={!isInputable}>메시지 전송</button>
         </div>
     )
 }
