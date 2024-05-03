@@ -12,8 +12,7 @@ const OfficeLeftContainer = ({ setSelectPostId, selectCategory }) => {
     type: "",
     name: "",
     addr: "",
-    desc: "",
-    img: ""
+    content: "",
   });
 
   // Function to handle input change
@@ -40,8 +39,7 @@ const OfficeLeftContainer = ({ setSelectPostId, selectCategory }) => {
       type: "",
       name: "",
       addr: "",
-      desc: "",
-      img: ""
+      content: "",
     });
   };
 

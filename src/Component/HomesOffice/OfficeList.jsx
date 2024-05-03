@@ -1,19 +1,30 @@
-import React from "react";
-
+// OfficeList.js
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import OfficeListItem from "./OfficeListItem";
-import { officeCategory, postData} from "./OfficeData"; 
 
-const OfficeList = ({selectCategory, setSelectPostId}) => {
+const OfficeList = ({ selectCategory, setSelectPostId }) => {
+  const [realtyData, setRealtyData] = useState([]);
 
-    return (
-        <>
-            {
-                postData
-                    .filter(({type}) => selectCategory === officeCategory.ALL || type === selectCategory )
-                    .map(post => <OfficeListItem post={post} setSelectPostId={setSelectPostId}/>)
-            }
-        </>
-    )
-}
+  useEffect(() => {
+    axios.get("http://localhost:8080/CommunityPage") // Assuming your endpoint to fetch all posts is '/api/posts'
+      .then(response => {
+        setRealtyData(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching posts:", error);
+      });
+  }, []); // Fetch data on component mount
 
-export default OfficeList
+  return (
+    <>
+      {realtyData
+        .filter(({ type }) => selectCategory === 'ALL' || type === selectCategory)
+        .map(post => (
+          <OfficeListItem key={post.id} post={post} setSelectPostId={setSelectPostId} />
+        ))}
+    </>
+  );
+};
+
+export default OfficeList;
