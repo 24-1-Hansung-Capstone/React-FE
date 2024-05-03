@@ -16,14 +16,13 @@ function SearchResultPage() {
         getSearchResult(searchTerm, "search", setSearchResults)
     }, [searchTerm]);
 
-
     return (
         <div>
             <section style={{}}>
                 <SearchResultNav searchWord = {searchTerm } searchUrlPath={"search"}/>
                 <div style={style.body}>
-                    <SearchResultLeftBox searchResults = {searchResults}/>
-                    <SearchResultRightBox searchTerm={searchTerm} />
+                    <SearchResultLeftBox searchResults={searchResults}/>
+                    <SearchResultRightBox searchTerm={searchTerm} searchResults={searchResults}/>
                 </div>
             </section>
         </div>
