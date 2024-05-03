@@ -27,13 +27,13 @@ const SearchResultRightBoxChattingLog = ({AI_Text, userMessages}) => {
         <div style={style.chattingLogs} >
             
             <div>
-                <p style={style.summary}>{AI_Text}</p>
+                {/* <p style={style.summary}>{AI_Text}</p> */}
                 {/* <img src={OnlyLogo} alt="Logo" style={style.logo} /> */}
-            </div>
-
-            <div style={style.botResponse}>
-                <img src={OnlyLogo} alt="Logo" style={style.logo} />
-                <p>요약 결과입니다.</p>
+                <ul>
+                {
+                    AI_Text.map((item, idx) => <li key={idx}>{item}</li>)
+                }
+                </ul>
             </div>
 
             {userMessages.map((message, index) => (
