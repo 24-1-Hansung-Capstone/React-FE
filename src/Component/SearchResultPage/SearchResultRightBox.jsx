@@ -9,6 +9,7 @@ function SearchResultRightBox({ searchTerm }) {
 
     const [userMessages, setUserMessages] = useState([]); // 대화내역
     const [currentMessage, setCurrentMessage] = useState(""); // user 입력
+    const [isInputable, setIsInputable] = useState(true);
 
     return (
         <div style={style.rightBox}>
@@ -18,14 +19,15 @@ function SearchResultRightBox({ searchTerm }) {
                 </div>
                 <SearchResultRightBoxChattingLog 
                     userMessages={userMessages}
-                    AI_Text={AI_Text}
-                    currentMessage={currentMessage}/>
+                    AI_Text={AI_Text} />
                     
                 <SearchResultRightBoxInput
                     currentMessage={currentMessage}
                     setCurrentMessage={setCurrentMessage}
                     userMessages={userMessages}
-                    setUserMessages={()=>setUserMessages}/>
+                    setUserMessages={setUserMessages}
+                    isInputable={isInputable}
+                    setIsInputable={setIsInputable} />
             </section>
         </div>
     );

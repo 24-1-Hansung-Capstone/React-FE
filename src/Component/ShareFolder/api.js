@@ -48,7 +48,9 @@ const getChatAnswer = (query, service, setResult) => {
   // } catch (e) {
   //   console.log(e);
   // }
-  setResult(`query:${query}`)
+  setTimeout(() => {
+    setResult(`query:${query}`);
+}, 3000); // 3초(3000밀리초) 지연
 }
 
 export { getSearchResult, getSummary, getChatAnswer};
