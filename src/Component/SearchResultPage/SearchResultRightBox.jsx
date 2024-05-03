@@ -3,13 +3,21 @@ import React, { useState, useRef, useEffect } from "react";
 import SearchResultRightBoxChattingLog from "./SearchResultRightBoxChattingLog";
 import SearchResultRightBoxInput from "./SearchResultRightBoxInput";
 import style from "./style/SearchResultRightBoxStyle";
+import { getSummary } from "../ShareFolder/api";
 
-function SearchResultRightBox({ searchTerm }) {
-    const AI_Text = "아 집가고 싶다.";
+function SearchResultRightBox({ searchTerm, searchResults}) {
+    const [summary, setSummary] = useState(["요약중..."]);
 
     const [userMessages, setUserMessages] = useState([]); // 대화내역
     const [currentMessage, setCurrentMessage] = useState(""); // user 입력
     const [isInputable, setIsInputable] = useState(true);
+
+    useEffect(() => {
+        setSummary(["요약중..."]);
+        getSummary("nlpModel/summary", res => {
+            setSummary(res); // 검색결과를 받아서 재랜더링
+        })
+    }, [searchResults])
 
     return (
         <div style={style.rightBox}>
@@ -19,7 +27,7 @@ function SearchResultRightBox({ searchTerm }) {
                 </div>
                 <SearchResultRightBoxChattingLog 
                     userMessages={userMessages}
-                    AI_Text={AI_Text} />
+                    AI_Text={summary} />
                     
                 <SearchResultRightBoxInput
                     currentMessage={currentMessage}

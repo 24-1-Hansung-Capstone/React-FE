@@ -19,20 +19,20 @@ const getSearchResult = (query, service, setResult) => {
   }
 };
 
-const getSummary = (query, service, setResult) => {
-  // try {
-  //   axios
-  //     .post(`${BASEURL}/${service}?query=${query}`)
-  //     .then((response) => {
-  //       console.log(`getapi : ${response.data}`);
-  //       // return response.data;
-  //       setResult(response.data);
-  //     })
-  //     .catch((e) => console.log(e));
-  // } catch (e) {
-  //   console.log(e);
-  // }
-  return "요약";
+const getSummary = (service, setResult) => {
+  try {
+    axios
+      .post(`${BASEURL}/${service}`)
+      .then((response) => {
+        console.log(`getSummaryapi : ${response.data}`);
+        // return response.data;
+        setResult(response.data);
+      })
+      .catch((e) => console.log(`그래 나 에러났다. 그래서 너가 뭘할수 있는데 ㅋㅋ${e}`));
+  } catch (e) {
+    console.log(`그래 나 에러났다. 그래서 너가 뭘할수 있는데 ㅋㅋ${e}`)
+  }
+  // return "요약";
 };
 
 const getChatAnswer = (query, service, setResult, errorHandle) => {
