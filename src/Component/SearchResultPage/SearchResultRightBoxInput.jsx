@@ -15,10 +15,10 @@ function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessa
         setUserMessages(prev => [...prev, currentMessage]);
         setCurrentMessage("");
 
-        getChatAnswer(currentMessage, "chat", res => {
+        getChatAnswer(currentMessage, "nlpModel/chat", res => {
             setUserMessages(prev => [...prev, res])
-            console.log(userMessages);
             setIsInputable(true);
+            setCurrentMessage("");
         });
     };
 
@@ -30,7 +30,7 @@ function SearchResultRightBoxInput({currentMessage, setCurrentMessage, userMessa
                 value={currentMessage}
                 onChange={(e) => setCurrentMessage(e.target.value)}
                 onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
+                    if (isInputable && e.key === 'Enter') {
                         e.preventDefault(); // 엔터키 입력을 막음
                         handleMessageSend(); // Enter 키를 눌렀을 때 handleMessageSend 함수 호출
                     }
