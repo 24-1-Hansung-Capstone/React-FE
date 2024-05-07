@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import style from "./style/DanjiReviewStarsStyle";
 
-function DanjiReviewStars({ setSelectedDesc, danjiData }) {
+function DanjiReviewStars({ setSelectedDesc, danjiData, setReview}) {
     const totalScoreRef = useRef(null);
     const trafficScoreRef = useRef(null);
     const careScoreRef = useRef(null);
@@ -15,22 +15,27 @@ function DanjiReviewStars({ setSelectedDesc, danjiData }) {
     const setTotalDesc = () => {
         setSelectedDesc(danjiData.totalDesc);
         setBackgroundColor(totalScoreRef.current);
+        setReview(danjiData.totalDesc);
     };
     const setTrafficDesc = () => {
         setSelectedDesc(danjiData.trafficDesc);
         setBackgroundColor(trafficScoreRef.current);
+        setReview(danjiData.trafficDesc);
     };
     const setCareDesc = () => {
         setSelectedDesc(danjiData.careDesc);
         setBackgroundColor(careScoreRef.current);
+        setReview(danjiData.careDesc);
     };
     const setResidentDesc = () => {
         setSelectedDesc(danjiData.residentDesc);
         setBackgroundColor(residentScoreRef.current);
+        setReview(danjiData.residentDesc);
     };
     const setAroundDesc = () => {
         setSelectedDesc(danjiData.aroundDesc);
         setBackgroundColor(aroundScoreRef.current);
+        setReview(danjiData.aroundDesc);
     };
 
     const setBackgroundColor = (nowSelected) => {

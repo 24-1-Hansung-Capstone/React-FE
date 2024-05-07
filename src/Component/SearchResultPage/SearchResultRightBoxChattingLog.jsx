@@ -1,9 +1,8 @@
 // src/Components/SearchResultPage/SearchResultRightBoxChattingLog.jsx
 import React, { useState, useRef, useEffect } from "react";
 import OnlyLogo from '../../Asset/OnlyLogo.png';
-import { BiSolidFace  } from "react-icons/bi";
+import { BiSolidFace } from "react-icons/bi";
 import style from "./style/SearchResultRightBoxChattingLogStyle"
-import { getChatAnswer } from "../ShareFolder/api";
 
 const SearchResultRightBoxChattingLog = ({AI_Text, userMessages}) => {
     const messagesEndRef = useRef(null);
