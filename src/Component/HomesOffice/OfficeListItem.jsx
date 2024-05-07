@@ -2,6 +2,11 @@ import React from "react";
 import "./style/OfficeListItem.css"; // 스타일 시트 파일을 임포트합니다.
 
 const OfficeListItem = ({ post: { id, type, name, addr }, setSelectPostId }) => {
+    const handleClick = () => {
+        console.log(type);
+        setSelectPostId(id);
+    };
+
     if(type === 1) {
         type = "전세";
     } else if (type === 2) {
@@ -15,7 +20,7 @@ const OfficeListItem = ({ post: { id, type, name, addr }, setSelectPostId }) => 
     return (
         <>
             <div className="officeListItemContainer">
-                <button className="officeListButton">{type}</button>
+                <button className="officeListButton" onClick={handleClick}>{type}</button>
                 <div className="officeListItemDetails">
                     <div>{name}</div>
                     <div>{addr}</div>
@@ -28,4 +33,4 @@ const OfficeListItem = ({ post: { id, type, name, addr }, setSelectPostId }) => 
     )
 }
 
-export default OfficeListItem
+export default OfficeListItem;
