@@ -3,7 +3,7 @@ import OfficeList from "./OfficeList";
 import "./style/OfficeLeftContainer.css";
 import { officeCategory } from "./OfficeData";
 
-const OfficeLeftContainer = ({ setSelectPostId, selectCategory }) => {
+const OfficeLeftContainer = ({ setSelectPost, selectCategory }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [postData, setPostData] = useState([]);
 
@@ -59,7 +59,7 @@ const OfficeLeftContainer = ({ setSelectPostId, selectCategory }) => {
   return (
     <div className="officeLeftList">
       <button className="officeAddButton" onClick={openPopup}>매물 추가</button>
-      <OfficeList selectCategory={selectCategory} setSelectPostId={setSelectPostId} />
+      <OfficeList selectCategory={selectCategory} setSelectPost={setSelectPost}/>
     </div>
   );
 };
