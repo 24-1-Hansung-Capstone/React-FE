@@ -6,12 +6,9 @@ import MyResponsivePie from "./MyResponsivePie";
 
 const { kakao } = window;
 
-const SatisfactionRightBody = ({DanjiName, InputText, setInputText}) => {
+const SatisfactionRightBody = ({DanjiName, InputText, setInputText, pieChartData}) => {
   const [Places, setPlaces] = useState([]);
-  const pieChartData = [
-    { id: '부정', value: 0.09693499, label: '부정' },
-    { id: '긍정', value: 0.903065, label: '긍정' }
-];
+
   useEffect(() => {
     kakao.maps.load(() => {
       console.log(DanjiName)
