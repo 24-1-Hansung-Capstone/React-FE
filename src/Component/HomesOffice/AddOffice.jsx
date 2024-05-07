@@ -25,6 +25,7 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
 
   function closePopup() {
     window.close();
+    window.opener.location.reload(); // Reload parent window after closing popup
   };
 
   const handleSubmit = () => {
@@ -32,6 +33,7 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
     axios.post("http://localhost:8080/CommunityPage/register", formData) // Assuming your endpoint to fetch all posts is '/api/posts'
       .then(response => {
         setPostData(response.data);
+        closePopup(); // Close popup and reload parent window after successful upload
       })
       .catch(error => {
         console.error("Error fetching posts:", error);

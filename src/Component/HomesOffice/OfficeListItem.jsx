@@ -2,13 +2,13 @@ import React from "react";
 import "./style/OfficeListItem.css"; // 스타일 시트 파일을 임포트합니다.
 
 const OfficeListItem = ({ post: { id, type, name, addr }, setSelectPostId }) => {
-    if(type == 1) {
+    if(type === 1) {
         type = "전세";
-    } else if (type == 2) {
+    } else if (type === 2) {
         type = "월세";
-    } else if (type == 3) {
+    } else if (type === 3) {
         type = "매매"; 
-    } else if (type == 4) {
+    } else if (type === 4) {
         type = "협의";
     }
 
