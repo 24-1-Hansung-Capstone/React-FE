@@ -14,8 +14,9 @@ const SearchResultRightBoxInput = ({currentMessage, setCurrentMessage, setUserMe
         setIsInputable(false);
         setUserMessages(prev => [...prev, currentMessage]);
         setCurrentMessage("");
-
-        getChatAnswer(currentMessage, "nlpModel/chat", res => {
+        
+        console.log("어 형이 부른거 맞아~");
+        getChatAnswer(currentMessage, res => {
             setUserMessages(prev => [...prev, res])
             setIsInputable(true);
             setCurrentMessage("");

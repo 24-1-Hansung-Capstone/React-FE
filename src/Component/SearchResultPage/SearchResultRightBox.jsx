@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import SearchResultRightBoxChattingLog from "./SearchResultRightBoxChattingLog";
 import SearchResultRightBoxInput from "./SearchResultRightBoxInput";
 import style from "./style/SearchResultRightBoxStyle";
-import { getSummary } from "../ShareFolder/api";
+import { getChatAnswer, getSummary } from "../ShareFolder/api";
 
 function SearchResultRightBox({ searchTerm, searchResults}) {
     const [summary, setSummary] = useState(["요약중..."]);
