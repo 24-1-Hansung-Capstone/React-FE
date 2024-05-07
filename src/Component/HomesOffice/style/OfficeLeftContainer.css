@@ -1,5 +1,5 @@
 .officeLeftList {
-  margin-left: 1%;
+margin-left: 1%;
   flex-basis: 49%;
   font-size: 20px;
   padding: 3%;
@@ -16,6 +16,7 @@
 }
 
 .popupButton {
+  font-family: "KCC-Hanbit";
   padding: 1px 20px;
   background-color: #92baff;
     color: #000000;
@@ -27,12 +28,13 @@
 }
 
 .officeAddButton {
+  font-family: "KCC-Hanbit";
   padding: 5px 25px;
   background-color: #E0E0E0;
     color: #000000;
     border: none;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
-    margin-right: 5px;
+    margin-bottom: 30px;
 }

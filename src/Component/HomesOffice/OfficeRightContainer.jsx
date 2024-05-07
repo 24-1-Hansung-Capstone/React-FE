@@ -1,13 +1,13 @@
-import React from "react";
-import { postData } from "./OfficeData";
-import "./style/OfficeRightContainer.css";
+// OfficeRightContainer.js
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import clickmeimage from "../../Asset/plsClickDetail.png";
+import "./style/OfficeRightContainer.css"
 
-const OfficeRightContainer = ({ selectPostId }) => {
-  const selectPost = postData.find(({ id }) => id === selectPostId);
+const OfficeRightContainer = ({ selectPost }) => {
 
   const getButtonStyle = (type) => {
-    if (type === selectPost.type) {
+    if (selectPost && type === selectPost.type) {
       return { backgroundColor: "#92baff" };
     } else {
       return { backgroundColor: "#E0E0E0" };
@@ -16,7 +16,7 @@ const OfficeRightContainer = ({ selectPostId }) => {
 
   return (
     <div className="officePost">
-      {selectPost != null ? (
+      {selectPost ? (
         <>
           <div className="officeName">
             <div>제목</div>
@@ -33,13 +33,9 @@ const OfficeRightContainer = ({ selectPostId }) => {
             <button className="officeTypeButton" style={getButtonStyle("매매")}>매매</button>
             <button className="officeTypeButton" style={getButtonStyle("협의")}>협의</button>
           </div>
-          <div className="officeImg">
-            <div>사진</div>
-            <div>{selectPost.img}</div>
-          </div>
           <div className="officeDesc">
             <div>내용</div>
-            <div>{selectPost.desc}</div>
+            <div>{selectPost.content}</div>
           </div>
         </>
       ) : (

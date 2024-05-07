@@ -10,6 +10,7 @@ import EstatePage from './Component/EstatePage/EstatePage';
 import SignUpPage from "./Component/SignUpPage/SignUpPage";
 import LoginPage from "./Component/LoginPage/LoginPage";
 import OfficeMain from "./Component/HomesOffice/OfficeMain"
+import AddOffice from "./Component/HomesOffice/AddOffice";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/SignUpPage" exact element={<SignUpPage />} />
           <Route path="/LoginPage" exact element={<LoginPage />} />
           <Route path="/CommunityPage" exact element={<OfficeMain />} />
+          <Route path="/CommunityPage/addOffice" exact element={<AddOffice />} />
         </Routes>
       </BrowserRouter>
     </div>

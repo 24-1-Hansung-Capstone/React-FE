@@ -8,6 +8,7 @@ import SearchResultNav from "../ShareFolder/SearchResultNav";
 
 function SatisfactionPage() {
     const [result, setResult] = useState([]);
+    const [review, setReview] = useState(null);
     const { searchTerm } = useParams();
     
 
