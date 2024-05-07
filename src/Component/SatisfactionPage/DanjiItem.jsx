@@ -3,7 +3,7 @@ import DanjiItemHeader from "./DanjiItemHeader";
 import DanjiReview from "./DanjiReview";
 import style from "./style/DanjiItemStyle"
 
-function DanjiItem({danjiName, danjiDatas, setInputText}) {
+function DanjiItem({danjiName, danjiDatas, setInputText, setReview}) {
     const [isOpen, setIsOpen] = useState(false);
     const handleToggle = () =>{
         setIsOpen(!isOpen)
@@ -17,7 +17,7 @@ function DanjiItem({danjiName, danjiDatas, setInputText}) {
                     {
                         danjiDatas.map((danjiData, index) => {
                             return(
-                                <DanjiReview danjiData = {danjiData}/>
+                                <DanjiReview danjiData = {danjiData} setReview={setReview}/>
                             )
                         })
                     }
