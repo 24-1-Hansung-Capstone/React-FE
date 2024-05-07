@@ -4,6 +4,7 @@ import "./style/OfficeCategorySelectBox.css";
 
 const OfficeCategorySelectBox = ({ setSelectCategory, selectCategory }) => {
   const handleButtonClick = (category) => {
+    console.log(category);
     setSelectCategory(category);
   };
 
