@@ -83,4 +83,21 @@ const getChatAnswer = (query, setResult) => {
   // }, 3000); // 3초(3000밀리초) 지연
 };
 
-export { getSearchResult, getSummary, getChatAnswer };
+const getSentimental = (query, service, setResult) => {
+  const data = {
+    target: query,
+  };
+  try {
+    axios
+      .post(`${BASEURL}/${service}`, data)
+      .then((res) => {
+        console.log(res.data);
+        setResult(res.data);
+      })
+      .catch((e) => console.log(e));
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export { getSearchResult, getSummary, getChatAnswer, getSentimental };

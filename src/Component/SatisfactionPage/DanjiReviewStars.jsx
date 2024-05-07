@@ -1,8 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import style from "./style/DanjiReviewStarsStyle";
-import setReview from "./SatisfactionPage";
 
-function DanjiReviewStars({ setSelectedDesc, danjiData }) {
+function DanjiReviewStars({ setSelectedDesc, danjiData, setReview}) {
     const totalScoreRef = useRef(null);
     const trafficScoreRef = useRef(null);
     const careScoreRef = useRef(null);
