@@ -1,6 +1,6 @@
 const style = {
     logo: {
-        width: '30%',
+        width: '25%',
         margin: '10% 0'
     },
     mainPageBody :{

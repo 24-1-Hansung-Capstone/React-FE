@@ -1,15 +1,15 @@
 const styles = {
     searchBar: {
-        width: '60%',
-        maxWidth: '568px',
+        width: '80%',
+        maxWidth: '750px',
         borderRadius: '40px',
         display: 'inline-flex',
-        border: '2px solid #92baff',
+        border: '3px solid #92baff',
     },
     searchInput: {
         border: 'none',
         outline: 'none',
-        marginLeft: '10px',
+        marginLeft: '20px',
         backgroundColor: 'transparent',
         flex: 1,
     },

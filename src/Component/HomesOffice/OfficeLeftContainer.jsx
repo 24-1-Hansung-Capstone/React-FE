@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import OfficeList from "./OfficeList";
 import "./style/OfficeLeftContainer.css";
-import { officeCategory, postData as initialPostData } from "./OfficeData";
+import { officeCategory } from "./OfficeData";
 
-const OfficeLeftContainer = ({ setSelectPostId, selectCategory }) => {
+const OfficeLeftContainer = ({ setSelectPost, selectCategory }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [postData, setPostData] = useState(initialPostData);
+  const [postData, setPostData] = useState([]);
 
   // State variables to hold input data
   const [formData, setFormData] = useState({
     type: "",
     name: "",
     addr: "",
-    desc: "",
-    img: ""
+    content: "",
   });
 
   // Function to handle input change
@@ -22,43 +21,45 @@ const OfficeLeftContainer = ({ setSelectPostId, selectCategory }) => {
     setFormData({ ...formData, [name]: value });
   };
 
+  function openPopup(){
+    window.open("http://localhost:3000/CommunityPage/addOffice", "new", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=700, height=700, left=0, top=0" );
+  };
+
   // Function to handle form submission
   const handleSubmit = () => {
     // Add the new data to postData array
     const newData = {
-      id: postData.length + 5, // Start with id: 5 and increment
+      id: postData.length + 1,
       ...formData
     };
     setPostData([...postData, newData]);
 
     // Clear form data for next entry
     setFormData({
-      type: "",
+      type: '',
       name: "",
       addr: "",
-      desc: "",
-      img: ""
+      content: "",
     });
   };
 
+  // useEffect to save data to localStorage whenever postData changes
+  useEffect(() => {
+    localStorage.setItem("postData", JSON.stringify(postData));
+  }, [postData]);
+
+  // useEffect to load data from localStorage when component mounts
+  useEffect(() => {
+    const savedData = localStorage.getItem("postData");
+    if (savedData) {
+      setPostData(JSON.parse(savedData));
+    }
+  }, []);
+
   return (
     <div className="officeLeftList">
-      <OfficeList selectCategory={selectCategory} setSelectPostId={setSelectPostId} />
-      <button className="officeAddButton" onClick={() => setIsPopupOpen(true)}>매물 추가</button>
-      {isPopupOpen && (
-        <div>
-          <h2>새로운 데이터 입력</h2>
-          <div className="popup">
-          <input type="text" name="type" placeholder="매물 종류" value={formData.type} onChange={handleInputChange} />
-          <input type="text" name="name" placeholder="매물 이름" value={formData.name} onChange={handleInputChange} />
-          <input type="text" name="addr" placeholder="매물 주소" value={formData.addr} onChange={handleInputChange} />
-          <input type="text" name="desc" placeholder="매물 설명" value={formData.desc} onChange={handleInputChange} />
-          <input type="text" name="img" placeholder="매물 이미지" value={formData.img} onChange={handleInputChange} />
-          </div>
-          <button className="popupButton" onClick={handleSubmit}>업로드</button>
-          <button className="popupButton" onClick={() => setIsPopupOpen(false)}>닫기</button>
-        </div>
-      )}
+      <button className="officeAddButton" onClick={openPopup}>매물 추가</button>
+      <OfficeList selectCategory={selectCategory} setSelectPost={setSelectPost}/>
     </div>
   );
 };

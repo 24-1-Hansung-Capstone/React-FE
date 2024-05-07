@@ -15,11 +15,14 @@ import {
 import './style/OfficeMain.css'
 
 const OfficeMain = ({ searchWord, searchUrlPath}) => {
-    const [selectPostId, setSelectPostId] = useState(null)
-    const [selectCategory, setSelectCategory] = useState(officeCategory.ALL)
+    const [selectPost, setSelectPost] = useState(null)
+    const [selectCategory, setSelectCategory] = useState("전체")
+
     const { searchTerm } = useParams();
 
+    console.log(selectCategory)
     return (
+        
         <div>
             <MenuBar />
             <div>
@@ -32,9 +35,9 @@ const OfficeMain = ({ searchWord, searchUrlPath}) => {
                 <OfficeCategorySelectBox setSelectCategory={setSelectCategory} selectCategory={selectCategory} />
                 <hr/>
                 <div className="OfficeMainContainer" >
-                    <OfficeLeftContainer setSelectPostId={setSelectPostId} selectCategory={selectCategory}/>
+                    <OfficeLeftContainer setSelectPost={setSelectPost} selectCategory={selectCategory}/>
                     
-                    <OfficeRightContainer selectPostId={selectPostId} />
+                    <OfficeRightContainer selectPost={selectPost} />
                 </div>
             </div>
         </div>
