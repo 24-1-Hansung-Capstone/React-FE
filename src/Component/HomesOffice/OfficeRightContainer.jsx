@@ -2,21 +2,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import clickmeimage from "../../Asset/plsClickDetail.png";
+import "./style/OfficeRightContainer.css"
 
-const OfficeRightContainer = ({ selectPostId }) => {
-  const [selectPost, setSelectPost] = useState(null);
-
-  useEffect(() => {
-    if (selectPostId) {
-      axios.get(`/api/posts/${selectPostId}`) // Assuming your endpoint to fetch a single post is '/api/posts/:id'
-        .then(response => {
-          setSelectPost(response.data);
-        })
-        .catch(error => {
-          console.error("Error fetching selected post:", error);
-        });
-    }
-  }, [selectPostId]); // Fetch data when selectPostId changes
+const OfficeRightContainer = ({ selectPost }) => {
 
   const getButtonStyle = (type) => {
     if (selectPost && type === selectPost.type) {

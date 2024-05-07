@@ -1,8 +1,8 @@
 const officeCategory = Object.freeze({
-  JEONSE: 1,
-  MONTH: 2,
-  SALE: 3,
-  CONFER: 4,
+  "전세": 1,
+  "월세": 2,
+  "매매": 3,
+  "협의": 4,
 });
 
 const postData = Object.freeze([

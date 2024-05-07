@@ -4,7 +4,7 @@ import OfficeListItem from "./OfficeListItem";
 import { getSearchResult } from "../ShareFolder/SpringApi";
 import { officeCategory } from "./OfficeData";
 
-const OfficeList = ({ selectCategory, setSelectPostId }) => {
+const OfficeList = ({ selectCategory, setSelectPost }) => {
   const [realtyData, setRealtyData] = useState([]);
 
   useEffect(() => {
@@ -13,16 +13,16 @@ const OfficeList = ({ selectCategory, setSelectPostId }) => {
 
   return (
     <div>
-      {realtyData
-        .filter(({ type }) => {
+      {realtyData.filter(({ type }) => {
           if (selectCategory === "전체") {
+            console.log(type)
             return true;
           } else {
             return type === officeCategory[selectCategory];
           }
         })
         .map((post) => (
-          <OfficeListItem key={post.id} post={post} setSelectPostId={setSelectPostId} />
+          <OfficeListItem key={post.id} post={post} setSelectPost={setSelectPost}/>
         ))}
     </div>
   );
