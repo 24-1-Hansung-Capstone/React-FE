@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { getSearchResult, getSentimental } from "../ShareFolder/api";
 import SatisfactionBody from "./SatisfactionBody";
 import SearchResultNav from "../ShareFolder/SearchResultNav";
+import BarChartData from "./BarChartData";
 
 function SatisfactionPage() {
     const [result, setResult] = useState([]);
@@ -31,7 +32,7 @@ function SatisfactionPage() {
     return (
         <div>
             <SearchResultNav searchWord = {searchTerm} searchUrlPath={"SatisfactionPage"}/>
-            <SatisfactionBody result = {result} barChartData={barChartData}/>
+            <SatisfactionBody result={result} barChartData={BarChartData()} />
         </div>
     );
 }
