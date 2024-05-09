@@ -11,29 +11,27 @@ function SatisfactionPage() {
     const [review, setReview] = useState(null);
     const { searchTerm } = useParams();
     
-    const [pieChartData, setPieCharData] = useState([
-        { id: '부정', value: 0.09693499, label: '부정' },
-        { id: '긍정', value: 0.903065, label: '긍정' }
-    ])
+    const barChartData = [
+        {
+            "country": "만족도",
+            "negative": 9,
+            "negativecolor": "hsl(163, 30%, 40%)",
+            "positive": 91,
+            "positivecolor": "hsl(79, 50%, 20%)",
+        },
+
+    ];
 
     useEffect(() => {
         getSearchResult(searchTerm, "satisfaction", setResult)
     }, [searchTerm]);
 
-    const clickReview = desc => {
-        getSentimental(desc, "nlpModel/sentimental", ([neg, pos, res]) => {
-            setPieCharData([
-                { id: '부정', value: neg, label: '부정' },
-                { id: '긍정', value: pos, label: '긍정' }
-            ])
-        });
-        setReview(desc);
-    }
+
 
     return (
         <div>
             <SearchResultNav searchWord = {searchTerm} searchUrlPath={"SatisfactionPage"}/>
-            <SatisfactionBody result = {result} setReview={clickReview} pieChartData={pieChartData}/>
+            <SatisfactionBody result = {result} barChartData={barChartData}/>
         </div>
     );
 }
