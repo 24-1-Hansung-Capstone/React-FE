@@ -9,15 +9,6 @@ const SearchResultRightBoxChattingLog = ({title, AI_Text, userMessages}) => {
 
     useEffect(() => {
         messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-        // getChatAnswer(currentMessage, "chat", res => setUserMessages([...userMessages, res]));
-        // console.log(userMessages)
-        // setIsInputable(true)
-        console.log(`${userMessages}`);
-
-        // getChatAnswer(currentMessage, "chat", res => setUserMessages([...userMessages, res]));
-        // console.log(userMessages);
-        // setIsInputable(true);
-
     }, [userMessages]);
 
 
