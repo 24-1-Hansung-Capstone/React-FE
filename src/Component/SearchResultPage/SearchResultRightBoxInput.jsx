@@ -9,16 +9,18 @@ const SearchResultRightBoxInput = ({currentMessage, setCurrentMessage, setUserMe
     const handleMessageSend = () => {
         if (currentMessage.trim() === "") return;
         
-        console.log(`clicked! msg:${currentMessage}`)
-        
         setIsInputable(false);
         setUserMessages(prev => [...prev, currentMessage]);
         setCurrentMessage("");
         
-        console.log("어 형이 부른거 맞아~");
         getChatAnswer(currentMessage, res => {
             setUserMessages(prev => [...prev, res])
             setIsInputable(true);
+            setCurrentMessage("");
+        },
+        res => {
+            setUserMessages(prev => [...prev, res])
+            // setIsInputable(true);
             setCurrentMessage("");
         });
     };
@@ -36,6 +38,7 @@ const SearchResultRightBoxInput = ({currentMessage, setCurrentMessage, setUserMe
                         handleMessageSend(); // Enter 키를 눌렀을 때 handleMessageSend 함수 호출
                     }
                 }}
+                disabled={!isInputable}
             />
             <button style={style.sendButton} onClick={handleMessageSend} disabled={!isInputable}>메시지 전송</button>
         </div>
