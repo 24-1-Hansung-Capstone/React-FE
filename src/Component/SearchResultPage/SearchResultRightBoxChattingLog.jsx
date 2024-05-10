@@ -9,15 +9,6 @@ const SearchResultRightBoxChattingLog = ({AI_Text, userMessages}) => {
 
     useEffect(() => {
         messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-        // getChatAnswer(currentMessage, "chat", res => setUserMessages([...userMessages, res]));
-        // console.log(userMessages)
-        // setIsInputable(true)
-        console.log(`${userMessages}`);
-
-        // getChatAnswer(currentMessage, "chat", res => setUserMessages([...userMessages, res]));
-        // console.log(userMessages);
-        // setIsInputable(true);
-
     }, [userMessages]);
 
 
@@ -26,8 +17,6 @@ const SearchResultRightBoxChattingLog = ({AI_Text, userMessages}) => {
         <div style={style.chattingLogs} >
             
             <div>
-                {/* <p style={style.summary}>{AI_Text}</p> */}
-                {/* <img src={OnlyLogo} alt="Logo" style={style.logo} /> */}
                 <ul>
                 {
                     AI_Text.map((item, idx) => <li key={idx}>{item}</li>)
