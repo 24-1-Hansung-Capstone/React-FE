@@ -43,7 +43,7 @@ export const ResultList = styled.div`
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 2;
-  font-size: 13px;
+  font-size: 15px;
   max-height: calc(82% - 10px);
   max-width: 468px;
   width: calc(30% - 10px);
@@ -58,7 +58,7 @@ export const ResultList = styled.div`
   }
 
   h5 {
-    font-size: 18px; /* Increased font size */
+    font-size: 20px; /* Increased font size */
     margin-bottom: 2px; /* Added margin bottom */
     color: #333; /* Changed text color */
   }

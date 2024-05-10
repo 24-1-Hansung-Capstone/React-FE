@@ -77,7 +77,7 @@ const SatisfactionRightBody = ({DanjiName, InputText, setInputText, barChartData
         });
 
         kakao.maps.event.addListener(marker, 'click', function () {
-          infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+          infowindow.setContent('<div style="padding:5px;font-size:15px;">' + place.place_name + '</div>');
           infowindow.open(map, marker);
         });
       }
@@ -127,9 +127,7 @@ const SatisfactionRightBody = ({DanjiName, InputText, setInputText, barChartData
         </div>
         <MapContainer id="myMap"></MapContainer>
       </div>
-      <div style={{ width: '700px', height: '200px' }}>
-        <MyResponsiveBar data={barChartData} />
-      </div>
+      
     </Wrapper>
   );
 }

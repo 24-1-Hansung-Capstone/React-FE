@@ -8,7 +8,7 @@ const style = {
     },
     category : {
         fontWeight: "bold", // 폰트를 bold로 설정
-        fontSize: "25px" // 원하는 크기로 조정
+        fontSize: "30px" // 원하는 크기로 조정
     },
     arrow : {
         width :"20px"
