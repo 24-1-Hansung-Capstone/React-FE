@@ -3,7 +3,7 @@ import DanjiItem from "./DanjiItem";
 import style from "./style/SatisfactionLeftBodyStyle";
 
 
-function SatisfactionLeftBody({ result, setInputText, setReview}) {
+function SatisfactionLeftBody({ result, setInputText, setReview }) {
     const danjiNameMap = {};
     
     result.forEach(item => {
