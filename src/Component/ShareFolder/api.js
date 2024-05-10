@@ -1,5 +1,4 @@
 import axios from "axios";
-import OpenAI from "openai";
 
 const URL = "localhost";
 const PORT = 8080;
@@ -41,7 +40,7 @@ const OPENAI_API_ORG = process.env.REACT_APP_OPENAI_API_ORG
 const CHATGPT_BASE_URL = "https://api.openai.com/v1/chat/completions";
 
 const getChatAnswer = (query, setResult, errorHandle) => {
-  console.log(`test : ${test}`)
+  console.log(`test : ${OPENAI_API_KEY}`)
   let data = JSON.stringify({
     model: "gpt-3.5-turbo",
     temperature: 0.5,
