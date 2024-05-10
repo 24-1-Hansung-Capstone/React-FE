@@ -2,12 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, InputForm, ResultList, Pagination, SearchButton, Wrapper, CurrentPosButton } from "./style"; // CurrentPosButton import 추가
 import searchIcon from "../../Asset/searchIcon.svg"; // 이미지 불러오기
-import MyResponsivePie from "./MyResponsivePie";
+import MyResponsiveBar from "./MyResponsiveBar";
 
 const { kakao } = window;
 
-const SatisfactionRightBody = ({DanjiName, InputText, setInputText, pieChartData}) => {
+const SatisfactionRightBody = ({DanjiName, InputText, setInputText, barChartData}) => {
   const [Places, setPlaces] = useState([]);
+  
 
   useEffect(() => {
     kakao.maps.load(() => {
@@ -126,8 +127,8 @@ const SatisfactionRightBody = ({DanjiName, InputText, setInputText, pieChartData
         </div>
         <MapContainer id="myMap"></MapContainer>
       </div>
-      <div style={{ width: '400px', height: '350px' }}>
-        <MyResponsivePie data={pieChartData} />
+      <div style={{ width: '700px', height: '200px' }}>
+        <MyResponsiveBar data={barChartData} />
       </div>
     </Wrapper>
   );

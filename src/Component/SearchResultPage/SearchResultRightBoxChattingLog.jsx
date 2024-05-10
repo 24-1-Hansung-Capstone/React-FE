@@ -4,7 +4,7 @@ import OnlyLogo from '../../Asset/OnlyLogo.png';
 import { BiSolidFace } from "react-icons/bi";
 import style from "./style/SearchResultRightBoxChattingLogStyle"
 
-const SearchResultRightBoxChattingLog = ({AI_Text, userMessages}) => {
+const SearchResultRightBoxChattingLog = ({title, AI_Text, userMessages}) => {
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
@@ -15,14 +15,12 @@ const SearchResultRightBoxChattingLog = ({AI_Text, userMessages}) => {
 
     return (
         <div style={style.chattingLogs} >
-            
-            <div>
-                <ul>
-                {
-                    AI_Text.map((item, idx) => <li key={idx}>{item}</li>)
-                }
-                </ul>
-            </div>
+            {AI_Text && Array.isArray(AI_Text) && AI_Text.map((item, idx) => (
+                <div key={idx}>
+                    <li>{title && title[idx]}</li>
+                    <li>{item}</li>
+                </div>
+            ))}
 
             {userMessages.map((message, index) => (
                 <div key={index} style = {{}}>
