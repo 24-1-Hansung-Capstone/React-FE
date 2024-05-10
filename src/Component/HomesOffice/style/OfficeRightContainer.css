@@ -1,9 +1,10 @@
 .officePost {
-  font-size: 22px;
+  font-size: 23px;
   position: sticky;
   height: 100%;
-  top : 0;
+  top: 0;
   bottom: 70px;
+  margin-left: 20px;
 }
 
 .officeName,
@@ -14,8 +15,8 @@
   display: flex;
   flex-direction: row;
   margin-top: 5%;
-  margin-bottom: 5%; 
-  margin-right: 2%;
+  margin-bottom: 5%;
+  margin-right: 5%;
 }
 
 .officeName > div,
@@ -24,19 +25,20 @@
 .officeImg > div,
 .officeDesc > div {
   margin-top: 8px; /* 간격 조절 */
-  padding: 10px 10px;
+  padding: 15px 15px;
+  white-space: nowrap; /* 줄넘김 없이 표시 */
 }
 
 .officeTypeButton {
-  font-family: "KCC-Hanbit";
+  font-family: "NanumGothicLight";
   padding: 1px 20px;
   background-color: #92baff;
-    color: #000000;
-    border: none;
-    height: 40px;
-    border-radius: 20px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-right: 5px;
+  color: #000000;
+  border: none;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 20px;
 }
