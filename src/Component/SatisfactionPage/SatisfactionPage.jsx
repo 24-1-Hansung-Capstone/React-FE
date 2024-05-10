@@ -11,17 +11,7 @@ function SatisfactionPage() {
     const [result, setResult] = useState([]);
     const [review, setReview] = useState(null);
     const { searchTerm } = useParams();
-    
-    const barChartData = [
-        {
-            "country": "만족도",
-            "negative": 9,
-            "negativecolor": "hsl(163, 30%, 40%)",
-            "positive": 91,
-            "positivecolor": "hsl(79, 50%, 20%)",
-        },
 
-    ];
 
     useEffect(() => {
         getSearchResult(searchTerm, "satisfaction", setResult)

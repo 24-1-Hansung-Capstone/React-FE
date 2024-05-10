@@ -4,7 +4,7 @@ const style = {
         position: "sticky",
         width : "45%",
         minWidth:"300px",
-        margin: "25px 25px",
+        margin: "20px 20px",
         backgroundcolor : "#f9f9f9",
         justifyContent: "center",
         alignItems: "flex-start",
