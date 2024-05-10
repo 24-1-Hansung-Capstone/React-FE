@@ -5,7 +5,7 @@ import { BiSolidFace } from "react-icons/bi";
 import style from "./style/SearchResultRightBoxChattingLogStyle"
 import { Link } from "react-router-dom";
 
-const SearchResultRightBoxChattingLog = ({ AI_Text, userMessages, summaryTitles }) => {
+const SearchResultRightBoxChattingLog = ({ AI_Text, userMessages }) => {
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
@@ -16,7 +16,6 @@ const SearchResultRightBoxChattingLog = ({ AI_Text, userMessages, summaryTitles 
         <div style={style.chattingLogs} >
             {AI_Text && Array.isArray(AI_Text) && AI_Text.map((item, idx) => (
                 <div key={idx}>
-                    {summaryTitles}
                     <li>{item}</li>
                 </div>
             ))}

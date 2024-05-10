@@ -34,7 +34,7 @@ export default function SearchResultCategory({ searchResults, context }) {
                     {
                         displayItem.map((item, index) => {
                             return (
-                                <HyperlinkPreview id={index} title={item["esDto"]["title"]} itemPreview={item["preview"]} url={item["esDto"]["url"]} />
+                                <HyperlinkPreview id={index} title={item["esDto"]["title"]} isVisitKoreaItem={item.category === "visitkorea"} itemPreview={item["preview"]} url={item["esDto"]["url"]} />
                             )
                         })
                     }
