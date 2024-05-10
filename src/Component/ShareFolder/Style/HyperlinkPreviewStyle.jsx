@@ -8,6 +8,7 @@ const style = {
     },
     preview : {
         fontSize: "17px"
+
     }
 };
 
