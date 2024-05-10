@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'NanumGothicLight';
+  font-family: 'NanumGothic';
   src: url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
   font-weight: normal;
   font-style: normal;
@@ -7,7 +7,7 @@
 
 body {
   margin: 0;
-  font-family: "NanumGothicLight";
+  font-family: "NanumGothic";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
