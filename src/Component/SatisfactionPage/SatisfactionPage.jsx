@@ -32,7 +32,7 @@ function SatisfactionPage() {
     return (
         <div>
             <SearchResultNav searchWord = {searchTerm} searchUrlPath={"SatisfactionPage"}/>
-            <SatisfactionBody result={result} barChartData={BarChartData()} />
+            <SatisfactionBody result={result} barChartData={BarChartData() } setReview={setReview} />
         </div>
     );
 }
