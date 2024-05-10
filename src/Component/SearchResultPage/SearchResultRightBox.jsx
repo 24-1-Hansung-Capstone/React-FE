@@ -4,7 +4,7 @@ import SearchResultRightBoxInput from "./SearchResultRightBoxInput";
 import style from "./style/SearchResultRightBoxStyle";
 import { getSummary } from "../ShareFolder/api";
 
-function SearchResultRightBox({ searchTerm, searchResults }) {
+function SearchResultRightBox({ searchTerm, searchResults, summaryTitles }) {
   const [summary, setSummary] = useState(["요약중..."]);
   const [userMessages, setUserMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState("");
@@ -25,7 +25,7 @@ function SearchResultRightBox({ searchTerm, searchResults }) {
         </div>
 
         <SearchResultRightBoxChattingLog
-          title={searchResults.title} // 수정된 부분
+        summaryTitles = {summaryTitles}
           userMessages={userMessages}
           AI_Text={summary}
         />
