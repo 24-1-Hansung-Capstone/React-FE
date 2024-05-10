@@ -8,12 +8,12 @@ import style from "./style/SearchResultPageStyle";
 
 function SearchResultPage() {
     const [searchResults, setSearchResults] = useState([]);
-    const [title, setTitle] = useState(""); // title 상태 추가
     const { searchTerm } = useParams();
 
     useEffect(() => {
-        getSearchResult(searchTerm, "search", setSearchResults);
-        setTitle(searchTerm); // 검색어로 title 상태 설정
+        getSearchResult(searchTerm, "search", (res) => {
+            setSearchResults(res)
+        });
     }, [searchTerm]);
 
     return (
@@ -22,7 +22,7 @@ function SearchResultPage() {
                 <SearchResultNav searchWord={searchTerm} searchUrlPath={"search"} />
                 <div style={style.body}>
                     <SearchResultLeftBox searchResults={searchResults} />
-                    <SearchResultRightBox searchTerm={searchTerm} searchResults={searchResults} title={title} /> {/* title props 전달 */}
+                    <SearchResultRightBox searchTerm={searchTerm} searchResults={searchResults}/> {/* title props 전달 */}
                 </div>
             </section>
         </div>

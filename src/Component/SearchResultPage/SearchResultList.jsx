@@ -1,8 +1,9 @@
 // src/Components/SearchResultPage/SearchResultList.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import SearchResultCategory from "./SearchResultCategory";
 
 function SearchResultList({searchResults}) {
+    
     return (
         <div style={{}}>
             <SearchResultCategory searchResults = {searchResults.filter(item => item.category === "news")} context="뉴스📰" />

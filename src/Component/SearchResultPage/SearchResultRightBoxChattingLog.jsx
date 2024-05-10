@@ -3,21 +3,19 @@ import React, { useState, useRef, useEffect } from "react";
 import OnlyLogo from '../../Asset/OnlyLogo.png';
 import { BiSolidFace } from "react-icons/bi";
 import style from "./style/SearchResultRightBoxChattingLogStyle"
+import { Link } from "react-router-dom";
 
-const SearchResultRightBoxChattingLog = ({title, AI_Text, userMessages}) => {
+const SearchResultRightBoxChattingLog = ({ AI_Text, userMessages }) => {
     const messagesEndRef = useRef(null);
 
     useEffect(() => {
         messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }, [userMessages]);
 
-
-
     return (
         <div style={style.chattingLogs} >
             {AI_Text && Array.isArray(AI_Text) && AI_Text.map((item, idx) => (
                 <div key={idx}>
-                    <li>{title && title[idx]}</li>
                     <li>{item}</li>
                 </div>
             ))}

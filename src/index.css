@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'KCC-Hanbit';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2') format('woff2');
+  font-family: 'NanumGothic';
+  src: url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   margin: 0;
-  font-family: "KCC-Hanbit";
+  font-family: "NanumGothic";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

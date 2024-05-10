@@ -3,7 +3,7 @@ import React from "react";
 import { Link,  } from "react-router-dom";
 import style from "./Style/HyperlinkPreviewStyle"
 
-export default function HyperlinkPreview({ title, itemPreview, url }) {
+export default function HyperlinkPreview({ title, itemPreview, url, isVisitKoreaItem }) {
   let target = "_blank"
 
   if(url == null){
@@ -17,7 +17,7 @@ export default function HyperlinkPreview({ title, itemPreview, url }) {
         <h1 style={style.title}>{title}</h1>
       </Link>
       <p style={style.preview}>
-        {itemPreview + "..."}
+        {isVisitKoreaItem ? itemPreview : itemPreview + "..."}
       </p>
     </div>
   );
