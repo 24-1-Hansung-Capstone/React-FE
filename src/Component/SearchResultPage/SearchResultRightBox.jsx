@@ -24,6 +24,16 @@ function SearchResultRightBox({ searchTerm, searchResults }) {
           <p>{searchTerm}</p>
         </div>
 
+        <div>
+          {summary && Array.isArray(summary) && summary.map((item, idx) => (
+                  <div key={idx}>
+                      {
+                        idx % 2 == 1 ? <li>{item}</li> : <div>{item}</div>
+                      }
+                  </div>
+              ))}
+        </div>
+
         <SearchResultRightBoxChattingLog
           userMessages={userMessages}
           AI_Text={summary}

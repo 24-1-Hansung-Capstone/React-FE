@@ -14,11 +14,7 @@ const SearchResultRightBoxChattingLog = ({ AI_Text, userMessages }) => {
 
     return (
         <div style={style.chattingLogs} >
-            {AI_Text && Array.isArray(AI_Text) && AI_Text.map((item, idx) => (
-                <div key={idx}>
-                    <li>{item}</li>
-                </div>
-            ))}
+
 
             {userMessages.map((message, index) => (
                 <div key={index} style = {{}}>
