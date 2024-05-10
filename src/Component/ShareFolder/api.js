@@ -10,8 +10,6 @@ const getSearchResult = (query, service, setResult) => {
     axios
       .get(`${BASEURL}/${service}?query=${query}`)
       .then((response) => {
-        // console.log(`getapi : ${response.data}`);
-        // return response.data;
         setResult(response.data);
       })
       .catch((e) => console.log(e));
@@ -38,10 +36,12 @@ const getSummary = (service, setResult) => {
   // return "요약";
 };
 
-const OPENAI_API_KEY = "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"; //"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"; //"sk-proj-9iwLRO6asDMedXEoW2yzT3BlbkFJ0dvN8REjEpjV7kFSu40q";
+const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+const OPENAI_API_ORG = process.env.REACT_APP_OPENAI_API_ORG
 const CHATGPT_BASE_URL = "https://api.openai.com/v1/chat/completions";
 
-const getChatAnswer = (query, setResult) => {
+const getChatAnswer = (query, setResult, errorHandle) => {
+  console.log(`test : ${test}`)
   let data = JSON.stringify({
     model: "gpt-3.5-turbo",
     temperature: 0.5,
@@ -67,20 +67,19 @@ const getChatAnswer = (query, setResult) => {
     axios
       .request(config)
       .then((response) => {
-        console.log(response.data[""]);
+        let answer = response.data.choices[0].message.content
+        setResult(answer)
       })
       .catch((error) => {
-        // console.log(`${error.toJSON()["status"]} ${error.toJSON()["code"]}`);
-        setResult(`${error.toJSON()["status"]} ${error.toJSON()["code"]}`);
-        console.log(`${error.toJSON()["status"]} ${error.toJSON()["code"]}`);
+        let status = error.toJSON()["status"]
+        let code = error.toJSON()["code"]
+        errorHandle(`에러가 발생했습니다. 관리자에게 문의해주세요. (CODE ${status})`);
+        console.log(`error summary : ${status} ${code}\n${error}`);
+        console.log(error);
       });
   } catch (e) {
     console.log(e);
   }
-
-  //   setTimeout(() => {
-  //     setResult(`query:${query}`);
-  // }, 3000); // 3초(3000밀리초) 지연
 };
 
 const getSentimental = (query, service, setResult) => {
