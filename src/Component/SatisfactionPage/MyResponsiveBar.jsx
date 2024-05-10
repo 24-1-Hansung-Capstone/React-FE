@@ -9,7 +9,7 @@ const MyResponsiveBar = ({ data }) => (
         'positive',
     ]}
     indexBy="country"
-    margin={{ top: 50, right: 50, bottom: 50, left: 60 }}
+    margin={{ top: 10, right: 50, bottom: 70, left: 60 }}
     padding={0.3}
     layout="horizontal"
     valueScale={{ type: 'linear' }}
