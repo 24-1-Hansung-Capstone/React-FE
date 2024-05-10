@@ -4,16 +4,16 @@ const style = {
         color: 'inherit'
     },
     title:{
-        fontSize: "20px",
+        fontSize: "23px",
         fontWeight: "bold",
         color:"blue"
     },
     supply: {
-        fontSize: "15px",
+        fontSize: "18px",
 
     },
     address :{
-        fontSize: "15px",
+        fontSize: "18px",
     },
     item : {
         marginBottom : "30px"

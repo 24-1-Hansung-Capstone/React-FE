@@ -3,11 +3,12 @@ const style = {
         marginBottom: "40px" 
     },
     title : {
-        fontSize: "22px",
+        fontSize: "23px",
         marginBottom: "15px" 
     },
     preview : {
-        fontSize: "16px"
+        fontSize: "17px"
+
     }
 };
 

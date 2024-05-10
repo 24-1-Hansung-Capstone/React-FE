@@ -25,7 +25,6 @@ function SearchResultRightBox({ searchTerm, searchResults }) {
         </div>
 
         <SearchResultRightBoxChattingLog
-          title={searchResults.title} // 수정된 부분
           userMessages={userMessages}
           AI_Text={summary}
         />
