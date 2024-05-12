@@ -1,6 +1,5 @@
 const styles = {
     searchBar: {
-        fontfamily: "KCC-Hanbit",
         width: '80%',
         maxWidth:"700px",
         maxHeight:"40px",
@@ -9,7 +8,6 @@ const styles = {
         border: '2px solid #92baff',
     },
     searchInput: {
-        fontfamily: "KCC-Hanbit",
         border: 'none',
         outline: 'none',
         marginLeft: '10px',

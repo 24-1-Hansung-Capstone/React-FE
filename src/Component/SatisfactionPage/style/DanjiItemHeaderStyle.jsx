@@ -3,7 +3,7 @@ const style = {
         display: "flex", 
         justifyContent: "space-between", 
         alignItems: "center",
-        marginBottom: "2%",
+        marginBottom: "3%",
     },
     danjiName : {
         fontWeight: "bold", // 폰트를 bold로 설정
