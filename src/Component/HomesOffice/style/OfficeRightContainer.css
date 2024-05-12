@@ -5,6 +5,7 @@
   top: 0;
   bottom: 70px;
   margin-left: 20px;
+  margin-top: 2%;
 }
 
 .officeName,
@@ -14,31 +15,37 @@
 .officeDesc {
   display: flex;
   flex-direction: row;
-  margin-top: 5%;
+  margin-top: 7%;
   margin-bottom: 5%;
-  margin-right: 5%;
+  align-items: center;
+
 }
+
 
 .officeName > div,
 .officeAddress > div,
 .officeType > div,
 .officeImg > div,
 .officeDesc > div {
-  margin-top: 8px; /* 간격 조절 */
-  padding: 15px 15px;
+  margin-top: 10px; /* 간격 조절 */
+  padding: 20px 60px;
   white-space: nowrap; /* 줄넘김 없이 표시 */
+  padding-right : 50px;
+  align-items: right;
 }
 
+
 .officeTypeButton {
-  font-family: "NanumGothicLight";
-  padding: 1px 20px;
+  font-family: "NanumGothic";
+  padding: 5px 20px;
   background-color: #92baff;
   color: #000000;
   border: none;
   height: 40px;
+  white-space: nowrap;
   border-radius: 20px;
   font-size: 20px;
   cursor: pointer;
-  margin-top: 10px;
-  margin-left: 20px;
+  margin-top: 15px;
+  margin-left: 25px;
 }

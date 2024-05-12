@@ -25,7 +25,7 @@
 }
 
 .officeDetailButton {
-    font-family: "NanumGothicLight";
+    font-family: "NanumGothic";
     background-color: #E0E0E0;
     color: #000000;
     border: none;
@@ -33,7 +33,7 @@
     padding: 8px 14px;
     font-size: 15px;
     cursor: pointer;
-    margin-right: 10px;
-    margin-left: 7%;
+    margin-left: auto; /* 버튼을 오른쪽으로 배치 */
+    margin-right : 15%;
     font-size: 17px;
 }

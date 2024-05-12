@@ -3,6 +3,7 @@
   h2 {
     color: #333;
     margin-bottom: 20px;
+    padding: 10px;
   }
   
   /* 입력 폼 스타일링 */
@@ -11,7 +12,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 25px;
     gap: 10px;
     margin-bottom: 20px;
   }
@@ -21,12 +22,13 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 98%;
+    width: 100%;
   }
   
   textarea { 
     font-family: "NanumGothicLight";
     resize: none; 
+    padding: 10px;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -35,7 +37,7 @@
   
   select {
     font-family: "NanumGothicLight";
-    width: 100%;
+    width: 103%;
     height: 30px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -51,6 +53,7 @@
     background-color: #007bff;
     color: white;
     margin-right: 10px;
+    margin-left: 10px;
   }
   
   .popupButton:last-child {
