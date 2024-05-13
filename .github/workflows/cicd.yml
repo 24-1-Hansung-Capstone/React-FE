@@ -21,9 +21,15 @@
        uses: actions/checkout@v4
        with:
          ref: main
+
+     - name: set node and install dependency
+     - uses: actions/setup-node@v3
+       with:
+        node-version: 20
+     - run: npm install
          
      - name: build project
-       run: npm install ; npm run build
+       run: npm run build
 
      - name: setting AWS credential
        uses: aws-actions/configure-aws-credentials@v1
