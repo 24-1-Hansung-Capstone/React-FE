@@ -2,10 +2,12 @@
 
 PROJECTNAME=React-FE
 REPOSITORY=/home/ubuntu/$PROJECTNAME
-FLASK_APP_DIR=/home/ubuntu/$PROJECTNAME
-ENV_PATH=$FLASK_APP_DIR/.env
+BUILD_LOG=$REPOSITORY/build.log
+RUN_LOG=$REPOSITORY/webapp.log
 
 cd $REPOSITORY
-echo "> starting..." > log.log
-echo "> install dependency"
-npm install
+echo "> starting..."
+# echo "> install dependency"
+# npm install
+# npm run build > $BUILD_LOG=$REPOSITORY
+# nohup npx -s serve build > $RUN_LOG 2>&1 &
