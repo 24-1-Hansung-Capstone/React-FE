@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "3.34.134.82";
+const URL = "localhost";
 const PORT = 8080;
 const BASEURL = `http://${URL}:${PORT}`;
 
