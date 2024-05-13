@@ -21,6 +21,9 @@
        uses: actions/checkout@v4
        with:
          ref: main
+         
+     - name: build project
+       run: npm install ; npm run build
 
      - name: setting AWS credential
        uses: aws-actions/configure-aws-credentials@v1
