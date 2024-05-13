@@ -16,4 +16,4 @@ if [ -f $PID_FILE ]; then
 fi
 
 echo "> run log : [$RUN_LOG]"
-nohup npx -s serve build > $RUN_LOG 2>&1 &
+nohup npm start > $RUN_LOG 2>&1 &
