@@ -22,14 +22,13 @@
        with:
          ref: main
 
-     - name: set node and install dependency
-     - uses: actions/setup-node@v3
+     - name: set node
+       uses: actions/setup-node@v3
        with:
         node-version: 20
-     - run: npm install
          
      - name: build project
-       run: npm run build
+       run: npm install ; npm run build
 
      - name: setting AWS credential
        uses: aws-actions/configure-aws-credentials@v1
