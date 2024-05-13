@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import MenuBar from "../ShareFolder/Menubar";
 import ResultSearchInput from "../ShareFolder/ResultSearchInput"
-import logo from '../../Asset/Logo.png';
 import OfficeCategorySelectBox from "./OfficeCategorySelectBox"
 import OfficeLeftContainer from "./OfficeLeftContainer";
 import OfficeRightContainer from "./OfficeRightContainer";
@@ -25,17 +24,12 @@ const OfficeMain = ({ searchWord, searchUrlPath}) => {
         
         <div>
             <MenuBar />
+            <br></br>
+            <br></br>
             <div>
             <div style = {style.NavBody}>
-                <div style={style.logoAndSearchBar}>
-                    <Link to="/">
-                    <img src={logo} alt="Logo" style={style.logo} />
-                    </Link>
-                    <ResultSearchInput searchWord={searchWord} searchUrlPath= {searchUrlPath} />
-                </div>
                 </div>
                 <OfficeCategorySelectBox setSelectCategory={setSelectCategory} selectCategory={selectCategory} />
-                <hr/>
                 <div className="OfficeMainContainer" >
                     <OfficeLeftContainer setSelectPost={setSelectPost} selectCategory={selectCategory}/>
                     
