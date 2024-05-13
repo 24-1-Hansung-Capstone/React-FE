@@ -15,5 +15,8 @@ if [ -f $PID_FILE ]; then
     rm $PID_FILE
 fi
 
+echo "> install dependency..."
+npm install
+
 echo "> run log : [$RUN_LOG]"
 nohup npm start > $RUN_LOG 2>&1 &
