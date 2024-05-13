@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import * as _ from "./SignUpStyle";
 import logo from '../../Asset/Logo.png';
 
@@ -35,7 +36,9 @@ const SignUp = () => {
 
   return (
     <_.SignUpContainer>
+      <Link to="/">
       <_.Logo><img src={logo} alt="Logo" height="120"/></_.Logo>
+      </Link>
       <_.SignUpForm>
       <h2>회원가입</h2>
         <_.SignUpInput

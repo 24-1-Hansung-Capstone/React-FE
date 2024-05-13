@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import MenuBar from "../ShareFolder/Menubar";
 import ResultSearchInput from "../ShareFolder/ResultSearchInput"
 import logo from '../../Asset/Logo.png';
@@ -28,7 +28,9 @@ const OfficeMain = ({ searchWord, searchUrlPath}) => {
             <div>
             <div style = {style.NavBody}>
                 <div style={style.logoAndSearchBar}>
+                    <Link to="/">
                     <img src={logo} alt="Logo" style={style.logo} />
+                    </Link>
                     <ResultSearchInput searchWord={searchWord} searchUrlPath= {searchUrlPath} />
                 </div>
                 </div>
