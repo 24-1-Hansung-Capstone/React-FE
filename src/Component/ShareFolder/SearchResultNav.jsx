@@ -1,5 +1,6 @@
 // src/Components/SearchResultPage/SearchResultNav.jsx
 import React, {useEffect, useState} from "react";
+import { Link } from "react-router-dom";
 import MenuBar from "./Menubar";
 import ResultSearchInput from "./ResultSearchInput"
 import RelatedSearchWords from "../SearchResultPage/RelatedSearchWords";
@@ -20,7 +21,9 @@ function SearchResultNav({ searchWord, searchUrlPath}) {
             <MenuBar />
             <div style = {style.NavBody}>
                 <div style={style.logoAndSearchBar}>
+                    <Link to="/">
                     <img src={logo} alt="Logo" style={style.logo} />
+                    </Link>
                     <ResultSearchInput searchWord={searchWord} searchUrlPath= {searchUrlPath} />
                 </div>
                 <div>

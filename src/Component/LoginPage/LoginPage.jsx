@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import MenuBar from "../ShareFolder/Menubar";
+import { Link } from "react-router-dom";
 import * as _ from "./style";
 import logo from '../../Asset/Logo.png';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
@@ -52,8 +53,9 @@ const LoginPage = () => {
       <div>
         <MenuBar/>
       <_.LoginContainer>
-        
+        <Link to="/">
         <_.Logo><img src={logo} alt="Logo" height="120"/></_.Logo>
+        </Link>
         <_.LoginForm onSubmit={onSubmit}> 
         <h2>로그인</h2>
                 <_.LoginInput
