@@ -2,18 +2,16 @@ const style = {
     logo: {
         width: '25%',
         margin: '10% 0',
-        backgroundcolor : '#EBF7FF',
+        backgroundColor: '#EBF7FF',
     },
-    mainPageBody :{
+    mainPageBody: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundcolor : '#EBF7FF',
+        backgroundColor: '#EBF7FF',
+        height: "93vh",
     }
-
-
 }
 
-
-export default style
+export default style;
