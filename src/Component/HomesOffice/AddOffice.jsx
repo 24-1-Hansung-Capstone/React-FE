@@ -30,7 +30,7 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
 
   const handleSubmit = () => {
     console.log(formData)
-    axios.post("http://localhost:8080/CommunityPage/register", formData) // Assuming your endpoint to fetch all posts is '/api/posts'
+    axios.post("http://3.34.134.82:8080/CommunityPage/register", formData) // Assuming your endpoint to fetch all posts is '/api/posts'
       .then(response => {
         setPostData(response.data);
         closePopup(); // Close popup and reload parent window after successful upload

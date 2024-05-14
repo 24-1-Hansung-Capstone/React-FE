@@ -10,7 +10,7 @@ const styles = {
         border: 'none',
         outline: 'none',
         marginLeft: '20px',
-        backgroundColor: 'transparent',
+        backgroundColor: 'white',
         flex: 1,
     },
     searchButton: {
