@@ -1,5 +1,5 @@
 // App.js
-import React from 'react';
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Mainpage from './Component/Mainpage/Mainpage';
 import SearchResultPage from './Component/SearchResultPage/SearchResultPage';
@@ -13,6 +13,7 @@ import OfficeMain from "./Component/HomesOffice/OfficeMain"
 import AddOffice from "./Component/HomesOffice/AddOffice";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div className="App">
       <BrowserRouter>
@@ -24,7 +25,7 @@ function App() {
           <Route path="/SatisfactionPage/:searchTerm" exact element={<SatisfactionPage />} />
           <Route path="/EstatePage" exact element={<EstatePage />} />
           <Route path="/SignUpPage" exact element={<SignUpPage />} />
-          <Route path="/LoginPage" exact element={<LoginPage />} />
+          <Route path="/LoginPage" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/CommunityPage" exact element={<OfficeMain />} />
           <Route path="/CommunityPage/addOffice" exact element={<AddOffice />} />
         </Routes>
