@@ -4,6 +4,7 @@ import MenuBar from "../ShareFolder/Menubar";
 import { MapContainer, InputForm, ResultList, Pagination, SearchButton, Wrapper, CurrentPosButton } from "./style"; // CurrentPosButton import 추가
 import searchIcon from "../../Asset/searchIcon.svg"; // 이미지 불러오기
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const { kakao } = window;
 
@@ -265,21 +266,23 @@ const MapPage = () => {
           </div>
           <ResultList style={{ display: InputText ? 'block' : 'none' }}>
             {Places.map((item, i) => (
-              <div key={i}>
-                <span>{i + 1}</span>
-                <div>
-                  <h5>{item.place_name}</h5>
-                  {item.road_address_name ? (
-                    <div>
-                      <span>{item.road_address_name}</span>
+              <Link to={"/search/" + item.place_name} style={{ textDecoration: 'none', color: 'inherit' }} >
+                <div key={i}>
+                  <span>{i + 1}</span>
+                  <div>
+                    <h5 style = {{color: "blue"}}>{item.place_name}</h5>
+                    {item.road_address_name ? (
+                      <div>
+                        <span>{item.road_address_name}</span>
+                        <span>{item.address_name}</span>
+                      </div>
+                    ) : (
                       <span>{item.address_name}</span>
-                    </div>
-                  ) : (
-                    <span>{item.address_name}</span>
-                  )}
-                  <span>{item.phone}</span>
+                    )}
+                    <span>{item.phone}</span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
             <Pagination ref={myPagination}></Pagination>
           </ResultList>
