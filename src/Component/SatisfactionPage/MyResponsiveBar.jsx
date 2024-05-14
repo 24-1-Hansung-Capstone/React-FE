@@ -14,7 +14,7 @@ const MyResponsiveBar = ({ data }) => (
     layout="horizontal"
     valueScale={{ type: 'linear' }}
     indexScale={{ type: 'band', round: true }}
-    colors={{ scheme: 'nivo' }}
+    colors={{ scheme: 'set1' }}
     borderColor={{
         from: 'color',
         modifiers: [['darker', 1.6]]
