@@ -13,7 +13,7 @@ function SearchResultNav({ searchWord, searchUrlPath}) {
 
     useEffect(()=>{
         getSearchResult(searchWord, "relatedWord", setRecommedations)
-    }, [])
+    }, [searchWord])
     
 
     return (
