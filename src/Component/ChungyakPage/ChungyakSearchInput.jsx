@@ -6,7 +6,7 @@ import style from "./style/ChangyakSearchInputStyle"
 function ChungyakSearchInput({ searchWord }) {
     return (
         <div style = {style.input}>
-            <ResultSearchInput searchWord={searchWord} searchUrlPath="ChungyakSearch" />
+            <ResultSearchInput searchWord={searchWord} searchUrlPath="search" />
         </div>
     );
 }
