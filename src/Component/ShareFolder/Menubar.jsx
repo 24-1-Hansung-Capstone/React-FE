@@ -1,5 +1,5 @@
 // src/Components/ShareFolder/Menubar.jsx
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./styles.css";
 
@@ -26,7 +26,10 @@ const styles = {
 };
 
 // 메뉴바 컴포넌트
-function MenuBar() {
+function MenuBar({ setIsLoggedIn }) {
+  // 로그인 상태를 바탕으로 메뉴바 내용을 조절하기 위해 상태 추가
+  console.log(setIsLoggedIn);
+
   return (
     <div style={styles.menuBar}>
       <NavLink
@@ -64,19 +67,23 @@ function MenuBar() {
         홈즈 사무소
       </NavLink>
 
-      <NavLink
-        className="link"
-        activeClassName="active"
-        to="/SignUpPage">
-        회원 가입
-      </NavLink>
-
-      <NavLink
-        className="link"
-        activeClassName="active"
-        to="/LoginPage">
-        로그인
-      </NavLink>
+      {setIsLoggedIn ? (
+        <NavLink
+          className="link"
+          activeClassName="active"
+          to="/"
+        >
+          로그인
+        </NavLink>
+      ) : (
+        <NavLink
+          className="link"
+          activeClassName="active"
+          to="/LoginPage"
+        >
+          로그아웃
+        </NavLink>
+      )}
     </div>
   );
 }
