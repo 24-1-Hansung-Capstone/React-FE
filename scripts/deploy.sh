@@ -19,4 +19,4 @@ echo "> install serve..."
 sudo npm install serve -g
 
 echo "> run log : [$RUN_LOG]"
-nohup serve -s build > $RUN_LOG 2>&1 &
+nohup serve -s build > $RUN_LOG 2>&1 & > .pid
