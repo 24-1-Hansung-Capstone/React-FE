@@ -32,7 +32,6 @@ jobs:
 
       - name: project build
         run: npm run build
-        env: CI:""
 
       - name: shell script chmod
         run: chmod +x ./scripts/deploy.sh;
