@@ -5,12 +5,12 @@ const styles = {
         borderRadius: '40px',
         display: 'inline-flex',
         border: '3px solid #92baff',
+        backgroundColor: 'white',
     },
     searchInput: {
         border: 'none',
         outline: 'none',
         marginLeft: '20px',
-        backgroundColor: 'white',
         flex: 1,
     },
     searchButton: {
