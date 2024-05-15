@@ -29,9 +29,17 @@ const styles = {
 function MenuBar({ setIsLoggedIn }) {
   // 로그인 상태를 바탕으로 메뉴바 내용을 조절하기 위해 상태 추가
   console.log(setIsLoggedIn);
+  const css = `.link:hover {
+    display: inline-block;
+    padding: 0px 20px; /* 내용 주위의 여백을 추가하여 배경을 더 넓게 함 */
+    background-color: #9e9e9e; /* 변경하고 싶은 배경색 */
+  }`
 
   return (
     <div style={styles.menuBar}>
+      {/* <style>
+        {css}
+      </style> */}
       <NavLink
         className="link"
         activeClassName="active"
