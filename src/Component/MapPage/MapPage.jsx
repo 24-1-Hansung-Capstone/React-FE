@@ -53,7 +53,7 @@ const MapPage = () => {
             markersArr[i].setMap(renderedMap)
           }
   
-          renderedMap.setBounds(bounds);
+          if(renderedMap !== null) renderedMap.setBounds(bounds);
           displayPagination(pagination);
           setPlaces(data);
         }
@@ -167,7 +167,7 @@ const MapPage = () => {
           markersArr[i].setMap(renderedMap)
         }
 
-        renderedMap.setBounds(bounds);
+        if(renderedMap !== null) renderedMap.setBounds(bounds);
         displayPagination(pagination);
         setPlaces(data);
       }

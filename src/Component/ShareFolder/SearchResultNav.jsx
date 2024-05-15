@@ -27,7 +27,7 @@ function SearchResultNav({ searchWord, searchUrlPath}) {
                     <ResultSearchInput searchWord={searchWord} searchUrlPath= {searchUrlPath} />
                 </div>
                 <div>
-                    <RelatedSearchWords recommendations={recommendations} searchWord= {searchWord}/>
+                    {searchUrlPath === "SatisfactionPage" ? null : <RelatedSearchWords recommendations={recommendations} searchWord= {searchWord}/>}
                 </div>
             </div>
             <hr style={{}} />

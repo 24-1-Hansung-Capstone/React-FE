@@ -13,7 +13,7 @@ function Mainpage(props) {
 
   const connectionTest = () => {
     axios
-      .get("http://localhost:3000/")
+      .get("http://13.125.234.8:3000/")
       .then((response) => {
         setConnection(response.data);
       })

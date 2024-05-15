@@ -32,11 +32,14 @@ export default function SearchResultCategory({ searchResults, context }) {
             {isOpen && (
                 <div>
                     {
-                        displayItem.map((item, index) => {
-                            return (
-                                <HyperlinkPreview id={index} title={item["esDto"]["title"]} isVisitKoreaItem={item.category === "visitkorea"} itemPreview={item["preview"]} url={item["esDto"]["url"]} />
-                            )
-                        })
+                        searchResults.length ? 
+                            displayItem.map((item, index) => {
+                                return (
+                                    <HyperlinkPreview id={index} title={item["esDto"]["title"]} isVisitKoreaItem={item.category === "visitkorea"} itemPreview={item["preview"]} url={item["esDto"]["url"]} />
+                                )
+                            })
+                        :
+                            "검색 결과가 없습니다."
                     }
                     <PaginationBar currentPage={currentPage} totalPages={totalPages} totalItem={totalItem} onPageChange={setCurrentPage} />
                 </div>

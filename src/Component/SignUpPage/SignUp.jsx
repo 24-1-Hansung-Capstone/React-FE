@@ -25,7 +25,7 @@ const SignUp = () => {
     };
 
     axios
-      .post("http://localhost:3000/SignUpPage", data)
+      .post("http://13.125.234.8:3000/SignUpPage", data)
       .then((res) => {
         console.log(res);
       })
