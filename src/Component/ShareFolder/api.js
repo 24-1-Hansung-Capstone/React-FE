@@ -41,6 +41,7 @@ const CHATGPT_BASE_URL = "https://api.openai.com/v1/chat/completions";
 
 const getChatAnswer = (query, setResult, errorHandle) => {
   console.log(`test : ${OPENAI_API_KEY}`)
+
   let data = JSON.stringify({
     model: "gpt-3.5-turbo",
     temperature: 0.5,
@@ -66,13 +67,15 @@ const getChatAnswer = (query, setResult, errorHandle) => {
     axios
       .request(config)
       .then((response) => {
-        let answer = response.data.choices[0].message.content
-        setResult(answer)
+        let answer = response.data.choices[0].message.content;
+        setResult(answer);
       })
       .catch((error) => {
-        let status = error.toJSON()["status"]
-        let code = error.toJSON()["code"]
-        errorHandle(`에러가 발생했습니다. 관리자에게 문의해주세요. (CODE ${status})`);
+        let status = error.toJSON()["status"];
+        let code = error.toJSON()["code"];
+        errorHandle(
+          `에러가 발생했습니다. 관리자에게 문의해주세요. (CODE ${status})`
+        );
         console.log(`error summary : ${status} ${code}\n${error}`);
         console.log(error);
       });

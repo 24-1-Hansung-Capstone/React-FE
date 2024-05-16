@@ -19,7 +19,7 @@ function ResultSearchInput({ searchWord, searchUrlPath }) {
     // 검색 아이콘 클릭 또는 엔터 키 입력 시 실행되는 함수
     const handleSearch = () => {
         // 검색 결과 페이지 URL을 검색어와 함께 동적으로 생성합니다.
-        const searchUrl = `http://localhost:3000/${searchUrlPath}/${searchTerm}`;
+        const searchUrl = `http://13.125.234.8:3000/${searchUrlPath}/${searchTerm}`;
         if (searchTerm !== undefined){
             navigate(`/${searchUrlPath}/${searchTerm}`)
         }

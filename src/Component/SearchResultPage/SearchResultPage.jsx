@@ -13,6 +13,7 @@ function SearchResultPage() {
     useEffect(() => {
         getSearchResult(searchTerm, "search", (res) => {
             setSearchResults(res)
+            console.log("검색결과 없어영", res)
         });
     }, [searchTerm]);
 
