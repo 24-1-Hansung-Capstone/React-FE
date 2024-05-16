@@ -40,7 +40,12 @@ const OPENAI_API_ORG = process.env.REACT_APP_OPENAI_API_ORG
 const CHATGPT_BASE_URL = "https://api.openai.com/v1/chat/completions";
 
 const getChatAnswer = (query, setResult, errorHandle) => {
-  console.log(`test : ${OPENAI_API_KEY}`)
+  if (OPENAI_API_KEY == null || OPENAI_API_KEY == undefined) {
+    console.log("openai api 키를 불러오는데 실패함.")
+  }
+  else {
+    console.log("openai api 키 불러오기 성공")
+  }
 
   let data = JSON.stringify({
     model: "gpt-3.5-turbo",
@@ -59,6 +64,7 @@ const getChatAnswer = (query, setResult, errorHandle) => {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${OPENAI_API_KEY}`,
+      Organization : OPENAI_API_ORG
     },
     data: data,
   };
