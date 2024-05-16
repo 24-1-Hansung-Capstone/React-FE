@@ -14,8 +14,8 @@ const LoginPage = () => {
     const [error, setError] = useState('');
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
-
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+   
 
     const toggleAccount = () => setNewAccount((prev) => !prev);
     const onChange = (e) => {

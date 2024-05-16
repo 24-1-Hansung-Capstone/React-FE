@@ -73,7 +73,7 @@ function MenuBar({ setIsLoggedIn }) {
           activeClassName="active"
           to="/"
         >
-          로그인
+          로그아웃
         </NavLink>
       ) : (
         <NavLink
@@ -81,7 +81,7 @@ function MenuBar({ setIsLoggedIn }) {
           activeClassName="active"
           to="/LoginPage"
         >
-          로그아웃
+          로그인
         </NavLink>
       )}
     </div>
