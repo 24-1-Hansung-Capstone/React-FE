@@ -31,7 +31,12 @@ jobs:
         run: npm install
       
       - name: copy production env file
-        run: echo "${{ secrets.PRODUCTION_ENV }}" > ./.env | echo ./.env
+        run: 
+        echo "REACT_APP_OPENAI_API_KEY=${{ secrets.PRODUCTION_OPENAI_API_KEY }}" >> .env
+        echo "REACT_APP_OPENAI_API_ORG=${{ secrets.PRODUCTION_OPENAI_API_ORG }}" >> .env
+      
+      - name: check .env file
+        run: cat .env
 
       - name: project build
         run: npm run build
