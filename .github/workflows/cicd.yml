@@ -29,6 +29,9 @@ jobs:
 
       - name: install dependency
         run: npm install
+      
+      - name: copy production env
+        run: echo "${{ secrets.PRODUCTION_ENV }}" > .env
 
       - name: project build
         run: npm run build
