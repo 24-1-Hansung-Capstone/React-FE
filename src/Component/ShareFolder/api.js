@@ -41,10 +41,10 @@ const CHATGPT_BASE_URL = "https://api.openai.com/v1/chat/completions";
 
 const getChatAnswer = (query, setResult, errorHandle) => {
   if (OPENAI_API_KEY == null || OPENAI_API_KEY == undefined) {
-    console.log("openai api 키를 불러오는데 실패함.")
+    console.log(`openai api 키를 불러오는데 실패함. value=${OPENAI_API_KEY}`)
   }
   else {
-    console.log("openai api 키 불러오기 성공")
+    console.log(`openai api 키 불러오기 성공 value=${OPENAI_API_KEY.substring(0, 10)}`)
   }
 
   let data = JSON.stringify({
