@@ -8,9 +8,10 @@ export const Wrapper = styled.div`
 export const MapContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 95vh;
+  height: 92vh;
   margin: 0 0;
   margin-top: 5px;
+  
 `;
 
 export const InputForm = styled.form`

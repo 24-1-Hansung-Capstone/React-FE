@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
-
-function DanjiDetailReview({desc}) {
+function DanjiDetailReview({ desc }) {
     return (
-        <div style = {{
-            marginTop:"3%",
-            fontSize:"20px",
+        <div style={{
+            padding: "10px 0px",
+            fontSize: "22px",
+            lineHeight: "1.6",
         }}>
             {desc}
         </div>
-    )
+    );
 }
-
 
 export default DanjiDetailReview;
