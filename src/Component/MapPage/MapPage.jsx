@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const { kakao } = window;
 
-const MapPage = () => {
+const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
   const [Places, setPlaces] = useState([]);
   const [renderedMap, setRenderedMap] = useState(null);
   const  [markersArr, setMarkersArr] = useState([])
@@ -253,7 +253,7 @@ const MapPage = () => {
 
   return (
     <Wrapper>
-      <MenuBar />
+      <MenuBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <div style={{ display: 'flex', position: 'relative' }}>
         <div style={{ flex: 1 }}>
           <div ref = {myInput}>

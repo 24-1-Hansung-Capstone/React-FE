@@ -7,16 +7,15 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { authService } from '../../firebase/fbInstance';
 
-const LoginPage = () => {
+const LoginPage = ({setIsLoggedIn, isLoggedIn}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [newAccount, setNewAccount] = useState(true);
     const [error, setError] = useState('');
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    
    
-
     const toggleAccount = () => setNewAccount((prev) => !prev);
     const onChange = (e) => {
         const { target: { name, value } } = e;
@@ -52,7 +51,7 @@ const LoginPage = () => {
 
     return (
         <div>
-            <MenuBar setIsLoggedIn={setIsLoggedIn} />
+            <MenuBar isLoggedIn={isLoggedIn} />
             <_.LoginContainer>
                 <Link to="/">
                     <_.Logo><img src={logo} alt="Logo" height="120" /></_.Logo>

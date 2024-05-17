@@ -8,7 +8,7 @@ import logo from '../../Asset/Logo.png';
 import style from "./Style/SearchResultNavStyle"
 import {getSearchResult} from "./api"
 
-function SearchResultNav({ searchWord, searchUrlPath}) {
+function SearchResultNav({ searchWord, searchUrlPath, isLoggedIn, setIsLoggedIn }) {
     const [recommendations, setRecommedations] = useState([]);
 
     useEffect(()=>{
@@ -18,7 +18,7 @@ function SearchResultNav({ searchWord, searchUrlPath}) {
 
     return (
         <div>
-            <MenuBar />
+            <MenuBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <div style = {style.NavBody}>
                 <div style={style.logoAndSearchBar}>
                     <Link to="/">

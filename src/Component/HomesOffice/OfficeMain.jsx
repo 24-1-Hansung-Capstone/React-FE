@@ -13,17 +13,17 @@ import {
   } from "./OfficeData";
 import './style/OfficeMain.css'
 
-const OfficeMain = ({ searchWord, searchUrlPath}) => {
+const OfficeMain = ({ isLoggedIn, setIsLoggedIn }) => {
     const [selectPost, setSelectPost] = useState(null)
     const [selectCategory, setSelectCategory] = useState("전체")
 
-    const { searchTerm } = useParams();
+    // const { searchTerm } = useParams();
 
     console.log(selectCategory)
     return (
         
         <div>
-            <MenuBar />
+            <MenuBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <br></br>
             <br></br>
             <div>
