@@ -9,7 +9,7 @@ const style = {
         fontFamily:"sans-serif"
     },
     sendButton : {
-        width : "101%",
+        width : "104%",
         border: "none",
         borderRadius:"5px",
     }
