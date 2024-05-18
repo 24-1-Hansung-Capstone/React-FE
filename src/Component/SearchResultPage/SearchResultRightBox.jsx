@@ -27,7 +27,7 @@ function SearchResultRightBox({ searchTerm, searchResults }) {
         <div>
           {summary && Array.isArray(summary) && summary.map((item, idx) => (
             <div key={idx}>
-              {idx % 2 === 1 ? <li style={{ marginLeft: "20px", marginBottom: "40px" }}>{item}</li> : <div>{item}</div>}
+              {idx % 2 === 1 ? <li style={{ marginLeft: "20px", marginBottom: "50px" }}>{item}</li> : <div>{item}</div>}
             </div>
           ))}
         </div>

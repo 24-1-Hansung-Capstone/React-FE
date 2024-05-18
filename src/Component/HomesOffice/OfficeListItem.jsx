@@ -26,6 +26,7 @@ const OfficeListItem = ({ post: { id, type, name, addr }, setSelectPost}) => {
                     <div>{addr}</div>
                 </div>
                 <button className="officeDetailButton" onClick={() => setSelectPost({ id, type, name, addr })}>상세 보기</button>
+                <button className="officeDeleteButton">🗑️</button>
             </div>
             
             <br/>
