@@ -26,9 +26,9 @@ const styles = {
 };
 
 // 메뉴바 컴포넌트
-function MenuBar({ setIsLoggedIn }) {
+function MenuBar({ setIsLoggedIn}) {
   // 로그인 상태를 바탕으로 메뉴바 내용을 조절하기 위해 상태 추가
-  console.log(setIsLoggedIn);
+  console.log("setIsLoggedIn:",setIsLoggedIn);
   const css = `.link:hover {
     display: inline-block;
     padding: 0px 20px; /* 내용 주위의 여백을 추가하여 배경을 더 넓게 함 */

@@ -10,7 +10,8 @@ import MainSearchInputStyle from "./Style/MainSearchInputStyle.jsx"
 
 function Mainpage(props) {
   const [connection, setConnection] = useState("");
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
   const connectionTest = () => {
     axios
       .get("http://13.125.234.8:3000/")
@@ -28,7 +29,7 @@ function Mainpage(props) {
 
   return (
     <div>
-      <MenuBar />
+      <MenuBar setIsLoggedIn={setIsLoggedIn}/>
       <div style={MainPage.mainPageBody}>
         <img src={logo} style={MainPage.logo} alt="Logo" />
         <MainSearchInput style = {MainSearchInputStyle}/>

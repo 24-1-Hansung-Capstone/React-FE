@@ -3,7 +3,7 @@ import MenuBar from "../ShareFolder/Menubar";
 import { Link, useNavigate } from "react-router-dom";
 import * as _ from "./style";
 import logo from '../../Asset/Logo.png';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, setPersistence, browserSessionPersistence,signOut} from 'firebase/auth';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { authService } from '../../firebase/fbInstance';
 
@@ -15,7 +15,6 @@ const LoginPage = () => {
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-   
 
     const toggleAccount = () => setNewAccount((prev) => !prev);
     const onChange = (e) => {
@@ -36,11 +35,12 @@ const LoginPage = () => {
 
     function handleGoogleLogin() {
         const provider = new GoogleAuthProvider();
+        setPersistence(authService, browserSessionPersistence).then(() => {
         signInWithPopup(authService, provider)
             .then((data) => {
                 setIsLoggedIn(true); // 로그인 상태를 true로 설정
                 setUserData(data.user);
-                console.log(data);
+                console.log("data:",data);
                 navigate('/');
             })
             .catch((err) => {
@@ -48,7 +48,18 @@ const LoginPage = () => {
                 setError("오류가 발생했습니다");
                 setIsLoggedIn(false); // 로그인 상태를 false로 설정
             });
-    }
+    });
+};
+    function handleGoogleLogout() {
+        signOut(authService)
+        .then(() => {
+            setIsLoggedIn(false);
+            navigate('/');
+        })
+        .catch(error => {
+        console.log(error);
+        });
+    };
 
     return (
         <div>
