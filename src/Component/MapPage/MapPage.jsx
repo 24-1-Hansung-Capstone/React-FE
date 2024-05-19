@@ -23,99 +23,99 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
   const [InputText, setInputText] = useState((location.state == null) ? "" : location.state.search);
 
   
-  if(location.state != null){
-    kakao.maps.load(() => {
-      const ps = new kakao.maps.services.Places();
-      infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
-      infoWindow.setMap(null)
-      infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
-      ps.keywordSearch(InputText, placesSearchCB, { size: 5 });
+  // if(location.state != null){
+  //   kakao.maps.load(() => {
+  //     const ps = new kakao.maps.services.Places();
+  //     infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
+  //     infoWindow.setMap(null)
+  //     infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
+  //     ps.keywordSearch(InputText, placesSearchCB, { size: 5 });
   
-      function placesSearchCB(data, status, pagination) {
-        for(let i = 0; i < markersArr.length; i++){
-          markersArr[i].setMap(null)
-        }
-        infoWindow.setMap(null)
-        markersArr.length = 0;
+  //     function placesSearchCB(data, status, pagination) {
+  //       for(let i = 0; i < markersArr.length; i++){
+  //         markersArr[i].setMap(null)
+  //       }
+  //       infoWindow.setMap(null)
+  //       markersArr.length = 0;
         
-        if (status === kakao.maps.services.Status.OK) {
-          let bounds = new kakao.maps.LatLngBounds();
-          for(let i = 0; i < markersArr.length; i++){
-            markersArr[i].setMap(null)
-          }
-          infoWindow.setMap(null)
-          markersArr.length = 0;
-          for (let i = 0; i < data.length; i++) {
-            addMarker(data[i], markersArr);
-            bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-          }
-          for(let i = 0; i < markersArr.length; i++){
-            markersArr[i].setMap(renderedMap)
-          }
+  //       if (status === kakao.maps.services.Status.OK) {
+  //         let bounds = new kakao.maps.LatLngBounds();
+  //         for(let i = 0; i < markersArr.length; i++){
+  //           markersArr[i].setMap(null)
+  //         }
+  //         infoWindow.setMap(null)
+  //         markersArr.length = 0;
+  //         for (let i = 0; i < data.length; i++) {
+  //           addMarker(data[i], markersArr);
+  //           bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+  //         }
+  //         for(let i = 0; i < markersArr.length; i++){
+  //           markersArr[i].setMap(renderedMap)
+  //         }
   
-          if(renderedMap !== null) renderedMap.setBounds(bounds);
-          displayPagination(pagination);
-          setPlaces(data);
-        }
-        else{
-          for(let i = 0; i < markersArr.length; i++){
-            markersArr[i].setMap(null)
-          }
-          infoWindow.setMap(null)
-          markersArr.length = 0;
-        }
-      }
+  //         if(renderedMap !== null) renderedMap.setBounds(bounds);
+  //         displayPagination(pagination);
+  //         setPlaces(data);
+  //       }
+  //       else{
+  //         for(let i = 0; i < markersArr.length; i++){
+  //           markersArr[i].setMap(null)
+  //         }
+  //         infoWindow.setMap(null)
+  //         markersArr.length = 0;
+  //       }
+  //     }
   
-      function displayPagination(pagination) {
-        var paginationEl = myPagination.current,
-          fragment = document.createDocumentFragment(),
-          i;
-        if(paginationEl == null) return;
-        while (paginationEl.hasChildNodes()) {
-          paginationEl.removeChild(paginationEl.lastChild);
-        }
+  //     function displayPagination(pagination) {
+  //       var paginationEl = myPagination.current,
+  //         fragment = document.createDocumentFragment(),
+  //         i;
+  //       if(paginationEl == null) return;
+  //       while (paginationEl.hasChildNodes()) {
+  //         paginationEl.removeChild(paginationEl.lastChild);
+  //       }
   
-        for (i = 1; i <= pagination.last; i++) {
-          var el = document.createElement('a');
-          el.href = '#';
-          el.innerHTML = i;
+  //       for (i = 1; i <= pagination.last; i++) {
+  //         var el = document.createElement('a');
+  //         el.href = '#';
+  //         el.innerHTML = i;
   
-          if (i === pagination.current) {
-            el.className = 'on';
-          } else {
-            el.onclick = (function (i) {
-              return function () {
+  //         if (i === pagination.current) {
+  //           el.className = 'on';
+  //         } else {
+  //           el.onclick = (function (i) {
+  //             return function () {
                 
-                pagination.gotoPage(i);
-              };
-            })(i);
-          }
+  //               pagination.gotoPage(i);
+  //             };
+  //           })(i);
+  //         }
   
-          fragment.appendChild(el);
-        }
-        paginationEl.appendChild(fragment);
-      }
+  //         fragment.appendChild(el);
+  //       }
+  //       paginationEl.appendChild(fragment);
+  //     }
   
-      function addMarker(place, markersArr) {
-        let marker = new kakao.maps.Marker({ // marker 변수 선언
-          map: null,
-          position: new kakao.maps.LatLng(place.y, place.x),
-        });
+  //     function addMarker(place, markersArr) {
+  //       let marker = new kakao.maps.Marker({ // marker 변수 선언
+  //         map: null,
+  //         position: new kakao.maps.LatLng(place.y, place.x),
+  //       });
   
-        kakao.maps.event.addListener(marker, 'click', () => {
-          infoWindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-          infoWindow.open(renderedMap, marker);
-  
-        });
-        markersArr.push(marker);
-      }
-    })
+  //       kakao.maps.event.addListener(marker, 'click', () => {
+  //         const innerHTML = '<div style="padding:5px;font-size:12px;" onc>' + place.place_name + '</div>'
+  //         infoWindow.setContent(innerHTML);
+  //         infoWindow.open(renderedMap, marker);  
+  //       });
+  //       markersArr.push(marker);
+  //     }
+  //   })
 
-    if(myInput.current != null){
-      myInput.current.style.visibility = "hidden"
-    }
+  //   if(myInput.current != null){
+  //     myInput.current.style.visibility = "hidden"
+  //   }
 
-  }
+  // }
 
   useEffect(() => {
     kakao.maps.load(() => {
@@ -140,16 +140,12 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
       return;
     }
     const ps = new kakao.maps.services.Places();
-    infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
-    infoWindow.setMap(null)
-    infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
     ps.keywordSearch(InputText, placesSearchCB, { size: 5 });
 
     function placesSearchCB(data, status, pagination) {
       for(let i = 0; i < markersArr.length; i++){
         markersArr[i].setMap(null)
       }
-      infoWindow.setMap(null)
       markersArr.length = 0;
       
       if (status === kakao.maps.services.Status.OK) {
@@ -157,7 +153,6 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
         for(let i = 0; i < markersArr.length; i++){
           markersArr[i].setMap(null)
         }
-        infoWindow.setMap(null)
         markersArr.length = 0;
         for (let i = 0; i < data.length; i++) {
           addMarker(data[i], markersArr);
@@ -175,7 +170,6 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
         for(let i = 0; i < markersArr.length; i++){
           markersArr[i].setMap(null)
         }
-        infoWindow.setMap(null)
         markersArr.length = 0;
       }
     }
@@ -217,7 +211,8 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
       });
 
       kakao.maps.event.addListener(marker, 'click', () => {
-        infoWindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+        infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
+        infoWindow.setContent('<div id=' + place.place_name + ' style="padding:5px;font-size:12px;" onclick = "this.parentNode.parentNode.remove()">' + place.place_name + '</div>');
         infoWindow.open(renderedMap, marker);
 
       });
