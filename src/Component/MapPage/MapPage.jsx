@@ -49,7 +49,7 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
           }
   
           if(renderedMap !== null) renderedMap.setBounds(bounds);
-          displayPagination(pagination);
+          if(pagination != null) displayPagination(pagination);
           setPlaces(data);
         }
         else{
@@ -64,6 +64,8 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
         var paginationEl = myPagination.current,
           fragment = document.createDocumentFragment(),
           i;
+
+        if(paginationEl == null) return;
   
         while (paginationEl.hasChildNodes()) {
           paginationEl.removeChild(paginationEl.lastChild);
