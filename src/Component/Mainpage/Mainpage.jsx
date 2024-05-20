@@ -10,7 +10,7 @@ import MainSearchInputStyle from "./Style/MainSearchInputStyle.jsx"
 
 function Mainpage( {props, setIsLoggedIn, isLoggedIn} ) {
   const [connection, setConnection] = useState("");
-
+  
   const connectionTest = () => {
     axios
       .get("http://13.125.234.8:3000/")

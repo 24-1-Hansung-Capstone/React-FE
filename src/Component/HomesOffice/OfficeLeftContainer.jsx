@@ -3,7 +3,7 @@ import OfficeList from "./OfficeList";
 import "./style/OfficeLeftContainer.css";
 import { officeCategory } from "./OfficeData";
 
-const OfficeLeftContainer = ({ setSelectPost, selectCategory }) => {
+const OfficeLeftContainer = ({ setSelectPost, selectCategory, isLoggedIn }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [postData, setPostData] = useState([]);
 
@@ -22,6 +22,10 @@ const OfficeLeftContainer = ({ setSelectPost, selectCategory }) => {
   };
 
   function openPopup(){
+    if (!isLoggedIn) {
+      alert("로그인 후 매물을 추가할 수 있습니다.");
+      return;
+    }
     window.open("http://13.125.234.8:3000/CommunityPage/addOffice", "new", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=700, height=700, left=0, top=0" );
   };
 

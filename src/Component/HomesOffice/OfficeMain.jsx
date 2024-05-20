@@ -31,7 +31,7 @@ const OfficeMain = ({ isLoggedIn, setIsLoggedIn }) => {
                 </div>
                 <OfficeCategorySelectBox setSelectCategory={setSelectCategory} selectCategory={selectCategory} />
                 <div className="OfficeMainContainer" >
-                    <OfficeLeftContainer setSelectPost={setSelectPost} selectCategory={selectCategory}/>
+                    <OfficeLeftContainer setSelectPost={setSelectPost} selectCategory={selectCategory} isLoggedIn={isLoggedIn} />
                     
                     <OfficeRightContainer selectPost={selectPost} />
                 </div>

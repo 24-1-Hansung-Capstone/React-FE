@@ -39,12 +39,12 @@ const SearchResultRightBoxInput = ({ currentMessage, setCurrentMessage, setUserM
                         handleMessageSend(); // Enter 키를 눌렀을 때 handleMessageSend 함수 호출
                     }
                 }}
-                disabled={!isInputable}
+                // disabled={!isInputable}
             />
             <button
                 style={style.sendButton}
                 onClick={handleMessageSend}
-                disabled={!isInputable}
+                // disabled={!isInputable}
             >
                 메시지 전송
             </button>

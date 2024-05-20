@@ -8,7 +8,6 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 import { authService } from '../../firebase/fbInstance';
 
 
-
 const LoginPage = ({ setIsLoggedIn, isLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

@@ -20,7 +20,7 @@
 .officeDesc {
   border: 2px solid #e8e8e8;
   display: flex;
-  padding: 40px 30px;
+  padding: 40px 20px;
   flex-direction: row;
   margin-top: -0.2%;
   align-items: center;
@@ -31,15 +31,20 @@
 .officeName > div,
 .officeAddress > div,
 .officeType > div,
-.officeImg > div,
-.officeDesc > div {
+.officeImg > div {
   margin-top: 10px; /* 간격 조절 */
-  padding: 25px 50px;
+  padding: 20px 50px;
   white-space: nowrap; /* 줄넘김 없이 표시 */
   padding-right : 50px;
   align-items: right;
 }
 
+.officeDesc > div {
+  margin-top: 10px; /* 간격 조절 */
+  padding: 0px 50px;
+  padding-right : 80px;
+  align-items: right;
+}
 
 .officeTypeButton {
   font-family: "NanumGothic";
