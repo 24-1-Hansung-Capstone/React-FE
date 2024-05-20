@@ -10,7 +10,6 @@ import MainSearchInputStyle from "./Style/MainSearchInputStyle.jsx"
 
 function Mainpage( {props, setIsLoggedIn, isLoggedIn} ) {
   const [connection, setConnection] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   
   const connectionTest = () => {
     axios
