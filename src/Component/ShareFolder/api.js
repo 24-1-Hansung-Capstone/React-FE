@@ -5,6 +5,7 @@ const PORT = 8080;
 const BASEURL = `http://${URL}:${PORT}`;
 
 const getSearchResult = (query, service, setResult) => {
+  console.log(`현재 입력받은 쿼리 : ${query}`);
   try {
     axios
       .get(`${BASEURL}/${service}?query=${query}`)
@@ -36,15 +37,16 @@ const getSummary = (service, setResult) => {
 };
 
 const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
-const OPENAI_API_ORG = process.env.REACT_APP_OPENAI_API_ORG
+const OPENAI_API_ORG = process.env.REACT_APP_OPENAI_API_ORG;
 const CHATGPT_BASE_URL = "https://api.openai.com/v1/chat/completions";
 
 const getChatAnswer = (query, setResult, errorHandle) => {
   if (OPENAI_API_KEY == null || OPENAI_API_KEY == undefined) {
-    console.log(`openai api 키를 불러오는데 실패함. value=${OPENAI_API_KEY}`)
-  }
-  else {
-    console.log(`openai api 키 불러오기 성공 value=${OPENAI_API_KEY.substring(0, 10)}`)
+    console.log(`openai api 키를 불러오는데 실패함. value=${OPENAI_API_KEY}`);
+  } else {
+    console.log(
+      `openai api 키 불러오기 성공 value=${OPENAI_API_KEY.substring(0, 2)}`
+    );
   }
 
   let data = JSON.stringify({
@@ -64,7 +66,7 @@ const getChatAnswer = (query, setResult, errorHandle) => {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${OPENAI_API_KEY}`,
-      Organization : OPENAI_API_ORG
+      Organization: OPENAI_API_ORG,
     },
     data: data,
   };
