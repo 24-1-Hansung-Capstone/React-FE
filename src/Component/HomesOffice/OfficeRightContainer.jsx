@@ -35,7 +35,7 @@ const OfficeRightContainer = ({ selectPost }) => {
             <button className="officeTypeButton" style={getButtonStyle("협의")}>협의</button>
           </div>
           <div className="officeDesc">
-            <div>내용</div>
+            <div style={{ whiteSpace: 'nowrap'}}>내용</div>
             <div>{selectPost.content}</div>
           </div>
         </>
