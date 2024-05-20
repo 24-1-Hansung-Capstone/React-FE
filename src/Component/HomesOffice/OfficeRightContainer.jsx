@@ -18,7 +18,6 @@ const OfficeRightContainer = ({ selectPost }) => {
     <div className="officePost">
       {selectPost ? (
         <>
-          <p className="officeTitle">상세 정보</p>
           <div className="officeName">
             <div>제목</div>
             <div>{selectPost.name}</div>
@@ -37,6 +36,9 @@ const OfficeRightContainer = ({ selectPost }) => {
           <div className="officeDesc">
             <div style={{ whiteSpace: 'nowrap'}}>내용</div>
             <div>{selectPost.content}</div>
+          </div>
+          <div>
+            <div>댓글</div>
           </div>
         </>
       ) : (
