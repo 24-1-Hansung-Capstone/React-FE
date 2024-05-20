@@ -2,23 +2,29 @@
   font-size: 23px;
   position: sticky;
   height: 100%;
+  width: 40%;
   top: 0;
   bottom: 70px;
-  margin-left: 20px;
+  margin-left: 25px;
   margin-top: 2%;
+  border-spacing: 0;
 }
-
+.officeTitle {
+  font-size: 23px;
+  text-align: center;
+}
 .officeName,
 .officeAddress,
 .officeType,
 .officeImg,
 .officeDesc {
+  border: 2px solid #e8e8e8;
   display: flex;
+  padding: 40px 30px;
   flex-direction: row;
-  margin-top: 7%;
-  margin-bottom: 5%;
+  margin-top: -0.2%;
   align-items: center;
-
+  background-color: #f8f9fa;
 }
 
 
@@ -28,7 +34,7 @@
 .officeImg > div,
 .officeDesc > div {
   margin-top: 10px; /* 간격 조절 */
-  padding: 20px 60px;
+  padding: 25px 50px;
   white-space: nowrap; /* 줄넘김 없이 표시 */
   padding-right : 50px;
   align-items: right;

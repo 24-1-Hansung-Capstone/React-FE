@@ -18,6 +18,7 @@ const OfficeRightContainer = ({ selectPost }) => {
     <div className="officePost">
       {selectPost ? (
         <>
+          <p className="officeTitle">상세 정보</p>
           <div className="officeName">
             <div>제목</div>
             <div>{selectPost.name}</div>

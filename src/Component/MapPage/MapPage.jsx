@@ -26,16 +26,12 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
   if(location.state != null){
     kakao.maps.load(() => {
       const ps = new kakao.maps.services.Places();
-      infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
-      infoWindow.setMap(null)
-      infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
       ps.keywordSearch(InputText, placesSearchCB, { size: 5 });
   
       function placesSearchCB(data, status, pagination) {
         for(let i = 0; i < markersArr.length; i++){
           markersArr[i].setMap(null)
         }
-        infoWindow.setMap(null)
         markersArr.length = 0;
         
         if (status === kakao.maps.services.Status.OK) {
@@ -43,7 +39,6 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
           for(let i = 0; i < markersArr.length; i++){
             markersArr[i].setMap(null)
           }
-          infoWindow.setMap(null)
           markersArr.length = 0;
           for (let i = 0; i < data.length; i++) {
             addMarker(data[i], markersArr);
@@ -54,14 +49,13 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
           }
   
           if(renderedMap !== null) renderedMap.setBounds(bounds);
-          displayPagination(pagination);
+          if(pagination != null) displayPagination(pagination);
           setPlaces(data);
         }
         else{
           for(let i = 0; i < markersArr.length; i++){
             markersArr[i].setMap(null)
           }
-          infoWindow.setMap(null)
           markersArr.length = 0;
         }
       }
@@ -70,7 +64,9 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
         var paginationEl = myPagination.current,
           fragment = document.createDocumentFragment(),
           i;
+
         if(paginationEl == null) return;
+  
         while (paginationEl.hasChildNodes()) {
           paginationEl.removeChild(paginationEl.lastChild);
         }
@@ -103,7 +99,8 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
         });
   
         kakao.maps.event.addListener(marker, 'click', () => {
-          infoWindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+          infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
+          infoWindow.setContent('<div id=' + place.place_name + ' style="padding:5px;font-size:12px;" onclick = "this.parentNode.parentNode.remove()">' + place.place_name + '</div>');
           infoWindow.open(renderedMap, marker);
   
         });
@@ -140,16 +137,12 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
       return;
     }
     const ps = new kakao.maps.services.Places();
-    infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
-    infoWindow.setMap(null)
-    infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
     ps.keywordSearch(InputText, placesSearchCB, { size: 5 });
 
     function placesSearchCB(data, status, pagination) {
       for(let i = 0; i < markersArr.length; i++){
         markersArr[i].setMap(null)
       }
-      infoWindow.setMap(null)
       markersArr.length = 0;
       
       if (status === kakao.maps.services.Status.OK) {
@@ -157,7 +150,6 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
         for(let i = 0; i < markersArr.length; i++){
           markersArr[i].setMap(null)
         }
-        infoWindow.setMap(null)
         markersArr.length = 0;
         for (let i = 0; i < data.length; i++) {
           addMarker(data[i], markersArr);
@@ -175,7 +167,6 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
         for(let i = 0; i < markersArr.length; i++){
           markersArr[i].setMap(null)
         }
-        infoWindow.setMap(null)
         markersArr.length = 0;
       }
     }
@@ -217,7 +208,8 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
       });
 
       kakao.maps.event.addListener(marker, 'click', () => {
-        infoWindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+        infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
+        infoWindow.setContent('<div id=' + place.place_name + ' style="padding:5px;font-size:12px;" onclick = "this.parentNode.parentNode.remove()">' + place.place_name + '</div>');
         infoWindow.open(renderedMap, marker);
 
       });
