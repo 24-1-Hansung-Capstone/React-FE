@@ -30,6 +30,14 @@ jobs:
       - name: install dependency
         run: npm install
 
+      - name: copy production env file
+        run: |
+          echo "REACT_APP_OPENAI_API_KEY=${{ secrets.PRODUCTION_OPENAI_API_KEY }}" >> .env
+          echo "REACT_APP_OPENAI_API_ORG=${{ secrets.PRODUCTION_OPENAI_API_ORG }}" >> .env
+
+      - name: check .env file
+        run: cat .env
+
       - name: project build
         run: npm run build
 
@@ -48,3 +56,4 @@ jobs:
 
       - name: publish on EC2
         run: aws deploy create-deployment --application-name ${{ env.AWS_CODE_DEPLOY_APPLICATION }} --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name ${{ env.AWS_CODE_DEPLOY_GROUP }} --s3-location bucket=$AWS_S3_BUCKET,key=cicdtest/$GITHUB_SHA.zip,bundleType=zip
+

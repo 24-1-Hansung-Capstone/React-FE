@@ -6,7 +6,7 @@ import SearchResultRightBox from "./SearchResultRightBox";
 import { getSearchResult } from "../ShareFolder/api";
 import style from "./style/SearchResultPageStyle";
 
-function SearchResultPage() {
+function SearchResultPage( {setIsLoggedIn, isLoggedIn} ) {
     const [searchResults, setSearchResults] = useState([]);
     const { searchTerm } = useParams();
 
@@ -20,7 +20,7 @@ function SearchResultPage() {
     return (
         <div>
             <section style={{}}>
-                <SearchResultNav searchWord={searchTerm} searchUrlPath={"search"} />
+                <SearchResultNav searchWord={searchTerm} searchUrlPath={"search"} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
                 <div style={style.body}>
                     <SearchResultLeftBox searchResults={searchResults} />
                     <SearchResultRightBox searchTerm={searchTerm} searchResults={searchResults}/> {/* title props 전달 */}

@@ -8,7 +8,7 @@ import logo from '../../Asset/Logo.png';
 import MainPage from "./Style/MainPageStyle.jsx"
 import MainSearchInputStyle from "./Style/MainSearchInputStyle.jsx"
 
-function Mainpage(props) {
+function Mainpage( {props, setIsLoggedIn, isLoggedIn} ) {
   const [connection, setConnection] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   
@@ -29,7 +29,7 @@ function Mainpage(props) {
 
   return (
     <div>
-      <MenuBar setIsLoggedIn={setIsLoggedIn}/>
+      <MenuBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <div style={MainPage.mainPageBody}>
         <img src={logo} style={MainPage.logo} alt="Logo" />
         <MainSearchInput style = {MainSearchInputStyle}/>

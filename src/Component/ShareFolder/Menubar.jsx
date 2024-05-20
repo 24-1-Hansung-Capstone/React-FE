@@ -1,45 +1,38 @@
-// src/Components/ShareFolder/Menubar.jsx
-import { React, useState, useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import "./styles.css";
 
-// 스타일 정의
 const styles = {
   menuBar: {
-    top: 0, // 최상단
-    left: 0, // 좌측에서 시작
-    display: "flex", // 내부 항목을 flex로 정렬
-    justifyContent: "space-around", // 항목 간 공간 동일하게 배분
-    padding: "20px", // 상하 패딩
-    zIndex: 1000, // 다른 요소들 위에 보이도록 z-index 설정
-    borderBottom: "1px solid ", // 아래쪽에만 테두리 추가
-    boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.1)', // 수평, 수직 그림자 위치 및 흐림 정도 및 색상 지정
+    top: 0,
+    left: 0,
+    display: "flex",
+    justifyContent: "space-around",
+    padding: "20px",
+    zIndex: 1000,
+    borderBottom: "1px solid ",
+    boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.1)',
   },
   link: {
-    color: "#191D21", // 링크 색상
-    textDecoration: "none", // 밑줄 없앰
+    color: "#191D21",
+    textDecoration: "none",
     fontSize: "20px",
   },
   activeLink: {
-    color: "#6392ff", // 활성 링크 색상
+    color: "#6392ff",
   }
 };
 
-// 메뉴바 컴포넌트
-function MenuBar({ setIsLoggedIn}) {
-  // 로그인 상태를 바탕으로 메뉴바 내용을 조절하기 위해 상태 추가
-  console.log("setIsLoggedIn:",setIsLoggedIn);
+function MenuBar({ setIsLoggedIn, isLoggedIn }) {
+  console.log(isLoggedIn);
   const css = `.link:hover {
     display: inline-block;
-    padding: 0px 20px; /* 내용 주위의 여백을 추가하여 배경을 더 넓게 함 */
-    background-color: #9e9e9e; /* 변경하고 싶은 배경색 */
+    padding: 0px 20px;
+    background-color: #9e9e9e;
   }`
 
   return (
     <div style={styles.menuBar}>
-      {/* <style>
-        {css}
-      </style> */}
       <NavLink
         className="link"
         activeClassName="active"
@@ -75,11 +68,12 @@ function MenuBar({ setIsLoggedIn}) {
         홈즈 사무소
       </NavLink>
 
-      {setIsLoggedIn ? (
+      {isLoggedIn ? (
         <NavLink
           className="link"
           activeClassName="active"
           to="/"
+          onClick={()=>{setIsLoggedIn(false)}}
         >
           로그아웃
         </NavLink>

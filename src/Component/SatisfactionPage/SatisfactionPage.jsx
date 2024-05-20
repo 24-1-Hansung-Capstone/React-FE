@@ -6,7 +6,7 @@ import { getSearchResult, getSentimental } from "../ShareFolder/api";
 import SatisfactionBody from "./SatisfactionBody";
 import SearchResultNav from "../ShareFolder/SearchResultNav";
 
-function SatisfactionPage() {
+function SatisfactionPage({isLoggedIn, setIsLoggedIn}) {
     const [result, setResult] = useState([]);
     const [review, setReview] = useState(null);
     const { searchTerm } = useParams();
@@ -18,7 +18,7 @@ function SatisfactionPage() {
 
     return (
         <div>
-            <SearchResultNav searchWord={searchTerm} searchUrlPath={"SatisfactionPage"} />
+            <SearchResultNav searchWord={searchTerm} searchUrlPath={"SatisfactionPage"} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <SatisfactionBody result={result} setReview={setReview} />
         </div>
     );

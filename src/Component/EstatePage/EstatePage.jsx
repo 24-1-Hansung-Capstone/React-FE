@@ -4,11 +4,11 @@ import MenuBar from "../ShareFolder/Menubar";
 import Logo from "../ShareFolder/Logo";
 import SmallSearchBar from "../ShareFolder/SmallSearchBar";
 
-function EstatePage({searchWord}) {
+function EstatePage({searchWord, isLoggedIn, setIsLoggedIn}) {
 
     return (
         <div>
-            <MenuBar />
+            <MenuBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
             <div style={{}}>
                 <Logo />
                 <SmallSearchBar searchWord = {searchWord}/>

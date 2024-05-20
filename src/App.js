@@ -18,16 +18,16 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" exact element={<Mainpage />} />
-          <Route path="/search/:searchTerm" element={<SearchResultPage />} />
-          <Route path="/MapPage" exact element={<MapPage />} />
-          <Route path="/ChungyakPage" exact element={<ChungyakPage />} />
-          <Route path="/SatisfactionPage/:searchTerm" exact element={<SatisfactionPage />} />
-          <Route path="/EstatePage" exact element={<EstatePage />} />
-          <Route path="/SignUpPage" exact element={<SignUpPage />} />
-          <Route path="/LoginPage" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
-          <Route path="/CommunityPage" exact element={<OfficeMain />} />
-          <Route path="/CommunityPage/addOffice" exact element={<AddOffice />} />
+          <Route path="/" exact element={<Mainpage  setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
+          <Route path="/search/:searchTerm" element={<SearchResultPage  setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
+          <Route path="/MapPage" exact element={<MapPage  setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
+          <Route path="/ChungyakPage" exact element={<ChungyakPage  setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
+          <Route path="/SatisfactionPage/:searchTerm" exact element={<SatisfactionPage setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>}  />
+          <Route path="/EstatePage" exact element={<EstatePage setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn} />} />
+          <Route path="/SignUpPage" exact element={<SignUpPage setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
+          <Route path="/LoginPage" element={<LoginPage setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
+          <Route path="/CommunityPage" exact element={<OfficeMain  setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
+          <Route path="/CommunityPage/addOffice" exact element={<AddOffice setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
         </Routes>
       </BrowserRouter>
     </div>

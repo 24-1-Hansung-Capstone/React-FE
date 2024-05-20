@@ -4,10 +4,8 @@ import style from "./style/RelatedSearchWordStyle"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function RelatedSearchWord({ recommendation, searchWord }) {
-    const next_word = recommendation.includes(searchWord) ? recommendation : searchWord + " " + recommendation;
-    
-    const url = `http://13.125.234.8:3000/search/${next_word}`;
+function RelatedSearchWord({ recommendation, searchWord }) {    
+    const url = `http://13.125.234.8:3000/search/${recommendation}`;
 
     return (
         <a
