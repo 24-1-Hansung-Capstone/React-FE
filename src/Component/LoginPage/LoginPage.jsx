@@ -3,7 +3,7 @@ import MenuBar from "../ShareFolder/Menubar";
 import { Link, useNavigate } from "react-router-dom";
 import * as _ from "./style";
 import logo from '../../Asset/Logo.png';
-import { GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { setPersistence, browserSessionPersistence, onAuthStateChanged } from "firebase/auth";
 import { authService } from '../../firebase/fbInstance';
@@ -77,18 +77,6 @@ const LoginPage = ({ setIsLoggedIn, isLoggedIn }) => {
       });
   };
 
-  const handleGithubSignIn = async () => {
-    const provider = new GithubAuthProvider();
-    try {
-      const result = await signInWithPopup(authService, provider);
-      handleSuccessfulLogin(result.user);
-    } catch (error) {
-      console.error(error);
-      setError("오류가 발생했습니다");
-      setIsLoggedIn(false);
-    }
-  };
-
   return (
     <div>
       <MenuBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
@@ -99,17 +87,6 @@ const LoginPage = ({ setIsLoggedIn, isLoggedIn }) => {
         <_.LoginForm onSubmit={onSubmit}>
           <h2>로그인</h2>
           <_.LoginButton name="Google" onClick={handleGoogleLogin}>Google 로그인</_.LoginButton>
-          <_.LoginButton>휴대폰 번호 로그인</_.LoginButton>
-          <_.LoginButton name="Github" onClick={handleGithubSignIn}>
-            GitHub 로그인
-          </_.LoginButton>
-          {/* <div>
-            <input name="email" type="email" placeholder="Email" required value={email} onChange={onChange} />
-            <input name="password" type="password" placeholder="Password" required value={password} onChange={onChange} />
-            <input type="submit" value={newAccount ? "Create Account" : "Sign In"} />
-          </div>
-          <span onClick={toggleAccount}>{newAccount ? "Sign In" : "Create Account"}</span>
-          {error && <span>{error}</span>} */}
         </_.LoginForm>
       </_.LoginContainer>
     </div>

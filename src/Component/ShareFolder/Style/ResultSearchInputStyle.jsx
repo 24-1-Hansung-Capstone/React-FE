@@ -5,7 +5,7 @@ const styles = {
         maxHeight:"40px",
         borderRadius: '40px',
         display: 'inline-flex',
-        border: '2px solid #92baff',
+        border: '2px solid #BFDEE0',
     },
     searchInput: {
         border: 'none',

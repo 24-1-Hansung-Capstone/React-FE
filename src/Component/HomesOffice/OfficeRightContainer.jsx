@@ -8,7 +8,7 @@ const OfficeRightContainer = ({ selectPost }) => {
 
   const getButtonStyle = (type) => {
     if (selectPost && type === selectPost.type) {
-      return { backgroundColor: "#92baff" };
+      return { backgroundColor: "#BFDEE0" };
     } else {
       return { backgroundColor: "#E0E0E0" };
     }

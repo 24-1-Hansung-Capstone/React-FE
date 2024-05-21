@@ -1,7 +1,7 @@
 const style = {
     logo: {
-        width: "20px",
-        height: "20px"
+        width: "50px",
+        height: "50px"
     },
     summary: {
         fontSize: "25px",

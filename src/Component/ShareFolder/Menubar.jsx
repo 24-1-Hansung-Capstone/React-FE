@@ -16,12 +16,12 @@ const styles = {
     boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.1)',
   },
   link: {
-    color: "#191D21",
+    color: "#BFDEE0",
     textDecoration: "none",
     fontSize: "20px",
   },
   activeLink: {
-    color: "#6392ff",
+    color: "#BFDEE0",
   }
 };
 
@@ -43,7 +43,7 @@ function MenuBar({ setIsLoggedIn, isLoggedIn }) {
   const css = `.link:hover {
     display: inline-block;
     padding: 0px 20px;
-    background-color: #9e9e9e;
+    background-color: #BFDEE0;
   }`
 
   return (
