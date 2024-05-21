@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Mainpage from './Component/Mainpage/Mainpage';
 import SearchResultPage from './Component/SearchResultPage/SearchResultPage';
@@ -14,6 +14,12 @@ import AddOffice from "./Component/HomesOffice/AddOffice";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const loggedIn = sessionStorage.getItem("isLoggedIn") === "true";
+    setIsLoggedIn(loggedIn);
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>

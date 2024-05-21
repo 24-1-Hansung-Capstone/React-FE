@@ -1,10 +1,10 @@
 import React from "react";
 import "./style/OfficeListItem.css"; // 스타일 시트 파일을 임포트합니다.
 
-const OfficeListItem = ({ post: { id, type, name, addr, content }, setSelectPost}) => {
+const OfficeListItem = ({ post: { id, type, name, addr, writer, content }, setSelectPost}) => {
     const handleClick = () => {
         console.log(type);
-        setSelectPost({ id, type, name, addr, content })
+        setSelectPost({ id, type, name, addr, writer, content })
     };
 
     if(type === 1) {
@@ -25,7 +25,7 @@ const OfficeListItem = ({ post: { id, type, name, addr, content }, setSelectPost
                     <div>{name}</div>
                     <div>{addr}</div>
                 </div>
-                <button className="officeDetailButton" onClick={() => setSelectPost({ id, type, name, addr, content })}>상세 보기</button>
+                <button className="officeDetailButton" onClick={() => setSelectPost({ id, type, name, addr, writer, content })}>상세 보기</button>
                 <button className="officeDeleteButton">🗑️</button>
             </div>
             

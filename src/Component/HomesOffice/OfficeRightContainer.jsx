@@ -26,6 +26,10 @@ const OfficeRightContainer = ({ selectPost }) => {
             <div>주소</div>
             <div>{selectPost.addr}</div>
           </div>
+          <div className="officeWriter">
+            <div>작성자</div>
+            <div>{selectPost.writer}</div>
+          </div>
           <div className="officeType">
             <div>거래유형</div>
             <button className="officeTypeButton" style={getButtonStyle("전세")}>전세</button>

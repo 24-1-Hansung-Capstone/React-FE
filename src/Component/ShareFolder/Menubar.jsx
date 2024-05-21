@@ -1,5 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { authService } from '../../firebase/fbInstance';
 import "./styles.css";
 
 const styles = {
@@ -24,6 +26,19 @@ const styles = {
 };
 
 function MenuBar({ setIsLoggedIn, isLoggedIn }) {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+      signOut(authService).then(() => {
+        setIsLoggedIn(false);
+        sessionStorage.removeItem("isLoggedIn");
+        sessionStorage.removeItem("userData");
+        navigate("/");
+      }).catch((error) => {
+        console.error("Error signing out:", error);
+      });
+    };
+  
   console.log(isLoggedIn);
   const css = `.link:hover {
     display: inline-block;
@@ -73,7 +88,7 @@ function MenuBar({ setIsLoggedIn, isLoggedIn }) {
           className="link"
           activeClassName="active"
           to="/"
-          onClick={()=>{setIsLoggedIn(false)}}
+          onClick={handleLogout}
         >
           로그아웃
         </NavLink>

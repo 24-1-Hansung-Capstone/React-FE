@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MenuBar from "../ShareFolder/Menubar";
 import { Link, useNavigate } from "react-router-dom";
 import * as _ from "./style";
 import logo from '../../Asset/Logo.png';
 import { GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from 'firebase/auth';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { setPersistence, browserSessionPersistence, onAuthStateChanged } from "firebase/auth";
 import { authService } from '../../firebase/fbInstance';
 
 
@@ -17,6 +18,29 @@ const LoginPage = ({ setIsLoggedIn, isLoggedIn }) => {
   const navigate = useNavigate();
 
   const toggleAccount = () => setNewAccount((prev) => !prev);
+
+
+  useEffect(() => {
+    setPersistence(authService, browserSessionPersistence)
+    .then(() => {
+      onAuthStateChanged(authService, (user) => {
+        if (user) {
+          sessionStorage.setItem("isLoggedIn", "true");
+          sessionStorage.setItem("userData", JSON.stringify(user));
+          setIsLoggedIn(true);
+          setUserData(user);
+        } else {
+          sessionStorage.removeItem("isLoggedIn");
+          sessionStorage.removeItem("userData");
+          setIsLoggedIn(false);
+          setUserData(null);
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("Error setting persistence:", error);
+    });
+}, [setIsLoggedIn]);
 
   const onChange = (e) => {
     const { target: { name, value } } = e;
@@ -34,15 +58,18 @@ const LoginPage = ({ setIsLoggedIn, isLoggedIn }) => {
     }
   };
 
+  const handleSuccessfulLogin = (user) => {
+    setIsLoggedIn(true);
+    setUserData(user);
+    sessionStorage.setItem("isLoggedIn", "true");
+    sessionStorage.setItem("userData", JSON.stringify(user));
+    navigate('/');
+  };
+
   const handleGoogleLogin = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(authService, provider)
-      .then((data) => {
-        setIsLoggedIn(true);
-        setUserData(data.user);
-        console.log(data);
-        navigate('/');
-      })
+      .then((result) => handleSuccessfulLogin(result.user))
       .catch((err) => {
         console.log(err);
         setError("오류가 발생했습니다");
@@ -54,11 +81,7 @@ const LoginPage = ({ setIsLoggedIn, isLoggedIn }) => {
     const provider = new GithubAuthProvider();
     try {
       const result = await signInWithPopup(authService, provider);
-      const user = result.user;
-      setIsLoggedIn(true);
-      setUserData(user);
-      console.log(user);
-      navigate('/');
+      handleSuccessfulLogin(result.user);
     } catch (error) {
       console.error(error);
       setError("오류가 발생했습니다");
@@ -80,6 +103,13 @@ const LoginPage = ({ setIsLoggedIn, isLoggedIn }) => {
           <_.LoginButton name="Github" onClick={handleGithubSignIn}>
             GitHub 로그인
           </_.LoginButton>
+          {/* <div>
+            <input name="email" type="email" placeholder="Email" required value={email} onChange={onChange} />
+            <input name="password" type="password" placeholder="Password" required value={password} onChange={onChange} />
+            <input type="submit" value={newAccount ? "Create Account" : "Sign In"} />
+          </div>
+          <span onClick={toggleAccount}>{newAccount ? "Sign In" : "Create Account"}</span>
+          {error && <span>{error}</span>} */}
         </_.LoginForm>
       </_.LoginContainer>
     </div>

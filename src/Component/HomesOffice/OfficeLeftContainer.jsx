@@ -26,7 +26,7 @@ const OfficeLeftContainer = ({ setSelectPost, selectCategory, isLoggedIn }) => {
       alert("로그인 후 매물을 추가할 수 있습니다.");
       return;
     }
-    window.open("http://13.125.234.8:3000/CommunityPage/addOffice", "new", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=700, height=700, left=0, top=0" );
+    window.open("http://13.125.234.8:3000/CommunityPage/addOffice", "new", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=700, height=700, left=60, top=60" );
   };
 
   // Function to handle form submission
@@ -43,6 +43,7 @@ const OfficeLeftContainer = ({ setSelectPost, selectCategory, isLoggedIn }) => {
       type: '',
       name: "",
       addr: "",
+      writer: "",
       content: "",
     });
   };
@@ -57,6 +58,15 @@ const OfficeLeftContainer = ({ setSelectPost, selectCategory, isLoggedIn }) => {
     const savedData = localStorage.getItem("postData");
     if (savedData) {
       setPostData(JSON.parse(savedData));
+    }
+  }, []);
+
+  // useEffect to set writer email from session storage when component mounts
+  useEffect(() => {
+    const userData = sessionStorage.getItem("userData");
+    if (userData) {
+      const user = JSON.parse(userData);
+      setFormData(prevFormData => ({ ...prevFormData, writer: user.email }));
     }
   }, []);
 
