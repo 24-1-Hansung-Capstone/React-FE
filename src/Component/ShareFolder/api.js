@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const URL = "3.34.134.82";
+// const URL = "3.34.134.82";
+const URL = "localhost";
 const PORT = 8080;
 const BASEURL = `http://${URL}:${PORT}`;
 
@@ -18,13 +19,13 @@ const getSearchResult = (query, service, setResult) => {
   }
 };
 
-const getSummary = (service, setResult) => {
+const getSummary = (service, data, setResult) => {
+  console.log(`보낸 url : ${data}`)
   try {
     axios
-      .post(`${BASEURL}/${service}`)
+      .post(`${BASEURL}/${service}`, data)
       .then((response) => {
-        console.log(`getSummaryapi : ${response.data}`);
-        // return response.data;
+        console.log(`getSummaryapi : ${response.data}`)
         setResult(response.data);
       })
       .catch((e) =>
@@ -53,7 +54,8 @@ const getChatAnswer = (query, setResult, errorHandle) => {
     model: "gpt-3.5-turbo",
     temperature: 0.5,
     messages: [
-      { role: "system", content: "" },
+      { role: "system", content: "넌 Yes 또는 No 밖에 모르는 멍청한 GPT야." },
+      { role: "assistant", content: "답변은 무조건 Yes or No" },
       { role: "user", content: query },
     ],
     max_tokens: 256,

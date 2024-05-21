@@ -1,15 +1,22 @@
-// src/Components/SearchResultPage/SearchResultList.jsx
-import React, { useEffect } from "react";
+import React from "react";
 import SearchResultCategory from "./SearchResultCategory";
 
-function SearchResultList({searchResults}) {
+function SearchResultList({searchResults, setSummary, summary}) {
+
+    const category = [
+        { type : "news", context : "뉴스📰" },
+        { type : "blog", context : "블로그👉" },
+        { type : "visitkorea", context : "관광지🧭" },
+        { type : "houseproducts", context : "매물🏠" },
+    ]
     
     return (
         <div style={{}}>
-            <SearchResultCategory searchResults = {searchResults.filter(item => item.category === "news")} context="뉴스📰" />
-            <SearchResultCategory searchResults = {searchResults.filter(item => item.category === "blog")} context="블로그👉" />
-            <SearchResultCategory searchResults = {searchResults.filter(item => item.category === "visitkorea")} context="관광지🧭" />
-            <SearchResultCategory searchResults = {searchResults.filter(item => item.category === "houseproducts")} context="매물🏠" />
+            {
+                category.map(({type, context}) => 
+                    <SearchResultCategory searchResults={searchResults.filter(item => item.category === type)} context={context} setSummary={setSummary} summary={summary}/>
+                )
+            }
             {/* <SearchResultCategory context="범죄율" />
             <SearchResultCategory context="지역 만족도" />
             <SearchResultCategory context="청약 공고" />

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function RelatedSearchWord({ recommendation, searchWord }) {    
-    const url = `http://13.125.234.8:3000/search/${recommendation}`;
+    const url = `http://localhost:3000/search/${recommendation}`;
 
     return (
         <a
@@ -16,6 +16,13 @@ function RelatedSearchWord({ recommendation, searchWord }) {
             {recommendation}
             </div>
         </a>
+        // <Link
+        //     to={url}
+        //     style={{ textDecoration: 'none', color: 'black' }}>
+        //     <div style={style.relatedSearchWord}>
+        //         {recommendation}
+        //     </div>
+        // </Link>
     );
 }
 

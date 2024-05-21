@@ -2,10 +2,10 @@
 import SearchResultList from "./SearchResultList";
 import style from "./style/SearchResultLeftBoxStyle"
 
-export default function SearchResultLeftBox({ searchResults }) {
+export default function SearchResultLeftBox({ searchResults, setSummary, summary}) {
     return (
         <div style={style.leftBox}>
-            <SearchResultList searchResults = {searchResults}/>
+            <SearchResultList searchResults = {searchResults} setSummary={setSummary} summary={summary}/>
         </div>
     );
 }

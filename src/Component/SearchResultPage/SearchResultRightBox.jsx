@@ -4,18 +4,18 @@ import SearchResultRightBoxInput from "./SearchResultRightBoxInput";
 import style from "./style/SearchResultRightBoxStyle";
 import { getSummary } from "../ShareFolder/api";
 
-function SearchResultRightBox({ searchTerm, searchResults }) {
-  const [summary, setSummary] = useState(["요약중..."]);
+function SearchResultRightBox({ searchTerm, searchResults, summary }) {
   const [userMessages, setUserMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState("");
   const [isInputable, setIsInputable] = useState(true);
 
-  useEffect(() => {
-    setSummary(["요약중..."]);
-    getSummary("nlpModel/summary", (res) => {
-      setSummary(res);
-    });
-  }, [searchResults]);
+  // useEffect(() => {
+  //   console.log("오른쪽 박스 이펙트")
+  //   setSummary(["요약중..."]);
+  //   getSummary("nlpModel/summary", (res) => {
+  //     setSummary(res);
+  //   });
+  // }, [searchResults, searchTerm]);
 
   return (
     <div style={style.rightBox}>
