@@ -13,6 +13,7 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
     type: 1,
     name: "",
     addr: "",
+    writer: "",
     content: "",
   });
 
@@ -50,6 +51,16 @@ const AddOffice = ({ setSelectPostId, selectCategory }) => {
     const savedData = localStorage.getItem("postData");
     if (savedData) {
       setPostData(JSON.parse(savedData));
+    }
+  }, []);
+
+  // // useEffect to set writer email from session storage when component mounts
+  useEffect(() => {
+    const userData = sessionStorage.getItem("userData");
+    if (userData) {
+      const user = JSON.parse(userData);
+      setFormData({ ...formData, writer: user.email });
+      console.log("userData : ",userData)
     }
   }, []);
 

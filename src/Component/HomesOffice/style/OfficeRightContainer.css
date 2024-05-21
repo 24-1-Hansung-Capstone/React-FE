@@ -15,6 +15,7 @@
 }
 .officeName,
 .officeAddress,
+.officeWriter,
 .officeType,
 .officeImg,
 .officeDesc {
@@ -30,6 +31,7 @@
 
 .officeName > div,
 .officeAddress > div,
+.officeWriter > div,
 .officeType > div {
   padding: 10px 30px;
   white-space: nowrap; /* 줄넘김 없이 표시 */
