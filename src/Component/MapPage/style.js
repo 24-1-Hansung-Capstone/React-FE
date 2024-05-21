@@ -8,9 +8,8 @@ export const Wrapper = styled.div`
 export const MapContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 92vh;
+  height: 93vh;
   margin: 0 0;
-  margin-top: 5px;
   
 `;
 
