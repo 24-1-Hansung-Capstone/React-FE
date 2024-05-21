@@ -17,7 +17,7 @@ const style = {
         borderRadius: "5px",
         marginTop: "10px", // 여백 추가
         padding: "10px", // 패딩 추가
-        backgroundColor: "#007bff", // 버튼 색상 추가
+        backgroundColor: "#5F9EA0", // 버튼 색상 추가
         color: "#ffffff", // 글자 색상 흰색으로
         cursor: "pointer", // 커서를 포인터로 변경
         fontSize: "16px", // 폰트 크기 조정

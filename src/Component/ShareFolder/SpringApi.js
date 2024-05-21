@@ -1,3 +1,4 @@
+// SpringApi.js
 import axios from "axios";
 
 const URL = "3.34.134.82";
@@ -18,4 +19,24 @@ const getSearchResult = (service, setResult) => {
   }
 };
 
-export { getSearchResult };
+const sendCommentToServer = (comment, postId, setComments, comments) => {
+  axios.get(`${BASEURL}/CommunityPage/sendComment`, { comment, postId })
+    .then((response) => {
+      setComments([...comments, comment]);
+    })
+    .catch((error) => {
+      console.error("Error adding comment:", error);
+    });
+};
+
+const receiveCommentFromServer = (postId, setComments) => {
+  axios.get(`${BASEURL}/CommunityPage/receiveComments${postId}`)
+    .then((response) => {
+      setComments(response.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching comments:", error);
+    });
+};
+
+export { getSearchResult, sendCommentToServer, receiveCommentFromServer };

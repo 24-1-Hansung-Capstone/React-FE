@@ -50,14 +50,14 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #5F9EA0;
     color: white;
     margin-right: 10px;
     margin-left: 10px;
   }
   
   .popupButton:last-child {
-    background-color: #dc3545;
+    background-color: #F08080;
   }
   
   .popupButton:hover {
@@ -67,7 +67,7 @@
   /* 추가된 디자인 요소 */
   /* 매물 종류, 이름 등의 입력 필드에 포커스 될 때의 스타일 */
   input[type="text"]:focus {
-    border-color: #007bff;
+    border-color: #5F9EA0;
     outline: none;
   }
   
