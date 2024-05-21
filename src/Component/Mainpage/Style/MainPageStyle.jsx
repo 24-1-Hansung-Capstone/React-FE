@@ -1,16 +1,21 @@
 const style = {
-    logo: {
+
+    logoTitle : {
         width: '20%',
-        marginTop: "-5%",
-        margin: '8% 0',
-        backgroundColor: '#EBF7FF',
+        marginTop:"3%",
+    },
+
+    logo: {
+        width: '25%',
+        margin: '3% 0',
+        backgroundColor: '#BFDEE0',
     },
     mainPageBody: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#EBF7FF',
+        backgroundColor: '#BFDEE0',
         height: "85vh",
     }
 }

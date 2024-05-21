@@ -7,7 +7,6 @@ import MapPage from './Component/MapPage/MapPage';
 import ChungyakPage from './Component/ChungyakPage/ChungyakPage';
 import SatisfactionPage from './Component/SatisfactionPage/SatisfactionPage';
 import EstatePage from './Component/EstatePage/EstatePage';
-import SignUpPage from "./Component/SignUpPage/SignUpPage";
 import LoginPage from "./Component/LoginPage/LoginPage";
 import OfficeMain from "./Component/HomesOffice/OfficeMain"
 import AddOffice from "./Component/HomesOffice/AddOffice";
@@ -24,7 +23,6 @@ function App() {
           <Route path="/ChungyakPage" exact element={<ChungyakPage  setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
           <Route path="/SatisfactionPage/:searchTerm" exact element={<SatisfactionPage setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>}  />
           <Route path="/EstatePage" exact element={<EstatePage setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn} />} />
-          <Route path="/SignUpPage" exact element={<SignUpPage setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
           <Route path="/LoginPage" element={<LoginPage setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
           <Route path="/CommunityPage" exact element={<OfficeMain  setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />
           <Route path="/CommunityPage/addOffice" exact element={<AddOffice setIsLoggedIn={setIsLoggedIn} isLoggedIn = {isLoggedIn}/>} />

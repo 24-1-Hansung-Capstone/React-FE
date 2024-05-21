@@ -23,7 +23,7 @@ export const InputForm = styled.form`
   max-width: 468px;
   border-radius: 40px;
   display: inline-flex;
-  border: 2px solid #92baff;
+  border: 2px solid #BFDEE0;
   position: absolute;
   z-index: 2;
   background-color: white;
@@ -92,7 +92,7 @@ export const Pagination = styled.div`
     }
 
     &.on {
-      background-color: #92baff;
+      background-color: #BFDEE0;
       color: #fff;
       cursor: default;
     }
@@ -118,7 +118,7 @@ export const CurrentPosButton = styled.button`
   position: absolute;
   bottom: 20px; /* 조정 가능한 버튼 위치 */
   right: 20px; /* 조정 가능한 버튼 위치 */
-  background-color: #92baff;
+  background-color: #BFDEE0;
   color: #fff;
   border: none;
   border-radius: 10px;

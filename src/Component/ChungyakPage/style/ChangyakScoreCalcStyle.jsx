@@ -40,7 +40,7 @@ const style = {
     result : {
         gridRow: "1 / 4",
         gridColumn: "3 / 4",
-        backgroundColor: "#92baff",    
+        backgroundColor: "#BFDEE0",    
         display: "flex",
         justifyContent: "center", // 텍스트를 수평 가운데 정렬
         alignItems: "center", // 텍스트를 수직 가운데 정렬

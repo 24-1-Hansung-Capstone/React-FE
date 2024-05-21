@@ -6,7 +6,7 @@ const styles = {
         display: 'flex',
         flexDirection: "row",
         alignItems: "center",
-        border: '3px solid #92baff',
+        border: '3px solid #BFDEE0',
         backgroundColor: 'white',
     },
     searchInput: {

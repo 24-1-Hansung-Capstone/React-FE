@@ -1,6 +1,6 @@
 // src/Components/SearchResultPage/SearchResultRightBoxChattingLog.jsx
 import React, { useState, useRef, useEffect } from "react";
-import OnlyLogo from '../../Asset/OnlyLogo.png';
+import NewLogo from '../../Asset/NewLogo.png';
 import { BiSolidFace } from "react-icons/bi";
 import style from "./style/SearchResultRightBoxChattingLogStyle"
 import { Link } from "react-router-dom";
@@ -25,7 +25,7 @@ const SearchResultRightBoxChattingLog = ({ AI_Text, userMessages }) => {
                         </div>
                     ) : (
                         <div style={style.botResponse}>
-                            <img src={OnlyLogo} alt="Logo" style={style.logo} />
+                            <img src={NewLogo} alt="Logo" style={style.logo} />
                             <p>{message}</p>
                         </div>
                     )}

@@ -6,7 +6,7 @@ display: flex;
 flex-direction: column; /* 로고와 폼을 세로로 배치 */
 justify-content: center;
 align-items: center;
-background-color: #EBF7FF;
+background-color: #BFDEE0;
 `;
 
 export const Logo = styled.div`
@@ -23,7 +23,7 @@ export const LoginForm = styled.form`
   align-items: center;
   padding: 30px;
   background-color: white;
-  border: 1px solid #EBF7FF;
+  border: 1px solid #BFDEE0;
   border-radius: 5px;
 `;
 
@@ -41,7 +41,7 @@ export const LoginButton = styled.button`
   width: 100%;
   height: 40px;
   margin-top: 20px;
-  background-color: darkblue;
+  background-color: #5F9EA0;
   color: white;
   border: none;
   border-radius: 3px;
@@ -49,6 +49,6 @@ export const LoginButton = styled.button`
   transition: background-color 0.3s;
   
   &:hover {
-    background-color: navy;
+    background-color: #4E8A8C;
   }
 `;

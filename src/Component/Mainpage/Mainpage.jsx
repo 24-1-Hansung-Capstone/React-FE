@@ -4,9 +4,11 @@ import MenuBar from "../ShareFolder/Menubar";
 import MainSearchInput from '../Mainpage/MainSearchInput';
 import { useEffect, useState } from "react";
 import axios from "axios";
-import logo from '../../Asset/Logo.png';
+import logo from '../../Asset/GIFLogo.gif';
 import MainPage from "./Style/MainPageStyle.jsx"
 import MainSearchInputStyle from "./Style/MainSearchInputStyle.jsx"
+import Footer from "./Footer.jsx";
+import logoTitle from '../../Asset/LogoTitle.png';
 
 function Mainpage( {props, setIsLoggedIn, isLoggedIn} ) {
   const [connection, setConnection] = useState("");
@@ -30,9 +32,11 @@ function Mainpage( {props, setIsLoggedIn, isLoggedIn} ) {
     <div>
       <MenuBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <div style={MainPage.mainPageBody}>
+        <img src={logoTitle} style={MainPage.logoTitle} alt="LogoTitle" />
         <img src={logo} style={MainPage.logo} alt="Logo" />
         <MainSearchInput style = {MainSearchInputStyle}/>
       </div>
+      <Footer />
     </div>
   );
 }
