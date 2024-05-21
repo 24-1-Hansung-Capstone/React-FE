@@ -1,16 +1,30 @@
-// OfficeRightContainer.js
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { sendCommentToServer } from "../ShareFolder/SpringApi";
 import clickmeimage from "../../Asset/plsClickDetail.png";
-import "./style/OfficeRightContainer.css"
+import "./style/OfficeRightContainer.css";
 
 const OfficeRightContainer = ({ selectPost }) => {
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
 
   const getButtonStyle = (type) => {
     if (selectPost && type === selectPost.type) {
       return { backgroundColor: "#BFDEE0" };
     } else {
       return { backgroundColor: "#E0E0E0" };
+    }
+  };
+
+  const handleSubmitComment = () => {
+    if (comment.trim() !== "") {
+      sendCommentToServer(comment, selectPost.id, setComments, comments);
+      setComment("");
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmitComment();
     }
   };
 
@@ -38,11 +52,27 @@ const OfficeRightContainer = ({ selectPost }) => {
             <button className="officeTypeButton" style={getButtonStyle("협의")}>협의</button>
           </div>
           <div className="officeDesc">
-            <div style={{ whiteSpace: 'nowrap'}}>내용</div>
+            <div style={{ whiteSpace: 'nowrap' }}>내용</div>
             <div>{selectPost.content}</div>
           </div>
-          <div>
+          <div className="officeComments">
             <div>댓글</div>
+            {comments.map((comment, index) => (
+              <div key={index}>{comment}</div>
+            ))}
+            <div className="commentContainer">
+              <input
+                className="commentInput"
+                type="text"
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                onKeyPress={handleKeyPress}
+                placeholder="댓글을 입력하세요"
+              />
+              <button className="commentSubmitBtn" onClick={handleSubmitComment}>
+                댓글 등록
+              </button>
+            </div>
           </div>
         </>
       ) : (

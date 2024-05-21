@@ -16,7 +16,7 @@ const style = {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#BFDEE0',
-        height: "85vh",
+        height: "90vh",
     }
 }
 
