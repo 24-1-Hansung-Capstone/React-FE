@@ -100,7 +100,7 @@ const MapPage = ({isLoggedIn, setIsLoggedIn}) => {
   
         kakao.maps.event.addListener(marker, 'click', () => {
           infoWindow = (new kakao.maps.InfoWindow({ zIndex: 1 }));
-          infoWindow.setContent('<div id=' + place.place_name + ' style="padding:5px;font-size:12px;" onclick = "this.parentNode.parentNode.remove()">' + place.place_name + '</div>');
+          infoWindow.setContent('<div id=' + place.place_name + ' style="padding:5px;font-size:10px;" onclick = "this.parentNode.parentNode.remove()">' + place.place_name + '</div>');
           infoWindow.open(renderedMap, marker);
   
         });

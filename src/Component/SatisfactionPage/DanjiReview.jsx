@@ -43,7 +43,7 @@ function DanjiReview({ danjiData, setReview }) {
                 />
                 <DanjiDetailReview desc={selectedDesc} />
             </div>
-            <div style={{ width: '100%', height: '180px' }}>
+            <div style={{ width: '70vh', height: '20vh' }}>
                 <MyResponsiveBar data={barChartData} /> 
             </div>
         </div>

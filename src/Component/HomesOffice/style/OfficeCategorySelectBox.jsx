@@ -1,9 +1,9 @@
 const style = {
 logo : {
-    width: "120px",
+    width: "15vh",
     },
     button: {
-        fontfamily : "NanumGothicLight",
+        fontFamily: "NanumGothicLight",
         display: "inline-flex",
         fontWeight: "bold",
         outline: "none",
@@ -13,12 +13,13 @@ logo : {
         height: "2.5rem",
         paddingLeft: "1rem",
         paddingRight: "1rem",
-        margin : "20px",
+        margin: "1vh",
         padding: "5px 25px",
-        color: "#000000",
+
         fontSize: "16px",
-        cursor: "pointer"
-    },
+        cursor: "pointer",
+        width: "auto", // Default width
+    }
 }
 
 export default style

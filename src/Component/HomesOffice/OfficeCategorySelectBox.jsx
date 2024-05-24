@@ -25,8 +25,8 @@ const OfficeCategorySelectBox = ({ setSelectCategory, selectCategory }) => {
             style={{
               ...buttonStyle.button,
               backgroundColor: selectCategory === category ? "#BFDEE0" : "#FFFFFF",
-              color: selectCategory === category ? "#FFFFFF" : "#000000",
-              border: selectCategory === category ? "2px solid #BFDEE0" : "2px solid #BFDEE0",
+              color: selectCategory === category ? "#ffffff" : "#000000",
+              border:  "2px solid #BFDEE0",
             }}
             onClick={() => handleButtonClick(category)}
           >
