@@ -7,6 +7,13 @@ const OfficeRightContainer = ({ selectPost }) => {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
 
+  useEffect(() => {
+    if (selectPost) {
+      // 페이지가 렌더링될 때 댓글을 받아옴
+      receiveCommentFromServer(selectPost.id, setComments);
+    }
+  }, [selectPost]); // selectPost가 바뀔 때마다 실행
+  
   const getButtonStyle = (type) => {
     if (selectPost && type === selectPost.type) {
       return { backgroundColor: "#BFDEE0" };
