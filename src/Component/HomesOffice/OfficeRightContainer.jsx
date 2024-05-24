@@ -24,7 +24,13 @@ const OfficeRightContainer = ({ selectPost }) => {
 
   const handleSubmitComment = () => {
     if (comment.trim() !== "") {
-      sendCommentToServer(selectPost.writer,comment, selectPost.id, setComments, comments);
+      const userData = sessionStorage.getItem("userData");
+      if (userData) {
+        const user = JSON.parse(userData);
+        sendCommentToServer(user.email, comment, selectPost.id, setComments, comments);
+      } else {
+        console.log("userData가 없습니다.")
+      }
       setComment("");
     }
   };
@@ -62,11 +68,13 @@ const OfficeRightContainer = ({ selectPost }) => {
             <div style={{ whiteSpace: 'nowrap' }}>내용</div>
             <div>{selectPost.content}</div>
           </div>
+
           <div className="officeComments">
             <div>댓글</div>
-            {comments.map((comment, index) => (
-              <div key={index}>{comment}</div>
-            ))}
+            {comments.map((comment, index) => 
+              {return <div key={index}>{comment.writer + ":" + comment.comment}</div>}
+            )}
+            
             <div className="commentContainer">
               <input
                 className="commentInput"

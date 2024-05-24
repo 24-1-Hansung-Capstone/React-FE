@@ -85,3 +85,9 @@
   margin-top: 10px;
   width: 100%; /* 컨테이너가 부모 요소의 전체 너비를 차지하도록 설정합니다. */
 }
+
+.officeComments {
+  display: flex;
+  flex-direction: column-reverse; /* 댓글을 역순으로 아래 방향으로 배치 */
+  margin-top: 20px; /* 예시값, 필요에 따라 조정 */
+}
