@@ -19,8 +19,8 @@ const getSearchResult = (service, setResult) => {
   }
 };
 
-const sendCommentToServer = (comment, postId, setComments, comments) => {
-  axios.get(`${BASEURL}/CommunityPage/sendComment`, { comment, postId })
+const sendCommentToServer = (writer, comment, postId, setComments, comments) => {
+  axios.post(`${BASEURL}/CommunityPage/sendComment`, { writer, comment, postId })
     .then((response) => {
       setComments([...comments, comment]);
     })

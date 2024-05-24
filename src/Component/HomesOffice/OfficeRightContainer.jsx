@@ -17,7 +17,7 @@ const OfficeRightContainer = ({ selectPost }) => {
 
   const handleSubmitComment = () => {
     if (comment.trim() !== "") {
-      sendCommentToServer(comment, selectPost.id, setComments, comments);
+      sendCommentToServer(selectPost.writer,comment, selectPost.id, setComments, comments);
       setComment("");
     }
   };
