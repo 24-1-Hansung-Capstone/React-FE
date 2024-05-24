@@ -3,7 +3,8 @@ import React from "react";
 function DanjiDetailReview({ desc }) {
     return (
         <div style={{
-            padding: "10px 0px",
+            width : "35vh",
+            padding: "0vh 2vh",
             fontSize: "22px",
             lineHeight: "1.6",
         }}>

@@ -30,7 +30,7 @@ const sendCommentToServer = (writer, comment, postId, setComments, comments) => 
 };
 
 const receiveCommentFromServer = (postId, setComments) => {
-  axios.get(`${BASEURL}/CommunityPage/receiveComments${postId}`)
+  axios.get(`${BASEURL}/CommunityPage/receiveComments?realtyId=${postId}`)
     .then((response) => {
       setComments(response.data);
     })

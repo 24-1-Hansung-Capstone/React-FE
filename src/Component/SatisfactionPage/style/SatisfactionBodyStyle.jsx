@@ -4,7 +4,6 @@ const style = {
         // display: "flex",
         // flexWrap: "wrap",
         // alignItems: "stretch"
-
         position: "relative",
         display: "flex",
         flexWrap: "wrap",
