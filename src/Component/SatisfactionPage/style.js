@@ -3,24 +3,23 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   position: sticky;
-  width: 50%;
-  top : 0;
+  width: 100vh;
+  margin-top : 5vh;
+  margin-left : -40vh;
 `;
 
 export const MapContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 75vh;
-  margin: 0 0;
-  margin-top: 5px;
+  width: 70vh;
+  height: 70vh;
+  margin-top: 1vh;
   border-radius: 20px;
 `;
 
 export const InputForm = styled.form`
-  margin-top: 20px;
-  margin-left: 50px;
-  width: 50%;
-  max-width: 468px;
+  margin-top: 5vh;
+  margin-left: 6vh;
+  width: 25vh;
   border-radius: 40px;
   display: inline-flex;
   border: 2px solid #BFDEE0;
@@ -31,7 +30,7 @@ export const InputForm = styled.form`
   input {
     border: none;
     outline: none;
-    margin-left: 20px;
+    margin-left: 4vh;
     background-color: white;
     flex: 1;
   }
@@ -39,22 +38,21 @@ export const InputForm = styled.form`
 
 export const ResultList = styled.div`
   position: absolute;
-  top: 40px;
+  top: 6vh;
+  height : 50vh;
+  width : 25vh;
   left: 0;
-  margin-left: 40px;
+  margin-left: 4vh;
   background-color: rgba(255, 255, 255);
-  padding: 20px;
+  padding: 3vh;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 2;
   font-size: 13px;
-  max-height: calc(70% - 10px);
-  max-width: 438px;
-  width: calc(30% - 10px);
   overflow-y: auto;
   border-radius: 10px;
 
   div {
-    margin-top: 5px;
+    margin-top: 2vh;
     padding: 5px;
     background-color: #f5f5f5; /* Added background color for inner divs */
     border-radius: 5px; /* Added border radius for inner divs */
@@ -76,7 +74,7 @@ export const ResultList = styled.div`
 export const Pagination = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 3vh;
 
   a {
     margin: 0 5px;

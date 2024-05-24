@@ -77,7 +77,7 @@ const SatisfactionRightBody = ({DanjiName, InputText, setInputText, barChartData
         });
 
         kakao.maps.event.addListener(marker, 'click', function () {
-          infowindow.setContent('<div style="padding:5px;font-size:15px;">' + place.place_name + '</div>');
+          infowindow.setContent('<div style="padding:2vh;font-size:15px;">' + place.place_name + '</div>');
           infowindow.open(map, marker);
         });
       }

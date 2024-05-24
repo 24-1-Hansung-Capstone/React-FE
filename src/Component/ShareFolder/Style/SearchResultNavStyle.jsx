@@ -1,7 +1,7 @@
 
 const style = {
     logo : {
-        width :"120px",
+        width :"10vh",
     },
     searchBar : {
         width : "120px",

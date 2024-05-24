@@ -6,6 +6,7 @@ const style = {
         padding: "0.1%",
         backgroundColor: "transparent",
         cursor: "pointer",
+        width : "30vh"
     },
     stars : {
         flex: "1",
@@ -13,7 +14,7 @@ const style = {
         flexWrap: "wrap",
         justifyContent: "space-around",
         alignContent: "flex-start",
-        marginBottom: "5px",
+        marginBottom: "2vh",
         fontSize: "20px"
     }
 };

@@ -35,17 +35,16 @@ export const InputForm = styled.form`
 
 export const ResultList = styled.div`
   position: absolute;
-  top: 100px;
+  top: 20vh;
   left: 0;
   margin-left: 40px;
+  height : 60vh;
+  width : 30vh;
   background-color: rgba(255, 255, 255);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 2;
   font-size: 15px;
-  max-height: calc(82% - 10px);
-  max-width: 468px;
-  width: calc(30% - 10px);
   overflow-y: auto;
   border-radius: 10px;
 

@@ -5,10 +5,10 @@ const Footer = () => {
   const footerStyle = {
     backgroundColor: "#3E6367",
     color: "#fff",
-    padding: "10vh 0",
+    padding: "10px 0",
     position: "fixed",
     bottom: 0,
-    width: "100vh",
+    width: "100%",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
