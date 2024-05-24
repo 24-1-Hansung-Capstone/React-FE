@@ -39,6 +39,7 @@ export default function SearchResultCategory({ searchResults, context, setSummar
                                     <HyperlinkPreview 
                                         id={index} title={item["esDto"]["title"]}
                                         isVisitKoreaItem={item.category === "visitkorea"}
+                                        isNews={item.category === "news"}
                                         itemPreview={item["preview"]} url={item["esDto"]["url"]}
                                         isClickable={isClickable}
                                         setSummary={
