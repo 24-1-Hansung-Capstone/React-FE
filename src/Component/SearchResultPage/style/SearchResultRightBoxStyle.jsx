@@ -1,5 +1,3 @@
-import { lineHeight } from "@mui/system";
-
 const style = {
     rightBox: {
         margin: "20px 20px",

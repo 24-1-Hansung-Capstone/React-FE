@@ -1,8 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom"
-import { Button, Stack } from "@mui/material";
+import { Link } from "react-router-dom";
 import logo from '../../Asset/Logo.png';
-import style from "./style/OfficeCategorySelectBox"
+import buttonStyle from "./style/OfficeCategorySelectBox";
 import "./style/OfficeCategorySelectBox.css";
 
 const OfficeCategorySelectBox = ({ setSelectCategory, selectCategory }) => {
@@ -12,20 +11,29 @@ const OfficeCategorySelectBox = ({ setSelectCategory, selectCategory }) => {
   };
 
   return (
-
     <div className="CategorySelectBox">
-      <Stack spacing={1.3} direction="row">
-        <Link to="/"><img src={logo} style={style.logo} /></Link>
+      <div>
+        <Link to="/">
+          <img src={logo} style={buttonStyle.logo} alt="Logo" />
+        </Link>
+      </div>
+      <div>
         {["전체", "전세", "월세", "매매", "협의"].map((category, index) => (
-          <Button
+          <button
             key={index}
-            variant={selectCategory !== category ? "outlined" : "contained"}
-            style={style.button}
-            onClick={() => handleButtonClick(category)}>
+            className={selectCategory !== category ? "outlined" : "contained"}
+            style={{
+              ...buttonStyle.button,
+              backgroundColor: selectCategory === category ? "#BFDEE0" : "#FFFFFF",
+              color: selectCategory === category ? "#FFFFFF" : "#000000",
+              border: selectCategory === category ? "2px solid #BFDEE0" : "2px solid #BFDEE0",
+            }}
+            onClick={() => handleButtonClick(category)}
+          >
             {category}
-          </Button>
+          </button>
         ))}
-      </Stack>
+      </div>
     </div>
   );
 };

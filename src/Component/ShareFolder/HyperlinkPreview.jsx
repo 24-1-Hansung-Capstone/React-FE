@@ -1,16 +1,16 @@
 // src/Components/ShareFolder/HyperlinkPreview.jsx
 import React from "react";
-import { Link, } from "react-router-dom";
-import style from "./Style/HyperlinkPreviewStyle"
-import { Button } from "@mui/material"
+import { Link } from "react-router-dom";
+import style from "./Style/HyperlinkPreviewStyle";
 import { getSummary } from "./api";
+import summaryButton from "../../Asset/summary.png";
 
 export default function HyperlinkPreview({ title, itemPreview, url, isVisitKoreaItem, setSummary, isClickable, isNews }) {
-  let target = "_blank"
+  let target = "_blank";
 
   if (url == null) {
-    url = "/MapPage"
-    target = "_self"
+    url = "/MapPage";
+    target = "_self";
   }
 
   return (
@@ -21,14 +21,22 @@ export default function HyperlinkPreview({ title, itemPreview, url, isVisitKorea
       <p style={style.preview}>
         {isVisitKoreaItem ? itemPreview : itemPreview + "..."}
         {isNews ?
-          <Button
-            variant="outlined"
+          <img
+            src={summaryButton}
+            alt="summary button"
             onClick={() => {
               console.log("어 형이야");
-              setSummary()
+              setSummary();
             }}
-            disabled={!isClickable}
-          >요약하기</Button>
+            style={{
+              cursor: isClickable ? 'pointer' : 'not-allowed',
+              opacity: isClickable ? 1 : 0.5,
+              width: '40px',
+              height: '40px',
+              float: 'right', // 오른쪽 정렬
+              marginRight: '10px', // 오른쪽 여백
+            }}
+          />
           :
           null
         }
