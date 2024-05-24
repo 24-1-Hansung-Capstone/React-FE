@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { sendCommentToServer } from "../ShareFolder/SpringApi";
+import { sendCommentToServer, receiveCommentFromServer } from "../ShareFolder/SpringApi";
 import clickmeimage from "../../Asset/plsClickDetail.png";
 import "./style/OfficeRightContainer.css";
 
@@ -13,7 +13,7 @@ const OfficeRightContainer = ({ selectPost }) => {
       receiveCommentFromServer(selectPost.id, setComments);
     }
   }, [selectPost]); // selectPost가 바뀔 때마다 실행
-  
+
   const getButtonStyle = (type) => {
     if (selectPost && type === selectPost.type) {
       return { backgroundColor: "#BFDEE0" };
