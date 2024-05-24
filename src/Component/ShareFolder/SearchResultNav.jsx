@@ -19,18 +19,23 @@ function SearchResultNav({ searchWord, searchUrlPath, isLoggedIn, setIsLoggedIn 
     return (
         <div>
             <MenuBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <div style = {style.NavBody}>
+            <div style={style.NavBody}>
                 <div style={style.logoAndSearchBar}>
                     <Link to="/">
-                    <img src={logo} alt="Logo" style={style.logo} />
+                        <img src={logo} alt="Logo" style={style.logo} />
                     </Link>
-                    <ResultSearchInput searchWord={searchWord} searchUrlPath= {searchUrlPath} />
+                    <ResultSearchInput searchWord={searchWord} searchUrlPath={searchUrlPath} />
                 </div>
                 <div>
-                    {searchUrlPath === "SatisfactionPage" ? null : <RelatedSearchWords recommendations={recommendations} searchWord= {searchWord}/>}
+                    {searchUrlPath === "SatisfactionPage" ? null : (
+                        <>
+                            <p style={style.recommendStyle}>연관검색어</p>
+                            <RelatedSearchWords recommendations={recommendations} searchWord={searchWord}/>
+                        </>
+                    )}
                 </div>
             </div>
-            <hr style={{}} />
+            <hr />
         </div>
     );
 }

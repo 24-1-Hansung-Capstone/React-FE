@@ -1,8 +1,8 @@
 const style = {
     relatedSearchWord: {
-        marginRight: "10px",
+        marginRight: "15px",
         backgroundColor: "#BFDEE0",
-        padding: '3px 10px', // 상하 1px, 좌우 10px 패딩
+        padding: '8px 20px',
         borderRadius: "10px",
     }
 };

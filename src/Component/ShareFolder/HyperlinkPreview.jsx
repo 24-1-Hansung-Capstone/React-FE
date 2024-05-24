@@ -31,10 +31,11 @@ export default function HyperlinkPreview({ title, itemPreview, url, isVisitKorea
             style={{
               cursor: isClickable ? 'pointer' : 'not-allowed',
               opacity: isClickable ? 1 : 0.5,
-              width: '40px',
-              height: '40px',
+              width: '45px',
+              height: '45px',
               float: 'right', // 오른쪽 정렬
               marginRight: '10px', // 오른쪽 여백
+              marginTop: "-10px",
             }}
           />
           :

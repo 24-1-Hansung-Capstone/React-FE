@@ -39,7 +39,7 @@ export const LoginInput = styled.input`
 
 export const LoginButton = styled.button`
   width: 100%;
-  height: 40px;
+  height: 60px;
   margin-top: 20px;
   background-color: #5F9EA0;
   color: white;
@@ -47,7 +47,8 @@ export const LoginButton = styled.button`
   border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s;
-  
+  font-Size : 22px;
+
   &:hover {
     background-color: #4E8A8C;
   }

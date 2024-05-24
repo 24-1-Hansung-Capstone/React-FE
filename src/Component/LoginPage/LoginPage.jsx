@@ -7,6 +7,7 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { setPersistence, browserSessionPersistence, onAuthStateChanged } from "firebase/auth";
 import { authService } from '../../firebase/fbInstance';
+import googleLogo from "../../Asset/googleLogo.png";
 
 
 const LoginPage = ({ setIsLoggedIn, isLoggedIn }) => {
@@ -86,7 +87,9 @@ const LoginPage = ({ setIsLoggedIn, isLoggedIn }) => {
         </Link>
         <_.LoginForm onSubmit={onSubmit}>
           <h2>로그인</h2>
-          <_.LoginButton name="Google" onClick={handleGoogleLogin}>Google 로그인</_.LoginButton>
+          <_.LoginButton name="Google" onClick={handleGoogleLogin}>
+            <img src={googleLogo} alt="Google 로고" height="30" /> Google 로그인
+          </_.LoginButton>
         </_.LoginForm>
       </_.LoginContainer>
     </div>

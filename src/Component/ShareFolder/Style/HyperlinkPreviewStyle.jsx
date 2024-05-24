@@ -17,7 +17,7 @@ const style = {
         borderRadius: "4px",
         border: "none",
         cursor: "pointer",
-        height: "2.25rem",
+        height: "2.5rem",
         paddingLeft: "1rem",
         paddingRight: "1rem",
         
