@@ -31,6 +31,17 @@
   background-color: #f8f9fa;
 }
 
+.officeCommentTitle {
+  border: 2px solid #e8e8e8;
+  display: flex;
+  padding: 0px 10px;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: -0.2%;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
 .officeName > div,
 .officeAddress > div,
 .officeWriter > div,
@@ -63,12 +74,11 @@
 }
 
 .commentInput {
-  flex-grow: 1; /* 이 속성은 입력 필드가 가능한 공간을 최대한 차지하도록 합니다. */
+  flex-grow: 1;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-left: 10px;
-  width: 70%; /* 입력 필드의 너비를 70%로 설정합니다. 필요에 따라 값을 조절하세요. */
+  width: 60%;
 }
 
 .commentSubmitBtn {
@@ -80,14 +90,41 @@
   cursor: pointer;
 }
 
+.wrapper {
+  margin: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid BFDEE0;
+  border-radius: 16px;
+}
+
+.contentContainer {
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.nameText {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.commentText {
+  color: black;
+  font-size: 16px;
+}
+
 .commentContainer {
+  margin: 8px;
+  padding: 8px;
   display: flex;
   margin-top: 10px;
   width: 100%; /* 컨테이너가 부모 요소의 전체 너비를 차지하도록 설정합니다. */
-}
-
-.officeComments {
-  display: flex;
-  flex-direction: column-reverse; /* 댓글을 역순으로 아래 방향으로 배치 */
-  margin-top: 20px; /* 예시값, 필요에 따라 조정 */
+  flex-direction: column;
+  border: 1px solid BFDEE0;
+  border-radius: 16px;
 }

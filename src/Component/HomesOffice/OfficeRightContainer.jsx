@@ -29,7 +29,7 @@ const OfficeRightContainer = ({ selectPost }) => {
         const user = JSON.parse(userData);
         sendCommentToServer(user.email, comment, selectPost.id, setComments, comments);
       } else {
-        console.log("userData가 없습니다.")
+        console.log("userData가 없습니다.");
       }
       setComment("");
     }
@@ -69,12 +69,7 @@ const OfficeRightContainer = ({ selectPost }) => {
             <div>{selectPost.content}</div>
           </div>
 
-          <div className="officeComments">
-            <div>댓글</div>
-            {comments.map((comment, index) => 
-              {return <div key={index}>{comment.writer + ":" + comment.comment}</div>}
-            )}
-            
+          <div>
             <div className="commentContainer">
               <input
                 className="commentInput"
@@ -89,6 +84,19 @@ const OfficeRightContainer = ({ selectPost }) => {
               </button>
             </div>
           </div>
+          
+          <div className="officeComments wrapper">
+          {comments.map((comment, index) => (
+            <div key={index} className="commentContainer">
+              <div className="contentContainer">
+                <span className="nameText">{comment.writer}</span>
+                <span className="commentText">{comment.comment}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+          
+            
         </>
       ) : (
         <div className="officePlaceholder">
