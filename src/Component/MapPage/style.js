@@ -16,8 +16,7 @@ export const MapContainer = styled.div`
 export const InputForm = styled.form`
   margin-top: 20px;
   margin-left: 50px;
-  width: 50%;
-  max-width: 468px;
+  width: 50vh;
   border-radius: 40px;
   display: inline-flex;
   border: 2px solid #BFDEE0;
@@ -36,7 +35,7 @@ export const InputForm = styled.form`
 
 export const ResultList = styled.div`
   position: absolute;
-  top: 130px;
+  top: 100px;
   left: 0;
   margin-left: 40px;
   background-color: rgba(255, 255, 255);

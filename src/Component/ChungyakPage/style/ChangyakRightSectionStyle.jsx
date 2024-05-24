@@ -1,6 +1,7 @@
 const style = {
     chungyakRightSection : {
-        width:"45%",
+        width:"100vh",
+        marginLeft : "2vh",
     }
 }
 
