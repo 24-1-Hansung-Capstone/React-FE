@@ -3,10 +3,10 @@ const style = {
         display:"flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "45%",
-        minWidth: "400px",
+        width: "100vh",
         top: "1px",
         position: "sticky",
+        marginRight : "2vh",
     },
     logo : {
         width: "200px",
