@@ -26,7 +26,7 @@ const OfficeListItem = ({ post: { id, type, name, addr, writer, content }, setSe
                     <div>{addr}</div>
                 </div>
                 <button className="officeDetailButton" onClick={() => setSelectPost({ id, type, name, addr, writer, content })}>상세 보기</button>
-                <button className="officeDeleteButton">🗑️</button>
+                {/*<button className="officeDeleteButton">🗑️</button>*/}
             </div>
             
             <br/>

@@ -40,11 +40,11 @@ export const ResultList = styled.div`
   position: absolute;
   top: 6vh;
   height : 50vh;
-  width : 25vh;
+  width : 20vh;
   left: 0;
-  margin-left: 4vh;
+  margin-left: 33vh;
   background-color: rgba(255, 255, 255);
-  padding: 3vh;
+  padding: 2vh;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 2;
   font-size: 13px;
@@ -52,21 +52,21 @@ export const ResultList = styled.div`
   border-radius: 10px;
 
   div {
-    margin-top: 2vh;
-    padding: 5px;
+    margin-top: 1vh;
+    padding: 2px;
     background-color: #f5f5f5; /* Added background color for inner divs */
     border-radius: 5px; /* Added border radius for inner divs */
   }
 
   h5 {
     font-size: 18px; /* Increased font size */
-    margin-bottom: 2px; /* Added margin bottom */
+    margin-bottom: 1px; /* Added margin bottom */
     color: #333; /* Changed text color */
   }
 
   span {
     display: block; /* Changed display to block */
-    margin-bottom: 2px; /* Added margin bottom */
+    margin-bottom: 1px; /* Added margin bottom */
     color: #666; /* Changed text color */
   }
 `;

@@ -2,11 +2,6 @@
 import React, { useState } from "react";
 import PaginationBar from "../ShareFolder/PaginationBar";
 import HyperlinkPreview from "../ShareFolder/HyperlinkPreview";
-import { TiNews } from "react-icons/ti";
-import { GrBlog } from "react-icons/gr";
-import { MdCardTravel, MdOutlineSentimentSatisfied, MdOutlineRealEstateAgent } from "react-icons/md";
-import { RiCriminalLine } from "react-icons/ri";
-import { TbBuildingEstate } from "react-icons/tb";
 import SearchResultCategoryHeader from "./SearchResultCategoryHeader";
 import style from "./style/SearchResultCategoryStyle"
 import { useNavigate } from "react-router-dom";

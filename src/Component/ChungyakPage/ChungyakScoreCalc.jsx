@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import React, { useEffect, useState } from "react";
 import style from "./style/ChangyakScoreCalcStyle"
 

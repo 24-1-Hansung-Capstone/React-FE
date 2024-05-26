@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { sendCommentToServer, receiveCommentFromServer } from "../ShareFolder/SpringApi";
 import clickmeimage from "../../Asset/plsClickDetail.png";
 import "./style/OfficeRightContainer.css";
+import commentIcon from "../../Asset/commentIcon.png";
 
 const OfficeRightContainer = ({ selectPost }) => {
   const [comment, setComment] = useState("");
@@ -69,8 +70,7 @@ const OfficeRightContainer = ({ selectPost }) => {
             <div>{selectPost.content}</div>
           </div>
 
-          <div>
-            <div className="commentContainer">
+          <div className="commentContainer">
               <input
                 className="commentInput"
                 type="text"
@@ -82,12 +82,12 @@ const OfficeRightContainer = ({ selectPost }) => {
               <button className="commentSubmitBtn" onClick={handleSubmitComment}>
                 댓글 등록
               </button>
-            </div>
           </div>
           
-          <div className="officeComments wrapper">
+          <div>
           {comments.map((comment, index) => (
-            <div key={index} className="commentContainer">
+            <div key={index} className="officeComments wrapper">
+              <img src={commentIcon} alt="Comment Icon" className="commentIcon" />
               <div className="contentContainer">
                 <span className="nameText">{comment.writer}</span>
                 <span className="commentText">{comment.comment}</span>

@@ -8,8 +8,9 @@ export const Wrapper = styled.div`
 export const MapContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 93vh;
+  height: calc(100vh - 61px);
   margin: 0 0;
+
   
 `;
 
@@ -49,7 +50,7 @@ export const ResultList = styled.div`
   border-radius: 10px;
 
   div {
-    margin-top: 5px;
+    margin-top: 2px;
     padding: 5px;
     background-color: #f5f5f5; /* Added background color for inner divs */
     border-radius: 5px; /* Added border radius for inner divs */
@@ -57,13 +58,13 @@ export const ResultList = styled.div`
 
   h5 {
     font-size: 20px; /* Increased font size */
-    margin-bottom: 2px; /* Added margin bottom */
+    margin-bottom: 1px; /* Added margin bottom */
     color: #333; /* Changed text color */
   }
 
   span {
     display: block; /* Changed display to block */
-    margin-bottom: 2px; /* Added margin bottom */
+    margin-bottom: 1px; /* Added margin bottom */
     color: #666; /* Changed text color */
   }
 `;

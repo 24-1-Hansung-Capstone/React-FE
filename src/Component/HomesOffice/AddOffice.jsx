@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import OfficeList from "./OfficeList";
 import "./style/AddOffice.css";
 import axios from "axios";
-import { officeCategory } from "./OfficeData";
 
 const AddOffice = ({ setSelectPostId, selectCategory }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);

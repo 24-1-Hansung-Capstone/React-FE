@@ -19,7 +19,7 @@ function DanjiReview({ danjiData, setReview }) {
         }
     ])
     const clickReview = desc => {
-        getSentimental(desc, "nlpModel/sentimental", ([neg, pos, res]) => {
+        getSentimental(desc, "nlpModel/sentimental", ([neg, pos]) => {
             setBarChartData([
                 {
                     "country": "만족도",
@@ -43,7 +43,7 @@ function DanjiReview({ danjiData, setReview }) {
                 />
                 <DanjiDetailReview desc={selectedDesc} />
             </div>
-            <div style={{ width: '70vh', height: '20vh' }}>
+            <div style={{ width: '70vh', height: '15vh' }}>
                 <MyResponsiveBar data={barChartData} /> 
             </div>
         </div>

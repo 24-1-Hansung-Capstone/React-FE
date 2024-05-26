@@ -6,6 +6,7 @@ import "./styles.css";
 
 const styles = {
   menuBar: {
+    height: "20px",
     top: 0,
     left: 0,
     display: "flex",

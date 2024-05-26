@@ -21,7 +21,10 @@ const style = {
         fontSize:"30px",
         fontWeight: "bold", // 폰트를 bold로 설정
         color: "#5F9EA0" // 파랑색 계열로 설정
-    }
+    },
+    noticeWord: {
+        fontSize:"12px",
+    },
 };
 
 export default style;
