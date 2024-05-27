@@ -1,5 +1,6 @@
 import React from "react";
 import SearchResultCategory from "./SearchResultCategory";
+import style from "./style/SearchResultListStyle";
 
 function SearchResultList({searchResults, setSummary, summary}) {
 
