@@ -1,7 +1,15 @@
 import React from "react";
 import SearchResultCategory from "./SearchResultCategory";
+import style from "./style/SearchResultListStyle";
+import { useNavigate } from "react-router-dom";
 
-function SearchResultList({searchResults, setSummary, summary}) {
+function SearchResultList({searchResults, setSummary, summary, searchTerm}) {
+
+    const navigate = useNavigate();
+
+    const handleSearchTermClick = () => {
+        navigate(`/search/${searchTerm}`); // Navigate to the new search URL
+    };
 
     const category = [
         { type : "news", context : "뉴스📰" },
@@ -12,15 +20,14 @@ function SearchResultList({searchResults, setSummary, summary}) {
     
     return (
         <div style={{}}>
-            {
-                category.map(({type, context}) => 
-                    <SearchResultCategory searchResults={searchResults.filter(item => item.category === type)} context={context} setSummary={setSummary} summary={summary}/>
-                )
-            }
-            {/* <SearchResultCategory context="범죄율" />
-            <SearchResultCategory context="지역 만족도" />
-            <SearchResultCategory context="청약 공고" />
-            <SearchResultCategory context="부동산 정보" /> */}
+        {/*<p style={style.recommendtypo} onClick={handleSearchTermClick}>
+                다음 검색어로 대신 검색 : <span style={{ cursor: 'pointer', color: 'blue' }}>{searchTerm}</span>
+        </p>*/}
+        {
+            category.map(({type, context}) => 
+                <SearchResultCategory searchResults={searchResults.filter(item => item.category === type)} context={context} setSummary={setSummary} summary={summary}/>
+            )
+        }
         </div>
     );
 }

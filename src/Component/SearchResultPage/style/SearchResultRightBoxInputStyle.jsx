@@ -1,8 +1,9 @@
 const style = {
     inputArea: {
-        width: "97%",
+        width: "94%",
         border: "none",
         resize: "none",
+        marginLeft : "1.5%",
         minHeight: "75px",
         backgroundColor: "#d9d9d9",
         borderRadius: "5px",
@@ -15,7 +16,7 @@ const style = {
         width: "100%",
         border: "none",
         borderRadius: "5px",
-        marginTop: "10px", // 여백 추가
+        marginTop: "5px", // 여백 추가
         padding: "10px", // 패딩 추가
         backgroundColor: "#5F9EA0", // 버튼 색상 추가
         color: "#ffffff", // 글자 색상 흰색으로

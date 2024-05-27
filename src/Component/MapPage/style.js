@@ -40,7 +40,7 @@ export const ResultList = styled.div`
   left: 0;
   margin-left: 40px;
   height : 60vh;
-  width : 30vh;
+  width : 40vh;
   background-color: rgba(255, 255, 255);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

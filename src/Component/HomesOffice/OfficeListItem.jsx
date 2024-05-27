@@ -40,11 +40,10 @@ const OfficeListItem = ({ post: { id, type, name, addr, writer, content }, setSe
                 {userData && userData.email === writer && (
                 <button
                 alt="Delete Icon"
-                className="deleteButton"
+                className="officeDeleteButton"
                 onClick={() => onDeletePost(id)}
                 >🗑️</button>
                 )}
-                {/*<button className="officeDeleteButton">🗑️</button>*/}
             </div>
             
             <br/>

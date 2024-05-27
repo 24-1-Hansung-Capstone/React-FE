@@ -10,7 +10,8 @@ const style = {
         backgroundColor:"#d9d9d9",
         border: "1px solid #d9d9d9", // 테두리 추가
         borderRadius: "5px", // 둥근 테두리 설정
-        marginBottom: "1%"
+        marginBottom: "1%",
+        marginTop: "1%", 
     },
 
 }

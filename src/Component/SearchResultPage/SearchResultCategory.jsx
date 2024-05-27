@@ -19,7 +19,7 @@ export default function SearchResultCategory({ searchResults, context, setSummar
     };
     
     const displayItem = searchResults.slice(5 * (currentPage - 1),
-        currentPage === totalPages ? undefined // 맨 마지막 페잊라면, 마지막 데이터까지 자른다.
+        currentPage === totalPages ? undefined // 맨 마지막 페이지라면, 마지막 데이터까지 자른다.
             : 5 * currentPage) // 중간 페이지라면, setpage만큼 띄운다 
 
     return (
