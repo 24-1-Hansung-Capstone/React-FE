@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./style/OfficeListItem.css"; // 스타일 시트 파일을 임포트합니다.
-import officeDeleteButton from "../../Asset/deleteButton.png";
+import officeDeleteButton from "../../Asset/realtyDelete.svg";
 
 const OfficeListItem = ({ post: { id, type, name, addr, writer, content }, setSelectPost, onDeletePost}) => {
 

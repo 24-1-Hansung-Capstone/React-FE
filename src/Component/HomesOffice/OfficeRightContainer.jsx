@@ -3,7 +3,7 @@ import { sendCommentToServer, receiveCommentFromServer, deleteCommentFromServer 
 import clickmeimage from "../../Asset/plsClickDetail.png";
 import "./style/OfficeRightContainer.css";
 import commentIcon from "../../Asset/commentIcon.png";
-import deleteButton from "../../Asset/deleteButton.png";
+import realtyDelete from "../../Asset/realtyDelete.svg";
 
 const OfficeRightContainer = ({ selectPost }) => {
   const [comment, setComment] = useState("");
@@ -102,7 +102,6 @@ const OfficeRightContainer = ({ selectPost }) => {
                 댓글 등록
               </button>
           </div>
-        
           <div>
           {comments.map((comment, index) => (
             <div key={index} className="officeComments wrapper">
@@ -113,9 +112,9 @@ const OfficeRightContainer = ({ selectPost }) => {
                 {/* 작성자와 현재 사용자가 같은 경우에만 삭제 버튼 표시 */}
                 {userData && userData.email === comment.writer && (
                   <img
-                    src={deleteButton}
+                    src={realtyDelete}
                     alt="Delete Icon"
-                    className="deleteButton"
+                    className="realtyDelete"
                     onClick={() => handleDeleteComment(comment.id)}
                   />
                 )}
