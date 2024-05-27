@@ -1,11 +1,28 @@
 import axios from "axios";
+import Inko from "inko";
 
 const URL = "3.34.134.82";
 const PORT = 8080;
 const BASEURL = `http://${URL}:${PORT}`;
 
+const inko = new Inko();
+
 const getSearchResult = (query, service, setResult) => {
-  console.log(`현재 입력받은 쿼리 : ${query}`);
+  // 영어가 섞여 있는 경우, 한글로 변환
+  let newQuery = inko.en2ko(query);
+  if (newQuery !== query) {
+    console.log(`입력어가 변경되었습니다. ${newQuery}`);
+    query = newQuery;
+  }
+
+  // 오탈자 수정
+  spell_checker(query).then((res) => {
+    if (res) {
+      query = res;
+    }
+  });
+  console.log(`오탈자 수정 테스트 : ${query}`);
+
   try {
     axios
       .get(`${BASEURL}/${service}?query=${query}`)
@@ -19,12 +36,12 @@ const getSearchResult = (query, service, setResult) => {
 };
 
 const getSummary = (service, data, setResult) => {
-  console.log(`보낸 url : ${data}`)
+  console.log(`보낸 url : ${data}`);
   try {
     axios
       .post(`${BASEURL}/${service}`, data)
       .then((response) => {
-        console.log(`getSummaryapi : ${response.data}`)
+        console.log(`getSummaryapi : ${response.data}`);
         setResult(response.data);
       })
       .catch((e) =>
@@ -107,6 +124,31 @@ const getSentimental = (query, service, setResult) => {
       .catch((e) => console.log(e));
   } catch (e) {
     console.log(e);
+  }
+};
+
+const spell_checker_api_id = process.env.REACT_APP_SPELLCHECK_API_ID;
+const spell_checker_api_key = process.env.REACT_APP_SPELLCHECK_API_KEY;
+const spell_checker_apiUrl = "https://openapi.naver.com/v1/search/errata.json";
+
+const spell_checker = async (query) => {
+  console.log(`id : ${spell_checker_api_id[0]}`);
+  console.log(`key : ${spell_checker_api_key[0]}`);
+  try {
+    const res = await axios.get(spell_checker_apiUrl, {
+      params: {
+        query,
+      },
+      headers: {
+        "X-Naver-Client-Id": spell_checker_api_id,
+        "X-Naver-Client-Secret": spell_checker_api_key,
+      },
+    });
+    console.log(`뭐야 나도 호출해줘요 : ${res.data}`);
+    return res.data.errata;
+  } catch (err) {
+    console.error(err);
+    return null;
   }
 };
 
