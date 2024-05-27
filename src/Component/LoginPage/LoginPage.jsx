@@ -88,7 +88,7 @@ const LoginPage = ({ setIsLoggedIn, isLoggedIn }) => {
         <_.LoginForm onSubmit={onSubmit}>
           <h2>로그인</h2>
           <_.LoginButton name="Google" onClick={handleGoogleLogin}>
-            <img src={googleLogo} alt="Google 로고" height="30" /> Google 로그인
+            <img src={googleLogo} alt="Google 로고" height="20" /> Google 로그인
           </_.LoginButton>
         </_.LoginForm>
       </_.LoginContainer>

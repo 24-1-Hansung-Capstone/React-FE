@@ -1,11 +1,22 @@
 import axios from "axios";
+import Inko from "inko";
 
 const URL = "3.34.134.82";
 const PORT = 8080;
 const BASEURL = `http://${URL}:${PORT}`;
 
+const inko = new Inko();
+
 const getSearchResult = (query, service, setResult) => {
-  console.log(`현재 입력받은 쿼리 : ${query}`);
+  // 영어가 섞여 있는 경우, 한글로 변환
+  let newQuery = inko.en2ko(query);
+  let isQueryChanged = false;
+  if (newQuery !== query) {
+    console.log(`입력어가 변경되었습니다. ${newQuery}`);
+    query = newQuery;
+    isQueryChanged = true;
+  }
+
   try {
     axios
       .get(`${BASEURL}/${service}?query=${query}`)
@@ -19,12 +30,12 @@ const getSearchResult = (query, service, setResult) => {
 };
 
 const getSummary = (service, data, setResult) => {
-  console.log(`보낸 url : ${data}`)
+  console.log(`보낸 url : ${data}`);
   try {
     axios
       .post(`${BASEURL}/${service}`, data)
       .then((response) => {
-        console.log(`getSummaryapi : ${response.data}`)
+        console.log(`getSummaryapi : ${response.data}`);
         setResult(response.data);
       })
       .catch((e) =>
@@ -41,14 +52,6 @@ const OPENAI_API_ORG = process.env.REACT_APP_OPENAI_API_ORG;
 const CHATGPT_BASE_URL = "https://api.openai.com/v1/chat/completions";
 
 const getChatAnswer = (query, setResult, errorHandle) => {
-  if (OPENAI_API_KEY == null || OPENAI_API_KEY == undefined) {
-    console.log(`openai api 키를 불러오는데 실패함. value=${OPENAI_API_KEY}`);
-  } else {
-    console.log(
-      `openai api 키 불러오기 성공 value=${OPENAI_API_KEY.substring(0, 2)}`
-    );
-  }
-
   let data = JSON.stringify({
     model: "gpt-3.5-turbo",
     temperature: 0.5,

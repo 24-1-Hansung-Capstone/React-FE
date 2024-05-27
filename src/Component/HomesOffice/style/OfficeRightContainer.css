@@ -119,8 +119,19 @@
   margin-left: 1vh;
 }
 
+.deleteButton {
+  width: 2vh;
+  height: 2vh;
+  position: absolute;
+  top: 0.5vh;
+  right: 0;
+  left : 69vh;
+  cursor: pointer; /* Optional: to change the cursor to a pointer when hovering over the delete button */
+}
+
 .contentContainer {
   margin-left: 8px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
