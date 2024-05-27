@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { sendCommentToServer, receiveCommentFromServer, deleteCommentFromServer,  } from "../ShareFolder/SpringApi";
+import { sendCommentToServer, receiveCommentFromServer, deleteCommentFromServer } from "../ShareFolder/SpringApi";
 import clickmeimage from "../../Asset/plsClickDetail.png";
 import "./style/OfficeRightContainer.css";
 import commentIcon from "../../Asset/commentIcon.png";
@@ -42,15 +42,18 @@ const OfficeRightContainer = ({ selectPost }) => {
   };
 
   const handleDeleteComment = (commentId) => {
-    // 댓글 삭제 요청
-    deleteCommentFromServer(commentId)
-    .then((newComments) => {
-      // 삭제 후 새로운 댓글 목록으로 상태를 업데이트
-      setComments(newComments);
-    })
-    .catch((error) => {
-      console.error("Error deleting comment:", error);
-    });
+      // 확인 창 표시
+      if (window.confirm("댓글을 삭제하시겠습니까?")) {
+        // 댓글 삭제 요청
+        deleteCommentFromServer(commentId)
+        .then((newComments) => {
+            // 삭제 후 새로운 댓글 목록으로 상태를 업데이트
+            setComments(newComments);
+        })
+        .catch((error) => {
+            console.error("Error deleting comment:", error);
+        });
+    }
   };
 
   const handleKeyPress = (e) => {

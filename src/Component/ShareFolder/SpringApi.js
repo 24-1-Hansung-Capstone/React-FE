@@ -54,4 +54,17 @@ const deleteCommentFromServer = (commentId) => {
   });
 };
 
-export { getSearchResult, sendCommentToServer, receiveCommentFromServer, deleteCommentFromServer };
+const deletePostFromServer = (postId) => {
+  return new Promise((resolve, reject) => {
+    axios.delete(`${BASEURL}/CommunityPage/deletePost?realtyId=${postId}`)
+      .then((response) => {
+        resolve(response.data); // 삭제된 댓글의 데이터로 resolve
+      })
+      .catch((error) => {
+        console.error("댓글 삭제 오류:", error);
+        reject(error); // 에러와 함께 reject
+      });
+  });
+};
+
+export { getSearchResult, sendCommentToServer, receiveCommentFromServer, deleteCommentFromServer, deletePostFromServer };
