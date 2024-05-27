@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style/OfficeListItem.css"; // 스타일 시트 파일을 임포트합니다.
 
-const OfficeListItem = ({ post: { id, type, name, addr, writer, content }, setSelectPost}) => {
+const OfficeListItem = ({ post: { id, type, name, addr, writer, content }, setSelectPost, onDeletePost}) => {
+
+    const [userData, setUserData] = useState(null); // 현재 사용자 정보 추가
+
+    useEffect(() => {
+        const storedUserData = sessionStorage.getItem("userData");
+        if (storedUserData) {
+        setUserData(JSON.parse(storedUserData));
+    }
+    });
+
     const handleClick = () => {
         console.log(type);
         setSelectPost({ id, type, name, addr, writer, content })
@@ -26,7 +36,14 @@ const OfficeListItem = ({ post: { id, type, name, addr, writer, content }, setSe
                     <div>{addr}</div>
                 </div>
                 <button className="officeDetailButton" onClick={() => setSelectPost({ id, type, name, addr, writer, content })}>상세 보기</button>
-                <button className="officeDeleteButton">🗑️</button>
+                {/* 작성자와 현재 사용자가 같은 경우에만 삭제 버튼 표시 */}
+                {userData && userData.email === writer && (
+                <button
+                alt="Delete Icon"
+                className="officeDeleteButton"
+                onClick={() => onDeletePost(id)}
+                >🗑️</button>
+                )}
             </div>
             
             <br/>
