@@ -22,7 +22,9 @@ const getSearchResult = (service, setResult) => {
 const sendCommentToServer = (email, comment, postId, setComments, comments) => {
   axios.post(`${BASEURL}/CommunityPage/sendComment`, { writer: email, comment, realtyId : postId })
     .then((response) => {
-      setComments([...comments, { writer: email, comment, realtyId : postId }]);
+      const savedComment = response.data;
+      console.log("savedComment:",savedComment)
+      setComments([...comments, savedComment]);
     })
     .catch((error) => {
       console.error("Error adding comment:", error);

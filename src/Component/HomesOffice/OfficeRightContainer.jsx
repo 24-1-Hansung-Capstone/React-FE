@@ -31,10 +31,8 @@ const OfficeRightContainer = ({ selectPost }) => {
 
   const handleSubmitComment = () => {
     if (comment.trim() !== "") {
-      const userData = sessionStorage.getItem("userData");
       if (userData) {
-        const user = JSON.parse(userData);
-        sendCommentToServer(user.email, comment, selectPost.id, setComments, comments);
+        sendCommentToServer(userData.email, comment, selectPost.id, setComments, comments);
       } else {
         console.log("userData가 없습니다.");
       }
@@ -108,11 +106,11 @@ const OfficeRightContainer = ({ selectPost }) => {
               <div className="contentContainer">
                 <span className="nameText">{comment.writer}</span>
                 <span className="commentText">{comment.comment}</span>
-                {/* 작성자와 현재 사용자가 같은 경우에만 삭제 버튼 표시 */}
-                {userData && userData.email === comment.writer && (
-                  <button onClick={() => handleDeleteComment(comment.id)}>삭제</button>
-                )}
               </div>
+              {/* 작성자와 현재 사용자가 같은 경우에만 삭제 버튼 표시 */}
+              {userData && userData.email === comment.writer && (
+                <button onClick={() => handleDeleteComment(comment.id)}>삭제</button>
+                )}
             </div>
           ))}
         </div>
