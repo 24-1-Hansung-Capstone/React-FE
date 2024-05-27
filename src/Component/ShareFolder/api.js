@@ -21,7 +21,7 @@ const getSearchResult = (query, service, setResult) => {
           isQueryChanged = response.headers.isquerychanged;
           suggest = decodeURIComponent(response.headers.suggestquery);
           console.log(
-            `isQueryChaged : ${isQueryChanged}\tsuggest : ${suggest}`
+            `isQueryChanged : ${isQueryChanged}\tsuggest : ${suggest}`
           );
           setResult(response.data, isQueryChanged, suggest);
         } else {

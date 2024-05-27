@@ -3,7 +3,7 @@ import SearchResultCategory from "./SearchResultCategory";
 import style from "./style/SearchResultListStyle";
 import { useNavigate } from "react-router-dom";
 
-function SearchResultList({searchResults, setSummary, summary, searchTerm, suggestQuery, isQueryChaged }) {
+function SearchResultList({searchResults, setSummary, summary, searchTerm, suggestQuery, isQueryChanged }) {
 
     const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ function SearchResultList({searchResults, setSummary, summary, searchTerm, sugge
     };
 
     const renderRecommendation = () => {
-        if (isQueryChaged  === true || isQueryChaged ==='true') {
+        if (isQueryChanged  === true || isQueryChanged ==='true') {
             return (
                 <p style={style.recommendtypo} onClick={handleSearchTermClick}>
                     다음 검색어로 대신 검색 : <span style={{ cursor: 'pointer', color: 'blue' }}>{suggestQuery}</span>

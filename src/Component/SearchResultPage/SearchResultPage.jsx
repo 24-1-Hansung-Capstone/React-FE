@@ -10,17 +10,17 @@ function SearchResultPage( {setIsLoggedIn, isLoggedIn} ) {
     const [searchResults, setSearchResults] = useState([]);
     const [summary, setSummary] = useState([]);
     /** 오탈자를 고려하여 새로운 입력을 제안함 true일때만 추천하면 됨. */
-    const [isQueryChaged , setIsQueryChanged] = useState(false);
+    const [isQueryChanged , setIsQueryChanged] = useState(false);
 
     /** 제안하는 검색어 */
     const [suggestQuery, setSuggestQuery] = useState("")
     const { searchTerm } = useParams();
 
     useEffect(() => {
-        getSearchResult(searchTerm, "search", (res, isQueryChaged , suggest) => {
+        getSearchResult(searchTerm, "search", (res, isQueryChanged , suggest) => {
             setSearchResults(res)
-            setIsQueryChanged(isQueryChaged )
-            if (isQueryChaged ) {
+            setIsQueryChanged(isQueryChanged )
+            if (isQueryChanged ) {
                 setSuggestQuery(suggest)
             }
         });
@@ -31,7 +31,7 @@ function SearchResultPage( {setIsLoggedIn, isLoggedIn} ) {
             <section style={{}}>
                 <SearchResultNav searchWord={searchTerm} searchUrlPath={"search"} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 <div style={style.body}>
-                <SearchResultLeftBox searchResults={searchResults} setSummary={setSummary} summary={summary} searchTerm={searchTerm} suggestQuery={suggestQuery} isQueryChaged ={isQueryChaged } />
+                <SearchResultLeftBox searchResults={searchResults} setSummary={setSummary} summary={summary} searchTerm={searchTerm} suggestQuery={suggestQuery} isQueryChanged ={isQueryChanged } />
                     <SearchResultRightBox searchTerm={searchTerm} searchResults={searchResults} summary={summary}/> {/* title props 전달 */}
                 </div>
             </section>
