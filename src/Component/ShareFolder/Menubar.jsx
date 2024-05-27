@@ -15,6 +15,7 @@ const styles = {
     zIndex: 1000,
     borderBottom: "1px solid ",
     boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.1)',
+
   },
   link: {
     color: "#BFDEE0",

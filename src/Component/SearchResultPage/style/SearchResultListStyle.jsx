@@ -1,14 +1,10 @@
 const style = {
-    wrongtypo : {
-        fontSize : "18px",
-        marginTop : "-1vh",
-        marginLeft : "-10vh",
-    },
-
     recommendtypo : {
         fontSize : "17px",
+        color: "#3E6367",
         marginTop : "-1vh",
-        marginLeft : "-10vh",
+        marginLeft : "-15vh",
+        padding: "5px",
     },
 };
 
