@@ -12,6 +12,7 @@ function SearchResultList({searchResults, setSummary, summary}) {
     
     return (
         <div style={{}}>
+        <p style={style.recommendtypo}>다음 검색어로 대신 검색 : </p>
             {
                 category.map(({type, context}) => 
                     <SearchResultCategory searchResults={searchResults.filter(item => item.category === type)} context={context} setSummary={setSummary} summary={summary}/>
