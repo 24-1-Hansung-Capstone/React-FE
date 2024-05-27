@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { sendCommentToServer, receiveCommentFromServer, deleteCommentFromServer,  } from "../ShareFolder/SpringApi";
 import clickmeimage from "../../Asset/plsClickDetail.png";
 import "./style/OfficeRightContainer.css";
+import commentIcon from "../../Asset/commentIcon.png";
 
 const OfficeRightContainer = ({ selectPost }) => {
   const [comment, setComment] = useState("");
@@ -35,7 +36,7 @@ const OfficeRightContainer = ({ selectPost }) => {
         const user = JSON.parse(userData);
         sendCommentToServer(user.email, comment, selectPost.id, setComments, comments);
       } else {
-        console.log("userData가 없습니다.")
+        console.log("userData가 없습니다.");
       }
       setComment("");
     }
@@ -86,19 +87,7 @@ const OfficeRightContainer = ({ selectPost }) => {
             <div style={{ whiteSpace: 'nowrap' }}>내용</div>
             <div>{selectPost.content}</div>
           </div>
-
-          <div className="officeComments">
-            <div>댓글</div>
-            {comments.map((comment, index) => 
-              {return <div key={index} className="commentItem"><div>{comment.writer + ":" + comment.comment}</div>
-               {/* 작성자와 현재 사용자가 같은 경우에만 삭제 버튼 표시 */}
-                 {userData && userData.email === comment.writer && (
-                  <button onClick={() => handleDeleteComment(comment.id)}>삭제</button>
-                )}
-              </div>}
-            )}
-            
-            <div className="commentContainer">
+          <div className="commentContainer">
               <input
                 className="commentInput"
                 type="text"
@@ -110,8 +99,24 @@ const OfficeRightContainer = ({ selectPost }) => {
               <button className="commentSubmitBtn" onClick={handleSubmitComment}>
                 댓글 등록
               </button>
-            </div>
           </div>
+        
+          <div>
+          {comments.map((comment, index) => (
+            <div key={index} className="officeComments wrapper">
+              <img src={commentIcon} alt="Comment Icon" className="commentIcon" />
+              <div className="contentContainer">
+                <span className="nameText">{comment.writer}</span>
+                <span className="commentText">{comment.comment}</span>
+                {/* 작성자와 현재 사용자가 같은 경우에만 삭제 버튼 표시 */}
+                {userData && userData.email === comment.writer && (
+                  <button onClick={() => handleDeleteComment(comment.id)}>삭제</button>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+            
         </>
       ) : (
         <div className="officePlaceholder">

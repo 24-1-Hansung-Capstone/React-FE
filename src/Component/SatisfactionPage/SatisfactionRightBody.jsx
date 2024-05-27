@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, InputForm, ResultList, Pagination, SearchButton, Wrapper, CurrentPosButton } from "./style"; // CurrentPosButton import 추가
 import searchIcon from "../../Asset/searchIcon.svg"; // 이미지 불러오기
-import MyResponsiveBar from "./MyResponsiveBar";
+
 
 const { kakao } = window;
 

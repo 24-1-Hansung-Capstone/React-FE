@@ -2,7 +2,7 @@ const style = {
     leftBox : {
         //searchResultRightBox과 맞춰야함
         position: "sticky",
-        width : "100vh",
+        width : "110vh",
         margin: "4vh 5vh",
         marginLeft : "2vh",
         marginRight : "2vh",

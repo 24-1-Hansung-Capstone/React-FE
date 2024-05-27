@@ -23,7 +23,9 @@ function SearchResultRightBox({ searchTerm, searchResults, summary }) {
         <div style={style.searchTerm}>
           <p>{searchTerm}</p>
         </div>
-
+        {/*<div style={style.noticeWord}>
+          <p>내용 요약을 원하시면 왼쪽의 요약 버튼을 눌러보세요.</p>
+        </div>*/}
         <div>
           {summary && Array.isArray(summary) && summary.map((item, idx) => (
             <div key={idx}>
