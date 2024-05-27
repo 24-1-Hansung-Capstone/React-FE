@@ -34,6 +34,8 @@ jobs:
         run: |
           echo "REACT_APP_OPENAI_API_KEY=${{ secrets.PRODUCTION_OPENAI_API_KEY }}" >> .env
           echo "REACT_APP_OPENAI_API_ORG=${{ secrets.PRODUCTION_OPENAI_API_ORG }}" >> .env
+          echo "REACT_APP_SPELLCHECK_API_ID=${{ secrets.NAVER_SPELLCHECK_API_ID }}" >> .env
+          echo "REACT_APP_SPELLCHECK_API_KEY=${{ secrets.NAVER_SPELLCHECK_API_KEY }}" >> .env
 
       - name: check .env file
         run: cat .env
