@@ -3,6 +3,7 @@ import { sendCommentToServer, receiveCommentFromServer, deleteCommentFromServer,
 import clickmeimage from "../../Asset/plsClickDetail.png";
 import "./style/OfficeRightContainer.css";
 import commentIcon from "../../Asset/commentIcon.png";
+import deleteButton from "../../Asset/deleteButton.png";
 
 const OfficeRightContainer = ({ selectPost }) => {
   const [comment, setComment] = useState("");
@@ -110,7 +111,9 @@ const OfficeRightContainer = ({ selectPost }) => {
                 <span className="commentText">{comment.comment}</span>
                 {/* 작성자와 현재 사용자가 같은 경우에만 삭제 버튼 표시 */}
                 {userData && userData.email === comment.writer && (
-                  <button onClick={() => handleDeleteComment(comment.id)}>삭제</button>
+                  <img src={deleteButton} alt="Delete Icon" className="deleteButton" onClick={() => handleDeleteComment(comment.id)} />
+                  /*<button onClick={() => handleDeleteComment(comment.id)}>삭제</button>*/
+
                 )}
               </div>
             </div>

@@ -119,6 +119,14 @@
   margin-left: 1vh;
 }
 
+.deleteButton {
+  width: 4vh;
+  height: 4vh;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
 .contentContainer {
   margin-left: 8px;
   display: flex;
