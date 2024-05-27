@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./style/OfficeListItem.css"; // 스타일 시트 파일을 임포트합니다.
+import officeDeleteButton from "../../Asset/deleteButton.png";
 
 const OfficeListItem = ({ post: { id, type, name, addr, writer, content }, setSelectPost, onDeletePost}) => {
 
@@ -38,11 +39,12 @@ const OfficeListItem = ({ post: { id, type, name, addr, writer, content }, setSe
                 <button className="officeDetailButton" onClick={() => setSelectPost({ id, type, name, addr, writer, content })}>상세 보기</button>
                 {/* 작성자와 현재 사용자가 같은 경우에만 삭제 버튼 표시 */}
                 {userData && userData.email === writer && (
-                <button
+                <img
+                src={officeDeleteButton}
                 alt="Delete Icon"
                 className="officeDeleteButton"
                 onClick={() => onDeletePost(id)}
-                >🗑️</button>
+                />
                 )}
             </div>
             
