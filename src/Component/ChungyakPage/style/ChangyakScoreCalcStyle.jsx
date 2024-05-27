@@ -1,6 +1,6 @@
 const div = {
     fontSize: "20px",
-    fontFamily: "roboto",
+    fontFamily: "NanumGothic",
     fontWeight: "bold",
     marginBottom: "3px",
 }
@@ -30,7 +30,7 @@ const style = {
         width: "60px", 
         height: "50px", 
         fontSize: "30px", 
-        fontFamily: "Roboto, sans-serif", 
+        fontFamily: "NanumGothic", 
         fontWeight: "bold", 
         border: "none",
         textAlign:"center",
