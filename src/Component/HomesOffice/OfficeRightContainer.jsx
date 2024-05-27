@@ -107,15 +107,19 @@ const OfficeRightContainer = ({ selectPost }) => {
             <div key={index} className="officeComments wrapper">
               <img src={commentIcon} alt="Comment Icon" className="commentIcon" />
               <div className="contentContainer">
-                <span className="nameText">{comment.writer}</span>
-                <span className="commentText">{comment.comment}</span>
-                {/* 작성자와 현재 사용자가 같은 경우에만 삭제 버튼 표시 */}
-                {userData && userData.email === comment.writer && (
-                  <img src={deleteButton} alt="Delete Icon" className="deleteButton" onClick={() => handleDeleteComment(comment.id)} />
-                  /*<button onClick={() => handleDeleteComment(comment.id)}>삭제</button>*/
-
-                )}
-              </div>
+              <span className="nameText">{comment.writer}</span>
+              <span className="commentText">{comment.comment}</span>
+              {/* 작성자와 현재 사용자가 같은 경우에만 삭제 버튼 표시 */}
+              {userData && userData.email === comment.writer && (
+                <img
+                  src={deleteButton}
+                  alt="Delete Icon"
+                  className="deleteButton"
+                  onClick={() => handleDeleteComment(comment.id)}
+                />
+                /*<button onClick={() => handleDeleteComment(comment.id)}>삭제</button>*/
+              )}
+            </div>
             </div>
           ))}
         </div>
