@@ -44,7 +44,6 @@
 
 .officeName > div,
 .officeAddress > div,
-.officeWriter > div,
 .officeType > div,
 .officeComments > div {
   padding: 10px 30px;
@@ -53,11 +52,18 @@
   align-items: right;
 }
 
+.officeWriter > div {
+  padding: 10px 30px;
+  white-space: nowrap;
+  padding-right: 30px;
+  align-items: right;
+}
+
 .officeDesc > div {
   padding: 100px 30px;
-  padding-right: 80px;
+  padding-right: 45px;
   align-items: right;
-  width: calc(100% - 60px); /* Added to match the width of the comment input and button */
+  
 }
 
 .officeType {
