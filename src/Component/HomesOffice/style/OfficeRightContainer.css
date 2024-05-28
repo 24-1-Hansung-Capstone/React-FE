@@ -29,6 +29,7 @@
   margin-top: -0.2%;
   align-items: center;
   background-color: #f8f9fa;
+  white-space: pre-line;
 }
 
 .officeCommentTitle {
@@ -50,6 +51,7 @@
   white-space: nowrap;
   padding-right: 50px;
   align-items: right;
+  white-space: pre-line;
 }
 
 .officeWriter > div {
@@ -63,6 +65,7 @@
   padding: 100px 30px;
   padding-right: 45px;
   align-items: right;
+  white-space: pre-line;
   
 }
 
