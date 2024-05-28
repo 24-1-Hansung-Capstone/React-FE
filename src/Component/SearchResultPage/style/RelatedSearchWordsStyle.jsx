@@ -6,7 +6,6 @@ const style = {
         display : "flex",
         flexDirection: "row",
         flexWrap: "wrap",
-        marginBottom : "10px",
     }
 };
 

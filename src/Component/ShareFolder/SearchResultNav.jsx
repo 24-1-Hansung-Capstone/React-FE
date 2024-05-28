@@ -31,6 +31,7 @@ function SearchResultNav({ searchWord, searchUrlPath, isLoggedIn, setIsLoggedIn 
                         <>
                             <p style={style.recommendStyle}>연관검색어</p>
                             <RelatedSearchWords recommendations={recommendations} searchWord={searchWord}/>
+                            <h2 style={style.blockText}>막아 이거</h2>
                         </>
                     )}
                 </div>
