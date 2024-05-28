@@ -9,22 +9,29 @@ import style from "./style/SearchResultPageStyle";
 function SearchResultPage( {setIsLoggedIn, isLoggedIn} ) {
     const [searchResults, setSearchResults] = useState([]);
     const [summary, setSummary] = useState([]);
+    /** 오탈자를 고려하여 새로운 입력을 제안함 true일때만 추천하면 됨. */
+    const [isQueryChanged , setIsQueryChanged] = useState(false);
+
+    /** 제안하는 검색어 */
+    const [suggestQuery, setSuggestQuery] = useState("")
     const { searchTerm } = useParams();
 
     useEffect(() => {
-        console.log("서치 페이지 이펙트");
-        getSearchResult(searchTerm, "search", (res) => {
+        getSearchResult(searchTerm, "search", (res, isQueryChanged , suggest) => {
             setSearchResults(res)
-            console.log("검색결과 없어영", res)
+            setIsQueryChanged(isQueryChanged )
+            if (isQueryChanged ) {
+                setSuggestQuery(suggest)
+            }
         });
     }, [searchTerm]);
 
     return (
         <div>
             <section style={{}}>
-                <SearchResultNav searchWord={searchTerm} searchUrlPath={"search"} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+                <SearchResultNav searchWord={searchTerm} searchUrlPath={"search"} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 <div style={style.body}>
-                    <SearchResultLeftBox searchResults={searchResults} setSummary={setSummary} summary={summary} searchTerm={searchTerm}/>
+                <SearchResultLeftBox searchResults={searchResults} setSummary={setSummary} summary={summary} searchTerm={searchTerm} suggestQuery={suggestQuery} isQueryChanged ={isQueryChanged } />
                     <SearchResultRightBox searchTerm={searchTerm} searchResults={searchResults} summary={summary}/> {/* title props 전달 */}
                 </div>
             </section>

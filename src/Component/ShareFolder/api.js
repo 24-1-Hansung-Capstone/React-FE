@@ -5,23 +5,28 @@ const URL = "3.34.134.82";
 const PORT = 8080;
 const BASEURL = `http://${URL}:${PORT}`;
 
-const inko = new Inko();
+// const inko = new Inko();
 
 const getSearchResult = (query, service, setResult) => {
   // 영어가 섞여 있는 경우, 한글로 변환
-  let newQuery = inko.en2ko(query);
+  // let newQuery = inko.en2ko(query);
   let isQueryChanged = false;
-  if (newQuery !== query) {
-    console.log(`입력어가 변경되었습니다. ${newQuery}`);
-    query = newQuery;
-    isQueryChanged = true;
-  }
+  let suggest = query;
 
   try {
     axios
       .get(`${BASEURL}/${service}?query=${query}`)
       .then((response) => {
-        setResult(response.data);
+        if (service === "search") {
+          isQueryChanged = response.headers.isquerychanged;
+          suggest = decodeURIComponent(response.headers.suggestquery);
+          console.log(
+            `isQueryChanged : ${isQueryChanged}\tsuggest : ${suggest}`
+          );
+          setResult(response.data, isQueryChanged, suggest);
+        } else {
+          setResult(response.data);
+        }
       })
       .catch((e) => console.log(e));
   } catch (e) {
