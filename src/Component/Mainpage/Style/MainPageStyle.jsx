@@ -2,12 +2,12 @@ const style = {
 
     logoTitle : {
         width: '20%',
-        marginTop:"3%",
+        marginTop:"2%",
     },
 
     logo: {
         width: '25%',
-        margin: '3% 0',
+        margin: '2% 0',
         backgroundColor: '#BFDEE0',
     },
     mainPageBody: {
@@ -16,7 +16,7 @@ const style = {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#BFDEE0',
-        height: "90vh",
+        height: "95vh",
     }
 }
 
