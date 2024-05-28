@@ -1,11 +1,8 @@
 import axios from "axios";
-import Inko from "inko";
 
 const URL = "3.34.134.82";
 const PORT = 8080;
 const BASEURL = `http://${URL}:${PORT}`;
-
-// const inko = new Inko();
 
 const getSearchResult = (query, service, setResult) => {
   // 영어가 섞여 있는 경우, 한글로 변환
