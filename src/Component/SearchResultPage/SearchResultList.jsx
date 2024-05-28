@@ -35,7 +35,7 @@ function SearchResultList({searchResults, setSummary, summary, searchTerm, sugge
         <div style={{}}>
             {renderRecommendation()}
             {category.map(({type, context}) => 
-                <SearchResultCategory key={type} searchResults={searchResults.filter(item => item.category === type)} context={context} setSummary={setSummary} summary={summary}/>
+                <SearchResultCategory key={type} searchTerm={searchTerm} searchResults={searchResults.filter(item => item.category === type)} context={context} setSummary={setSummary} summary={summary}/>
             )}
         </div>
     );

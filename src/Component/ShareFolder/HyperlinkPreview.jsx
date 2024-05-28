@@ -18,14 +18,12 @@ export default function HyperlinkPreview({ title, itemPreview, url, isVisitKorea
       <Link to={url} target={target} state={{ search: title }}>
         <h1 style={style.title}>{title}</h1>
       </Link>
-      <p style={style.preview}>
-        {isVisitKoreaItem ? itemPreview : itemPreview + "..."}
-        {isNews ?
+      <p style={style.preview} dangerouslySetInnerHTML={{ __html: isVisitKoreaItem ? itemPreview : itemPreview + "..." }}></p>
+        {isNews &&
           <img
             src={summaryButton}
             alt="summary button"
             onClick={() => {
-              console.log("어 형이야");
               setSummary();
             }}
             style={{
@@ -37,11 +35,8 @@ export default function HyperlinkPreview({ title, itemPreview, url, isVisitKorea
               marginRight: '10px', // 오른쪽 여백
               marginTop: "-10px",
             }}
-          />
-          :
-          null
-        }
-      </p>
-    </div>
-  );
-}
+            />
+          }
+        </div>
+      );
+    }
