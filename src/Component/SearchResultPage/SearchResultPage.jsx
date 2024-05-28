@@ -17,6 +17,9 @@ function SearchResultPage( {setIsLoggedIn, isLoggedIn} ) {
     const { searchTerm } = useParams();
 
     useEffect(() => {
+        // 관련 state 초기화 후, 검색요청
+        setSummary([])
+        setIsQueryChanged(false)
         getSearchResult(searchTerm, "search", (res, isQueryChanged , suggest) => {
             setSearchResults(res)
             setIsQueryChanged(isQueryChanged )

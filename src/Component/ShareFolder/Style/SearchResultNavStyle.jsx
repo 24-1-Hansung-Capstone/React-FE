@@ -23,11 +23,20 @@ const style = {
         color: "#3E6367",
         padding: "5px", // padding around text
         borderRadius: "5px", // rounded corners
-        marginTop: "-10px",
-        marginBottom: "-35px",
+        marginTop: "-15px",
+        marginBottom: "-30px",
         marginLeft : "7px",
-    }
+    },
 
+    blockText : {
+        display : "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        fontSize : "5px",
+        marginBottom : "-5px",
+        marginTop : "20px",
+        color : "white",
+    }
 
 };
 

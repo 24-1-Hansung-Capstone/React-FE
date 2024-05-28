@@ -29,6 +29,7 @@
   margin-top: -0.2%;
   align-items: center;
   background-color: #f8f9fa;
+  white-space: pre-line;
 }
 
 .officeCommentTitle {
@@ -44,20 +45,28 @@
 
 .officeName > div,
 .officeAddress > div,
-.officeWriter > div,
 .officeType > div,
 .officeComments > div {
   padding: 10px 30px;
   white-space: nowrap;
   padding-right: 50px;
   align-items: right;
+  white-space: pre-line;
+}
+
+.officeWriter > div {
+  padding: 10px 30px;
+  white-space: nowrap;
+  padding-right: 30px;
+  align-items: right;
 }
 
 .officeDesc > div {
   padding: 100px 30px;
-  padding-right: 80px;
+  padding-right: 45px;
   align-items: right;
-  width: calc(100% - 60px); /* Added to match the width of the comment input and button */
+  white-space: pre-line;
+  
 }
 
 .officeType {
