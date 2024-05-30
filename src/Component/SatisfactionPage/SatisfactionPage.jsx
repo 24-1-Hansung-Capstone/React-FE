@@ -24,7 +24,7 @@ function SatisfactionPage({isLoggedIn, setIsLoggedIn}) {
                 setSuggestQuery(suggest)
             }
         })
-        console.log(`수정 제안 : ${ isQueryChanged ? "사실 멀쩡하심" : suggestQuery}`)
+        console.log(`수정 제안 : ${ isQueryChanged ? suggestQuery : "사실 멀쩡하심"}`)
     }, [searchTerm]);
 
 
