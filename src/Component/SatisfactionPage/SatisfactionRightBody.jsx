@@ -1,7 +1,8 @@
 //srr\Component\SatisfactionPage\SatisfactionRightBody.jsx
 import React, { useEffect, useState } from 'react';
-import { MapContainer, InputForm, ResultList, Pagination, SearchButton, Wrapper, CurrentPosButton } from "./style"; // CurrentPosButton import 추가
+import { MapContainer, InputForm, ResultList, Pagination, SearchButton, Wrapper, CurrentPosmyMButton } from "./style"; // CurrentPosButton import 추가
 import searchIcon from "../../Asset/searchIcon.svg"; // 이미지 불러오기
+import style from './style/DanjiItemHeaderStyle';
 
 
 const { kakao } = window;
@@ -95,8 +96,9 @@ const SatisfactionRightBody = ({DanjiName, InputText, setInputText, barChartData
   };
 
   return (
+    <div style = {{position : "sticky", top:"1px"}}>
     <Wrapper>
-      <div style={{ display: 'flex', position: 'relative' }}>
+      <div style={{ display: 'flex', position:"relative",}}>
         <div style={{ flex: 1 }}>
         <InputForm onSubmit={(e) => e.preventDefault()} style={{ display: 'none' }}>
           <input placeholder="검색어를 입력하세요" onChange={onChange} value={InputText} />
@@ -125,10 +127,11 @@ const SatisfactionRightBody = ({DanjiName, InputText, setInputText, barChartData
             <Pagination id="pagination"></Pagination>
           </ResultList>
         </div>
-        <MapContainer id="myMap"></MapContainer>
+        <MapContainer id="myMap" style={{position:"sticky", top:"1px", left:"1px"}}></MapContainer>
       </div>
       
     </Wrapper>
+    </div>
   );
 }
 

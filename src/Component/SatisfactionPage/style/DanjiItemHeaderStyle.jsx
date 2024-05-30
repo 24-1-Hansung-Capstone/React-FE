@@ -12,6 +12,16 @@ const style = {
     },
     arrow : {
         width :"2vh"
+    },
+
+    myMap : {
+        //searchResultRightBox과 맞춰야함
+        top: "1px",
+        left: "1px",
+        display:"flex",
+        position: "sticky",
+        justifyContent: "center",
+        alignItems: "flex-start",
     }
 };
 
