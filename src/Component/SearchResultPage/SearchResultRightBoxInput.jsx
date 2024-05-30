@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import style from "./style/SearchResultRightBoxInputStyle";
 import { getChatAnswer } from "../ShareFolder/api";
 
-const SearchResultRightBoxInput = ({ currentMessage, setCurrentMessage, setUserMessages, isInputable, setIsInputable }) => {
+const SearchResultRightBoxInput = ({ currentMessage, setCurrentMessage, setUserMessages, isInputable, setIsInputable, summary, userMessages }) => {
     const textareaRef = useRef(null);
 
     const handleMessageSend = () => {
@@ -12,7 +12,7 @@ const SearchResultRightBoxInput = ({ currentMessage, setCurrentMessage, setUserM
         setUserMessages(prev => [...prev, currentMessage]);
         setCurrentMessage("");
 
-        getChatAnswer(currentMessage, res => {
+        getChatAnswer(currentMessage, summary, userMessages, res => {
             setUserMessages(prev => [...prev, res]);
             setIsInputable(true);
             setCurrentMessage("");

@@ -53,16 +53,19 @@ const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 const OPENAI_API_ORG = process.env.REACT_APP_OPENAI_API_ORG;
 const CHATGPT_BASE_URL = "https://api.openai.com/v1/chat/completions";
 
-const getChatAnswer = (query, setResult, errorHandle) => {
+const getChatAnswer = (query, assi, users, setResult, errorHandle) => {
+  let messages = [
+    { role: "system", content: "너는 한국 서울의 부동산을 알려주는 찾아줘 홈즈 부동산의 중개업자야. 매우 보수적이라 확실한 것밖에 대답을 하지 못해." },
+    { role: "assistant", content: assi },
+  ]
+
+  users.map( user => messages.push({ role : "user", content : user }))
+  
   let data = JSON.stringify({
-    model: "gpt-3.5-turbo",
+    model: "gpt-4-turbo",
     temperature: 0.5,
-    messages: [
-      { role: "system", content: "너는 한국의 부동산 중개업자야. 매우 보수적이라 확실한 것밖에 대답을 하지 못해." },
-      { role: "assistant", content: "안녕하세요. 홈즈입니다. 저에게 부동산에 대해 물어봐 주세요" },
-      { role: "user", content: query },
-    ],
-    max_tokens: 256,
+    messages, 
+    max_tokens: 300,
   });
 
   let config = {

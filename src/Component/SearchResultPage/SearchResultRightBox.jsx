@@ -42,9 +42,11 @@ function SearchResultRightBox({ searchTerm, searchResults, summary }) {
         <SearchResultRightBoxInput
           currentMessage={currentMessage}
           setCurrentMessage={setCurrentMessage}
+          userMessages={userMessages}
           setUserMessages={setUserMessages}
           isInputable={isInputable}
           setIsInputable={setIsInputable}
+          summary={summary}
         />
       </section>
     </div>
