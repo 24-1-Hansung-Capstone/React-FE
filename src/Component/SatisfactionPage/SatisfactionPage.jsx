@@ -30,8 +30,8 @@ function SatisfactionPage({isLoggedIn, setIsLoggedIn}) {
 
     return (
         <div>
-            <SearchResultNav searchWord={searchTerm} searchUrlPath={"SatisfactionPage"} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-            <SatisfactionBody result={result} setReview={setReview} />
+            <SearchResultNav searchWord={searchTerm} searchUrlPath={"SatisfactionPage"} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}  />
+            <SatisfactionBody result={result} setReview={setReview} searchTerm={searchTerm} suggestQuery={suggestQuery} isQueryChanged ={isQueryChanged }/>
         </div>
     );
 }
