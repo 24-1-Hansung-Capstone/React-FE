@@ -16,7 +16,7 @@ function SatisfactionLeftBody({ result, setInputText, setReview, searchTerm, sug
     });
 
     const handleSearchTermClick = () => {
-        const newURL = `/search/${suggestQuery}`;
+        const newURL = `/SatisfactionPage/${suggestQuery}`;
         navigate(newURL); // Change URL
         window.location.reload(); // Reload the page
     };
