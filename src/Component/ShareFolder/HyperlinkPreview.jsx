@@ -1,8 +1,6 @@
-// src/Components/ShareFolder/HyperlinkPreview.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./Style/HyperlinkPreviewStyle";
-import { getSummary } from "./api";
 import summaryButton from "../../Asset/summary.png";
 
 export default function HyperlinkPreview({ title, itemPreview, url, isVisitKoreaItem, setSummary, isClickable, isNews }) {
@@ -18,8 +16,9 @@ export default function HyperlinkPreview({ title, itemPreview, url, isVisitKorea
       <Link to={url} target={target} state={{ search: title }}>
         <h1 style={style.title}>{title}</h1>
       </Link>
-      <p style={style.preview} dangerouslySetInnerHTML={{ __html: isVisitKoreaItem ? itemPreview : itemPreview + "..." }}></p>
-        {isNews &&
+      <p style={style.preview}>
+        <span dangerouslySetInnerHTML={{ __html: isVisitKoreaItem ? itemPreview : itemPreview + "..." }}></span>
+        {isNews && (
           <img
             src={summaryButton}
             alt="summary button"
@@ -35,8 +34,9 @@ export default function HyperlinkPreview({ title, itemPreview, url, isVisitKorea
               marginRight: '10px', // 오른쪽 여백
               marginTop: "-10px",
             }}
-            />
-          }
-        </div>
-      );
-    }
+          />
+        )}
+      </p>
+    </div>
+  );
+}
