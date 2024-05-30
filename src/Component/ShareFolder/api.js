@@ -65,7 +65,7 @@ const getChatAnswer = (query, assi, users, setResult, errorHandle) => {
     model: "gpt-4-turbo",
     temperature: 0.5,
     messages, 
-    max_tokens: 300,
+    max_tokens: 512,
   });
 
   let config = {
