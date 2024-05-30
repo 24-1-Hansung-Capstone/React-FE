@@ -14,7 +14,7 @@ const getSearchResult = (query, service, setResult) => {
     axios
       .get(`${BASEURL}/${service}?query=${query}`)
       .then((response) => {
-        if (service === "search") {
+        if (service === "search" || service === "satisfaction") {
           isQueryChanged = response.headers.isquerychanged;
           suggest = decodeURIComponent(response.headers.suggestquery);
           console.log(
