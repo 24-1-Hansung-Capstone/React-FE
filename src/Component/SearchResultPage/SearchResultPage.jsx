@@ -34,7 +34,7 @@ function SearchResultPage( {setIsLoggedIn, isLoggedIn} ) {
             <section style={{}}>
                 <SearchResultNav searchWord={searchTerm} searchUrlPath={"search"} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 <div style={style.body}>
-                <SearchResultLeftBox searchResults={searchResults} setSummary={setSummary} summary={summary} searchTerm={searchTerm} suggestQuery={suggestQuery} isQueryChanged ={isQueryChanged } />
+                    <SearchResultLeftBox searchResults={searchResults} setSummary={setSummary} summary={summary} searchTerm={searchTerm} suggestQuery={suggestQuery} isQueryChanged ={isQueryChanged } />
                     <SearchResultRightBox searchTerm={searchTerm} searchResults={searchResults} summary={summary}/> {/* title props 전달 */}
                 </div>
             </section>

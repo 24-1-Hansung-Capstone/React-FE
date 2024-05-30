@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import style from "./style/SearchResultRightBoxInputStyle";
 import { getChatAnswer } from "../ShareFolder/api";
 

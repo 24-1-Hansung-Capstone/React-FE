@@ -58,8 +58,8 @@ const getChatAnswer = (query, setResult, errorHandle) => {
     model: "gpt-3.5-turbo",
     temperature: 0.5,
     messages: [
-      { role: "system", content: "넌 Yes 또는 No 밖에 모르는 멍청한 GPT야." },
-      { role: "assistant", content: "답변은 무조건 Yes or No" },
+      { role: "system", content: "너는 한국의 부동산 중개업자야. 매우 보수적이라 확실한 것밖에 대답을 하지 못해." },
+      { role: "assistant", content: "안녕하세요. 홈즈입니다. 저에게 부동산에 대해 물어봐 주세요" },
       { role: "user", content: query },
     ],
     max_tokens: 256,
