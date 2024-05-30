@@ -15,7 +15,7 @@ function SatisfactionLeftBody({ result, setInputText, setReview }) {
 
     return (
         <div style={style.leftBox}>
-            {Object.entries(danjiNameMap).map(([danjiName, danjiDatas], index) => {
+            { result.length === 0 ? <div>검색결과가 없습니다.</div> : Object.entries(danjiNameMap).map(([danjiName, danjiDatas], index) => {
                 return (
                     <div key={index}>
                         <DanjiItem danjiName={danjiName} danjiDatas={danjiDatas} setInputText={setInputText} setReview={setReview}/>
