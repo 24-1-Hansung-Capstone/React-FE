@@ -10,9 +10,21 @@ function SatisfactionPage({isLoggedIn, setIsLoggedIn}) {
     const [result, setResult] = useState([]);
     const [review, setReview] = useState(null);
     const { searchTerm } = useParams();
+    /** 오탈자를 고려하여 새로운 입력을 제안함 true일때만 추천하면 됨. */
+    const [isQueryChanged , setIsQueryChanged] = useState(false);
+
+    /** 제안하는 검색어 */
+    const [suggestQuery, setSuggestQuery] = useState("")
 
     useEffect(() => {
-        getSearchResult(searchTerm, "satisfaction", setResult)
+        getSearchResult(searchTerm, "satisfaction", (res, isQueryChanged , suggest) => {
+            setResult(res)
+            setIsQueryChanged(isQueryChanged)
+            if (isQueryChanged ) {
+                setSuggestQuery(suggest)
+            }
+        })
+        console.log(`수정 제안 : ${ isQueryChanged ? "사실 멀쩡하심" : suggestQuery}`)
     }, [searchTerm]);
 
 
