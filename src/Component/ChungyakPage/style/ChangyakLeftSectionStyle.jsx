@@ -3,7 +3,7 @@ const style = {
         display:"flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "100vh",
+        width: "90vh",
         top: "1px",
         position: "sticky",
         marginRight : "2vh",
